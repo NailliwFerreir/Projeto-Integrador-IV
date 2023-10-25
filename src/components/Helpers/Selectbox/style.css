@@ -1,0 +1,76 @@
+.my-select-box {
+    width: 100%;
+    font-size: 14px;
+    font-weight: normal;
+    position: relative;
+}
+.my-select-box .click-away {
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+}
+.my-select-box .my-select-box-btn {
+    width: 100%;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-select-box .my-select-box-section {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgb(68 68 68 / 11%);
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform: scale(0.75) translateY(-21px);
+    -ms-transform: scale(0.75) translateY(-21px);
+    transform: scale(0.75) translateY(-21px);
+    -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+}
+.my-select-box .my-select-box-section.open {
+    opacity: 1;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    visibility: visible;
+}
+.my-select-box .my-select-box-section ul {
+    padding: 0;
+}
+.my-select-box .my-select-box-section li {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.my-select-box .my-select-box-section li:hover {
+    background-color: #f6f6f6;
+    font-weight: bold;
+}
+.my-select-box .my-select-box-section li.selected {
+    background-color: #f6f6f6;
+    font-weight: bold;
+}
