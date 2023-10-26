@@ -920,35 +920,35 @@ export default function Navbar({ className }) {
                               <ul className="flex flex-col space-y-2">
                                 <li>
                                   <a href="/privacy-policy">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
                                       Privacy Policy
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/terms-condition">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
                                       Terms and Conditions
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/faq">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
                                       FAQ
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
                                       Shop Category Icon
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
                                       Shop List View
                                     </span>
                                   </a>
@@ -963,21 +963,21 @@ export default function Navbar({ className }) {
                   <li>
                     <Link to="/about">
                       <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                        <span>About</span>
+                        <span>Sobre</span>
                       </span>
                     </Link>
                   </li>
-                  <li>
+                  {/*  <li>
                     <Link to="/blogs">
                       <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
                         <span>Blog</span>
                       </span>
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/contact">
                       <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                        <span>Contact</span>
+                        <span>Contato</span>
                       </span>
                     </Link>
                   </li>
@@ -986,9 +986,9 @@ export default function Navbar({ className }) {
             </div>
             <div className="become-seller-btn  w-[161px] h-[40px]">
               <Link to="/become-saller">
-                <div className="yellow-btn flex justify-center items-center cursor-pointer">
+                <div className="black-btn flex justify-center items-center cursor-pointer h-full">
                   <div className="flex space-x-2 items-center">
-                    <span className="text-sm font-600">Become a Seller</span>
+                    <span className="text-sm font-600">Seja um Vendedor</span>
                     <span>
                       <svg
                         width="6"

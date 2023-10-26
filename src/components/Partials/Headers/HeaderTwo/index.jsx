@@ -1,12 +1,11 @@
 import ThinBag from "../../../Helpers/icons/ThinBag";
 import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
-import TopBar from "./TopBar";
 
 export default function HeaderTwo({ className, drawerAction }) {
   return (
     <header className={` ${className || ""} header-section-wrapper relative`}>
-      <TopBar className="quomodo-shop-top-bar" />
+      {/* <TopBar className="quomodo-shop-top-bar" /> */}
       <Middlebar className="quomodo-shop-middle-bar lg:block hidden" />
       <div className="quomodo-shop-drawer lg:hidden block w-full h-[60px] bg-white">
         <div className="w-full h-full flex justify-between items-center px-5">
