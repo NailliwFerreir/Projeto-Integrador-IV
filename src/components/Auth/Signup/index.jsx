@@ -57,6 +57,8 @@ export default function Signup() {
     }
   };
 
+  const handleSubmit = () => {};
+
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="login-page-wrapper w-full py-10">

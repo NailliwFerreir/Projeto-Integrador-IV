@@ -1,4 +1,5 @@
 import { useState } from "react";
+import api from "../../../services/api";
 import InputCom from "../../Helpers/InputCom";
 import Layout from "../../Partials/Layout";
 import Thumbnail from "./Thumbnail";
@@ -7,6 +8,15 @@ export default function Login() {
   const [checked, setValue] = useState(false);
   const rememberMe = () => {
     setValue(!checked);
+  };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+  const handleSubmit = (e) => {
+    api
+      .post("/test/login", { email, password })
+      .then((res) => console.log("algo foi enviado"));
   };
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -17,7 +27,7 @@ export default function Login() {
               <div className="w-full">
                 <div className="title-area flex flex-col justify-center items-center relative text-center mb-7">
                   <h1 className="text-[34px] font-bold leading-[74px] text-qblack">
-                    Log In
+                    Entrar
                   </h1>
                   <div className="shape -mt-6">
                     <svg
@@ -29,7 +39,7 @@ export default function Login() {
                     >
                       <path
                         d="M1 5.08742C17.6667 19.0972 30.5 31.1305 62.5 27.2693C110.617 21.4634 150 -10.09 171 5.08727"
-                        stroke="#FFBB38"
+                        stroke="#2D6F6D"
                       />
                     </svg>
                   </div>
@@ -38,7 +48,7 @@ export default function Login() {
                   <div className="input-item mb-5">
                     <InputCom
                       placeholder="example@quomodosoft.com"
-                      label="Email Address*"
+                      label="Email*"
                       name="email"
                       type="email"
                       inputClasses="h-[50px]"
@@ -47,7 +57,7 @@ export default function Login() {
                   <div className="input-item mb-5">
                     <InputCom
                       placeholder="● ● ● ● ● ●"
-                      label="Password*"
+                      label="Senha*"
                       name="password"
                       type="password"
                       inputClasses="h-[50px]"
@@ -79,23 +89,24 @@ export default function Login() {
                         onClick={rememberMe}
                         className="text-base text-black"
                       >
-                        Remember Me
+                        Lembrar-me
                       </span>
                     </div>
                     <a
                       href="/forgot-password"
                       className="text-base text-qyellow"
                     >
-                      Forgot Password
+                      Esqueceu a senha?
                     </a>
                   </div>
                   <div className="signin-area mb-3.5">
                     <div className="flex justify-center">
                       <button
-                        type="button"
+                        type="submit"
+                        onClick={handleSubmit}
                         className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center"
                       >
-                        <span>Log In</span>
+                        <span>Entrar</span>
                       </button>
                     </div>
                     <a
@@ -148,15 +159,15 @@ export default function Login() {
                       </svg>
 
                       <span className="text-[18px] text-qgraytwo font-normal">
-                        Sign In with Google
+                        Entre com sua conta Google
                       </span>
                     </a>
                   </div>
                   <div className="signup-area flex justify-center">
                     <p className="text-base text-qgraytwo font-normal">
-                      Dont’t have an aceount ?
+                      Não tem uma conta?
                       <a href="/signup" className="ml-2 text-qblack">
-                        Sign up free
+                        Cadastre-se de graça
                       </a>
                     </p>
                   </div>
