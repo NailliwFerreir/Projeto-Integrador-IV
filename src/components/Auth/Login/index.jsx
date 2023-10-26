@@ -18,8 +18,8 @@ export default function Login() {
     const jsonstr = JSON.stringify(obj)
     console.log(jsonstr)
     api
-      .post("http://localhost:8080/api/auth/signin", jsonstr, {headers: {"Content-Type": "application/json"}})
-      .then((res) => console.log("algo foi enviado"));
+      .post("http://localhost:8080/api/auth/signin", jsonstr, {headers: {"Content-Type": "application/json"}, xhrFields: { withCredentials: true }})
+      .then((res) => console.log(res.data));
   };
   return (
     <Layout childrenClasses="pt-0 pb-0">
