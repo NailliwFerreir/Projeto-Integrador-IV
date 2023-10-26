@@ -73,7 +73,7 @@ export default function Signup() {
   const handleSubmit = () => { };
 
   const createAccount = () => {
-    const obj = { "username": `${firstName} ${lastName}`, "email": email, "password": password, "role": ["comprador"], "cpf": cpf, "afe": "0", "address": `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}` }
+    const obj = { "username": `${firstName}${lastName}`, "email": email, "password": password, "role": ["comprador"], "cpf": cpf, "afe": "0", "address": `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}` }
     console.log(obj)
     const jsonStr = JSON.stringify(obj)
     console.log(jsonStr)
@@ -196,7 +196,7 @@ export default function Signup() {
                           inputHandler={(e) => {
                             if (e.target.value.length < 10) {
                               setCep(cepMask(e.target.value));
-                              //checkCep(e.target.value);
+                              checkCep(e.target.value);
                             }
                           }}
                         />
