@@ -10,12 +10,15 @@ export default function Login() {
     setValue(!checked);
   };
 
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const handleSubmit = (e) => {
+    const obj = {"username": username, "password": password}
+    const jsonstr = JSON.stringify(obj)
+    console.log(jsonstr)
     api
-      .post("/test/login", { email, password })
+      .post("http://localhost:8080/api/auth/signin", jsonstr, {headers: {"Content-Type": "application/json"}})
       .then((res) => console.log("algo foi enviado"));
   };
   return (
@@ -47,11 +50,13 @@ export default function Login() {
                 <div className="input-area">
                   <div className="input-item mb-5">
                     <InputCom
-                      placeholder="example@quomodosoft.com"
-                      label="Email*"
-                      name="email"
-                      type="email"
+                      placeholder="Usuário"
+                      label="Usuário*"
+                      name="username"
+                      type="text"
+                      value={username}
                       inputClasses="h-[50px]"
+                      inputHandler={(e) => setUsername(e.target.value)}
                     />
                   </div>
                   <div className="input-item mb-5">
@@ -60,7 +65,9 @@ export default function Login() {
                       label="Senha*"
                       name="password"
                       type="password"
+                      value={password}
                       inputClasses="h-[50px]"
+                      inputHandler={(e) => setPassword(e.target.value)}
                     />
                   </div>
                   <div className="forgot-password-area flex justify-between items-center mb-7">
