@@ -10,16 +10,17 @@ export default function Login() {
     setValue(!checked);
   };
 
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+
   const handleSubmit = (e) => {
-    const obj = {"username": username, "password": password}
-    const jsonstr = JSON.stringify(obj)
-    console.log(jsonstr)
-    api
-      .post("http://localhost:8080/api/auth/signin", jsonstr, {headers: {"Content-Type": "application/json"}, xhrFields: { withCredentials: true }})
-      .then((res) => console.log(res.data));
+    try {
+      const data = { email, password };
+      api.post("/api/auth/signin", data).then((res) => console.log(res));
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -52,11 +53,11 @@ export default function Login() {
                     <InputCom
                       placeholder="Usuário"
                       label="Usuário*"
-                      name="username"
+                      name="email"
                       type="text"
-                      value={username}
+                      value={email}
                       inputClasses="h-[50px]"
-                      inputHandler={(e) => setUsername(e.target.value)}
+                      inputHandler={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="input-item mb-5">

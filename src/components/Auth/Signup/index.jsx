@@ -21,7 +21,7 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [cpf, setCpf] = useState("")
+  const [cpf, setCpf] = useState("");
 
   const cepMask = (value) => {
     value = value.replace(/[^0-9]/g, "");
@@ -31,7 +31,14 @@ export default function Signup() {
 
   const cpfMask = (value) => {
     value = value.replace(/[^0-9]/g, "");
-    value = value.slice(0, 3) + "." + value.slice(3, 6) + "." + value.slice(6, 9) + "-" + value.slice(9, 11);
+    value =
+      value.slice(0, 3) +
+      "." +
+      value.slice(3, 6) +
+      "." +
+      value.slice(6, 9) +
+      "-" +
+      value.slice(9, 11);
     return value;
   };
 
@@ -70,23 +77,24 @@ export default function Signup() {
     }
   };
 
-  const handleSubmit = () => { };
+  const handleSubmit = () => {};
 
   const createAccount = () => {
-    const obj = { "username": `${firstName}${lastName}`, "email": email, "password": password, "role": ["comprador"], "cpf": cpf, "afe": "0", "address": `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}` }
-    console.log(obj)
-    const jsonStr = JSON.stringify(obj)
-    console.log(jsonStr)
-    const url = "http://localhost:8080/api/auth/signup"
-    axios.post(url, jsonStr, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(resp => console.log(resp.data))
-      .catch(error => console.log(error.data))
-
-  }
+    const data = {
+      username: `${firstName}${lastName}`,
+      email,
+      password,
+      role: ["comprador"],
+      /* cpf,
+      afe: "0",
+      address: `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}`, */
+    };
+    console.log(data);
+    api
+      .post("/api/auth/signup", data)
+      .then((resp) => console.log(resp.data))
+      .catch((error) => console.log(error));
+  };
 
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -162,7 +170,6 @@ export default function Signup() {
                         }
                       }}
                     />
-
                   </div>
 
                   <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
@@ -280,8 +287,9 @@ export default function Signup() {
                           placeholder="Senha"
                           value={password}
                           inputHandler={(e) => {
-                            setPassword(e.target.value)
-                          }} />
+                            setPassword(e.target.value);
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
