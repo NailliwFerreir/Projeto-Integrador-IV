@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import api from "../../../services/api";
 import InputCom from "../../Helpers/InputCom";
 import Layout from "../../Partials/Layout";
 import Thumbnail from "./Thumbnail";
@@ -77,7 +78,7 @@ export default function Signup() {
     }
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => { };
 
   const createAccount = () => {
     const data = {
@@ -85,9 +86,9 @@ export default function Signup() {
       email,
       password,
       role: ["comprador"],
-      /* cpf,
+      cpf,
       afe: "0",
-      address: `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}`, */
+      address: `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}`,
     };
     console.log(data);
     api

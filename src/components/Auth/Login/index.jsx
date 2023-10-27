@@ -10,13 +10,13 @@ export default function Login() {
     setValue(!checked);
   };
 
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     try {
-      const data = { username, password };
+      const data = { email, password };
       api.post("/api/auth/signin", data).then((response) => {
         console.log(response.data.accessToken)
         if (response.data.accessToken) {
@@ -58,13 +58,13 @@ export default function Login() {
                 <div className="input-area">
                   <div className="input-item mb-5">
                     <InputCom
-                      placeholder="username"
-                      label="username*"
-                      name="username"
+                      placeholder="email"
+                      label="email*"
+                      name="email"
                       type="text"
-                      value={username}
+                      value={email}
                       inputClasses="h-[50px]"
-                      inputHandler={(e) => setUsername(e.target.value)}
+                      inputHandler={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="input-item mb-5">
