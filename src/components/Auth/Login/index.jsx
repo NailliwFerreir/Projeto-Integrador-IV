@@ -51,8 +51,8 @@ export default function Login() {
                 <div className="input-area">
                   <div className="input-item mb-5">
                     <InputCom
-                      placeholder="Usuário"
-                      label="Usuário*"
+                      placeholder="Email"
+                      label="Email*"
                       name="email"
                       type="text"
                       value={email}
@@ -100,10 +100,7 @@ export default function Login() {
                         Lembrar-me
                       </span>
                     </div>
-                    <a
-                      href="/forgot-password"
-                      className="text-base text-qyellow"
-                    >
+                    <a href="/forgot-password" className="text-base text-black">
                       Esqueceu a senha?
                     </a>
                   </div>
