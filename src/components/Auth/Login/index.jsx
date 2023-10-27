@@ -10,14 +10,21 @@ export default function Login() {
     setValue(!checked);
   };
 
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     try {
-      const data = { email, password };
-      api.post("/api/auth/signin", data).then((res) => console.log(res));
+      const data = { username, password };
+      api.post("/api/auth/signin", data).then((response) => {
+        console.log(response.data.accessToken)
+        if (response.data.accessToken) {
+          localStorage.setItem("user", JSON.stringify(response.data));
+        }
+
+        return response.data;
+      });
     } catch (error) {
       console.log(error);
     }
@@ -51,13 +58,13 @@ export default function Login() {
                 <div className="input-area">
                   <div className="input-item mb-5">
                     <InputCom
-                      placeholder="Email"
-                      label="Email*"
-                      name="email"
+                      placeholder="username"
+                      label="username*"
+                      name="username"
                       type="text"
-                      value={email}
+                      value={username}
                       inputClasses="h-[50px]"
-                      inputHandler={(e) => setEmail(e.target.value)}
+                      inputHandler={(e) => setUsername(e.target.value)}
                     />
                   </div>
                   <div className="input-item mb-5">
