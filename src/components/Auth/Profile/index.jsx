@@ -49,7 +49,7 @@ export default function Profile() {
             <div className="w-full bg-white px-10 py-9">
               <div className="title-area w-full flex justify-between items-center">
                 <h1 className="text-[22px] font-bold text-qblack">
-                  Your Dashboard
+                  Sua Conta
                 </h1>
                 <div className="switch-dashboard flex space-x-3 items-center">
                   <p className="text-qgray text-base">Switch Dashboard</p>
@@ -76,7 +76,7 @@ export default function Profile() {
                             <IcoDashboard />
                           </span>
                           <span className=" font-normal text-base">
-                            Dashbaord
+                            Dashboard
                           </span>
                         </div>
                       </Link>
@@ -88,7 +88,7 @@ export default function Profile() {
                             <IcoPeople />
                           </span>
                           <span className=" font-normal text-base">
-                            Parsonal Info
+                            Informações pessoais
                           </span>
                         </div>
                       </Link>
@@ -101,7 +101,7 @@ export default function Profile() {
                             <IcoPayment />
                           </span>
                           <span className=" font-normal text-base">
-                            Payment Method
+                            Métodos de pagamento
                           </span>
                         </div>
                       </Link>
@@ -112,7 +112,7 @@ export default function Profile() {
                           <span>
                             <IcoCart />
                           </span>
-                          <span className=" font-normal text-base">Order</span>
+                          <span className=" font-normal text-base">Pedidos</span>
                         </div>
                       </Link>
                     </div>
@@ -123,7 +123,7 @@ export default function Profile() {
                             <IcoLove />
                           </span>
                           <span className=" font-normal text-base">
-                            Wishlist
+                            Listas de desejos
                           </span>
                         </div>
                       </Link>
@@ -135,7 +135,7 @@ export default function Profile() {
                             <IcoAdress />
                           </span>
                           <span className=" font-normal text-base">
-                            Address
+                            Endereço
                           </span>
                         </div>
                       </Link>
@@ -147,7 +147,7 @@ export default function Profile() {
                             <IcoReviewHand />
                           </span>
                           <span className=" font-normal text-base">
-                            Reviews
+                            Reviews apaga depois essa bosta
                           </span>
                         </div>
                       </Link>
@@ -159,7 +159,7 @@ export default function Profile() {
                             <IcoPassword />
                           </span>
                           <span className=" font-normal text-base">
-                            Change Password
+                            Mudar senha
                           </span>
                         </div>
                       </Link>
@@ -171,7 +171,7 @@ export default function Profile() {
                             <IcoSupport />
                           </span>
                           <span className=" font-normal text-base">
-                            Support Ticket
+                            Ticket de suporte
                           </span>
                         </div>
                       </Link>
@@ -183,7 +183,7 @@ export default function Profile() {
                             <IcoLogout />
                           </span>
                           <span className=" font-normal text-base">
-                            Logoout
+                            Sair da container
                           </span>
                         </div>
                       </Link>
