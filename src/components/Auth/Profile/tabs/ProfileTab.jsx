@@ -3,6 +3,9 @@ import InputCom from "../../../Helpers/InputCom";
 
 export default function ProfileTab() {
   const [profileImg, setprofileImg] = useState(null);
+  const [nome, setNome] = useState();
+  const [sobrenome, setSobrenome] = useState();
+  const [email, setEmail] = useState();
   const profileImgInput = useRef(null);
   const browseprofileImg = () => {
     profileImgInput.current.click();
@@ -23,18 +26,22 @@ export default function ProfileTab() {
           <div className="input-item flex space-x-2.5 mb-8">
             <div className="w-1/2 h-full">
               <InputCom
-                label="First Name*"
-                placeholder="Demo Name"
+                label="Nome*"
+                placeholder="Nome"
                 type="text"
                 inputClasses="h-[50px]"
+                value={nome}
+                inputHandler={(e) => setNome(e.target.value)}
               />
             </div>
             <div className="w-1/2 h-full">
               <InputCom
-                label="Last Name*"
-                placeholder="Demo Name"
+                label="Sobrenome*"
+                placeholder="Sobrenome"
                 type="text"
                 inputClasses="h-[50px]"
+                value={sobrenome}
+                inputHandler={(e) => setSobrenome(e.target.value)}
               />
             </div>
           </div>
@@ -45,52 +52,8 @@ export default function ProfileTab() {
                 placeholder="demoemial@gmail.com"
                 type="email"
                 inputClasses="h-[50px]"
-              />
-            </div>
-            <div className="w-1/2 h-full">
-              <InputCom
-                label="Phone Number*"
-                placeholder="012 3  *******"
-                type="text"
-                inputClasses="h-[50px]"
-              />
-            </div>
-          </div>
-          <div className="input-item mb-8">
-            <div className="w-full">
-              <InputCom
-                label="Country*"
-                placeholder="country"
-                type="text"
-                inputClasses="h-[50px]"
-              />
-            </div>
-          </div>
-          <div className="input-item mb-8">
-            <div className="w-full">
-              <InputCom
-                label="Address*"
-                placeholder="your address here"
-                type="text"
-                inputClasses="h-[50px]"
-              />
-            </div>
-          </div>
-          <div className="input-item flex space-x-2.5 mb-8">
-            <div className="w-1/2 h-full">
-              <InputCom
-                label="Town / City*"
-                placeholder=""
-                type="text"
-                inputClasses="h-[50px]"
-              />
-            </div>
-            <div className="w-1/2 h-full">
-              <InputCom
-                label="Postcode / ZIP*"
-                placeholder=""
-                type="text"
-                inputClasses="h-[50px]"
+                value={email}
+                inputHandler={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
@@ -98,7 +61,7 @@ export default function ProfileTab() {
         <div className="flex-1">
           <div className="update-logo w-full mb-9">
             <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
-              Update Profile
+              Atualizar informações pessoais
               <span className="ml-1">
                 <svg
                   width="20"
@@ -116,9 +79,9 @@ export default function ProfileTab() {
               </span>
             </h1>
             <p className="text-sm text-qgraytwo mb-5 ">
-              Profile of at least Size
-              <span className="ml-1 text-qblack">300x300</span>. Gifs work too.
-              <span className="ml-1 text-qblack">Max 5mb</span>.
+              Tamanho da foto de perfil
+              <span className="ml-1 text-qblack">300x300</span>. Gifs funcionam também.
+              <span className="ml-1 text-qblack">Máximo 5mb</span>.
             </p>
             <div className="flex xl:justify-center justify-start">
               <div className="relative">
@@ -166,15 +129,33 @@ export default function ProfileTab() {
       </div>
       <div className="action-area flex space-x-4 items-center">
         <button type="button" className="text-sm text-qred font-semibold">
-          Cancel
+          Cancelar
         </button>
         <button
           type="button"
           className="w-[164px] h-[50px] bg-qblack text-white text-sm"
+          onClick={atualizarPerfil}
         >
-          Update Profile
+          Atualizar perfil
         </button>
       </div>
     </>
   );
+}
+
+const atualizarPerfil = (e) => {
+  console.log(nome, sobrenome);
+  console.log("Entrou");
+  try {
+    const data = {
+      username: `${nome}${sobrenome}`,
+      email
+    }
+    api.put("/api/auth/signup", data).then((response) => {
+      console.log(response);
+      console.log("Perfil atualizado!");
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }

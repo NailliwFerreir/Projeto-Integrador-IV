@@ -59,9 +59,8 @@ export default function Profile() {
                     className="w-[73px] h-[31px] border border-[#D9D9D9] rounded-full relative "
                   >
                     <div
-                      className={`w-[23px] h-[23px] bg-qblack rounded-full absolute top-[3px] transition-all duration-300 ease-in-out ${
-                        switchDashboard ? "left-[44px]" : "left-[4px]"
-                      }`}
+                      className={`w-[23px] h-[23px] bg-qblack rounded-full absolute top-[3px] transition-all duration-300 ease-in-out ${switchDashboard ? "left-[44px]" : "left-[4px]"
+                        }`}
                     ></div>
                   </button>
                 </div>
@@ -177,16 +176,18 @@ export default function Profile() {
                       </Link>
                     </div>
                     <div className="item group">
-                      <Link to="/profile#profile">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoLogout />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Sair da container
-                          </span>
-                        </div>
-                      </Link>
+                      <button onClick={logout}>
+                        <Link to="/login">
+                          <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                            <span>
+                              <IcoLogout />
+                            </span>
+                            <span className=" font-normal text-base">
+                              Sair da conta
+                            </span>
+                          </div>
+                        </Link>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -239,3 +240,7 @@ export default function Profile() {
     </Layout>
   );
 }
+
+const logout = () => {
+  localStorage.removeItem("user");
+};
