@@ -116,7 +116,7 @@ export default function SingleProductPage() {
                       onClick={() => setTab("des")}
                       className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
                         tab === "des"
-                          ? "border-qyellow text-qblack "
+                          ? "border-qh2-green text-qblack "
                           : "border-transparent text-qgray"
                       }`}
                     >
@@ -128,7 +128,7 @@ export default function SingleProductPage() {
                       onClick={() => setTab("review")}
                       className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
                         tab === "review"
-                          ? "border-qyellow text-qblack "
+                          ? "border-qh2-green text-qblack "
                           : "border-transparent text-qgray"
                       }`}
                     >
@@ -140,7 +140,7 @@ export default function SingleProductPage() {
                       onClick={() => setTab("info")}
                       className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
                         tab === "info"
-                          ? "border-qyellow text-qblack "
+                          ? "border-qh2-green text-qblack "
                           : "border-transparent text-qgray"
                       }`}
                     >

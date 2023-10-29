@@ -39,7 +39,7 @@ export default function OrderTab() {
               <td className="text-center py-4">
                 <button
                   type="button"
-                  className="w-[116px] h-[46px] bg-qyellow text-qblack font-bold"
+                  className="w-[116px] h-[46px] bg-qh2-green text-qblack font-bold"
                 >
                   View Details
                 </button>
@@ -67,7 +67,7 @@ export default function OrderTab() {
               <td className="text-center py-4">
                 <button
                   type="button"
-                  className="w-[116px] h-[46px] bg-qyellow text-qblack font-bold"
+                  className="w-[116px] h-[46px] bg-qh2-green text-qblack font-bold"
                 >
                   View Details
                 </button>
@@ -95,7 +95,7 @@ export default function OrderTab() {
               <td className="text-center py-4">
                 <button
                   type="button"
-                  className="w-[116px] h-[46px] bg-qyellow text-qblack font-bold"
+                  className="w-[116px] h-[46px] bg-qh2-green text-qblack font-bold"
                 >
                   View Details
                 </button>
@@ -123,7 +123,7 @@ export default function OrderTab() {
               <td className="text-center py-4">
                 <button
                   type="button"
-                  className="w-[116px] h-[46px] bg-qyellow text-qblack font-bold"
+                  className="w-[116px] h-[46px] bg-qh2-green text-qblack font-bold"
                 >
                   View Details
                 </button>
@@ -151,7 +151,7 @@ export default function OrderTab() {
               <td className="text-center py-4">
                 <button
                   type="button"
-                  className="w-[116px] h-[46px] bg-qyellow text-qblack font-bold"
+                  className="w-[116px] h-[46px] bg-qh2-green text-qblack font-bold"
                 >
                   View Details
                 </button>
@@ -179,7 +179,7 @@ export default function OrderTab() {
               <td className="text-center py-4">
                 <button
                   type="button"
-                  className="w-[116px] h-[46px] bg-qyellow text-qblack font-bold"
+                  className="w-[116px] h-[46px] bg-qh2-green text-qblack font-bold"
                 >
                   View Details
                 </button>
@@ -207,7 +207,7 @@ export default function OrderTab() {
               <td className="text-center py-4">
                 <button
                   type="button"
-                  className="w-[116px] h-[46px] bg-qyellow text-qblack font-bold"
+                  className="w-[116px] h-[46px] bg-qh2-green text-qblack font-bold"
                 >
                   View Details
                 </button>

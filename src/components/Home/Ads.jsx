@@ -37,7 +37,7 @@ export default function Ads({ handler }) {
             </p>
           </div>
           <div className="md:w-[415px] w-full h-[54px] sm:flex mt-8">
-            <div className="flex-1 bg-white pl-4 flex space-x-2 items-center h-full focus-within:text-qyellow text-qblack">
+            <div className="flex-1 bg-white pl-4 flex space-x-2 items-center h-full focus-within:text-qh2-green text-qblack">
               <span>
                 <svg
                   width="17"
@@ -71,7 +71,7 @@ export default function Ads({ handler }) {
             </div>
             <button
               type="button"
-              className="w-[120px] h-full bg-qyellow text-sm font-600"
+              className="w-[120px] h-full bg-qh2-green text-sm font-600"
             >
               Subscribe
             </button>

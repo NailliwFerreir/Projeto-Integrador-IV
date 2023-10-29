@@ -112,7 +112,7 @@ export default function AllProductPage() {
                   <button
                     onClick={() => setToggle(!filterToggle)}
                     type="button"
-                    className="w-10 lg:hidden h-10 rounded flex justify-center items-center border border-qyellow text-qyellow"
+                    className="w-10 lg:hidden h-10 rounded flex justify-center items-center border border-qh2-green text-qh2-green"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

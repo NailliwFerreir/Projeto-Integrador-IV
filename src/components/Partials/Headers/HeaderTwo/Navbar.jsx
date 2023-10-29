@@ -706,35 +706,35 @@ export default function Navbar({ className }) {
                               <ul className="flex flex-col space-y-2">
                                 <li>
                                   <a href="/">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qh2-green hover:border-qh2-green">
                                       Home One
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/home-two">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow ">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qh2-green hover:border-qh2-green ">
                                       Home Two
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/home-three">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qh2-green hover:border-qh2-green">
                                       Home Three
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/home-four">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qh2-green hover:border-qh2-green">
                                       Home Four
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/home-five">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qh2-green hover:border-qh2-green">
                                       Home Five
                                     </span>
                                   </a>
@@ -772,35 +772,35 @@ export default function Navbar({ className }) {
                               <ul className="flex flex-col space-y-2">
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Shop Sidebar
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Shop Fullwidth
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Shop Category Icon
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Shop Category Icon
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Shop List View
                                     </span>
                                   </a>
@@ -818,28 +818,28 @@ export default function Navbar({ className }) {
                               <ul className="flex flex-col space-y-2">
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Horizonral Thumbnail
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Vertical Thumbnail
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Gallery Thumbnail
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Sticky Summary
                                     </span>
                                   </a>
@@ -857,28 +857,28 @@ export default function Navbar({ className }) {
                               <ul className="flex flex-col space-y-2">
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Phone & Tablet
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Gaming & Sports
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Home Appliance
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Fashion Clothes
                                     </span>
                                   </a>

@@ -71,7 +71,7 @@ export default function CampaignCountDown({
                       WOO! Flash Sale
                     </h1>
                   </div>
-                  <div className="inline-flex space-x-2 items-center border-b border-qyellow">
+                  <div className="inline-flex space-x-2 items-center border-b border-qh2-green">
                     <span className="text-sm font-600 tracking-wide leading-7">
                       Shop Now
                     </span>

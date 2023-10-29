@@ -31,7 +31,7 @@ export default function Drawer({ className, open, action }) {
                       <Compair />
                     </span>
                   </a>
-                  <span className="w-[18px] h-[18px] rounded-full bg-qyellow absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
+                  <span className="w-[18px] h-[18px] rounded-full bg-qh2-green absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
                     2
                   </span>
                 </div>
@@ -41,7 +41,7 @@ export default function Drawer({ className, open, action }) {
                       <ThinLove />
                     </span>
                   </a>
-                  <span className="w-[18px] h-[18px] rounded-full bg-qyellow absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
+                  <span className="w-[18px] h-[18px] rounded-full bg-qh2-green absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
                     1
                   </span>
                 </div>
@@ -79,7 +79,7 @@ export default function Drawer({ className, open, action }) {
                   placeholder="Search Product..."
                 />
               </div>
-              <div className="w-[40px] h-full bg-qyellow flex justify-center items-center">
+              <div className="w-[40px] h-full bg-qh2-green flex justify-center items-center">
                 <span>
                   <svg
                     width="23"
@@ -121,7 +121,7 @@ export default function Drawer({ className, open, action }) {
               <ul className="categories-list">
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -202,7 +202,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -287,7 +287,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -366,7 +366,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -437,7 +437,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -528,7 +528,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -581,7 +581,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item ">
                   <a href="/all-products">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -652,7 +652,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -717,7 +717,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -772,7 +772,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item ">
                   <a href="/all-products">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -835,7 +835,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/all-products">
-                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span>
                           <svg
@@ -893,7 +893,7 @@ export default function Drawer({ className, open, action }) {
               <ul className="categories-list">
                 <li className="category-item">
                   <a href="/">
-                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400">Home</span>
                       </div>
@@ -930,7 +930,7 @@ export default function Drawer({ className, open, action }) {
                   <ul className="submenu-list ml-5">
                     <li className="category-item">
                       <a href="/home-two">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">Home Two</span>
                           </div>
@@ -967,7 +967,7 @@ export default function Drawer({ className, open, action }) {
                     </li>
                     <li className="category-item">
                       <a href="/home-three">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">Home Three</span>
                           </div>
@@ -1004,7 +1004,7 @@ export default function Drawer({ className, open, action }) {
                     </li>
                     <li className="category-item">
                       <a href="/home-four">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">Home Four</span>
                           </div>
@@ -1043,7 +1043,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/shops/shop">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400">Shop</span>
                       </div>
@@ -1080,7 +1080,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="#">
-                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400">Pages</span>
                       </div>
@@ -1117,7 +1117,7 @@ export default function Drawer({ className, open, action }) {
                   <ul className="submenu-list ml-5">
                     <li className="category-item">
                       <a href="/privacy-policy">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">
                               Privacy Policy
@@ -1156,7 +1156,7 @@ export default function Drawer({ className, open, action }) {
                     </li>
                     <li className="category-item">
                       <a href="/faq">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">FAQ</span>
                           </div>
@@ -1193,7 +1193,7 @@ export default function Drawer({ className, open, action }) {
                     </li>
                     <li className="category-item">
                       <a href="/terms-condition">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">
                               Terms and Conditions
@@ -1235,7 +1235,7 @@ export default function Drawer({ className, open, action }) {
 
                 <li className="category-item">
                   <a href="/about">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400">About</span>
                       </div>
@@ -1272,7 +1272,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/Blogs">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400">Blogs</span>
                       </div>
@@ -1309,7 +1309,7 @@ export default function Drawer({ className, open, action }) {
                 </li>
                 <li className="category-item">
                   <a href="/contact">
-                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                    <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
                         <span className="text-sm font-400">Contact</span>
                       </div>

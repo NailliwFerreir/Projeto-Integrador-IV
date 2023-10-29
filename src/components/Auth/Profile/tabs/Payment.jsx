@@ -28,7 +28,7 @@ export default function Payment() {
             <div>
               <button
                 type="button"
-                className="w-[116px] sm:h-[46px] h-[40px]  bg-qyellow text-qblack font-medium sm:text-18 text-sm tracking-wide"
+                className="w-[116px] sm:h-[46px] h-[40px]  bg-qh2-green text-qblack font-medium sm:text-18 text-sm tracking-wide"
               >
                 <span>Manage</span>
               </button>
@@ -57,7 +57,7 @@ export default function Payment() {
             <div>
               <button
                 type="button"
-                className="w-[116px] sm:h-[46px] h-[40px]  bg-qyellow text-qblack font-medium sm:text-18 text-sm tracking-wide"
+                className="w-[116px] sm:h-[46px] h-[40px]  bg-qh2-green text-qblack font-medium sm:text-18 text-sm tracking-wide"
               >
                 <span>Manage</span>
               </button>
@@ -86,7 +86,7 @@ export default function Payment() {
             <div>
               <button
                 type="button"
-                className="w-[116px] sm:h-[46px] h-[40px]  bg-qyellow text-qblack font-medium sm:text-18 text-sm tracking-wide"
+                className="w-[116px] sm:h-[46px] h-[40px]  bg-qh2-green text-qblack font-medium sm:text-18 text-sm tracking-wide"
               >
                 <span>Manage</span>
               </button>
@@ -115,7 +115,7 @@ export default function Payment() {
             <div>
               <button
                 type="button"
-                className="w-[116px] sm:h-[46px] h-[40px]  bg-qyellow text-qblack font-medium sm:text-18 text-sm tracking-wide"
+                className="w-[116px] sm:h-[46px] h-[40px]  bg-qh2-green text-qblack font-medium sm:text-18 text-sm tracking-wide"
               >
                 <span>Manage</span>
               </button>

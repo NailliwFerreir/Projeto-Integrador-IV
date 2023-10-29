@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Star from "../Helpers/icons/Star";
 import Selectbox from "../Helpers/Selectbox";
+import Star from "../Helpers/icons/Star";
 
 export default function ProductView({ className, reportHandler }) {
   const productsImg = [
@@ -59,7 +59,7 @@ export default function ProductView({ className, reportHandler }) {
               alt=""
               className="object-contain"
             />
-            <div className="w-[80px] h-[80px] rounded-full bg-qyellow text-qblack flex justify-center items-center text-xl font-medium absolute left-[30px] top-[30px]">
+            <div className="w-[80px] h-[80px] rounded-full bg-qh2-green text-qblack flex justify-center items-center text-xl font-medium absolute left-[30px] top-[30px]">
               <span>-50%</span>
             </div>
           </div>

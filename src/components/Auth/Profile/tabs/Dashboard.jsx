@@ -12,7 +12,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="quick-view-grid w-full flex justify-between items-center mt-3 ">
-        <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qyellow transition-all duration-300 ease-in-out p-6">
+        <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qh2-green transition-all duration-300 ease-in-out p-6">
           <div className="w-[62px] h-[62px] rounded bg-white flex justify-center items-center">
             <span>
               <svg
@@ -44,7 +44,7 @@ export default function Dashboard() {
             656
           </span>
         </div>
-        <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qyellow transition-all duration-300 ease-in-out p-6">
+        <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qh2-green transition-all duration-300 ease-in-out p-6">
           <div className="w-[62px] h-[62px] rounded bg-white flex justify-center items-center">
             <span>
               <svg
@@ -68,7 +68,7 @@ export default function Dashboard() {
             656
           </span>
         </div>
-        <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qyellow transition-all duration-300 ease-in-out p-6">
+        <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qh2-green transition-all duration-300 ease-in-out p-6">
           <div className="w-[62px] h-[62px] rounded bg-white flex justify-center items-center">
             <span>
               <svg

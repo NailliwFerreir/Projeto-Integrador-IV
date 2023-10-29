@@ -254,13 +254,13 @@ export default function Blog() {
                     <div className="w-full sm:flex justify-between items-center mb-[30px]">
                       <div className="tags flex space-x-5 items-center mb-5 sm:mb-0">
                         <span className="text-2xl text-qblack">Tags:</span>
-                        <span className="text-base text-qgraytwo hover:text-qyellow">
+                        <span className="text-base text-qgraytwo hover:text-qh2-green">
                           #Technology
                         </span>
-                        <span className="text-base text-qgraytwo hover:text-qyellow">
+                        <span className="text-base text-qgraytwo hover:text-qh2-green">
                           #Agency
                         </span>
-                        <span className="text-base text-qgraytwo hover:text-qyellow">
+                        <span className="text-base text-qgraytwo hover:text-qh2-green">
                           #Data
                         </span>
                       </div>
@@ -619,58 +619,58 @@ export default function Blog() {
                   <div className="w-full h-[1px] bg-[#DCDCDC] mb-5"></div>
                   <ul className="flex flex-col space-y-5">
                     <li className="flex justify-between items-center group">
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         Development
                       </span>
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         (6)
                       </span>
                     </li>
                     <li className="flex justify-between items-center group">
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         Guide
                       </span>
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         (6)
                       </span>
                     </li>
                     <li className="flex justify-between items-center group">
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         Inspiration
                       </span>
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         (6)
                       </span>
                     </li>
                     <li className="flex justify-between items-center group">
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         Latest News
                       </span>
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         (6)
                       </span>
                     </li>
                     <li className="flex justify-between items-center group">
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         Revenew
                       </span>
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         (6)
                       </span>
                     </li>
                     <li className="flex justify-between items-center group">
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         Start Up
                       </span>
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         (6)
                       </span>
                     </li>
                     <li className="flex justify-between items-center group">
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         Technology
                       </span>
-                      <span className="text-base text-qgraytwo group-hover:text-qyellow">
+                      <span className="text-base text-qgraytwo group-hover:text-qh2-green">
                         (6)
                       </span>
                     </li>
@@ -686,28 +686,28 @@ export default function Blog() {
                   <div className="w-full h-[1px] bg-[#DCDCDC] mb-5"></div>
                   <div className="filter-items">
                     <div className="flex gap-[10px] flex-wrap">
-                      <span className="text-base bg-[#F9F3E9] hover:bg-qyellow text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
+                      <span className="text-base bg-[#F9F3E9] hover:bg-qh2-green text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
                         Agency
                       </span>
-                      <span className="text-base bg-[#F9F3E9] hover:bg-qyellow text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
+                      <span className="text-base bg-[#F9F3E9] hover:bg-qh2-green text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
                         Creative
                       </span>
-                      <span className="text-base bg-[#F9F3E9] hover:bg-qyellow text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
+                      <span className="text-base bg-[#F9F3E9] hover:bg-qh2-green text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
                         Data
                       </span>
-                      <span className="text-base bg-[#F9F3E9] hover:bg-qyellow text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
+                      <span className="text-base bg-[#F9F3E9] hover:bg-qh2-green text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
                         Technology
                       </span>
-                      <span className="text-base bg-[#F9F3E9] hover:bg-qyellow text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
+                      <span className="text-base bg-[#F9F3E9] hover:bg-qh2-green text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
                         Development
                       </span>
-                      <span className="text-base bg-[#F9F3E9] hover:bg-qyellow text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
+                      <span className="text-base bg-[#F9F3E9] hover:bg-qh2-green text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
                         Business
                       </span>
-                      <span className="text-base bg-[#F9F3E9] hover:bg-qyellow text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
+                      <span className="text-base bg-[#F9F3E9] hover:bg-qh2-green text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
                         Idea
                       </span>
-                      <span className="text-base bg-[#F9F3E9] hover:bg-qyellow text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
+                      <span className="text-base bg-[#F9F3E9] hover:bg-qh2-green text-[#9A9A9A] hover:text-qblack px-[14px] py-[6px] cursor-pointer mb-[5px]">
                         Generic
                       </span>
                     </div>
