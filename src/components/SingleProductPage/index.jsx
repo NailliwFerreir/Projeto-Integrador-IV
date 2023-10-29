@@ -120,7 +120,7 @@ export default function SingleProductPage() {
                           : "border-transparent text-qgray"
                       }`}
                     >
-                      Description
+                      Descrição
                     </span>
                   </li>
                   <li>
@@ -132,7 +132,7 @@ export default function SingleProductPage() {
                           : "border-transparent text-qgray"
                       }`}
                     >
-                      Reviews
+                      Avaliações
                     </span>
                   </li>
                   <li>
@@ -144,7 +144,7 @@ export default function SingleProductPage() {
                           : "border-transparent text-qgray"
                       }`}
                     >
-                      Seller Info
+                      Informações do vendedor
                     </span>
                   </li>
                 </ul>
@@ -156,7 +156,7 @@ export default function SingleProductPage() {
                 {tab === "des" && (
                   <div data-aos="fade-up" className="w-full tab-content-item">
                     <h6 className="text-[18px] font-medium text-qblack mb-2">
-                      Introduction
+                      Introdução
                     </h6>
                     <p className="text-[15px] text-qgray text-normal mb-10">
                       Lorem Ipsum is simply dummy text of the printing and
@@ -174,7 +174,7 @@ export default function SingleProductPage() {
                     </p>
                     <div>
                       <h6 className="text-[18px] text-medium mb-4">
-                        Features :
+                        Características :
                       </h6>
                       <ul className="list-disc ml-[15px]">
                         <li className="font-normal text-qgray leading-9">
@@ -198,7 +198,7 @@ export default function SingleProductPage() {
                 {tab === "review" && (
                   <div data-aos="fade-up" className="w-full tab-content-item">
                     <h6 className="text-[18px] font-medium text-qblack mb-2">
-                      Reviews
+                      Avaliações
                     </h6>
                     {/* review-comments */}
                     <div className="w-full">
@@ -235,7 +235,7 @@ export default function SingleProductPage() {
             <div className="container-x mx-auto">
               <div className="w-full py-[60px]">
                 <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none mb-[30px]">
-                  Related Product
+                  Produtos relacionados
                 </h1>
                 <div
                   data-aos="fade-up"
@@ -269,7 +269,7 @@ export default function SingleProductPage() {
               style={{ zIndex: "999" }}
             >
               <div className="title-bar flex items-center justify-between mb-3">
-                <h6 className="text-2xl font-medium">Report Products</h6>
+                <h6 className="text-2xl font-medium">Denúnciar Produto</h6>
                 <span
                   className="cursor-pointer"
                   onClick={() => setReport(!report)}
@@ -302,7 +302,7 @@ export default function SingleProductPage() {
                 </div>
                 <div className="w-full mb-[40px]">
                   <h6 className="input-label  capitalize text-[13px] font-600 leading-[24px] text-qblack block mb-2 ">
-                    Enter Report Note*
+                    Insira as informações da denúncia*
                   </h6>
                   <textarea
                     name=""
@@ -315,7 +315,7 @@ export default function SingleProductPage() {
                 </div>
 
                 <button type="button" className="w-full h-[50px] black-btn">
-                  Submit Report
+                  Enviar Denúncia
                 </button>
               </div>
             </div>
