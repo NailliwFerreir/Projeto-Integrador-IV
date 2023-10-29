@@ -174,16 +174,16 @@ export default function Footer() {
               </a>
             </div>
             <span className="sm:text-base text-[10px] text-qgray font-300">
-              ©2022
+              ©{new Date().getFullYear()}
               <a
                 href="https://quomodosoft.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="font-500 text-qblack mx-1"
               >
-                Quomodosoft
+                INSEMINA +
               </a>
-              All rights reserved
+              Todos os direitos reservados.
             </span>
           </div>
           <div className="">
