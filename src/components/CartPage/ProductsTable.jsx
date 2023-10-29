@@ -9,13 +9,13 @@ export default function ProductsTable({ className }) {
             {/* table heading */}
             <tr className="text-[13px] font-medium text-black bg-[#F6F6F6] whitespace-nowrap px-2 border-b default-border-bottom uppercase">
               <td className="py-4 pl-10 block whitespace-nowrap min-w-[300px]">
-                product
+                Produto
               </td>
-              <td className="py-4 whitespace-nowrap text-center">color</td>
-              <td className="py-4 whitespace-nowrap text-center">size</td>
-              <td className="py-4 whitespace-nowrap text-center">price</td>
-              <td className="py-4 whitespace-nowrap  text-center">quantity</td>
-              <td className="py-4 whitespace-nowrap  text-center">total</td>
+              <td className="py-4 whitespace-nowrap text-center">Cor</td>
+              <td className="py-4 whitespace-nowrap text-center">Tamanho</td>
+              <td className="py-4 whitespace-nowrap text-center">Preço</td>
+              <td className="py-4 whitespace-nowrap  text-center">Quantidade</td>
+              <td className="py-4 whitespace-nowrap  text-center">Total</td>
               <td className="py-4 whitespace-nowrap text-right w-[114px]"></td>
             </tr>
             {/* table heading end */}
@@ -48,7 +48,7 @@ export default function ProductsTable({ className }) {
               </td>
               <td className="text-center py-4 px-2">
                 <div className="flex space-x-1 items-center justify-center">
-                  <span className="text-[15px] font-normal">$38</span>
+                  <span className="text-[15px] font-normal">R$38</span>
                 </div>
               </td>
               <td className=" py-4">
@@ -58,7 +58,7 @@ export default function ProductsTable({ className }) {
               </td>
               <td className="text-right py-4">
                 <div className="flex space-x-1 items-center justify-center">
-                  <span className="text-[15px] font-normal">$38</span>
+                  <span className="text-[15px] font-normal">R$38</span>
                 </div>
               </td>
               <td className="text-right py-4">
@@ -109,7 +109,7 @@ export default function ProductsTable({ className }) {
               </td>
               <td className="text-center py-4 px-2">
                 <div className="flex space-x-1 items-center justify-center">
-                  <span className="text-[15px] font-normal">$38</span>
+                  <span className="text-[15px] font-normal">R$38</span>
                 </div>
               </td>
               <td className=" py-4">
@@ -119,7 +119,7 @@ export default function ProductsTable({ className }) {
               </td>
               <td className="text-right py-4">
                 <div className="flex space-x-1 items-center justify-center">
-                  <span className="text-[15px] font-normal">$38</span>
+                  <span className="text-[15px] font-normal">R$38</span>
                 </div>
               </td>
               <td className="text-right py-4">
@@ -170,7 +170,7 @@ export default function ProductsTable({ className }) {
               </td>
               <td className="text-center py-4 px-2">
                 <div className="flex space-x-1 items-center justify-center">
-                  <span className="text-[15px] font-normal">$38</span>
+                  <span className="text-[15px] font-normal">R$38</span>
                 </div>
               </td>
               <td className=" py-4">
@@ -180,7 +180,7 @@ export default function ProductsTable({ className }) {
               </td>
               <td className="text-right py-4">
                 <div className="flex space-x-1 items-center justify-center">
-                  <span className="text-[15px] font-normal">$38</span>
+                  <span className="text-[15px] font-normal">R$38</span>
                 </div>
               </td>
               <td className="text-right py-4">
