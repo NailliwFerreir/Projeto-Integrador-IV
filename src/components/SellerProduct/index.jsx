@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
 import PageTitle from "../Helpers/PageTitle";
+import SelectCustom from "../Helpers/SelectCustom";
 import Layout from "../Partials/Layout";
 
 export default function SellerProduct() {
@@ -264,7 +265,7 @@ export default function SellerProduct() {
                         type="text"
                         inputClasses="h-[50px]"
                         value={productName}
-                        onChange={(e) => setProductName(e.target.value)}
+                        inputHandler={(e) => setProductName(e.target.value)}
                       />
 
                       <InputCom
@@ -274,17 +275,25 @@ export default function SellerProduct() {
                         type="text"
                         inputClasses="h-[50px]"
                         value={productPrice}
-                        onChange={(e) => setProductPrice(e.target.value)}
+                        inputHandler={(e) => setProductPrice(e.target.value)}
                       />
                     </div>
-                    {/* <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5"> */}
+
                     <div className="mb-5 align-top ">
                       <InputTextareaCom
                         label="Product Description*"
                         placeholder="Please insert product details"
                         name="phone"
                         type="text"
-                        inputClasses="h-[200px] whitespace-pre-line word-brake text-qh2-green"
+                        inputClasses="h-[150px] whitespace-pre-line word-brake text-black"
+                      />
+                    </div>
+
+                    <div className="mb-5">
+                      <SelectCustom
+                        label="Select Categorie*"
+                        datas={["exemplo1", "teste2"]}
+                        getValue={(value) => console.log(value)}
                       />
                     </div>
 
