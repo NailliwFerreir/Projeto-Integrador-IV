@@ -73,25 +73,19 @@ export default function About() {
               </div>
               <div className="content flex-1">
                 <h1 className="text-[18px] font-medium text-qblack mb-2.5">
-                  What is e-commerce business?
+                  O que é a Insemina+?
                 </h1>
                 <p className="text-[15px] text-qgraytwo leading-7 mb-2.5">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries but
-                  also the on leap into electronic typesetting.
+                A INSEMINA+ é uma plataforma online que conecta criadores de bovinos e equinos com compradores de sêmen. Nosso objetivo é facilitar a comercialização de material genético de qualidade, garantindo que criadores tenham acesso a um público amplo e qualificado.
                 </p>
                 <ul className="text-[15px] text-qgraytwo leading-7 list-disc ml-5 mb-5">
-                  <li>slim body with metal cover</li>
+                  <li>Marketplace rural</li>
                   <li>
-                    latest Intel Core i5-1135G7 processor (4 cores / 8 threads)
+                    Melhores genéticas
                   </li>
-                  <li>8GB DDR4 RAM and fast 512GB PCIe SSD</li>
+                  <li>Logistíca planejada</li>
                   <li>
-                    NVIDIA GeForce MX350 2GB GDDR5 graphics card backlit
-                    keyboard
+                    Taxas baixas!
                   </li>
                 </ul>
 
@@ -126,13 +120,7 @@ export default function About() {
                     <span className="text-[13px] text-qblack">(5.0)</span>
                   </div>
                   <div className="text-[15px] text-qgraytwo leading-[30px] text-justify line-clamp-6">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an into the
-                    find unknown printer took a galley of type and scrambled it
-                    to make a type inot the specimen book. It has survived not
-                    only five centuries but also the on leap into find it a
-                    electronic typesetting, remaining end to make it.
+                    Melhores opções de genética bovina que já vi!
                   </div>
                   <div className="flex items-center space-x-2.5 mt-3">
                     <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
@@ -143,9 +131,9 @@ export default function About() {
                     </div>
                     <div>
                       <p className="text-[18px] text-qblack font-medium">
-                        Ridoy Rock
+                        Oswaldo Pereira
                       </p>
-                      <p className="text-qgraytwo text-[13px]">London,UK</p>
+                      <p className="text-qgraytwo text-[13px]">Piranguinho,MG</p>
                     </div>
                   </div>
                 </div>
@@ -163,13 +151,7 @@ export default function About() {
                     <span className="text-[13px] text-qblack">(5.0)</span>
                   </div>
                   <div className="text-[15px] text-qgraytwo leading-[30px] text-justify line-clamp-6">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an into the
-                    find unknown printer took a galley of type and scrambled it
-                    to make a type inot the specimen book. It has survived not
-                    only five centuries but also the on leap into find it a
-                    electronic typesetting, remaining end to make it.
+                    Chegou super rápido!! Recomendo muito!
                   </div>
                   <div className="flex items-center space-x-2.5 mt-3">
                     <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
@@ -180,7 +162,7 @@ export default function About() {
                     </div>
                     <div>
                       <p className="text-[18px] text-qblack font-medium">
-                        Ridoy Rock
+                        Antonio Cruz
                       </p>
                       <p className="text-qgraytwo text-[13px]">Campinas,SP</p>
                     </div>
@@ -200,13 +182,7 @@ export default function About() {
                     <span className="text-[13px] text-qblack">(5.0)</span>
                   </div>
                   <div className="text-[15px] text-qgraytwo leading-[30px] text-justify line-clamp-6">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an into the
-                    find unknown printer took a galley of type and scrambled it
-                    to make a type inot the specimen book. It has survived not
-                    only five centuries but also the on leap into find it a
-                    electronic typesetting, remaining end to make it.
+                    Super feliz com o resultado obtido!
                   </div>
                   <div className="flex items-center space-x-2.5 mt-3">
                     <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
@@ -217,9 +193,9 @@ export default function About() {
                     </div>
                     <div>
                       <p className="text-[18px] text-qblack font-medium">
-                        Ridoy Rock
+                        Marcos dos Anjos
                       </p>
-                      <p className="text-qgraytwo text-[13px]">London,UK</p>
+                      <p className="text-qgraytwo text-[13px]">Uberaba,MG</p>
                     </div>
                   </div>
                 </div>
@@ -237,13 +213,7 @@ export default function About() {
                     <span className="text-[13px] text-qblack">(5.0)</span>
                   </div>
                   <div className="text-[15px] text-qgraytwo leading-[30px] text-justify line-clamp-6">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an into the
-                    find unknown printer took a galley of type and scrambled it
-                    to make a type inot the specimen book. It has survived not
-                    only five centuries but also the on leap into find it a
-                    electronic typesetting, remaining end to make it.
+                    A oportunidade que faltava no interior!
                   </div>
                   <div className="flex items-center space-x-2.5 mt-3">
                     <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
@@ -254,9 +224,9 @@ export default function About() {
                     </div>
                     <div>
                       <p className="text-[18px] text-qblack font-medium">
-                        Ridoy Rock
+                        José Bezerra
                       </p>
-                      <p className="text-qgraytwo text-[13px]">London,UK</p>
+                      <p className="text-qgraytwo text-[13px]">Capivari,SP</p>
                     </div>
                   </div>
                 </div>
@@ -274,13 +244,7 @@ export default function About() {
                     <span className="text-[13px] text-qblack">(5.0)</span>
                   </div>
                   <div className="text-[15px] text-qgraytwo leading-[30px] text-justify line-clamp-6">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an into the
-                    find unknown printer took a galley of type and scrambled it
-                    to make a type inot the specimen book. It has survived not
-                    only five centuries but also the on leap into find it a
-                    electronic typesetting, remaining end to make it.
+                    Um dos melhores marketplace que já tive contato!
                   </div>
                   <div className="flex items-center space-x-2.5 mt-3">
                     <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
@@ -291,9 +255,9 @@ export default function About() {
                     </div>
                     <div>
                       <p className="text-[18px] text-qblack font-medium">
-                        Ridoy Rock
+                        Carlos Cunha
                       </p>
-                      <p className="text-qgraytwo text-[13px]">London,UK</p>
+                      <p className="text-qgraytwo text-[13px]">Goiânia,GO</p>
                     </div>
                   </div>
                 </div>
@@ -311,13 +275,7 @@ export default function About() {
                     <span className="text-[13px] text-qblack">(5.0)</span>
                   </div>
                   <div className="text-[15px] text-qgraytwo leading-[30px] text-justify line-clamp-6">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an into the
-                    find unknown printer took a galley of type and scrambled it
-                    to make a type inot the specimen book. It has survived not
-                    only five centuries but also the on leap into find it a
-                    electronic typesetting, remaining end to make it.
+                    Feliz demais com a nova safra bovina que estou tendo!
                   </div>
                   <div className="flex items-center space-x-2.5 mt-3">
                     <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
@@ -328,9 +286,9 @@ export default function About() {
                     </div>
                     <div>
                       <p className="text-[18px] text-qblack font-medium">
-                        Ridoy Rock
+                        Isaac Bernardes
                       </p>
-                      <p className="text-qgraytwo text-[13px]">London,UK</p>
+                      <p className="text-qgraytwo text-[13px]">Bom Jesus do Goiás,GO</p>
                     </div>
                   </div>
                 </div>
