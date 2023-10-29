@@ -47,7 +47,7 @@ export default function Dropzone({
           {isDragActive ? (
             <p>Solte os arquivos aqui...</p>
           ) : (
-            <p>Arraste e solte os arquivos aqui, ou click para selecioná-los</p>
+            <p>Arraste e solte os arquivos aqui, ou clique para selecioná-los</p>
           )}
         </div>
       )}

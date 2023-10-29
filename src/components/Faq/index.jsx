@@ -22,7 +22,7 @@ export default function Faq() {
           <div className="main-wrapper w-full lg:flex lg:space-x-[30px]">
             <div className="lg:w-1/2 w-full mb-10 lg:mb-0">
               <h1 className="text-qblack font-bold text-[22px] mb-4">
-                Frequently asked questions
+                Dúvidas frequentes
               </h1>
               <div className="flex flex-col space-y-7 justify-between">
                 <Accodion
@@ -62,7 +62,7 @@ humour, or randomised words"
               <div className="bg-white sm:p-10 p-5">
                 <div className="title flex flex-col items-center">
                   <h1 className="lg:text-[34px] text-xl font-bold text-qblack">
-                    Have Any Qustion
+                    Tem alguma dúvida?
                   </h1>
                   <span className="-mt-5 block">
                     <svg
@@ -100,7 +100,7 @@ humour, or randomised words"
                   </div>
                   <div className="mb-5">
                     <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-                      Message*
+                      Mensagem*
                     </h6>
                     <textarea
                       placeholder="Type your message here"
@@ -110,7 +110,7 @@ humour, or randomised words"
                   <div>
                     <a href="#">
                       <div className="black-btn text-sm font-semibold w-full h-[50px] flex justify-center items-center">
-                        <span>Send Now</span>
+                        <span>Mande Agora</span>
                       </div>
                     </a>
                   </div>

@@ -19,10 +19,10 @@ export default function TrackingOrder() {
         <div className="content-wrapper w-full mb-[40px]">
           <div className="container-x mx-auto">
             <h1 className="text-[22px] text-qblack font-semibold leading-9">
-              Track Your Order
+              Rastrear seu pedido
             </h1>
             <p className="text-[15px] text-qgraytwo leading-8 mb-5">
-              Enter your order taracking number and your secreet id.
+              Informe o código do pedido e seu ID secreto.
             </p>
             <div className="w-full bg-white lg:px-[30px] px-5 py-[23px] lg:flex items-center">
               <div className="lg:w-[642px] w-full">
@@ -43,7 +43,7 @@ export default function TrackingOrder() {
 
                 <a href="#">
                   <div className="w-[142px] h-[50px] black-btn flex justify-center items-center">
-                    <span>Track Now</span>
+                    <span>Rastrear Agora</span>
                   </div>
                 </a>
               </div>

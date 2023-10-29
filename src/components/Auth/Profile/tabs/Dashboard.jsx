@@ -5,9 +5,9 @@ export default function Dashboard() {
     <>
       <div className="welcome-msg w-full">
         <div>
-          <p className="text-qblack text-lg">Hello, Shovo</p>
+          <p className="text-qblack text-lg">Olá, Inseminador+</p>
           <h1 className="font-bold text-[24px] text-qblack">
-            Welcome to your Profile
+            Bem-vindo(a) ao seu perfil!
           </h1>
         </div>
       </div>
@@ -38,10 +38,10 @@ export default function Dashboard() {
             </span>
           </div>
           <p className="text-xl text-white group-hover:text-qblacktext mt-5">
-            New Orders
+            Novos Pedidos
           </p>
           <span className="text-[40px] text-white group-hover:text-qblacktext font-bold leading-none mt-1 block">
-            656
+            15
           </span>
         </div>
         <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qh2-green transition-all duration-300 ease-in-out p-6">
@@ -62,10 +62,10 @@ export default function Dashboard() {
             </span>
           </div>
           <p className="text-xl text-white group-hover:text-qblacktext mt-5">
-            New Orders
+            Pedidos Enviados
           </p>
           <span className="text-[40px] text-white group-hover:text-qblacktext font-bold leading-none mt-1 block">
-            656
+            1
           </span>
         </div>
         <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qh2-green transition-all duration-300 ease-in-out p-6">
@@ -94,26 +94,26 @@ export default function Dashboard() {
             </span>
           </div>
           <p className="text-xl text-white group-hover:text-qblacktext mt-5">
-            New Orders
+            Pedidos em análise
           </p>
           <span className="text-[40px] text-white group-hover:text-qblacktext font-bold leading-none mt-1 block">
-            656
+            1
           </span>
         </div>
       </div>
       <div className="dashboard-info mt-8 flex justify-between items-center bg-primarygray px-7 py-7">
         <div className="">
           <p className="title text-[22px] font-semibold">
-            Parsonal Information
+            Informação Pessoal
           </p>
           <div className="mt-5">
             <table>
               <tr className="inline-flex mb-5">
                 <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Name:</div>
+                  <div>Nome:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  Shuvo khan
+                  Inseminador+
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
@@ -121,45 +121,45 @@ export default function Dashboard() {
                   <div>Email:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  rafiqulislamsuvobd@gmail.com
+                  inseminador123@gmail.com
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
                 <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Phone:</div>
+                  <div>Celular:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  01792166627
+                  019 9 8321-0933
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
                 <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>City:</div>
+                  <div>Cidade:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  Dhaka,Bangladesh
+                  Campinas
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
                 <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Zip:</div>
+                  <div>CEP:</div>
                 </td>
-                <td className="text-base text-qblack font-medium">4040</td>
+                <td className="text-base text-qblack font-medium">13040586</td>
               </tr>
             </table>
           </div>
         </div>
         <div className="w-[1px] h-[164px] bg-[#E4E4E4]"></div>
         <div className="ml-6">
-          <p className="title text-[22px] font-semibold">Shop Info</p>
+          <p className="title text-[22px] font-semibold">Informações de vendedor</p>
           <div className="mt-5">
             <table>
               <tr className="inline-flex mb-5">
                 <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Name:</div>
+                  <div>Nome:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  Shuvo khan
+                  Inseminador+
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
@@ -167,15 +167,15 @@ export default function Dashboard() {
                   <div>Email:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  rafiqulislamsuvobd@gmail.com
+                  inseminador123@gmail.com
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
                 <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Phone:</div>
+                  <div>Celular:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  01792166627
+                  019 9 8321-0933
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
@@ -183,14 +183,14 @@ export default function Dashboard() {
                   <div>City:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  Dhaka,Bangladesh
+                  Campinas
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
                 <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Zip:</div>
+                  <div>CEP:</div>
                 </td>
-                <td className="text-base text-qblack font-medium">4040</td>
+                <td className="text-base text-qblack font-medium">13040586</td>
               </tr>
             </table>
           </div>

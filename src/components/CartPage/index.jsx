@@ -40,20 +40,20 @@ export default function CardPage({ cart = true }) {
                     <InputCom type="text" placeholder="Discount Code" />
                   </div>
                   <button type="button" className="w-[90px] h-[50px] black-btn">
-                    <span className="text-sm font-semibold">Apply</span>
+                    <span className="text-sm font-semibold">Aplicar</span>
                   </button>
                 </div>
                 <div className="flex space-x-2.5 items-center">
                   <a href="#">
                     <div className="w-[220px] h-[50px] bg-[#F6F6F6] flex justify-center items-center">
                       <span className="text-sm font-semibold">
-                        Continue Shopping
+                        Continue Comprando
                       </span>
                     </div>
                   </a>
                   <a href="#">
                     <div className="w-[140px] h-[50px] bg-[#F6F6F6] flex justify-center items-center">
-                      <span className="text-sm font-semibold">Update Cart</span>
+                      <span className="text-sm font-semibold">Atualizar Carrinho</span>
                     </div>
                   </a>
                 </div>
@@ -65,13 +65,13 @@ export default function CardPage({ cart = true }) {
                       <p className="text-[15px] font-medium text-qblack">
                         Subtotal
                       </p>
-                      <p className="text-[15px] font-medium text-qred">$365</p>
+                      <p className="text-[15px] font-medium text-qred">R$365</p>
                     </div>
                     <div className="w-full h-[1px] bg-[#EDEDED]"></div>
                   </div>
                   <div className="shipping mb-6">
                     <span className="text-[15px] font-medium text-qblack mb-[18px] block">
-                      Shipping
+                      Frete
                     </span>
                     <ul className="flex flex-col space-y-1">
                       <li>
@@ -85,7 +85,26 @@ export default function CardPage({ cart = true }) {
                               />
                             </div>
                             <span className="text-[13px] text-normal text-qgraytwo">
-                              Free Shipping
+                              Frete Grátis
+                            </span>
+                          </div>
+                          <span className="text-[13px] text-normal text-qgraytwo">
+                            +R$00.00
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="flex justify-between items-center">
+                          <div className="flex space-x-2.5 items-center">
+                            <div className="input-radio">
+                              <input
+                                type="radio"
+                                name="price"
+                                className="accent-pink-500"
+                              />
+                            </div>
+                            <span className="text-[13px] text-normal text-qgraytwo">
+                              Taxa fixa
                             </span>
                           </div>
                           <span className="text-[13px] text-normal text-qgraytwo">
@@ -104,26 +123,7 @@ export default function CardPage({ cart = true }) {
                               />
                             </div>
                             <span className="text-[13px] text-normal text-qgraytwo">
-                              Flat Rate
-                            </span>
-                          </div>
-                          <span className="text-[13px] text-normal text-qgraytwo">
-                            +$00.00
-                          </span>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between items-center">
-                          <div className="flex space-x-2.5 items-center">
-                            <div className="input-radio">
-                              <input
-                                type="radio"
-                                name="price"
-                                className="accent-pink-500"
-                              />
-                            </div>
-                            <span className="text-[13px] text-normal text-qgraytwo">
-                              Local Delivery
+                              Entrega Local
                             </span>
                           </div>
                           <span className="text-[13px] text-normal text-qgraytwo">
@@ -136,12 +136,12 @@ export default function CardPage({ cart = true }) {
                   <div className="shipping-calculation w-full mb-3">
                     <div className="title mb-[17px]">
                       <h1 className="text-[15px] font-medium">
-                        Calculate Shipping
+                        Calcular Frete
                       </h1>
                     </div>
                     <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
                       <span className="text-[13px] text-qgraytwo">
-                        Select Country
+                        Selecione um Estado
                       </span>
                       <span>
                         <svg
@@ -168,7 +168,7 @@ export default function CardPage({ cart = true }) {
                   </div>
                   <button type="button" className="w-full mb-10">
                     <div className="w-full h-[50px] bg-[#F6F6F6] flex justify-center items-center">
-                      <span className="text-sm font-semibold">Update Cart</span>
+                      <span className="text-sm font-semibold">Atualizar Carrinho</span>
                     </div>
                   </button>
                   <div className="total mb-6">
@@ -176,13 +176,13 @@ export default function CardPage({ cart = true }) {
                       <p className="text-[18px] font-medium text-qblack">
                         Total
                       </p>
-                      <p className="text-[18px] font-medium text-qred">$365</p>
+                      <p className="text-[18px] font-medium text-qred">R$365</p>
                     </div>
                   </div>
                   <a href="/checkout">
                     <div className="w-full h-[50px] black-btn flex justify-center items-center">
                       <span className="text-sm font-semibold">
-                        Proceed to Checkout
+                        Prosseguir para o checkout
                       </span>
                     </div>
                   </a>

@@ -23,7 +23,7 @@ export default function ProductsFilter({
         <div className="filter-subject-item pb-10 border-b border-qgray-border">
           <div className="subject-title mb-[30px]">
             <h1 className="text-black text-base font-500">
-              Product categories
+              Categorias
             </h1>
           </div>
           <div className="filter-items">
@@ -473,7 +473,7 @@ export default function ProductsFilter({
         </div>
         <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">Price Range</h1>
+            <h1 className="text-black text-base font-500">Defina o preço</h1>
           </div>
           <div className="price-range mb-5">
             <InputRange
@@ -485,12 +485,12 @@ export default function ProductsFilter({
             />
           </div>
           <p className="text-xs text-qblack font-400">
-            Price: ${volume.min} - ${volume.max}
+            Preço: ${volume.min} - ${volume.max}
           </p>
         </div>
         <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">Brands</h1>
+            <h1 className="text-black text-base font-500">Marcas</h1>
           </div>
           <div className="filter-items">
             <ul>
@@ -649,7 +649,7 @@ export default function ProductsFilter({
                       htmlFor="others"
                       className="text-xs font-black font-400 capitalize"
                     >
-                      others
+                      outros
                     </label>
                   </div>
                 </div>
@@ -718,7 +718,7 @@ export default function ProductsFilter({
         </div>
         <div className="filter-subject-item pb-10 mt-10">
           <div className="subject-title mb-[30px]">
-            <h1 className="text-black text-base font-500">Sizes</h1>
+            <h1 className="text-black text-base font-500">Tamanhos</h1>
           </div>
           <div className="filter-items">
             <ul>

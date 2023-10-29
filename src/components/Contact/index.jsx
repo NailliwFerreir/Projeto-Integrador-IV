@@ -19,7 +19,7 @@ export default function Contact() {
           <div className="main-wrapper w-full lg:flex lg:space-x-[30px]">
             <div className="lg:w-1/2 w-full">
               <h1 className="text-[22px] font-semibold text-qblack leading-[30px] mb-1">
-                Contact Information
+                Informações para Contato
               </h1>
               <p className="text-[15px] text-qgraytwo leading-[30px] mb-5">
                 Fill the form below or write us .We will help you as soon as
@@ -55,13 +55,13 @@ export default function Contact() {
                     </svg>
                   </div>
                   <p className="text-[22px] text-black leading-[30px] text-center font-semibold">
-                    Phone
+                    Celular
                   </p>
                   <p className="text-[15px] text-black leading-[30px] text-center">
-                    +(323) 9847 3847 383
+                    +55 19 98401-0686
                   </p>
                   <p className="text-[15px] text-black leading-[30px] text-center">
-                    +(434) 5466 5467 443
+                    +55 19 98401-0686
                   </p>
                 </div>
                 <div className="xl:w-1/2 w-full h-[196px] flex flex-col item justify-center bg-[#D3EFFF] p-5">
@@ -105,10 +105,10 @@ export default function Contact() {
                     Email
                   </p>
                   <p className="text-[15px] text-black leading-[30px] text-center">
-                    Demoemail@gmail.com
+                    insemina@gmail.com
                   </p>
                   <p className="text-[15px] text-black leading-[30px] text-center">
-                    rafiqulislamsuvobd@gmail.com
+                    inseminador123@gmail.com
                   </p>
                 </div>
               </div>
@@ -132,11 +132,11 @@ export default function Contact() {
                   </span>
                   <div>
                     <h1 className="text-[22px] font-semibold text-qblack leading-[30px] mb-2">
-                      Address
+                      Endereço
                     </h1>
                     <p className="text-[15px] text-qblack leading-[30px]">
-                      4517 Washington Ave. Manchester, Road 2342, <br />
-                      Kentucky 39495
+                      Av. Reitor Benedito José Barreto Fonseca, 355-371, <br />
+                      - Parque dos Jacarandás, Campinas - SP
                     </p>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export default function Contact() {
             <div className="flex-1 bg-white sm:p-10 p-3">
               <div className="title flex flex-col items-center">
                 <h1 className="text-[34px] font-bold text-qblack">
-                  Get In Touch
+                  Entre em Contato!
                 </h1>
                 <span className="-mt-5 block">
                   <svg
@@ -200,7 +200,7 @@ export default function Contact() {
                 </div>
                 <div className="mb-5">
                   <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-                    Message*
+                    Mensagem*
                   </h6>
                   <textarea
                     placeholder="Type your message here"
@@ -210,7 +210,7 @@ export default function Contact() {
                 <div>
                   <a href="#">
                     <div className="black-btn text-sm font-semibold w-full h-[50px] flex justify-center items-center">
-                      <span>Send Now</span>
+                      <span>Mande Agora</span>
                     </div>
                   </a>
                 </div>

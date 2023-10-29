@@ -52,7 +52,7 @@ export default function Profile() {
                   Sua Conta
                 </h1>
                 <div className="switch-dashboard flex space-x-3 items-center">
-                  <p className="text-qgray text-base">Switch Dashboard</p>
+                  <p className="text-qgray text-base">Trocar paínel de controle</p>
                   <button
                     onClick={() => setSwitchDashboard(!switchDashboard)}
                     type="button"
@@ -75,7 +75,7 @@ export default function Profile() {
                             <IcoDashboard />
                           </span>
                           <span className=" font-normal text-base">
-                            Dashboard
+                            Paínel de controle
                           </span>
                         </div>
                       </Link>

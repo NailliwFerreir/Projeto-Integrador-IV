@@ -104,7 +104,7 @@ export default function DrawerThree({ className, open, action }) {
                 tab === "category" ? "text-qblack" : "text-qgray"
               }`}
             >
-              Categories
+              Categorias
             </span>
             <span className="w-[1px] h-[14px] bg-qgray"></span>
             <span
@@ -113,7 +113,7 @@ export default function DrawerThree({ className, open, action }) {
                 tab === "menu" ? "text-qblack" : "text-qgray "
               }`}
             >
-              Main Menu
+              Menu Principal
             </span>
           </div>
           {tab === "category" ? (
@@ -895,7 +895,7 @@ export default function DrawerThree({ className, open, action }) {
                   <a href="/">
                     <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh3-blue transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">Home</span>
+                        <span className="text-sm font-400">Início</span>
                       </div>
                       <div>
                         <span>
@@ -1008,7 +1008,7 @@ export default function DrawerThree({ className, open, action }) {
                   <a href="/shops/shop">
                     <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh3-blue transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">Shop</span>
+                        <span className="text-sm font-400">Comprar</span>
                       </div>
                       <div>
                         <span>
@@ -1045,7 +1045,7 @@ export default function DrawerThree({ className, open, action }) {
                   <a href="#">
                     <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh3-blue transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">Pages</span>
+                        <span className="text-sm font-400">Notas</span>
                       </div>
                       <div>
                         <span>
@@ -1083,7 +1083,7 @@ export default function DrawerThree({ className, open, action }) {
                         <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh3-blue transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">
-                              Privacy Policy
+                              Política de Privacidade
                             </span>
                           </div>
                           <div>
@@ -1159,7 +1159,7 @@ export default function DrawerThree({ className, open, action }) {
                         <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh3-blue transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">
-                              Terms and Conditions
+                              Termos e Condições
                             </span>
                           </div>
                           <div>
@@ -1200,7 +1200,7 @@ export default function DrawerThree({ className, open, action }) {
                   <a href="/about">
                     <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh3-blue transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">About</span>
+                        <span className="text-sm font-400">Sobre</span>
                       </div>
                       <div>
                         <span>
@@ -1274,7 +1274,7 @@ export default function DrawerThree({ className, open, action }) {
                   <a href="/contact">
                     <div className="flex justify-between items-center px-5 h-12 bg-white hover:bg-qh3-blue transition-all duration-300 ease-in-out cursor-pointer">
                       <div className="flex items-center space-x-6">
-                        <span className="text-sm font-400">Contact</span>
+                        <span className="text-sm font-400">Contato</span>
                       </div>
                       <div>
                         <span>

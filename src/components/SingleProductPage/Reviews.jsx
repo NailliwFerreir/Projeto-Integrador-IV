@@ -110,13 +110,13 @@ export default function Reviews({
             type="button"
             className="black-btn w-[300px] h-[50px] text-sm font-semibold"
           >
-            Load More
+            Ver mais
           </button>
         </div>
       </div>
       <div className="write-review w-full">
         <h1 className="text-2xl font-medium text-qblack mb-5">
-          Write Your Reviews
+          Escreva sua Avaliação
         </h1>
 
         <div className="flex space-x-1 items-center mb-[30px]">
@@ -169,7 +169,7 @@ export default function Reviews({
           </div>
           <div className="w-full mb-[30px]">
             <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-              Message*
+              Mensagem*
             </h6>
             <textarea
               value={message}
@@ -189,7 +189,7 @@ export default function Reviews({
               className="black-btn w-[300px] h-[50px]  flex justify-center"
             >
               <span className="flex space-x-1 items-center h-full">
-                <span className="text-sm font-semibold">Submit Review</span>
+                <span className="text-sm font-semibold">Enviar Avaliação</span>
                 {reviewLoading && (
                   <span className="w-5 " style={{ transform: "scale(0.3)" }}>
                     <LoaderStyleOne />

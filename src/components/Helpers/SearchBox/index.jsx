@@ -2,9 +2,8 @@ export default function SearchBox({ className, type }) {
   return (
     <>
       <div
-        className={`w-full h-full flex items-center  border border-qgray-border bg-white ${
-          className || ""
-        }`}
+        className={`w-full h-full flex items-center  border border-qgray-border bg-white ${className || ""
+          }`}
       >
         <div className="flex-1 bg-red-500 h-full">
           <form action="#" className="h-full">
@@ -21,7 +20,7 @@ export default function SearchBox({ className, type }) {
             type="button"
             className="w-full text-xs font-500 text-qgray flex justify-between items-center"
           >
-            <span>All Categories</span>
+            <span>Todas categorias</span>
             <span>
               <svg
                 width="10"
@@ -56,7 +55,7 @@ export default function SearchBox({ className, type }) {
           }
           type="button"
         >
-          Search
+          Pesquisar
         </button>
       </div>
     </>

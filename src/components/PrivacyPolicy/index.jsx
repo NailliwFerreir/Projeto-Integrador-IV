@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
           <div className="container-x mx-auto">
             <div className="content-item w-full mb-10">
               <h2 className="text-[18px] font-medium text-qblack mb-5">
-                1. What Are Terms and Conditions?
+                1. O que são termos e condições?
               </h2>
               <p className="text-[15px] text-qgraytwo leading-7">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
               </p>
               <div>
                 <h2 className="text-[18px] font-medium text-qblack mb-5">
-                  2. Does My Online Shop Need Terms and Conditions?
+                  2. Por que a compra online precisa de termos e condições?
                 </h2>
 
                 <ul className="list-disc ml-5">
@@ -77,7 +77,7 @@ export default function PrivacyPolicy() {
 
             <div className="content-item w-full mb-10">
               <h2 className="text-[18px] font-medium text-qblack mb-5">
-                3. Ecommerce Terms and Conditions Template [Free]
+                3. Insemina+ Termos e Condições Template 
               </h2>
               <p className="text-[15px] text-qgraytwo leading-7">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
             </div>
             <div className="content-item w-full mb-10">
               <h2 className="text-[18px] font-medium text-qblack mb-5">
-                4. What to Include in Terms and Conditions for Online Stores
+                4. O que incluir nos termos e condições das lojas online
               </h2>
               <p className="text-[15px] text-qgraytwo leading-7">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -129,7 +129,7 @@ export default function PrivacyPolicy() {
             </div>
             <div className="content-item w-full mb-10">
               <h2 className="text-[18px] font-medium text-qblack mb-5">
-                05.Pricing and Payment Terms
+                05.Preços e condições de pagamento
               </h2>
               <p className="text-[15px] text-qgraytwo leading-7">
                 Lorem Ipsum is simply dummy text of the printing and typesetting

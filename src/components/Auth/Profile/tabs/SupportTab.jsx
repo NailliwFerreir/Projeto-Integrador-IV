@@ -6,20 +6,20 @@ export default function SupportTab() {
       <div className="support-tab w-full">
         <div className="w-[180px] h-[50px] mb-4">
           <button type="button" className="black-btn h-full p-3">
-            <div className="w-full text-sm font-semibold">Add New Support</div>
+            <div className="w-full text-sm font-semibold">Adicionar N°vo suporte</div>
           </button>
         </div>
         <div className="relative w-full overflow-x-auto sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500">
             <tbody>
               {/* table heading */}
-              <tr className="text-base text-qblack font-semibold bg-[#F6F6F6] whitespace-nowrap px-2 border-b default-border-bottom ">
-                <td className="py-6 block whitespace-nowrap text-center">No</td>
-                <td className="py-6 whitespace-nowrap text-center">Time</td>
-                <td className="py-6 whitespace-nowrap w-[285px] text-center">
-                  Report
+              <tr className="text-base text-qblack font-semibold bg-[#F6F6F6] whitespace-N°wrap px-2 border-b default-border-bottom ">
+                <td className="py-6 block whitespace-N°wrap text-center">N°</td>
+                <td className="py-6 whitespace-N°wrap text-center">Data</td>
+                <td className="py-6 whitespace-N°wrap w-[285px] text-center">
+                  Reportar
                 </td>
-                <td className="py-6 whitespace-nowrap  text-center">Action</td>
+                <td className="py-6 whitespace-N°wrap  text-center">Status</td>
               </tr>
               {/* table heading end */}
               <tr className="bg-white hover:bg-gray-50">
@@ -27,14 +27,13 @@ export default function SupportTab() {
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-base text-qgray  whitespace-nowrap">
-                    Fub 05,2021
+                  <span className="text-base text-qgray  whitespace-N°wrap">
+                    Fev 05,2021
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <span className="text-sm text-center text-qgray">
-                    Printing and typesetting industry standard dummy text ever
-                    since
+                    Problemas na entrega
                   </span>
                 </td>
                 <td className="text-center py-4 flex space-x-2.5 justify-center">
@@ -46,7 +45,7 @@ export default function SupportTab() {
                       width="18"
                       height="17"
                       viewBox="0 0 18 17"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -63,7 +62,7 @@ export default function SupportTab() {
                       width="17"
                       height="19"
                       viewBox="0 0 17 19"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -83,14 +82,13 @@ export default function SupportTab() {
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-base text-qgray  whitespace-nowrap">
-                    Fub 05,2021
+                  <span className="text-base text-qgray  whitespace-N°wrap">
+                    Fev 05,2021
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <span className="text-sm text-center text-qgray">
-                    Printing and typesetting industry standard dummy text ever
-                    since
+                    Problemas no pagamento
                   </span>
                 </td>
                 <td className="text-center py-4 flex space-x-2.5 justify-center">
@@ -102,7 +100,7 @@ export default function SupportTab() {
                       width="18"
                       height="17"
                       viewBox="0 0 18 17"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -119,7 +117,7 @@ export default function SupportTab() {
                       width="17"
                       height="19"
                       viewBox="0 0 17 19"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -139,14 +137,13 @@ export default function SupportTab() {
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-base text-qgray  whitespace-nowrap">
-                    Fub 05,2021
+                  <span className="text-base text-qgray  whitespace-N°wrap">
+                    Fev 05,2021
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <span className="text-sm text-center text-qgray">
-                    Printing and typesetting industry standard dummy text ever
-                    since
+                    Problemas no pagamento
                   </span>
                 </td>
                 <td className="text-center py-4 flex space-x-2.5 justify-center">
@@ -158,7 +155,7 @@ export default function SupportTab() {
                       width="18"
                       height="17"
                       viewBox="0 0 18 17"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -175,7 +172,7 @@ export default function SupportTab() {
                       width="17"
                       height="19"
                       viewBox="0 0 17 19"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -195,14 +192,13 @@ export default function SupportTab() {
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-base text-qgray  whitespace-nowrap">
-                    Fub 05,2021
+                  <span className="text-base text-qgray  whitespace-N°wrap">
+                    Fev 05,2021
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <span className="text-sm text-center text-qgray">
-                    Printing and typesetting industry standard dummy text ever
-                    since
+                    Problemas no pagamento
                   </span>
                 </td>
                 <td className="text-center py-4 flex space-x-2.5 justify-center">
@@ -214,7 +210,7 @@ export default function SupportTab() {
                       width="18"
                       height="17"
                       viewBox="0 0 18 17"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -231,7 +227,7 @@ export default function SupportTab() {
                       width="17"
                       height="19"
                       viewBox="0 0 17 19"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -251,14 +247,13 @@ export default function SupportTab() {
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-base text-qgray  whitespace-nowrap">
-                    Fub 05,2021
+                  <span className="text-base text-qgray  whitespace-N°wrap">
+                    Fev 05,2021
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <span className="text-sm text-center text-qgray">
-                    Printing and typesetting industry standard dummy text ever
-                    since
+                    Problemas no pagamento
                   </span>
                 </td>
                 <td className="text-center py-4 flex space-x-2.5 justify-center">
@@ -270,7 +265,7 @@ export default function SupportTab() {
                       width="18"
                       height="17"
                       viewBox="0 0 18 17"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -287,7 +282,7 @@ export default function SupportTab() {
                       width="17"
                       height="19"
                       viewBox="0 0 17 19"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -307,14 +302,13 @@ export default function SupportTab() {
                   <span className="text-lg text-qblack font-medium">#354</span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-base text-qgray  whitespace-nowrap">
-                    Fub 05,2021
+                  <span className="text-base text-qgray  whitespace-N°wrap">
+                    Fev 05,2021
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <span className="text-sm text-center text-qgray">
-                    Printing and typesetting industry standard dummy text ever
-                    since
+                    Problemas no pagamento
                   </span>
                 </td>
                 <td className="text-center py-4 flex space-x-2.5 justify-center">
@@ -326,7 +320,7 @@ export default function SupportTab() {
                       width="18"
                       height="17"
                       viewBox="0 0 18 17"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -343,7 +337,7 @@ export default function SupportTab() {
                       width="17"
                       height="19"
                       viewBox="0 0 17 19"
-                      fill="none"
+                      fill="N°ne"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path

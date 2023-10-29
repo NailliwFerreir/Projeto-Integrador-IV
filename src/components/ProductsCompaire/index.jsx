@@ -13,7 +13,7 @@ export default function ProductsCompaire() {
               { name: "home", path: "/" },
               { name: "compaire", path: "/products-compaire" },
             ]}
-            title="Product Comparison"
+            title="Comparação de Produtos"
           />
         </div>
 
@@ -25,7 +25,7 @@ export default function ProductsCompaire() {
                   <td className="w-[233px] pt-[30px] px-[26px] align-top bg-[#FAFAFA]">
                     <div className="">
                       <h1 className="text-[18px] font-medium text-qblack mb-4">
-                        Product Comparison
+                        Comparação de Produtos
                       </h1>
                       <p className="text-[13px] text-qgraytwo">
                         Select products to see the differences and similarities
@@ -222,7 +222,7 @@ export default function ProductsCompaire() {
                   <td className="w-[233px]  px-[26px] align-top bg-[#FAFAFA]">
                     <div className="">
                       <h1 className="text-[15px] font-medium text-qblack ">
-                        Star Rating
+                        Avaliação por estrelas
                       </h1>
                     </div>
                   </td>
@@ -359,28 +359,28 @@ export default function ProductsCompaire() {
                   <td className="w-[233px] px-[26px] align-top bg-[#FAFAFA]">
                     <div className="">
                       <h1 className="text-[15px] font-medium text-qblack ">
-                        Availability
+                        Disponibilidade
                       </h1>
                     </div>
                   </td>
                   <td className="product w-[235px] bg-white px-6 border-r border-qgray-border pb-[20px] align-top">
                     <span className="text-[13px] font-semibold text-green-500">
-                      In Stock
+                      Em Estoque
                     </span>
                   </td>
                   <td className="product w-[235px] bg-white px-6 border-r border-qgray-border pb-[20px] align-top">
                     <span className="text-[13px] font-semibold  text-qred">
-                      Out of Stock
+                      Fora de estoque
                     </span>
                   </td>
                   <td className="product w-[235px] bg-white px-6 border-r border-qgray-border pb-[20px] align-top">
                     <span className="text-[13px] font-semibold  text-green-500">
-                      In Stock
+                      Em Estoque
                     </span>
                   </td>
                   <td className="product w-[235px] bg-white px-6 border-r border-qgray-border pb-[20px] align-top">
                     <span className="text-[13px] font-semibold  text-qred">
-                      Out of Stock
+                      Fora de estoque
                     </span>
                   </td>
                 </tr>
@@ -388,7 +388,7 @@ export default function ProductsCompaire() {
                   <td className="w-[233px] px-[26px] align-top bg-[#FAFAFA]">
                     <div className="">
                       <h1 className="text-[15px] font-medium text-qblack ">
-                        Colors
+                        Cores
                       </h1>
                     </div>
                   </td>

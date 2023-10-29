@@ -111,15 +111,15 @@ export default function ProductView({ className, reportHandler }) {
               <Star />
             </div>
             <span className="text-[13px] font-normal text-qblack">
-              6 Reviews
+              6 Avaliações
             </span>
           </div>
 
           <div data-aos="fade-up" className="flex space-x-2 items-center mb-7">
             <span className="text-sm font-500 text-qgray line-through mt-2">
-              $9.99
+              R$9.99
             </span>
-            <span className="text-2xl font-500 text-qred">$6.99</span>
+            <span className="text-2xl font-500 text-qred">R$6.99</span>
           </div>
 
           <p
@@ -132,7 +132,7 @@ export default function ProductView({ className, reportHandler }) {
 
           <div data-aos="fade-up" className="colors mb-[30px]">
             <span className="text-sm font-normal uppercase text-qgray mb-[14px] inline-block">
-              COLOR
+              COR
             </span>
 
             <div className="flex space-x-4 items-center">
@@ -160,7 +160,7 @@ export default function ProductView({ className, reportHandler }) {
 
           <div data-aos="fade-up" className="product-size mb-[30px]">
             <span className="text-sm font-normal uppercase text-qgray mb-[14px] inline-block">
-              SIZE
+              TAMANHO
             </span>
             <div className="w-full">
               <div className=" border border-qgray-border h-[50px] flex justify-between items-center px-6 cursor-pointer">
@@ -248,17 +248,17 @@ export default function ProductView({ className, reportHandler }) {
                 type="button"
                 className="black-btn text-sm font-semibold w-full h-full"
               >
-                Add To Cart
+                Adicionar ao Carrinho
               </button>
             </div>
           </div>
 
           <div data-aos="fade-up" className="mb-[20px]">
             <p className="text-[13px] text-qgray leading-7">
-              <span className="text-qblack">Category :</span> Kitchen
+              <span className="text-qblack">Categoria:</span> Kitchen
             </p>
             <p className="text-[13px] text-qgray leading-7">
-              <span className="text-qblack">Tags :</span> Beer, Foamer
+              <span className="text-qblack">Tags:</span> Beer, Foamer
             </p>
             <p className="text-[13px] text-qgray leading-7">
               <span className="text-qblack">SKU:</span> KE-91039
@@ -289,7 +289,7 @@ export default function ProductView({ className, reportHandler }) {
               onClick={reportHandler}
               className="text-qred font-semibold text-[13px]"
             >
-              Report This Item
+              Denunciar esse item
             </button>
           </div>
 
@@ -298,7 +298,7 @@ export default function ProductView({ className, reportHandler }) {
             className="social-share flex  items-center w-full"
           >
             <span className="text-qblack text-[13px] mr-[17px] inline-block">
-              Share This
+              Compartilhar
             </span>
 
             <div className="flex space-x-5 items-center">

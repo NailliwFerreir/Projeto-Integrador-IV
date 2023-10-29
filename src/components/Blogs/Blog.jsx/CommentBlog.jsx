@@ -63,7 +63,7 @@ export default function CommentBlog() {
     <>
       <div className="write-review w-full mb-[30px]">
         <h1 className="text-2xl font-medium text-qblack mb-5">
-          Leave a Comment
+          Deixe um comentário
         </h1>
         <div className="w-full review-form ">
           <div className="sm:flex sm:space-x-[30px] items-center mb-5 w-full">
@@ -92,7 +92,7 @@ export default function CommentBlog() {
           </div>
           <div className="w-full mb-[30px]">
             <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-              Message*
+              Mensagem*
             </h6>
             <textarea
               value={message}
@@ -112,7 +112,7 @@ export default function CommentBlog() {
               className="black-btn w-[300px] h-[50px]  flex justify-center"
             >
               <span className="flex space-x-1 items-center h-full">
-                <span className="text-sm font-semibold">Submit Review</span>
+                <span className="text-sm font-semibold">Enviar Avaliação</span>
                 {reviewLoading && (
                   <span className="w-5 " style={{ transform: "scale(0.3)" }}>
                     <LoaderStyleOne />
@@ -124,7 +124,7 @@ export default function CommentBlog() {
         </div>
       </div>
       <div className="w-full comments">
-        <h1 className="text-2xl font-medium text-qblack mb-5">Comments</h1>
+        <h1 className="text-2xl font-medium text-qblack mb-5">Comentários</h1>
         {commnets &&
           commnets.length > 0 &&
           commnets.map((comment) => (
