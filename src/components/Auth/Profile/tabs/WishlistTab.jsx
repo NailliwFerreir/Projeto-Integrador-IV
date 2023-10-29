@@ -11,14 +11,14 @@ export default function WishlistTab({ className }) {
               {/* table heading */}
               <tr className="text-[13px] font-medium text-black bg-[#F6F6F6] whitespace-nowrap px-2 border-b default-border-bottom uppercase">
                 <td className="py-4 pl-10 block whitespace-nowrap  w-[380px]">
-                  product
+                  Produto
                 </td>
                 <td className="py-4 whitespace-nowrap text-center">
-                  stock status
+                  Estoque
                 </td>
-                <td className="py-4 whitespace-nowrap text-center">price</td>
+                <td className="py-4 whitespace-nowrap text-center">Preço</td>
                 <td className="py-4 whitespace-nowrap  text-center">
-                  quantity
+                  Quantidade
                 </td>
                 <td className="py-4 whitespace-nowrap  text-center">total</td>
                 <td className="py-4 whitespace-nowrap text-right w-[114px] block"></td>
@@ -42,7 +42,7 @@ export default function WishlistTab({ className }) {
                   </div>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-[15px] font-normal">In Stock(23)</span>
+                  <span className="text-[15px] font-normal">Em Estoque(23)</span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <div className="flex space-x-1 items-center justify-center">
@@ -96,7 +96,7 @@ export default function WishlistTab({ className }) {
                   </div>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-[15px] font-normal">In Stock(23)</span>
+                  <span className="text-[15px] font-normal">Em Estoque(23)</span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <div className="flex space-x-1 items-center justify-center">
@@ -150,7 +150,7 @@ export default function WishlistTab({ className }) {
                   </div>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-[15px] font-normal">In Stock(23)</span>
+                  <span className="text-[15px] font-normal">Em Estoque(23)</span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <div className="flex space-x-1 items-center justify-center">
@@ -194,13 +194,13 @@ export default function WishlistTab({ className }) {
         <div className="sm:flex sm:space-x-[30px] items-center">
           <button type="button">
             <div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">
-              Clean Wishlist
+              Limpar lista de desejos
             </div>
           </button>
           <div className="w-[180px] h-[50px]">
             <button type="button" className="black-btn h-full p-3">
               <div className="w-full text-sm font-semibold">
-                Add to Cart All
+                Adicionar tudo ao carrinho
               </div>
             </button>
           </div>

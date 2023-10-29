@@ -9,12 +9,12 @@ export default function OrderTab() {
             {/* table heading */}
             <tr className="text-base text-qgray whitespace-nowrap px-2 border-b default-border-bottom ">
               <td className="py-4 block whitespace-nowrap text-center">
-                Order
+                Pedidos
               </td>
-              <td className="py-4 whitespace-nowrap text-center">Date</td>
+              <td className="py-4 whitespace-nowrap text-center">Data</td>
               <td className="py-4 whitespace-nowrap text-center">Status</td>
-              <td className="py-4 whitespace-nowrap text-center">Amount</td>
-              <td className="py-4 whitespace-nowrap  text-center">Action</td>
+              <td className="py-4 whitespace-nowrap text-center">Estoque</td>
+              <td className="py-4 whitespace-nowrap  text-center">Ação</td>
             </tr>
             {/* table heading end */}
             <tr className="bg-white border-b hover:bg-gray-50">
@@ -23,17 +23,17 @@ export default function OrderTab() {
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qgray  whitespace-nowrap">
-                  Fub 05,2021
+                  Fev 05,2021
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  Complated
+                  Concluído
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  $757
+                  RR$757
                 </span>
               </td>
               <td className="text-center py-4">
@@ -41,7 +41,7 @@ export default function OrderTab() {
                   type="button"
                   className="w-[116px] h-[46px] bg-qh2-green text-white font-bold"
                 >
-                  View Details
+                  Ver Detalhes
                 </button>
               </td>
             </tr>
@@ -51,17 +51,17 @@ export default function OrderTab() {
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qgray  whitespace-nowrap">
-                  Fub 05,2021
+                  Fev 05,2021
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  Complated
+                  Concluído
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  $757
+                  R$757
                 </span>
               </td>
               <td className="text-center py-4">
@@ -69,7 +69,7 @@ export default function OrderTab() {
                   type="button"
                   className="w-[116px] h-[46px] bg-qh2-green text-white font-bold"
                 >
-                  View Details
+                  Ver Detalhes
                 </button>
               </td>
             </tr>
@@ -79,17 +79,17 @@ export default function OrderTab() {
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qgray  whitespace-nowrap">
-                  Fub 05,2021
+                  Fev 05,2021
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  Complated
+                  Concluído
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  $757
+                  R$757
                 </span>
               </td>
               <td className="text-center py-4">
@@ -97,7 +97,7 @@ export default function OrderTab() {
                   type="button"
                   className="w-[116px] h-[46px] bg-qh2-green text-white font-bold"
                 >
-                  View Details
+                  Ver Detalhes
                 </button>
               </td>
             </tr>
@@ -107,17 +107,17 @@ export default function OrderTab() {
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qgray  whitespace-nowrap">
-                  Fub 05,2021
+                  Fev 05,2021
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  Complated
+                  Concluído
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  $757
+                  R$757
                 </span>
               </td>
               <td className="text-center py-4">
@@ -125,7 +125,7 @@ export default function OrderTab() {
                   type="button"
                   className="w-[116px] h-[46px] bg-qh2-green text-white font-bold"
                 >
-                  View Details
+                  Ver Detalhes
                 </button>
               </td>
             </tr>
@@ -135,17 +135,17 @@ export default function OrderTab() {
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qgray  whitespace-nowrap">
-                  Fub 05,2021
+                  Fev 05,2021
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  Complated
+                  Concluído
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  $757
+                  R$757
                 </span>
               </td>
               <td className="text-center py-4">
@@ -153,7 +153,7 @@ export default function OrderTab() {
                   type="button"
                   className="w-[116px] h-[46px] bg-qh2-green text-white font-bold"
                 >
-                  View Details
+                  Ver Detalhes
                 </button>
               </td>
             </tr>
@@ -163,17 +163,17 @@ export default function OrderTab() {
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qgray  whitespace-nowrap">
-                  Fub 05,2021
+                  Fev 05,2021
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  Complated
+                  Concluído
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  $757
+                  R$757
                 </span>
               </td>
               <td className="text-center py-4">
@@ -181,7 +181,7 @@ export default function OrderTab() {
                   type="button"
                   className="w-[116px] h-[46px] bg-qh2-green text-white font-bold"
                 >
-                  View Details
+                  Ver Detalhes
                 </button>
               </td>
             </tr>
@@ -191,17 +191,17 @@ export default function OrderTab() {
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qgray  whitespace-nowrap">
-                  Fub 05,2021
+                  Fev 05,2021
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  Complated
+                  Concluído
                 </span>
               </td>
               <td className="text-center py-4 px-2">
                 <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  $757
+                  R$757
                 </span>
               </td>
               <td className="text-center py-4">
@@ -209,7 +209,7 @@ export default function OrderTab() {
                   type="button"
                   className="w-[116px] h-[46px] bg-qh2-green text-white font-bold"
                 >
-                  View Details
+                  Ver Detalhes
                 </button>
               </td>
             </tr>

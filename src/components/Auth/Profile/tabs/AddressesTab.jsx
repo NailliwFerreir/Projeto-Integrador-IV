@@ -6,7 +6,7 @@ export default function AddressesTab() {
       <div className="grid grid-cols-2 gap-[30px]">
         <div className="w-full bg-primarygray p-5 border">
           <div className="flex justify-between items-center">
-            <p className="title text-[22px] font-semibold">Address #1</p>
+            <p className="title text-[22px] font-semibold">Endereço 1</p>
             <button
               type="button"
               className="border border-qgray w-[34px] h-[34px] rounded-full flex justify-center items-center"
@@ -34,10 +34,10 @@ export default function AddressesTab() {
               <tbody>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>Name:</div>
+                    <div>Nome:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    Shuvo Khan
+                    Inseminador+
                   </td>
                 </tr>
                 <tr className="flex mb-3">
@@ -45,39 +45,39 @@ export default function AddressesTab() {
                     <div>Email:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    rafiqulislamsuvobd@gmail.com
+                    insemina123@gmail.com
                   </td>
                 </tr>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>Phone:</div>
+                    <div>Celular:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    01792166627
+                    019 9 8321-0933
                   </td>
                 </tr>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>country:</div>
+                    <div>País:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    Dhaka,Bangldesh
+                    Brasil
                   </td>
                 </tr>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>state:</div>
+                    <div>Estado:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    Barishal
+                    São Paulo
                   </td>
                 </tr>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>City:</div>
+                    <div>Cidade:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    banaripara
+                    Campinas
                   </td>
                 </tr>
               </tbody>
@@ -86,7 +86,7 @@ export default function AddressesTab() {
         </div>
         <div className="w-full bg-primarygray p-5 border">
           <div className="flex justify-between items-center">
-            <p className="title text-[22px] font-semibold">Address #1</p>
+            <p className="title text-[22px] font-semibold">Enderço 1</p>
             <button
               type="button"
               className="border border-qgray w-[34px] h-[34px] rounded-full flex justify-center items-center"
@@ -114,10 +114,10 @@ export default function AddressesTab() {
               <tbody>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>Name:</div>
+                    <div>Nome:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    Shuvo Khan
+                    Inseminador+
                   </td>
                 </tr>
                 <tr className="flex mb-3">
@@ -125,39 +125,39 @@ export default function AddressesTab() {
                     <div>Email:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    rafiqulislamsuvobd@gmail.com
+                    inseminador123@gmail.com
                   </td>
                 </tr>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>Phone:</div>
+                    <div>Celular:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    01792166627
+                    019 9 8321-0933
                   </td>
                 </tr>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>country:</div>
+                    <div>País:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    Dhaka,Bangldesh
+                    Brasil
                   </td>
                 </tr>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>state:</div>
+                    <div>Estado:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    Barishal
+                    São Paulo
                   </td>
                 </tr>
                 <tr className="flex mb-3">
                   <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
-                    <div>City:</div>
+                    <div>Cidade:</div>
                   </td>
                   <td className="text-base text-qblack line-clamp-1 font-medium">
-                    banaripara
+                    Campinas
                   </td>
                 </tr>
               </tbody>
@@ -167,7 +167,7 @@ export default function AddressesTab() {
       </div>
       <div className="w-[180px] h-[50px] mt-4">
         <button type="button" className="black-btn h-full p-3">
-          <div className="w-full text-sm font-semibold">Add New Address</div>
+          <div className="w-full text-sm font-semibold">Adicionar novo endereço</div>
         </button>
       </div>
     </>

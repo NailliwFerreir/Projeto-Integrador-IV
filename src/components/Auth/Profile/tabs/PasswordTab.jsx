@@ -44,7 +44,7 @@ export default function PasswordTab() {
               className="input-label text-qgray text-sm block mb-2.5"
               htmlFor="old_password"
             >
-              Old Password*
+              Senha Antiga*
             </label>
             <div className="input-wrapper border border-[#E8E8E8] w-full  h-[58px] overflow-hidden relative ">
               <input
@@ -115,7 +115,7 @@ export default function PasswordTab() {
               className="input-label text-qgray text-sm block mb-2.5"
               htmlFor="old_password"
             >
-              Password*
+              Senha*
             </label>
             <div className="input-wrapper border border-[#E8E8E8] w-full  h-[58px] overflow-hidden relative ">
               <input
@@ -186,7 +186,7 @@ export default function PasswordTab() {
               className="input-label text-qgray text-sm block mb-2.5"
               htmlFor="old_password"
             >
-              Re-enter Password*
+              Reescrever Senha*
             </label>
             <div className="input-wrapper border border-[#E8E8E8] w-full  h-[58px] overflow-hidden relative ">
               <input
@@ -257,13 +257,13 @@ export default function PasswordTab() {
               <div className="w-[180px] h-[50px]">
                 <button type="button" className="black-btn h-full p-3">
                   <div className="w-full text-sm font-semibold">
-                    Update Password
+                    Atualizar Senha
                   </div>
                 </button>
               </div>
               <button type="button">
                 <div className="w-full text-sm font-semibold text-qblack mb-5 sm:mb-0">
-                  Cancel
+                  Cancelar
                 </div>
               </button>
             </div>

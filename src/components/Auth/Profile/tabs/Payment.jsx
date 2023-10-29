@@ -21,7 +21,7 @@ export default function Payment() {
                   Bank **********5535
                 </p>
                 <p className="sm:text-18 text-sm tracking-wide text-green-500">
-                  Verified
+                  Verificado
                 </p>
               </div>
             </div>
@@ -30,7 +30,7 @@ export default function Payment() {
                 type="button"
                 className="w-[116px] sm:h-[46px] h-[40px]  bg-qh2-green text-qblack font-medium sm:text-18 text-sm tracking-wide"
               >
-                <span>Manage</span>
+                <span>Gerenciar</span>
               </button>
             </div>
           </li>
@@ -50,7 +50,7 @@ export default function Payment() {
                   Bank **********5535
                 </p>
                 <p className="sm:text-18 text-sm tracking-wide text-green-500">
-                  Verified
+                  Verificado
                 </p>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function Payment() {
                 type="button"
                 className="w-[116px] sm:h-[46px] h-[40px]  bg-qh2-green text-qblack font-medium sm:text-18 text-sm tracking-wide"
               >
-                <span>Manage</span>
+                <span>Gerenciar</span>
               </button>
             </div>
           </li>
@@ -79,7 +79,7 @@ export default function Payment() {
                   Bank **********5535
                 </p>
                 <p className="sm:text-18 text-sm tracking-wide text-green-500">
-                  Verified
+                  Verificado
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function Payment() {
                 type="button"
                 className="w-[116px] sm:h-[46px] h-[40px]  bg-qh2-green text-qblack font-medium sm:text-18 text-sm tracking-wide"
               >
-                <span>Manage</span>
+                <span>Gerenciar</span>
               </button>
             </div>
           </li>
@@ -108,7 +108,7 @@ export default function Payment() {
                   Bank **********5535
                 </p>
                 <p className="sm:text-18 text-sm tracking-wide text-green-500">
-                  Verified
+                  Verificado
                 </p>
               </div>
             </div>
@@ -117,7 +117,7 @@ export default function Payment() {
                 type="button"
                 className="w-[116px] sm:h-[46px] h-[40px]  bg-qh2-green text-qblack font-medium sm:text-18 text-sm tracking-wide"
               >
-                <span>Manage</span>
+                <span>Gerenciar</span>
               </button>
             </div>
           </li>
@@ -127,13 +127,13 @@ export default function Payment() {
             type="button"
             className="text-white bg-qblack w-[126px] h-[50px] text-sm font-semibold"
           >
-            Add Card
+            Adicionar Cartão
           </button>
           <button
             type="button"
             className="text-qblack  w-[126px] h-[50px] text-sm font-semibold border border-qblack"
           >
-            Add Bank
+            Adicionar Banco
           </button>
         </div>
       </div>
