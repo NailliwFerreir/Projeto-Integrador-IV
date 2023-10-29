@@ -255,9 +255,9 @@ export default function PasswordTab() {
           <div className="w-full mt-[30px] flex justify-start">
             <div className="sm:flex sm:space-x-[30px] items-center">
               <div className="w-[180px] h-[50px]">
-                <button type="button" className="yellow-btn">
+                <button type="button" className="black-btn h-full p-3">
                   <div className="w-full text-sm font-semibold">
-                    Upldate Password
+                    Update Password
                   </div>
                 </button>
               </div>

@@ -14,27 +14,24 @@ import Faq from "./components/Faq";
 import FlashSale from "./components/FlashSale";
 import FourZeroFour from "./components/FourZeroFour";
 import Home from "./components/Home";
-import HomeTwo from "./components/HomeTwo";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import ProductsCompaire from "./components/ProductsCompaire/index";
 import SallerPage from "./components/SallerPage";
+import SellerProduct from "./components/SellerProduct";
 import Sallers from "./components/Sellers";
 import SingleProductPage from "./components/SingleProductPage";
 import TermsCondition from "./components/TermsCondition/index";
 import TrackingOrder from "./components/TrackingOrder";
 import Wishlist from "./components/Wishlist";
-import HomeThree from "./components/HomeThree";
-import HomeFour from "./components/HomeFour";
-import HomeFive from "./components/HomeFive";
 
 export default function Routers() {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route exact path="/home-two" element={<HomeTwo />} />
+      {/* <Route exact path="/home-two" element={<HomeTwo />} />
       <Route exact path="/home-three" element={<HomeThree />} />
       <Route exact path="/home-four" element={<HomeFour />} />
-      <Route exact path="/home-five" element={<HomeFive />} />
+      <Route exact path="/home-five" element={<HomeFive />} /> */}
       <Route exact path="/all-products" element={<AllProductPage />} />
       <Route exact path="/single-product" element={<SingleProductPage />} />
       <Route exact path="/cart" element={<CardPage />} />
@@ -42,6 +39,7 @@ export default function Routers() {
       <Route exact path="/wishlist" element={<Wishlist />} />
       <Route exact path="/flash-sale" element={<FlashSale />} />
       <Route exact path="/saller-page" element={<SallerPage />} />
+      <Route exact path="/seller-product" element={<SellerProduct />} />
       <Route exact path="/products-compaire" element={<ProductsCompaire />} />
       <Route exact path="/sallers" element={<Sallers />} />
       <Route exact path="/about" element={<About />} />

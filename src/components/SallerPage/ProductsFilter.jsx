@@ -667,7 +667,7 @@ export default function ProductsFilter({
                 onClick={() => filterstorage("64GB")}
                 className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
                   storage === "64GB"
-                    ? "bg-qyellow text-qblack border-none"
+                    ? "bg-qh2-green text-qblack border-none"
                     : " text-qgray "
                 }`}
               >
@@ -677,7 +677,7 @@ export default function ProductsFilter({
                 onClick={() => filterstorage("128GB")}
                 className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
                   storage === "128GB"
-                    ? "bg-qyellow text-qblack border-none"
+                    ? "bg-qh2-green text-qblack border-none"
                     : " text-qgray "
                 }`}
               >
@@ -687,7 +687,7 @@ export default function ProductsFilter({
                 onClick={() => filterstorage("256GB")}
                 className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
                   storage === "256GB"
-                    ? "bg-qyellow text-qblack border-none"
+                    ? "bg-qh2-green text-qblack border-none"
                     : " text-qgray "
                 }`}
               >
@@ -697,7 +697,7 @@ export default function ProductsFilter({
                 onClick={() => filterstorage("512GB")}
                 className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
                   storage === "512GB"
-                    ? "bg-qyellow text-qblack border-none"
+                    ? "bg-qh2-green text-qblack border-none"
                     : " text-qgray "
                 }`}
               >
@@ -707,7 +707,7 @@ export default function ProductsFilter({
                 onClick={() => filterstorage("1024GB")}
                 className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
                   storage === "1024GB"
-                    ? "bg-qyellow text-qblack border-none"
+                    ? "bg-qh2-green text-qblack border-none"
                     : " text-qgray "
                 }`}
               >

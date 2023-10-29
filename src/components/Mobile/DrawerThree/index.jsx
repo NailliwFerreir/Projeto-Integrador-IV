@@ -930,7 +930,7 @@ export default function DrawerThree({ className, open, action }) {
                   <ul className="submenu-list ml-5">
                     <li className="category-item">
                       <a href="/home-two">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">Home Two</span>
                           </div>
@@ -967,7 +967,7 @@ export default function DrawerThree({ className, open, action }) {
                     </li>
                     <li className="category-item">
                       <a href="/home-three">
-                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qyellow transition-all duration-300 ease-in-out cursor-pointer">
+                        <div className=" flex justify-between items-center px-5 h-12 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer">
                           <div className="flex items-center space-x-6">
                             <span className="text-sm font-400">Home Three</span>
                           </div>

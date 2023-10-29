@@ -8,7 +8,7 @@ export default function Accodion({ init, title, des }) {
   return (
     <div
       className={`accordion-item w-full bg-white overflow-hidden ${
-        collaps ? "bg-qyellow" : "bg-white"
+        collaps ? "bg-qh2-green" : "bg-white"
       }`}
     >
       <button

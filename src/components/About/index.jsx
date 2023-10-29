@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import BlogCard from "../Helpers/Cards/BlogCard";
-import Star from "../Helpers/icons/Star";
 import PageTitle from "../Helpers/PageTitle";
 import SimpleSlider from "../Helpers/SliderCom";
+import Star from "../Helpers/icons/Star";
 import Layout from "../Partials/Layout";
 
 import blog from "../../data/blogs.json";
@@ -453,7 +453,7 @@ export default function About() {
                 <button
                   onClick={prev}
                   type="button"
-                  className="w-[48px] h-[48px] rounded-full overflow-hidden flex justify-center items-center border border-qyellow text-qyellow focus:bg-qyellow focus:text-white"
+                  className="w-[48px] h-[48px] rounded-full overflow-hidden flex justify-center items-center border border-qh2-green text-qh2-green focus:bg-qh2-green focus:text-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -473,7 +473,7 @@ export default function About() {
                 <button
                   onClick={next}
                   type="button"
-                  className="w-[48px] h-[48px] rounded-full overflow-hidden flex justify-center items-center border border-qyellow text-qyellow focus:bg-qyellow focus:text-white"
+                  className="w-[48px] h-[48px] rounded-full overflow-hidden flex justify-center items-center border border-qh2-green text-qh2-green focus:bg-qh2-green focus:text-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -497,7 +497,7 @@ export default function About() {
         <div className="container-x mx-auto my-[60px]">
           <div
             data-aos="fade-down"
-            className="best-services w-full bg-qyellow flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10"
+            className="best-services w-full bg-qh2-green flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center lg:h-[110px] px-10 lg:py-0 py-10"
           >
             <div className="item">
               <div className="flex space-x-5 items-center">

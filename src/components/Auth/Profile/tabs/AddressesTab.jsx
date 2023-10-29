@@ -166,7 +166,7 @@ export default function AddressesTab() {
         </div>
       </div>
       <div className="w-[180px] h-[50px] mt-4">
-        <button type="button" className="yellow-btn">
+        <button type="button" className="black-btn h-full p-3">
           <div className="w-full text-sm font-semibold">Add New Address</div>
         </button>
       </div>
