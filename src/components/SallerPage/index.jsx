@@ -68,7 +68,7 @@ export default function SallerPage() {
             >
               <div className="store-status w-[230px] h-[60px] bg-qh2-green flex justify-end items-center rounded-full absolute top-[30px] -left-[30px]">
                 <span className="text-[26px] font-600 mr-[30px]">
-                  Store Open
+                  Loja aberta
                 </span>
               </div>
 
@@ -93,7 +93,7 @@ export default function SallerPage() {
                         />
                       </svg>
                     </span>
-                    <span>Demoemail@gmail.com</span>
+                    <span>inseminador123@gmail.com</span>
                   </li>
                   <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                     <span>
@@ -110,7 +110,7 @@ export default function SallerPage() {
                         />
                       </svg>
                     </span>
-                    <span>023 434 54354</span>
+                    <span>19 9 8321 7322</span>
                   </li>
                   <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                     <span>
@@ -127,7 +127,7 @@ export default function SallerPage() {
                         />
                       </svg>
                     </span>
-                    <span>Haydarabad, Rord 3,Dhaka</span>
+                    <span>Campinas, São Paulo</span>
                   </li>
                 </ul>
               </div>
@@ -190,15 +190,15 @@ export default function SallerPage() {
                 <div className="products-sorting w-full bg-white md:h-[70px] flex md:flex-row flex-col md:space-y-0 space-y-5 md:justify-between md:items-center p-[30px] mb-[40px]">
                   <div>
                     <p className="font-400 text-[13px]">
-                      <span className="text-qgray"> Showing</span> 1–16 of 66
-                      results
+                      <span className="text-qgray"> Mostrando</span> 1–16 de 66
+                      resultados
                     </p>
                   </div>
                   <div className="flex space-x-3 items-center">
-                    <span className="font-400 text-[13px]">Sort by:</span>
+                    <span className="font-400 text-[13px]">Ordenar por:</span>
                     <div className="flex space-x-3 items-center border-b border-b-qgray">
                       <span className="font-400 text-[13px] text-qgray">
-                        Default
+                        Padrão
                       </span>
                       <span>
                         <svg
