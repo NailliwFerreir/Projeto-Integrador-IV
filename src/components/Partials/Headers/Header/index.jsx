@@ -30,7 +30,7 @@ export default function Header({ className, drawerAction }) {
               <img
                 width="152"
                 height="36"
-                src={`${process.env.PUBLIC_URL}/assets/images/logo-2.svg`}
+                src={`${process.env.PUBLIC_URL}/assets/images/INSEMINA +.svg`}
                 alt="logo"
               />
             </a>

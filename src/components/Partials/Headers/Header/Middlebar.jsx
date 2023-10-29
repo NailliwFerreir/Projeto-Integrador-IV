@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import Cart from "../../../Cart";
 import Compair from "../../../Helpers/icons/Compair";
 import ThinBag from "../../../Helpers/icons/ThinBag";
 import ThinLove from "../../../Helpers/icons/ThinLove";
 import ThinPeople from "../../../Helpers/icons/ThinPeople";
 import SearchBox from "../../../Helpers/SearchBox";
-import { Link } from "react-router-dom";
 
 export default function Middlebar({ className }) {
   // const [toggleCart, setToggle] = useState(false);
@@ -21,7 +21,7 @@ export default function Middlebar({ className }) {
                 <img
                   width="152"
                   height="36"
-                  src={`${process.env.PUBLIC_URL}/assets/images/logo-2.svg`}
+                  src={`${process.env.PUBLIC_URL}/assets/images/INSEMINA +.svg`}
                   alt="logo"
                 />
               </a>
