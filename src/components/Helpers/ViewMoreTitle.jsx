@@ -16,7 +16,7 @@ export default function ViewMoreTitle({
           <div>
             <a href={seeMoreUrl}>
               <div className="flex space-x-2 items-center">
-                <p className="text-base font-600 text-qblack">View More</p>
+                <p className="text-base font-600 text-qblack">Ver Mais</p>
                 <span className="animate-right-dir">
                   <svg
                     width="17"
