@@ -1,7 +1,7 @@
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
-
+;
 export default function CheakoutPage() {
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -23,7 +23,7 @@ export default function CheakoutPage() {
                   <a href="#">
                     <div className="w-full h-full bg-[#F6F6F6] text-qblack flex justify-center items-center">
                       <span className="text-[15px] font-medium">
-                        Log into your Account
+                        Entre na sua conta
                       </span>
                     </div>
                   </a>
@@ -32,7 +32,7 @@ export default function CheakoutPage() {
                   <a href="#">
                     <div className="w-full h-full bg-[#F6F6F6] text-qblack flex justify-center items-center">
                       <span className="text-[15px] font-medium">
-                        Enter Coupon Code
+                        Digite um cupom de desconto
                       </span>
                     </div>
                   </a>
@@ -42,7 +42,7 @@ export default function CheakoutPage() {
             <div className="w-full lg:flex lg:space-x-[30px]">
               <div className="lg:w-1/2 w-full">
                 <h1 className="sm:text-2xl text-xl text-qblack font-medium mb-5">
-                  Billing Details
+                  Informações de cobranças
                 </h1>
                 <div className="form-area">
                   <form>
@@ -80,11 +80,11 @@ export default function CheakoutPage() {
                     </div>
                     <div className="mb-6">
                       <h1 className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal">
-                        Country*
+                        País*
                       </h1>
                       <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
                         <span className="text-[13px] text-qgraytwo">
-                          Select Country
+                          Escolha o país
                         </span>
                         <span>
                           <svg
@@ -114,11 +114,11 @@ export default function CheakoutPage() {
                     <div className="flex space-x-5 items-center mb-6">
                       <div className="w-1/2">
                         <h1 className="input-label capitalize block  mb-2 text-qgray text-[13px] font-normal">
-                          Town / City*
+                          Cidade*
                         </h1>
                         <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center">
                           <span className="text-[13px] text-qgraytwo">
-                            Miyami Town
+                            Campinas
                           </span>
                           <span>
                             <svg
@@ -152,12 +152,12 @@ export default function CheakoutPage() {
                         htmlFor="create"
                         className="text-qblack text-[15px] select-none"
                       >
-                        Create an account?
+                        Criar conta
                       </label>
                     </div>
                     <div>
                       <h1 className="text-2xl text-qblack font-medium mb-3">
-                        Billing Details
+                        Informações de cobrança
                       </h1>
                       <div className="flex space-x-2 items-center mb-10">
                         <div>
@@ -167,7 +167,7 @@ export default function CheakoutPage() {
                           htmlFor="address"
                           className="text-qblack text-[15px] select-none"
                         >
-                          Ship to a different address
+                          Enviar para um endereço diferente
                         </label>
                       </div>
                     </div>
@@ -176,14 +176,14 @@ export default function CheakoutPage() {
               </div>
               <div className="flex-1">
                 <h1 className="sm:text-2xl text-xl text-qblack font-medium mb-5">
-                  Order Summary
+                  Resumo do pedido
                 </h1>
 
                 <div className="w-full px-10 py-[30px] border border-[#EDEDED]">
                   <div className="sub-total mb-6">
                     <div className=" flex justify-between mb-5">
                       <p className="text-[13px] font-medium text-qblack uppercase">
-                        PROduct
+                        Produto
                       </p>
                       <p className="text-[13px] font-medium text-qblack uppercase">
                         total
@@ -193,66 +193,7 @@ export default function CheakoutPage() {
                   </div>
                   <div className="product-list w-full mb-[30px]">
                     <ul className="flex flex-col space-y-5">
-                      <li>
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h4 className="text-[15px] text-qblack mb-2.5">
-                              Apple Watch
-                              <sup className="text-[13px] text-qgray ml-2 mt-2">
-                                x1
-                              </sup>
-                            </h4>
-                            <p className="text-[13px] text-qgray">
-                              64GB, Black, 44mm, Chain Belt
-                            </p>
-                          </div>
-                          <div>
-                            <span className="text-[15px] text-qblack font-medium">
-                              $38
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h4 className="text-[15px] text-qblack mb-2.5">
-                              Apple Watch
-                              <sup className="text-[13px] text-qgray ml-2 mt-2">
-                                x1
-                              </sup>
-                            </h4>
-                            <p className="text-[13px] text-qgray">
-                              64GB, Black, 44mm, Chain Belt
-                            </p>
-                          </div>
-                          <div>
-                            <span className="text-[15px] text-qblack font-medium">
-                              $38
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h4 className="text-[15px] text-qblack mb-2.5">
-                              Apple Watch
-                              <sup className="text-[13px] text-qgray ml-2 mt-2">
-                                x1
-                              </sup>
-                            </h4>
-                            <p className="text-[13px] text-qgray">
-                              64GB, Black, 44mm, Chain Belt
-                            </p>
-                          </div>
-                          <div>
-                            <span className="text-[15px] text-qblack font-medium">
-                              $38
-                            </span>
-                          </div>
-                        </div>
-                      </li>
+                      {/* {loadItems()} */}
                     </ul>
                   </div>
                   <div className="w-full h-[1px] bg-[#EDEDED]"></div>
@@ -263,7 +204,8 @@ export default function CheakoutPage() {
                         SUBTOTAL
                       </p>
                       <p className="text-[15px] font-medium text-qblack uppercase">
-                        $365
+                        {/* Aquii fica o valor do subtotal, tem que adicionar a função */}
+                        {/* {loadSubtotal()} */}
                       </p>
                     </div>
                   </div>
@@ -273,10 +215,10 @@ export default function CheakoutPage() {
                       <div className=" flex justify-between mb-5">
                         <div>
                           <span className="text-xs text-qgraytwo mb-3 block">
-                            SHIPPING
+                            ENVIO
                           </span>
                           <p className="text-base font-medium text-qblack">
-                            Free Shipping
+                            Frete grátis
                           </p>
                         </div>
                         <p className="text-[15px] font-medium text-qblack">
@@ -290,7 +232,7 @@ export default function CheakoutPage() {
                   <div className="mt-[30px]">
                     <div className=" flex justify-between mb-5">
                       <p className="text-2xl font-medium text-qblack">Total</p>
-                      <p className="text-2xl font-medium text-qred">$365</p>
+                      <p className="text-2xl font-medium text-qred">INSERIR VALOR DO TOTAL AQUI</p>
                     </div>
                   </div>
                   <div className="shipping mt-[30px]">
@@ -309,12 +251,11 @@ export default function CheakoutPage() {
                             htmlFor="transfer"
                             className="text-[18px] text-normal text-qblack"
                           >
-                            Direct Bank Transfer
+                            Transferência bancária
                           </label>
                         </div>
                         <p className="text-qgraytwo text-[15px] ml-6">
-                          Make your payment directly into our bank account.
-                          Please use your Order ID as the payment reference.
+                          Pagamento debitado direto na sua conta bancária
                         </p>
                       </li>
                       <li>
@@ -331,7 +272,7 @@ export default function CheakoutPage() {
                             htmlFor="delivery"
                             className="text-[18px] text-normal text-qblack"
                           >
-                            Cash on Delivery
+                            APAGAR DEPOIS
                           </label>
                         </div>
                       </li>
@@ -349,7 +290,7 @@ export default function CheakoutPage() {
                             htmlFor="bank"
                             className="text-[18px] text-normal text-qblack"
                           >
-                            Credit/Debit Cards or Paypal
+                            Cartão de Crédito
                           </label>
                         </div>
                       </li>
@@ -357,9 +298,9 @@ export default function CheakoutPage() {
                   </div>
                   <a href="#">
                     <div className="w-full h-[50px] black-btn flex justify-center items-center">
-                      <span className="text-sm font-semibold">
-                        Place Order Now
-                      </span>
+                      <button className="text-sm font-semibold">
+                        Realizar pedido
+                      </button>
                     </div>
                   </a>
                 </div>
@@ -371,3 +312,44 @@ export default function CheakoutPage() {
     </Layout>
   );
 }
+
+
+// function makeOrder() {
+//   const value = "TESTE TESTE"
+//   const obj = { "date": data, "situation": "REALIZADO", "value": value }
+//   axios.post("/clients/{clientId}/orders", obj)
+//     .then(resp => console.log(resp.data))
+//     .catch(err => console.log(err.data))
+// }
+
+//function loadItems() {
+// const items = await items em cache do pedido
+// let res = []
+// items.map((element) => {
+//  res.push(
+// <li>
+//   <div className="flex justify-between items-center">
+//   <div>
+//     <h4 className="text-[15px] text-qblack mb-2.5">
+//       {element.name}
+//       <sup className="text-[13px] text-qgray ml-2 mt-2">
+//         {element.qtd}
+//       </sup>
+//     </h4>
+//   </div>
+//   <div>
+//     <span className="text-[15px] text-qblack font-medium">
+//       R${element.value}
+//     </span>
+//   </div>
+// </div>
+// </li>
+//)
+// })
+// return res
+// }
+
+//function loadSubtotal(){
+//  const subtotal += items.valor e retornar esse valor para aparecer lá na tela depois
+//  return subtotal 
+//}  

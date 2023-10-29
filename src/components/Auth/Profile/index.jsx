@@ -49,7 +49,7 @@ export default function Profile() {
             <div className="w-full bg-white px-10 py-9">
               <div className="title-area w-full flex justify-between items-center">
                 <h1 className="text-[22px] font-bold text-qblack">
-                  Your Dashboard
+                  Sua Conta
                 </h1>
                 <div className="switch-dashboard flex space-x-3 items-center">
                   <p className="text-qgray text-base">Switch Dashboard</p>
@@ -59,9 +59,8 @@ export default function Profile() {
                     className="w-[73px] h-[31px] border border-[#D9D9D9] rounded-full relative "
                   >
                     <div
-                      className={`w-[23px] h-[23px] bg-qblack rounded-full absolute top-[3px] transition-all duration-300 ease-in-out ${
-                        switchDashboard ? "left-[44px]" : "left-[4px]"
-                      }`}
+                      className={`w-[23px] h-[23px] bg-qblack rounded-full absolute top-[3px] transition-all duration-300 ease-in-out ${switchDashboard ? "left-[44px]" : "left-[4px]"
+                        }`}
                     ></div>
                   </button>
                 </div>
@@ -76,7 +75,7 @@ export default function Profile() {
                             <IcoDashboard />
                           </span>
                           <span className=" font-normal text-base">
-                            Dashbaord
+                            Dashboard
                           </span>
                         </div>
                       </Link>
@@ -88,7 +87,7 @@ export default function Profile() {
                             <IcoPeople />
                           </span>
                           <span className=" font-normal text-base">
-                            Parsonal Info
+                            Informações pessoais
                           </span>
                         </div>
                       </Link>
@@ -101,7 +100,7 @@ export default function Profile() {
                             <IcoPayment />
                           </span>
                           <span className=" font-normal text-base">
-                            Payment Method
+                            Métodos de pagamento
                           </span>
                         </div>
                       </Link>
@@ -112,7 +111,7 @@ export default function Profile() {
                           <span>
                             <IcoCart />
                           </span>
-                          <span className=" font-normal text-base">Order</span>
+                          <span className=" font-normal text-base">Pedidos</span>
                         </div>
                       </Link>
                     </div>
@@ -123,7 +122,7 @@ export default function Profile() {
                             <IcoLove />
                           </span>
                           <span className=" font-normal text-base">
-                            Wishlist
+                            Listas de desejos
                           </span>
                         </div>
                       </Link>
@@ -135,7 +134,7 @@ export default function Profile() {
                             <IcoAdress />
                           </span>
                           <span className=" font-normal text-base">
-                            Address
+                            Endereço
                           </span>
                         </div>
                       </Link>
@@ -147,7 +146,7 @@ export default function Profile() {
                             <IcoReviewHand />
                           </span>
                           <span className=" font-normal text-base">
-                            Reviews
+                            Reviews apaga depois essa bosta
                           </span>
                         </div>
                       </Link>
@@ -159,7 +158,7 @@ export default function Profile() {
                             <IcoPassword />
                           </span>
                           <span className=" font-normal text-base">
-                            Change Password
+                            Mudar senha
                           </span>
                         </div>
                       </Link>
@@ -171,22 +170,24 @@ export default function Profile() {
                             <IcoSupport />
                           </span>
                           <span className=" font-normal text-base">
-                            Support Ticket
+                            Ticket de suporte
                           </span>
                         </div>
                       </Link>
                     </div>
                     <div className="item group">
-                      <Link to="/profile#profile">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoLogout />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Logoout
-                          </span>
-                        </div>
-                      </Link>
+                      <button onClick={logout}>
+                        <Link to="/login">
+                          <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                            <span>
+                              <IcoLogout />
+                            </span>
+                            <span className=" font-normal text-base">
+                              Sair da conta
+                            </span>
+                          </div>
+                        </Link>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -239,3 +240,7 @@ export default function Profile() {
     </Layout>
   );
 }
+
+const logout = () => {
+  localStorage.removeItem("user");
+};

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import api from "../../../services/api";
 import InputCom from "../../Helpers/InputCom";
 import Layout from "../../Partials/Layout";
 import Thumbnail from "./Thumbnail";
@@ -11,19 +12,39 @@ export default function Signup() {
   };
   const [cep, setCep] = useState("");
   const [street, setStreet] = useState("");
-  const [number, setNumber] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
+  const [houseNumber, setHouseNumber] = useState("");
+  const [number, setNumber] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [cpf, setCpf] = useState("");
 
   const cepMask = (value) => {
     value = value.replace(/[^0-9]/g, "");
     value = value.slice(0, 5) + "-" + value.slice(5);
+    return value;
+  };
+
+  const cpfMask = (value) => {
+    value = value.replace(/[^0-9]/g, "");
+    value =
+      value.slice(0, 3) +
+      "." +
+      value.slice(3, 6) +
+      "." +
+      value.slice(6, 9) +
+      "-" +
+      value.slice(9, 11);
+    return value;
+  };
+
+  const numberMask = (value) => {
+    value = value.replace(/[^0-9]/g, "");
     return value;
   };
 
@@ -57,7 +78,24 @@ export default function Signup() {
     }
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => { };
+
+  const createAccount = () => {
+    const data = {
+      username: `${firstName}${lastName}`,
+      email,
+      password,
+      role: ["comprador"],
+      cpf,
+      afe: "0",
+      address: `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}`,
+    };
+    console.log(data);
+    api
+      .post("/api/auth/signup", data)
+      .then((resp) => console.log(resp.data))
+      .catch((error) => console.log(error));
+  };
 
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -137,6 +175,25 @@ export default function Signup() {
 
                   <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
                     <div className="w-1/2">
+                      <div className="w-full h-[25px] mb-5 sm:mb-0">
+                        <InputCom
+                          placeholder="123.456.789-10"
+                          label="CPF*"
+                          name="cpf"
+                          type="text"
+                          inputClasses="h-[50px]"
+                          value={cpf}
+                          inputHandler={(e) => {
+                            if (e.target.value.length < 15) {
+                              setCpf(cpfMask(e.target.value));
+                            }
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
+                    <div className="w-1/2">
                       <div className="w-full h-[50px] mb-5 sm:mb-0">
                         <InputCom
                           label="Código Postal / CEP*"
@@ -204,44 +261,45 @@ export default function Signup() {
                         />
                       </div>
                     </div>
-                  </div>
-                  {/* <div className="forgot-password-area mb-7">
-                    <div className="remember-checkbox flex items-center space-x-2.5">
-                      <button
-                        onClick={rememberMe}
-                        type="button"
-                        className="w-5 h-5 text-qblack flex justify-center items-center border border-light-gray"
-                      >
-                        {checked && (
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        )}
-                      </button>
-                      <span
-                        onClick={rememberMe}
-                        className="text-base text-black"
-                      >
-                        I agree all
-                        <span className="text-qblack">tarm and condition</span>
-                        in BigShop.
-                      </span>
+                    <div className="flex-1">
+                      <div className="w-full h-[50px] mb-5 sm:mb-0">
+                        <InputCom
+                          label="Número"
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="Número da casa"
+                          value={houseNumber}
+                          inputHandler={(e) => {
+                            if (e.target.value.length < 10) {
+                              setHouseNumber(numberMask(e.target.value));
+                            }
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div> */}
+                  </div>
+                  <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
+                    <div className="flex-1">
+                      <div className="w-full h-[50px] mb-5 sm:mb-0">
+                        <InputCom
+                          label="Senha"
+                          inputClasses="w-full h-full"
+                          type="password"
+                          placeholder="Senha"
+                          value={password}
+                          inputHandler={(e) => {
+                            setPassword(e.target.value);
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
                   <div className="signin-area mb-3">
                     <div className="flex justify-center">
                       <button
                         type="button"
                         className="black-btn text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center"
+                        onClick={createAccount}
                       >
                         <span>Criar Conta</span>
                       </button>

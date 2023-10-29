@@ -13,10 +13,21 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+
   const handleSubmit = (e) => {
-    api
-      .post("/test/login", { email, password })
-      .then((res) => console.log("algo foi enviado"));
+    try {
+      const data = { email, password };
+      api.post("/api/auth/signin", data).then((response) => {
+        console.log(response.data.accessToken)
+        if (response.data.accessToken) {
+          localStorage.setItem("user", JSON.stringify(response.data));
+        }
+
+        return response.data;
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -47,11 +58,13 @@ export default function Login() {
                 <div className="input-area">
                   <div className="input-item mb-5">
                     <InputCom
-                      placeholder="example@quomodosoft.com"
-                      label="Email*"
+                      placeholder="email"
+                      label="email*"
                       name="email"
-                      type="email"
+                      type="text"
+                      value={email}
                       inputClasses="h-[50px]"
+                      inputHandler={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="input-item mb-5">
@@ -60,7 +73,9 @@ export default function Login() {
                       label="Senha*"
                       name="password"
                       type="password"
+                      value={password}
                       inputClasses="h-[50px]"
+                      inputHandler={(e) => setPassword(e.target.value)}
                     />
                   </div>
                   <div className="forgot-password-area flex justify-between items-center mb-7">
@@ -92,10 +107,7 @@ export default function Login() {
                         Lembrar-me
                       </span>
                     </div>
-                    <a
-                      href="/forgot-password"
-                      className="text-base text-qyellow"
-                    >
+                    <a href="/forgot-password" className="text-base text-black">
                       Esqueceu a senha?
                     </a>
                   </div>
