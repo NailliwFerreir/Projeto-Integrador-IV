@@ -2,7 +2,11 @@ import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import ImageIcon from "./components/ImageIcon";
 
-export default function Dropzone({ className, limitFiles = 5 }) {
+export default function Dropzone({
+  className,
+  limitFiles = 5,
+  type = "image/*",
+}) {
   const [files, setFiles] = useState([]);
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -17,7 +21,10 @@ export default function Dropzone({ className, limitFiles = 5 }) {
       ]);
     }
   }, []);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: { type: [] },
+  });
 
   const hadleRemoveFile = (file) => {
     setFiles((previousFiles) => previousFiles.filter((f) => f !== file));
@@ -34,12 +41,9 @@ export default function Dropzone({ className, limitFiles = 5 }) {
         <div {...getRootProps({ className: className })}>
           <input {...getInputProps()} />
           {isDragActive ? (
-            <p>Solte as imagens aqui...</p>
+            <p>Solte os arquivos aqui...</p>
           ) : (
-            <p>
-              Arraste e solte algumas imagens aqui, ou click para selecionar as
-              imagens
-            </p>
+            <p>Arraste e solte os arquivos aqui, ou click para selecioná-los</p>
           )}
         </div>
       )}
