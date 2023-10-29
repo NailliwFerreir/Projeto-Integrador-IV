@@ -2,7 +2,7 @@ import ThinBag from "../../../Helpers/icons/ThinBag";
 import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
 
-export default function HeaderTwo({ className, drawerAction }) {
+export default function Header({ className, drawerAction }) {
   return (
     <header className={` ${className || ""} header-section-wrapper relative`}>
       {/* <TopBar className="quomodo-shop-top-bar" /> */}

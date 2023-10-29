@@ -14,7 +14,6 @@ import Faq from "./components/Faq";
 import FlashSale from "./components/FlashSale";
 import FourZeroFour from "./components/FourZeroFour";
 import Home from "./components/Home";
-import HomeTwo from "./components/HomeTwo";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import ProductsCompaire from "./components/ProductsCompaire/index";
 import SallerPage from "./components/SallerPage";
@@ -23,18 +22,15 @@ import SingleProductPage from "./components/SingleProductPage";
 import TermsCondition from "./components/TermsCondition/index";
 import TrackingOrder from "./components/TrackingOrder";
 import Wishlist from "./components/Wishlist";
-import HomeThree from "./components/HomeThree";
-import HomeFour from "./components/HomeFour";
-import HomeFive from "./components/HomeFive";
 
 export default function Routers() {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route exact path="/home-two" element={<HomeTwo />} />
+      {/* <Route exact path="/home-two" element={<HomeTwo />} />
       <Route exact path="/home-three" element={<HomeThree />} />
       <Route exact path="/home-four" element={<HomeFour />} />
-      <Route exact path="/home-five" element={<HomeFive />} />
+      <Route exact path="/home-five" element={<HomeFive />} /> */}
       <Route exact path="/all-products" element={<AllProductPage />} />
       <Route exact path="/single-product" element={<SingleProductPage />} />
       <Route exact path="/cart" element={<CardPage />} />
