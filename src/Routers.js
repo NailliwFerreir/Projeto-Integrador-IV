@@ -17,6 +17,7 @@ import Home from "./components/Home";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import ProductsCompaire from "./components/ProductsCompaire/index";
 import SallerPage from "./components/SallerPage";
+import SellerProduct from "./components/SellerProduct";
 import Sallers from "./components/Sellers";
 import SingleProductPage from "./components/SingleProductPage";
 import TermsCondition from "./components/TermsCondition/index";
@@ -38,6 +39,7 @@ export default function Routers() {
       <Route exact path="/wishlist" element={<Wishlist />} />
       <Route exact path="/flash-sale" element={<FlashSale />} />
       <Route exact path="/saller-page" element={<SallerPage />} />
+      <Route exact path="/seller-product" element={<SellerProduct />} />
       <Route exact path="/products-compaire" element={<ProductsCompaire />} />
       <Route exact path="/sallers" element={<Sallers />} />
       <Route exact path="/about" element={<About />} />
