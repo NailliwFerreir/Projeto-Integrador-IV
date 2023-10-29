@@ -55,7 +55,7 @@ export default function SearchBox({ className, type }) {
           }
           type="button"
         >
-          Search
+          Pesquisar
         </button>
       </div>
     </>
