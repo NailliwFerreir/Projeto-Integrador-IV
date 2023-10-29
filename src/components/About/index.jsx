@@ -97,7 +97,7 @@ export default function About() {
 
                 <Link to="/contact">
                   <div className="w-[121px] h-10">
-                    <span className="yellow-btn">Contact Us</span>
+                    <span className="yellow-btn">Nos Contate</span>
                   </div>
                 </Link>
               </div>
@@ -108,7 +108,7 @@ export default function About() {
         <div className="customer-feedback w-full bg-white py-[60px]">
           <div className="title flex justify-center mb-5">
             <h1 className="text-[30px] font-semibold text-qblack">
-              Customers Feedback
+              Feedback dos Clientes
             </h1>
           </div>
           <div className="feedback-slider-wrapper w-vw relative overflow-hidden">
@@ -182,7 +182,7 @@ export default function About() {
                       <p className="text-[18px] text-qblack font-medium">
                         Ridoy Rock
                       </p>
-                      <p className="text-qgraytwo text-[13px]">London,UK</p>
+                      <p className="text-qgraytwo text-[13px]">Campinas,SP</p>
                     </div>
                   </div>
                 </div>
