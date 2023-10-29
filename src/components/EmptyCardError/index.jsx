@@ -10,13 +10,13 @@ export default function EmptyCardError() {
           </div>
           <div data-aos="fade-up" className="empty-content w-full">
             <h1 className="sm:text-xl text-base font-semibold text-center mb-5">
-              Empty! You don’t Cart any Products
+              Ei! Seu carrinho está vazio!
             </h1>
             <a href="/">
               <div className="flex justify-center w-full ">
                 <div className="w-[180px] h-[50px] ">
                   <span type="button" className="yellow-btn">
-                    Back to Shop
+                    Voltar para compras
                   </span>
                 </div>
               </div>
