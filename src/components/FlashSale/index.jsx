@@ -29,7 +29,7 @@ export default function FlashSale() {
                       </span>
                     </div>
                     <p className="sm:text-[18px] text-xs font-500 text-center leading-8 text-white">
-                      Days
+                      Dias
                     </p>
                   </div>
                   <div className="countdown-item">
@@ -39,7 +39,7 @@ export default function FlashSale() {
                       </span>
                     </div>
                     <p className="sm:text-[18px] text-xs font-500 text-center leading-8 text-white">
-                      Hours
+                      Horas
                     </p>
                   </div>
                   <div className="countdown-item">
@@ -49,7 +49,7 @@ export default function FlashSale() {
                       </span>
                     </div>
                     <p className="sm:text-[18px] text-xs font-500 text-center leading-8 text-white">
-                      Minutes
+                      Minutos
                     </p>
                   </div>
                   <div className="countdown-item">
@@ -59,7 +59,7 @@ export default function FlashSale() {
                       </span>
                     </div>
                     <p className="sm:text-[18px] text-xs font-500 text-center leading-8 text-white">
-                      Seconds
+                      Segundos
                     </p>
                   </div>
                 </div>
