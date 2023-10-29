@@ -68,7 +68,7 @@ export default function BecomeSaller() {
                 <div className="xl:w-[824px]">
                   <div className="title w-full mb-4">
                     <h1 className="text-[22px] font-semibold text-qblack mb-1">
-                      Seller Information
+                      Informações do vendedor
                     </h1>
                     <p className="text-[15px] text-qgraytwo">
                       Fill the form below or write us .We will help you as soon
@@ -113,11 +113,11 @@ export default function BecomeSaller() {
 
                     <div className="input-item mb-5">
                       <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-                        Country*
+                        País*
                       </h6>
                       <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
                         <span className="text-[13px] text-qgraytwo">
-                          Select Country
+                          Informe o país
                         </span>
                         <span>
                           <svg
@@ -150,7 +150,7 @@ export default function BecomeSaller() {
                   {/* ============================================================== */}
                   <div className="title w-full mb-4">
                     <h1 className="text-[22px] font-semibold text-qblack mb-1">
-                      Shop Information
+                      Informações da loja
                     </h1>
                     <p className="text-[15px] text-qgraytwo">
                       Fill the form below or write us .We will help you as soon
@@ -200,14 +200,14 @@ export default function BecomeSaller() {
                           type="button"
                           className="black-btn text-sm text-white w-[490px] h-[50px] font-semibold flex justify-center bg-purple items-center"
                         >
-                          <span>Create Seller Account</span>
+                          <span>Criar Conta Vendedor</span>
                         </button>
                       </div>
                     </div>
 
                     <div className="signup-area flex justify-center">
                       <p className="text-sm text-qgraytwo font-normal">
-                        Alrady have an Account?
+                        Já tem uma conta?
                         <a href="/login" className="ml-2 text-qblack">
                           Log In
                         </a>
@@ -218,7 +218,7 @@ export default function BecomeSaller() {
                 <div className="flex-1 mb-10 xl:mb-0">
                   <div className="update-profile w-full mb-9">
                     <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
-                      Update Profile
+                      Atualizar perfil
                       <span className="ml-1">
                         <svg
                           width="20"
@@ -236,9 +236,9 @@ export default function BecomeSaller() {
                       </span>
                     </h1>
                     <p className="text-sm text-qgraytwo mb-5">
-                      Profile of at least Size
+                      Tamanho
                       <span className="ml-1 text-qblack">300x300</span>. Gifs
-                      work too.
+                      Também funcionam.
                       <span className="ml-1 text-qblack">Max 5mb</span>.
                     </p>
                     <div className="flex xl:justify-center justify-start">
@@ -283,7 +283,7 @@ export default function BecomeSaller() {
                   </div>
                   <div className="update-logo w-full mb-9">
                     <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
-                      Update Logo
+                      Atualizar Logo
                       <span className="ml-1">
                         <svg
                           width="20"
@@ -301,9 +301,9 @@ export default function BecomeSaller() {
                       </span>
                     </h1>
                     <p className="text-sm text-qgraytwo mb-5">
-                      Profile of at least Size
+                      Tamanho
                       <span className="ml-1 text-qblack">300x300</span>. Gifs
-                      work too.
+                      Também funcionam.
                       <span className="ml-1 text-qblack">Max 5mb</span>.
                     </p>
                     <div className="flex xl:justify-center justify-start">
@@ -348,7 +348,7 @@ export default function BecomeSaller() {
                   </div>
                   <div className="update-cover w-full">
                     <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
-                      Update Cover
+                      Atualizar capa
                       <span className="ml-1">
                         <svg
                           width="20"
@@ -366,7 +366,7 @@ export default function BecomeSaller() {
                       </span>
                     </h1>
                     <p className="text-sm text-qgraytwo mb-5">
-                      Cover of at least Size
+                      Tamanho
                       <span className="ml-1 text-qblack">1170x920</span>.
                     </p>
                     <div className="flex justify-center">
