@@ -17,21 +17,21 @@ export default function TopBar({ className }) {
                 <li>
                   <Link to="/">
                     <span className="text-xs leading-6 text-qblack font-500">
-                      Account
+                      Sua Conta
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/tracking-order">
                     <span className="text-xs leading-6 text-qblack font-500">
-                      Track Order
+                      Rastrear Pedido
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/faq">
                     <span className="text-xs leading-6 text-qblack font-500">
-                      Support
+                      Suporte
                     </span>
                   </Link>
                 </li>
