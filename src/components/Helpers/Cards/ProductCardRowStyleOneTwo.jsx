@@ -34,7 +34,7 @@ export default function ProductCardRowStyleOneTwo({ className, datas }) {
               </span>
             </p>
             <button type="button" className="w-[116px] h-[40px]">
-              <span className="black-btn h-ful p-3"> Add To Cart</span>
+              <span className="black-btn h-ful p-3"> Adicionar ao Carrinho</span>
             </button>
           </div>
         </div>

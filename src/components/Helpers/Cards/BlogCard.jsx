@@ -60,7 +60,7 @@ export default function BlogCard({ className, datas }) {
               </svg>
             </span>
             <span className="text-base text-qgraytwo">
-              {datas.comments_length} Comments
+              {datas.comments_length} Comentários
             </span>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function BlogCard({ className, datas }) {
           <a href="#">
             <div className="flex items-center space-x-2">
               <span className="text-qblack text-base font-semibold">
-                View More
+                Ver Mais
               </span>
               <span>
                 <svg
