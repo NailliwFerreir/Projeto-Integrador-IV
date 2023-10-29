@@ -78,15 +78,15 @@ export default function BecomeSaller() {
                   <div className="input-area">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
                       <InputCom
-                        placeholder="Demo Name"
-                        label="Frist Name*"
+                        placeholder="Digite seu nome..."
+                        label="Primeiro Nome*"
                         name="fname"
                         type="text"
                         inputClasses="h-[50px]"
                       />
 
                       <InputCom
-                        placeholder="Demo Name"
+                        placeholder="Digite seu nome..."
                         label="Last Name*"
                         name="lname"
                         type="text"
@@ -96,7 +96,7 @@ export default function BecomeSaller() {
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
                       <InputCom
                         placeholder="Demo@gmail.com"
-                        label="Email Address*"
+                        label="Endereço de e-mail"
                         name="email"
                         type="email"
                         inputClasses="h-[50px]"
@@ -160,7 +160,7 @@ export default function BecomeSaller() {
                   <div className="input-area">
                     <div className="mb-5">
                       <InputCom
-                        placeholder="Demo Name"
+                        placeholder="Digite seu nome..."
                         label="Shop Name*"
                         name="shopname"
                         type="text"

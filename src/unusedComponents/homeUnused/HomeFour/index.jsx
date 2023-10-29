@@ -1,13 +1,13 @@
 import React from "react";
-import LayoutHomeFour from "../Partials/LayoutHomeFour";
+import datas from "../../data/products.json";
+import SectionStyleFour from "../Helpers/SectionStyleFour";
+import SectionStyleOneHmFour from "../Helpers/SectionStyleOneHmFour";
+import SectionStyleThreeHmFour from "../Helpers/SectionStyleThreeHmFour";
 import BrandSection from "../Home/BrandSection";
 import ProductsAds from "../Home/ProductsAds";
+import LayoutHomeFour from "../Partials/LayoutHomeFour";
 import Banner from "./Banner";
-import SectionStyleOneHmFour from "../Helpers/SectionStyleOneHmFour";
-import datas from "../../data/products.json";
 import CampaignCountDown from "./CampaignCountDown";
-import SectionStyleThreeHmFour from "../Helpers/SectionStyleThreeHmFour";
-import SectionStyleFour from "../Helpers/SectionStyleFour";
 
 function Index() {
   const { products } = datas;
@@ -46,7 +46,7 @@ function Index() {
       />
       <SectionStyleFour
         products={products.slice(16, 28)}
-        sectionTitle="Popular Sales"
+        sectionTitle="Vendas Populares"
         seeMoreUrl="/all-products"
         className="mb-[60px]"
       />

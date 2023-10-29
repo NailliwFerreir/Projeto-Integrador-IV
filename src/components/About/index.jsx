@@ -53,10 +53,10 @@ export default function About() {
       <div className="about-page-wrapper w-full">
         <div className="title-area w-full">
           <PageTitle
-            title="About Us"
+            title="Sobre Nós"
             breadcrumb={[
               { name: "home", path: "/" },
-              { name: "About us", path: "/about" },
+              { name: "Sobre Nós", path: "/about" },
             ]}
           />
         </div>

@@ -2,7 +2,7 @@ import Facebook from "../../../Helpers/icons/Facebook";
 import Instagram from "../../../Helpers/icons/Instagram";
 import Youtube from "../../../Helpers/icons/Youtube";
 
-export default function Footer({type}) {
+export default function Footer({ type }) {
 
     return (
         <footer className="footer-section-wrapper bg-white print:hidden">
@@ -10,7 +10,7 @@ export default function Footer({type}) {
                 <div className="w-full flex flex-col items-center mb-[50px]">
                     {/* logo area */}
                     <div className="mb-[40px]">
-                        {type===3?(
+                        {type === 3 ? (
                             <a href="/">
                                 <img
                                     width="152"
@@ -19,7 +19,7 @@ export default function Footer({type}) {
                                     alt="logo"
                                 />
                             </a>
-                        ):(
+                        ) : (
                             <a href="/">
                                 <img
                                     width="152"
@@ -35,7 +35,7 @@ export default function Footer({type}) {
                 </div>
                 <div className="lg:flex justify-between mb-[50px]">
                     <div className="lg:w-[424px]  ml-0 w-full mb-10 lg:mb-0">
-                        <h1 className="text-[18] font-500 text-[#2F2F2F] mb-5">About Us</h1>
+                        <h1 className="text-[18] font-500 text-[#2F2F2F] mb-5">Sobre Nós</h1>
                         <p className="text-[#9A9A9A] text-[15px] w-[247px] leading-[28px]">
                             We know there are a lot of threa developers our but we pride into a firm in the industry.
                         </p>
@@ -51,26 +51,26 @@ export default function Footer({type}) {
                                 <ul className="flex flex-col space-y-4 ">
                                     <li>
                                         <a href="/about">
-                                <span
-                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                  About Us
-                                </span>
+                                            <span
+                                                className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                Sobre Nós
+                                            </span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/terms-condition">
-                                <span
-                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                  Terms Condition
-                                </span>
+                                            <span
+                                                className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                Terms Condition
+                                            </span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/all-products">
-                                <span
-                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                 Best Products
-                                </span>
+                                            <span
+                                                className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                Best Products
+                                            </span>
                                         </a>
                                     </li>
                                 </ul>
@@ -88,28 +88,28 @@ export default function Footer({type}) {
                                         <li>
                                             <a href="/blogs">
 
-                                  <span
-                                      className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                    Blog
-                                  </span>
+                                                <span
+                                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                    Blog
+                                                </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/tracking-order">
 
-                                  <span
-                                      className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                    Tracking Order
-                                  </span>
+                                                <span
+                                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                    Tracking Order
+                                                </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/become-saller">
 
-                                  <span
-                                      className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                    Become Seller
-                                  </span>
+                                                <span
+                                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                    Become Seller
+                                                </span>
                                             </a>
                                         </li>
                                     </ul>
@@ -127,26 +127,26 @@ export default function Footer({type}) {
                                     <ul className="flex flex-col space-y-4 ">
                                         <li>
                                             <a href="/flash-sale">
-                                              <span
-                                                  className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                                Flash Sale
-                                              </span>
+                                                <span
+                                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                    Flash Sale
+                                                </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/faq">
-                                              <span
-                                                  className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                                FAQ
-                                              </span>
+                                                <span
+                                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                    FAQ
+                                                </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/about">
-                                              <span
-                                                  className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
-                                                Support
-                                              </span>
+                                                <span
+                                                    className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack cursor-pointer capitalize">
+                                                    Support
+                                                </span>
                                             </a>
                                         </li>
                                     </ul>
@@ -169,17 +169,17 @@ export default function Footer({type}) {
                             </a>
                         </div>
                         <span className="sm:text-base text-[10px] text-qgray font-300">
-              ©2022
-              <a
-                  href="https://quomodosoft.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-500 text-qblack mx-1"
-              >
-                Quomodosoft
-              </a>
-              All rights reserved
-            </span>
+                            ©2022
+                            <a
+                                href="https://quomodosoft.com/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="font-500 text-qblack mx-1"
+                            >
+                                Quomodosoft
+                            </a>
+                            All rights reserved
+                        </span>
                     </div>
                     <div className="">
                         <a href="#">

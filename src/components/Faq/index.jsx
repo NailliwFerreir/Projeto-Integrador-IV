@@ -9,7 +9,7 @@ export default function Faq() {
       <div className="faq-page-wrapper w-full mb-10">
         <div className="page-title w-full">
           <PageTitle
-            title="Frequently Asked Questions"
+            title="Dúvidas Frequentes"
             breadcrumb={[
               { name: "home", path: "/" },
               { name: "FAQ", path: "/faq" },
@@ -84,16 +84,16 @@ humour, or randomised words"
                 <div className="inputs mt-5">
                   <div className="mb-4">
                     <InputCom
-                      label="Frist Name*"
-                      placeholder="Demo Name"
+                      label="Primeiro Nome*"
+                      placeholder="Digite seu nome..."
                       name="first_name"
                       inputClasses="h-[50px]"
                     />
                   </div>
                   <div className="mb-4">
                     <InputCom
-                      label="Email Address*"
-                      placeholder="info@quomodosoft.com"
+                      label="Endereço de e-mail"
+                      placeholder="Digite seu e-mail..."
                       name="email"
                       inputClasses="h-[50px]"
                     />
@@ -103,7 +103,7 @@ humour, or randomised words"
                       Mensagem*
                     </h6>
                     <textarea
-                      placeholder="Type your message here"
+                      placeholder="Digite sua mensagem..."
                       className="w-full h-[105px] focus:ring-0 focus:outline-none p-3 border border-qgray-border placeholder:text-sm"
                     ></textarea>
                   </div>

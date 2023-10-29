@@ -686,7 +686,7 @@ export default function Navbar({ className }) {
                   <li className="relative">
                     <Link to="/">
                       <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                        <span>Homepage</span>
+                        <span>Página Inicial</span>
                         <span className="ml-1.5 ">
                           <Arrow className="fill-current" />
                         </span>
@@ -747,7 +747,7 @@ export default function Navbar({ className }) {
                   </li>
                   <li>
                     <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                      <span>Shop</span>
+                      <span>Comprar</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
                       </span>
@@ -764,7 +764,7 @@ export default function Navbar({ className }) {
                           <div>
                             <div className="category">
                               <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
-                                Shop List
+                                Lista de Compras
                               </h1>
                             </div>
                             <div className="category-items">
@@ -800,7 +800,7 @@ export default function Navbar({ className }) {
                                 <li>
                                   <a href="#">
                                     <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
-                                      Shop List View
+                                      Comprar Lista de Desejos
                                     </span>
                                   </a>
                                 </li>
@@ -901,7 +901,7 @@ export default function Navbar({ className }) {
                   </li>
                   <li className="relative">
                     <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
-                      <span>Pages</span>
+                      <span>Notas</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
                       </span>
@@ -920,14 +920,14 @@ export default function Navbar({ className }) {
                                 <li>
                                   <a href="/privacy-policy">
                                     <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
-                                      Privacy Policy
+                                      Políticas de Privacidade
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/terms-condition">
                                     <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
-                                      Terms and Conditions
+                                      Termos e Condições
                                     </span>
                                   </a>
                                 </li>
@@ -948,7 +948,7 @@ export default function Navbar({ className }) {
                                 <li>
                                   <a href="#">
                                     <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
-                                      Shop List View
+                                      Comprar Lista de Desejos
                                     </span>
                                   </a>
                                 </li>
@@ -987,7 +987,7 @@ export default function Navbar({ className }) {
               <Link to="/become-saller">
                 <div className="black-btn flex justify-center items-center cursor-pointer h-full">
                   <div className="flex space-x-2 items-center">
-                    <span className="text-sm font-600">Seja um Vendedor</span>
+                    <span className="text-sm font-600">Seja um Vendedor!</span>
                     <span>
                       <svg
                         width="6"

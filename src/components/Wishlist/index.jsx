@@ -23,7 +23,7 @@ export default function Wishlist({ wishlist = true }) {
         <div className="wishlist-page-wrapper w-full bg-white pb-[60px]">
           <div className="w-full">
             <PageTitle
-              title="Wishlist"
+              title="Lista de desejos"
               breadcrumb={[
                 { name: "home", path: "/" },
                 { name: "wishlist", path: "/wishlist" },

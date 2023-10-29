@@ -7,9 +7,8 @@ export default function Drawer({ className, open, action }) {
   return (
     <>
       <div
-        className={`drawer-wrapper w-full  h-full relative block lg:hidden  ${
-          className || ""
-        }`}
+        className={`drawer-wrapper w-full  h-full relative block lg:hidden  ${className || ""
+          }`}
       >
         {open && (
           <div
@@ -18,9 +17,8 @@ export default function Drawer({ className, open, action }) {
           ></div>
         )}
         <div
-          className={`w-[280px] transition-all duration-300 ease-in-out h-screen overflow-y-auto overflow-x-hidden overflow-style-none bg-white fixed top-0 z-50 ${
-            open ? "left-0" : "-left-[280px]"
-          }`}
+          className={`w-[280px] transition-all duration-300 ease-in-out h-screen overflow-y-auto overflow-x-hidden overflow-style-none bg-white fixed top-0 z-50 ${open ? "left-0" : "-left-[280px]"
+            }`}
         >
           <div className="w-full px-5 mt-5 mb-4">
             <div className="flex justify-between items-center">
@@ -76,7 +74,7 @@ export default function Drawer({ className, open, action }) {
                 <input
                   type="text"
                   className="w-full text-xs h-full focus:outline-none foucus:ring-0 placeholder:text-qgraytwo pl-2.5 "
-                  placeholder="Search Product..."
+                  placeholder="Pesquisar Produto..."
                 />
               </div>
               <div className="w-[40px] h-full bg-qh2-green flex justify-center items-center">
@@ -100,18 +98,16 @@ export default function Drawer({ className, open, action }) {
           <div className="w-full mt-5 px-5 flex items-center space-x-3">
             <span
               onClick={() => setTab("category")}
-              className={`text-base font-semibold  ${
-                tab === "category" ? "text-qblack" : "text-qgray"
-              }`}
+              className={`text-base font-semibold  ${tab === "category" ? "text-qblack" : "text-qgray"
+                }`}
             >
               Categorias
             </span>
             <span className="w-[1px] h-[14px] bg-qgray"></span>
             <span
               onClick={() => setTab("menu")}
-              className={`text-base font-semibold ${
-                tab === "menu" ? "text-qblack" : "text-qgray "
-              }`}
+              className={`text-base font-semibold ${tab === "menu" ? "text-qblack" : "text-qgray "
+                }`}
             >
               Menu Principal
             </span>

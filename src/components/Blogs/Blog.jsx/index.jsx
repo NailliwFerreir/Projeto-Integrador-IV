@@ -728,7 +728,7 @@ export default function Blog() {
                       </h1>
                       <div className="w-full h-[1px] bg-[#615B9C] mb-5"></div>
                       <p className="text-base text-white leading-[26px] line-clamp-2">
-                        Follow our newsletter to stay updated about us.
+                        Follow our newsletter to stay updated Sobre Nós.
                       </p>
                     </div>
                     <div>

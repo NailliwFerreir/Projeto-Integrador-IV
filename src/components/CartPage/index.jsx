@@ -24,7 +24,7 @@ export default function CardPage({ cart = true }) {
         <div className="cart-page-wrapper w-full bg-white pb-[60px]">
           <div className="w-full">
             <PageTitle
-              title="Your Cart"
+              title="Seu Carrinho"
               breadcrumb={[
                 { name: "home", path: "/" },
                 { name: "cart", path: "/cart" },
@@ -37,7 +37,7 @@ export default function CardPage({ cart = true }) {
               <div className="w-full sm:flex justify-between">
                 <div className="discount-code sm:w-[270px] w-full mb-5 sm:mb-0 h-[50px] flex">
                   <div className="flex-1 h-full">
-                    <InputCom type="text" placeholder="Discount Code" />
+                    <InputCom type="text" placeholder="Cupom de Desconto" />
                   </div>
                   <button type="button" className="w-[90px] h-[50px] black-btn">
                     <span className="text-sm font-semibold">Aplicar</span>
@@ -162,7 +162,7 @@ export default function CardPage({ cart = true }) {
                       <InputCom
                         inputClasses="w-full h-full"
                         type="text"
-                        placeholder="Postcode / ZIP"
+                        placeholder="CEP"
                       />
                     </div>
                   </div>
@@ -182,7 +182,7 @@ export default function CardPage({ cart = true }) {
                   <a href="/checkout">
                     <div className="w-full h-[50px] black-btn flex justify-center items-center">
                       <span className="text-sm font-semibold">
-                        Prosseguir para o checkout
+                        Finalizar compra!
                       </span>
                     </div>
                   </a>

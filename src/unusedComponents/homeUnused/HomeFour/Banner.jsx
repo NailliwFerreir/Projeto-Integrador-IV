@@ -20,7 +20,7 @@ export default function Banner({ className }) {
                   </p>
                   <Link to="#">
                     <div className="w-[100px] h-[36px] rounded bg-qh4-pink flex justify-center items-center">
-                      <span>Shop Now</span>
+                      <span>Comprar Agora</span>
                     </div>
                   </Link>
                 </div>
@@ -39,7 +39,7 @@ export default function Banner({ className }) {
                   </p>
                   <Link to="#">
                     <div className="w-[100px] h-[36px] rounded bg-qh4-pink flex justify-center items-center">
-                      <span>Shop Now</span>
+                      <span>Comprar Agora</span>
                     </div>
                   </Link>
                 </div>
@@ -58,7 +58,7 @@ export default function Banner({ className }) {
                   </p>
                   <Link to="#">
                     <div className="w-[100px] h-[36px] rounded bg-qh4-pink flex justify-center items-center">
-                      <span>Shop Now</span>
+                      <span>Comprar Agora</span>
                     </div>
                   </Link>
                 </div>

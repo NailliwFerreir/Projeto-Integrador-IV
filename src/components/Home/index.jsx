@@ -19,14 +19,14 @@ export default function Home() {
       <ViewMoreTitle
         className="my-categories mb-[60px]"
         seeMoreUrl="/all-products"
-        categoryTitle="My Market Category"
+        categoryTitle="Minhas Categorias"
       >
         <CategoriesSection />
       </ViewMoreTitle>
       <SectionStyleThreeHomeTwo
         products={products}
         showProducts={6}
-        sectionTitle="Featured Products"
+        sectionTitle="Produtos em Destaque!"
         seeMoreUrl="/all-products"
         className="new-products mb-[60px]"
       />
@@ -42,14 +42,14 @@ export default function Home() {
       <SectionStyleThreeHomeTwo
         products={products.slice(3, 7)}
         showProducts={3}
-        sectionTitle="Popular Sales"
+        sectionTitle="Vendas Populares"
         seeMoreUrl="/all-products"
         className="feature-products mb-[60px]"
       />
       <ViewMoreTitle
         className="top-selling-product mb-[60px]"
         seeMoreUrl="/all-products"
-        categoryTitle="Top Selling Products"
+        categoryTitle="Produtos Mais Vendidos"
       >
         <SectionStyleTwo products={products.slice(3, products.length)} />
       </ViewMoreTitle>
@@ -60,7 +60,7 @@ export default function Home() {
       <SectionStyleThreeHomeTwo
         products={products.reverse().slice(0, 10)}
         showProducts={9}
-        sectionTitle="New Arrivals"
+        sectionTitle="Novidades"
         seeMoreUrl="/all-products"
         className="new-arrivals mb-[60px]"
       />
@@ -71,7 +71,7 @@ export default function Home() {
       />
       <SectionStyleFour
         products={products}
-        sectionTitle="Popular Sales"
+        sectionTitle="Vendas Populares"
         seeMoreUrl="/all-products"
         className="category-products mb-[60px]"
       />

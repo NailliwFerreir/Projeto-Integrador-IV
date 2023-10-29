@@ -49,7 +49,7 @@ export default function ProfileTab() {
             <div className="w-1/2 h-full">
               <InputCom
                 label="Email*"
-                placeholder="demoemial@gmail.com"
+                placeholder="inseminador123@gmail.com"
                 type="email"
                 inputClasses="h-[50px]"
                 value={email}
