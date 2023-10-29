@@ -19,7 +19,7 @@ export default function Contact() {
           <div className="main-wrapper w-full lg:flex lg:space-x-[30px]">
             <div className="lg:w-1/2 w-full">
               <h1 className="text-[22px] font-semibold text-qblack leading-[30px] mb-1">
-                Informações para contato
+                Informações para Contato
               </h1>
               <p className="text-[15px] text-qgraytwo leading-[30px] mb-5">
                 Fill the form below or write us .We will help you as soon as
@@ -58,10 +58,10 @@ export default function Contact() {
                     Celular
                   </p>
                   <p className="text-[15px] text-black leading-[30px] text-center">
-                    +55 (19) 9 8401-0686
+                    +55 19 98401-0686
                   </p>
                   <p className="text-[15px] text-black leading-[30px] text-center">
-                    +55 (19) 9 8401-0686
+                    +55 19 98401-0686
                   </p>
                 </div>
                 <div className="xl:w-1/2 w-full h-[196px] flex flex-col item justify-center bg-[#D3EFFF] p-5">
@@ -105,7 +105,7 @@ export default function Contact() {
                     Email
                   </p>
                   <p className="text-[15px] text-black leading-[30px] text-center">
-                    inseminador123@gmail.com
+                    insemina@gmail.com
                   </p>
                   <p className="text-[15px] text-black leading-[30px] text-center">
                     inseminador123@gmail.com
@@ -132,11 +132,12 @@ export default function Contact() {
                   </span>
                   <div>
                     <h1 className="text-[22px] font-semibold text-qblack leading-[30px] mb-2">
-                      Engereço
+                      Endereço
                     </h1>
                     <p className="text-[15px] text-qblack leading-[30px]">
-                      Av. Reitor Benedito José Barreto Fonseca,  Campinas - SP, <br />
-                      355-371 - Parque dos Jacarandás
+                      Av. Reitor Benedito José Barreto Fonseca, 355-371, <br />
+                      - Parque dos Jacarandás, Campinas - SP
+                    </p>
                   </div>
                 </div>
                 <div className="w-full h-[206px] mt-5">
@@ -153,7 +154,7 @@ export default function Contact() {
             <div className="flex-1 bg-white sm:p-10 p-3">
               <div className="title flex flex-col items-center">
                 <h1 className="text-[34px] font-bold text-qblack">
-                  Entrar em contato
+                  Entre em Contato!
                 </h1>
                 <span className="-mt-5 block">
                   <svg
