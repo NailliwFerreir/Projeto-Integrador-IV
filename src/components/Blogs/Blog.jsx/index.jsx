@@ -44,7 +44,7 @@ export default function Blog() {
                         </svg>
                       </span>
                       <span className="text-base text-qgraytwo capitalize">
-                        By Admin
+                        Pelo admin
                       </span>
                     </div>
                     <div className="flex space-x-1.5 items-center">
@@ -71,7 +71,7 @@ export default function Blog() {
                         </svg>
                       </span>
                       <span className="text-base text-qgraytwo">
-                        10 Comments
+                        10 Comentarios
                       </span>
                     </div>
                   </div>

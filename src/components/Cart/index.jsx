@@ -26,7 +26,7 @@ export default function Cart({ className, type }) {
 
                     <p className="price">
                       <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                        $38
+                        R$38
                       </span>
                     </p>
                   </div>
@@ -60,7 +60,7 @@ export default function Cart({ className, type }) {
 
                     <p className="price">
                       <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                        $38
+                        R$38
                       </span>
                     </p>
                   </div>
@@ -94,7 +94,7 @@ export default function Cart({ className, type }) {
 
                     <p className="price">
                       <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                        $38
+                        R$38
                       </span>
                     </p>
                   </div>
@@ -128,7 +128,7 @@ export default function Cart({ className, type }) {
 
                     <p className="price">
                       <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                        $38
+                        R$38
                       </span>
                     </p>
                   </div>
@@ -162,7 +162,7 @@ export default function Cart({ className, type }) {
 
                     <p className="price">
                       <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                        $38
+                        R$38
                       </span>
                     </p>
                   </div>
@@ -196,7 +196,7 @@ export default function Cart({ className, type }) {
 
                     <p className="price">
                       <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                        $38
+                        R$38
                       </span>
                     </p>
                   </div>
@@ -222,12 +222,12 @@ export default function Cart({ className, type }) {
           <div className="product-actions px-4 mb-[30px]">
             <div className="total-equation flex justify-between items-center mb-[28px]">
               <span className="text-[15px] font-500 text-qblack">Subtotal</span>
-              <span className="text-[15px] font-500 text-qred ">$365</span>
+              <span className="text-[15px] font-500 text-qred ">R$365</span>
             </div>
             <div className="product-action-btn">
               <a href="#">
                 <div className="gray-btn w-full h-[50px] mb-[10px] ">
-                  <span>View Cart</span>
+                  <span>Ver carrinho</span>
                 </div>
               </a>
               <a href="#">
@@ -237,7 +237,7 @@ export default function Cart({ className, type }) {
                       "black-btn h-full flex justify-center items-center font-bold "
                     }
                   >
-                    <span className="text-sm">Checkout Now</span>
+                    <span className="text-sm">Fazer checkout</span>
                   </div>
                 </div>
               </a>
@@ -248,7 +248,7 @@ export default function Cart({ className, type }) {
           </div>
           <div className="flex justify-center py-[15px]">
             <p className="text-[13px] font-500 text-qgray">
-              Get Return within <span className="text-qblack">30 days</span>
+              Devolução com até <span className="text-qblack">30 dias</span>
             </p>
           </div>
         </div>
