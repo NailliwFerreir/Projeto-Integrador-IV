@@ -1,14 +1,14 @@
 import datas from "../../data/products.json";
 import SectionStyleFour from "../Helpers/SectionStyleFour";
+import SectionStyleOneHmThree from "../Helpers/SectionStyleOneHmThree";
 import SectionStyleThree from "../Helpers/SectionStyleThree";
 import SectionStyleTwo from "../Helpers/SectionStyleTwo";
 import ViewMoreTitle from "../Helpers/ViewMoreTitle";
+import LayoutHomeThree from "../Partials/LayoutHomeThree";
 import Banner from "./Banner";
 import BrandSection from "./BrandSection";
 import CampaignCountDown from "./CampaignCountDown";
 import ProductsAds from "./ProductsAds";
-import LayoutHomeThree from "../Partials/LayoutHomeThree";
-import SectionStyleOneHmThree from "../Helpers/SectionStyleOneHmThree";
 
 export default function HomeThree() {
   const { products } = datas;
@@ -28,7 +28,7 @@ export default function HomeThree() {
         <SectionStyleThree
           type={3}
           products={products}
-          sectionTitle="New Arrivals"
+          sectionTitle="Novidades"
           seeMoreUrl="/all-products"
           className="new-products mb-[60px]"
         />
@@ -50,7 +50,7 @@ export default function HomeThree() {
         <ViewMoreTitle
           className="top-selling-product mb-[60px]"
           seeMoreUrl="/all-products"
-          categoryTitle="Top Selling Products"
+          categoryTitle="Produtos Mais Vendidos"
         >
           <SectionStyleTwo
             type={3}
@@ -72,7 +72,7 @@ export default function HomeThree() {
           products={products.slice(4, products.length)}
           brands={brands}
           categoryTitle="Electronics"
-          sectionTitle="Popular Sales"
+          sectionTitle="Vendas Populares"
           seeMoreUrl="/all-products"
           className="category-products mb-[60px]"
         />
@@ -82,7 +82,7 @@ export default function HomeThree() {
         />
         <SectionStyleFour
           products={products}
-          sectionTitle="Popular Sales"
+          sectionTitle="Vendas Populares"
           seeMoreUrl="/all-products"
           className="category-products mb-[60px]"
         />

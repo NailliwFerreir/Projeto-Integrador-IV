@@ -50,14 +50,14 @@ export default function CheakoutPage() {
                       <div className="sm:w-1/2  mb-5 sm:mb-0">
                         <InputCom
                           label="First Name*"
-                          placeholder="Demo Name"
+                          placeholder="Digite seu nome..."
                           inputClasses="w-full h-[50px]"
                         />
                       </div>
                       <div className="flex-1">
                         <InputCom
                           label="Last Name*"
-                          placeholder="Demo Name"
+                          placeholder="Digite seu nome..."
                           inputClasses="w-full h-[50px]"
                         />
                       </div>
@@ -65,8 +65,8 @@ export default function CheakoutPage() {
                     <div className="flex space-x-5 items-center mb-6">
                       <div className="w-1/2">
                         <InputCom
-                          label="Email Address*"
-                          placeholder="demoemial@gmail.com"
+                          label="Endereço de e-mail"
+                          placeholder="inseminador123@gmail.com"
                           inputClasses="w-full h-[50px]"
                         />
                       </div>
@@ -138,7 +138,7 @@ export default function CheakoutPage() {
                       </div>
                       <div className="flex-1">
                         <InputCom
-                          label="Postcode / ZIP*"
+                          label="CEP*"
                           placeholder=""
                           inputClasses="w-full h-[50px]"
                         />
@@ -351,5 +351,5 @@ export default function CheakoutPage() {
 
 //function loadSubtotal(){
 //  const subtotal += items.valor e retornar esse valor para aparecer lá na tela depois
-//  return subtotal 
+//  return subtotal
 //}  

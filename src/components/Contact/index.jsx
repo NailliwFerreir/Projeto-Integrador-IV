@@ -7,7 +7,7 @@ export default function Contact() {
     <Layout childrenClasses="pt-0 pb-0">
       <div className="page-title mb-10">
         <PageTitle
-          title="Contact"
+          title="Contato"
           breadcrumb={[
             { name: "home", path: "/" },
             { name: "contact", path: "/contact" },
@@ -176,24 +176,24 @@ export default function Contact() {
               <div className="inputs mt-5">
                 <div className="mb-4">
                   <InputCom
-                    label="Frist Name*"
-                    placeholder="Demo Name"
+                    label="Primeiro Nome*"
+                    placeholder="Digite seu nome..."
                     name="first_name"
                     inputClasses="h-[50px]"
                   />
                 </div>
                 <div className="mb-4">
                   <InputCom
-                    label="Email Address*"
-                    placeholder="info@quomodosoft.com"
+                    label="Endereço de e-mail"
+                    placeholder="Digite seu e-mail..."
                     name="email"
                     inputClasses="h-[50px]"
                   />
                 </div>
                 <div className="mb-4">
                   <InputCom
-                    label="Subject*"
-                    placeholder="Your Subject here"
+                    label="Assunto*"
+                    placeholder="Informe seu assunto"
                     name="subject"
                     inputClasses="h-[50px]"
                   />
@@ -203,7 +203,7 @@ export default function Contact() {
                     Mensagem*
                   </h6>
                   <textarea
-                    placeholder="Type your message here"
+                    placeholder="Digite sua mensagem..."
                     className="w-full h-[105px] focus:ring-0 focus:outline-none p-3 border border-qgray-border placeholder:text-sm"
                   ></textarea>
                 </div>

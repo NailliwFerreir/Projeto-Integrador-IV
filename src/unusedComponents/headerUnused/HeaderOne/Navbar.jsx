@@ -80,8 +80,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -142,8 +142,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -205,8 +205,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -267,8 +267,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -325,8 +325,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -388,8 +388,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -445,8 +445,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -505,8 +505,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -563,8 +563,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -622,8 +622,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -680,8 +680,8 @@ export default function Navbar({ className, type }) {
                       <a href="/all-products">
                         <div
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qh2-green"
+                            ? "hover:bg-qh3-blue hover:text-white"
+                            : "hover:bg-qh2-green"
                             }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -743,7 +743,7 @@ export default function Navbar({ className, type }) {
                       className={`flex items-center text-sm font-600 cursor-pointer ${type === 3 ? "text-white" : "text-qblacktext"
                         }`}
                     >
-                      <span>Homepage</span>
+                      <span>Página Inicial</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
                       </span>
@@ -763,8 +763,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Home One
@@ -775,8 +775,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/home-two">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Home Two
@@ -787,8 +787,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/home-three">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Home Three
@@ -799,8 +799,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/home-four">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Home Four
@@ -811,8 +811,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/home-five">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Home Five
@@ -857,8 +857,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Shop Sidebar
@@ -869,8 +869,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Shop Fullwidth
@@ -881,8 +881,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Shop Category Icon
@@ -893,8 +893,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Shop Category Icon
@@ -905,11 +905,11 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
-                                      Shop List View
+                                      Comprar Lista de Desejos
                                     </span>
                                   </a>
                                 </li>
@@ -928,8 +928,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Horizonral Thumbnail
@@ -940,8 +940,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Vertical Thumbnail
@@ -952,8 +952,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Gallery Thumbnail
@@ -964,8 +964,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Sticky Summary
@@ -987,8 +987,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Phone & Tablet
@@ -999,8 +999,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Gaming & Sports
@@ -1011,8 +1011,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Home Appliance
@@ -1023,8 +1023,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Fashion Clothes
@@ -1053,7 +1053,7 @@ export default function Navbar({ className, type }) {
                       className={`flex items-center text-sm font-600 cursor-pointer ${type === 3 ? "text-white" : "text-qblacktext"
                         }`}
                     >
-                      <span>Pages</span>
+                      <span>Notas</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
                       </span>
@@ -1073,11 +1073,11 @@ export default function Navbar({ className, type }) {
                                   <a href="/privacy-policy">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
-                                      Privacy Policy
+                                      Políticas de Privacidade
                                     </span>
                                   </a>
                                 </li>
@@ -1085,11 +1085,11 @@ export default function Navbar({ className, type }) {
                                   <a href="/terms-condition">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
-                                      Terms and Conditions
+                                      Termos e Condições
                                     </span>
                                   </a>
                                 </li>
@@ -1097,8 +1097,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/faq">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       FAQ
@@ -1109,8 +1109,8 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
                                       Shop Category Icon
@@ -1121,11 +1121,11 @@ export default function Navbar({ className, type }) {
                                   <a href="/all-products">
                                     <span
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qh2-green hover:border-qh2-green"
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qh2-green hover:border-qh2-green"
                                         }`}
                                     >
-                                      Shop List View
+                                      Comprar Lista de Desejos
                                     </span>
                                   </a>
                                 </li>

@@ -6,7 +6,7 @@ export default function SupportTab() {
       <div className="support-tab w-full">
         <div className="w-[180px] h-[50px] mb-4">
           <button type="button" className="black-btn h-full p-3">
-            <div className="w-full text-sm font-semibold">Adicionar N°vo suporte</div>
+            <div className="w-full text-sm font-semibold">Solicitar Suporte</div>
           </button>
         </div>
         <div className="relative w-full overflow-x-auto sm:rounded-lg">

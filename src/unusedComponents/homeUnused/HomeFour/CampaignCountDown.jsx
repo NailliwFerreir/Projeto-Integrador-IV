@@ -73,7 +73,7 @@ export default function CampaignCountDown({ className, lastDate }) {
                   <div className=" w-[100px] h-8 border-b border-qblack">
                     <div className=" h-full inline-flex space-x-2  items-center">
                       <span className="text-sm font-600 tracking-wide leading-7">
-                        Shop Now
+                        Comprar Agora
                       </span>
                       <span>
                         <svg

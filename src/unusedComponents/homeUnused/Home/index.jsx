@@ -52,7 +52,7 @@ export default function Home() {
         <ViewMoreTitle
           className="top-selling-product mb-[60px]"
           seeMoreUrl="/all-products"
-          categoryTitle="Top Selling Products"
+          categoryTitle="Produtos Mais Vendidos"
         >
           <SectionStyleTwo products={products.slice(3, products.length)} />
         </ViewMoreTitle>
@@ -76,7 +76,7 @@ export default function Home() {
           products={products.slice(4, products.length)}
           brands={brands}
           categoryTitle="Electronics"
-          sectionTitle="Popular Sales"
+          sectionTitle="Vendas Populares"
           seeMoreUrl="/all-products"
           className="category-products mb-[60px]"
         />
@@ -86,7 +86,7 @@ export default function Home() {
         />
         <SectionStyleThree
           products={products}
-          sectionTitle="New Arrivals"
+          sectionTitle="Novidades"
           seeMoreUrl="/all-products"
           className="new-products mb-[60px]"
         />
@@ -97,7 +97,7 @@ export default function Home() {
         />
         <SectionStyleFour
           products={products}
-          sectionTitle="Popular Sales"
+          sectionTitle="Vendas Populares"
           seeMoreUrl="/all-products"
           className="category-products mb-[60px]"
         />

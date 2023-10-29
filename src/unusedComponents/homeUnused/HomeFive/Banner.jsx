@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import SimpleSlider from "../Helpers/SliderCom";
 
 export default function Banner({ className }) {
@@ -22,9 +22,8 @@ export default function Banner({ className }) {
   return (
     <>
       <div
-        className={`hero-slider-wrapper w-full xl:h-[733px] h-[500px] hero-slider-wrapper ${
-          className || ""
-        }`}
+        className={`hero-slider-wrapper w-full xl:h-[733px] h-[500px] hero-slider-wrapper ${className || ""
+          }`}
       >
         <div className="main-wrapper w-full h-full">
           <div className=" xl:h-full mb-20 xl:mb-0  w-full relative">
@@ -53,7 +52,7 @@ export default function Banner({ className }) {
                             <div className="flex justify-center items-center bg-qh5-bwhite w-[160px] h-[52px] group rounded-lg hover:text-white relative transition-all duration-300 ease-in-out overflow-hidden cursor-pointer">
                               <div className="flex space-x-1 items-center transition-all duration-300 ease-in-out relative z-10">
                                 <span className="text-sm font-600 tracking-wide leading-7 mr-2">
-                                  Shop Now
+                                  Comprar Agora
                                 </span>
                                 <span>
                                   <svg
@@ -119,7 +118,7 @@ export default function Banner({ className }) {
                             <div className="flex justify-center items-center bg-qh5-bwhite w-[160px] h-[52px] group rounded-lg hover:text-white relative transition-all duration-300 ease-in-out overflow-hidden cursor-pointer">
                               <div className="flex space-x-1 items-center transition-all duration-300 ease-in-out relative z-10">
                                 <span className="text-sm font-600 tracking-wide leading-7 mr-2">
-                                  Shop Now
+                                  Comprar Agora
                                 </span>
                                 <span>
                                   <svg
@@ -185,7 +184,7 @@ export default function Banner({ className }) {
                             <div className="flex justify-center items-center bg-qh5-bwhite w-[160px] h-[52px] group rounded-lg hover:text-white relative transition-all duration-300 ease-in-out overflow-hidden cursor-pointer">
                               <div className="flex space-x-1 items-center transition-all duration-300 ease-in-out relative z-10">
                                 <span className="text-sm font-600 tracking-wide leading-7 mr-2">
-                                  Shop Now
+                                  Comprar Agora
                                 </span>
                                 <span>
                                   <svg

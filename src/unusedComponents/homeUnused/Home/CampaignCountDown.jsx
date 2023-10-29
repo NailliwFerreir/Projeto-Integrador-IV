@@ -73,7 +73,7 @@ export default function CampaignCountDown({
                   </div>
                   <div className="inline-flex space-x-2 items-center border-b border-qh2-green">
                     <span className="text-sm font-600 tracking-wide leading-7">
-                      Shop Now
+                      Comprar Agora
                     </span>
                     <span>
                       <svg
@@ -109,10 +109,9 @@ export default function CampaignCountDown({
               data-aos="fade-left"
               className="download-app flex-1 lg:h-full h-[430px] xl:p-12 p-5"
               style={{
-                background: `url(${
-                  counterbg ||
+                background: `url(${counterbg ||
                   `${process.env.PUBLIC_URL}/assets/images/download-app-cover.png`
-                }) no-repeat`,
+                  }) no-repeat`,
                 backgroundSize: "cover",
               }}
             >

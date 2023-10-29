@@ -53,7 +53,7 @@ export default function FooterFour() {
           </div>
           <div className="lg:w-2/10 w-full mb-10 lg:mb-0">
             <div className="mb-5">
-              <h6 className="text-[18] font-500 text-[#2F2F2F]">About us</h6>
+              <h6 className="text-[18] font-500 text-[#2F2F2F]">Sobre Nós</h6>
             </div>
             <div>
               <ul className="flex flex-col space-y-5 ">
@@ -143,7 +143,7 @@ export default function FooterFour() {
                 <li>
                   <Link to="/">
                     <span className="text-white text-[15px] hover:text-[#9a9a9a] hover:underline">
-                      Privacy Policy
+                      Políticas de Privacidade
                     </span>
                   </Link>
                 </li>

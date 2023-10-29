@@ -9,9 +9,9 @@ export default function PrivacyPolicy() {
           <PageTitle
             breadcrumb={[
               { name: "home", path: "/" },
-              { name: "Privacy Policy", path: "privacy-policy" },
+              { name: "Políticas de Privacidade", path: "privacy-policy" },
             ]}
-            title="Privacy Policy"
+            title="Políticas de Privacidade"
           />
         </div>
         <div className="w-full">
@@ -35,15 +35,15 @@ export default function PrivacyPolicy() {
             </div>
             <div className="content-item w-full mb-10">
               <h2 className="text-[18px] font-medium text-qblack mb-5">
-                2. Ecommerce Terms and Conditions Examples
+                2. Ecommerce Termos e Condições Examples
               </h2>
               <p className="text-[15px] text-qgraytwo leading-7 mb-10">
                 While it’s not legally required for ecommerce websites to have a
-                terms and conditions agreement, adding one will help protect
-                your online business.As terms and conditions are legally
+                Termos e Condições agreement, adding one will help protect
+                your online business.As Termos e Condições are legally
                 enforceable rules, they allow you to set standards for how users
                 interact with your site. Here are some of the major benefits of
-                including terms and conditions on your ecommerce site:
+                including Termos e Condições on your ecommerce site:
                 <br />
                 <br />
                 has survived not only five centuries but also the on leap into
@@ -77,7 +77,7 @@ export default function PrivacyPolicy() {
 
             <div className="content-item w-full mb-10">
               <h2 className="text-[18px] font-medium text-qblack mb-5">
-                3. Insemina+ Termos e Condições Template 
+                3. Insemina+ Termos e Condições Template
               </h2>
               <p className="text-[15px] text-qgraytwo leading-7">
                 Lorem Ipsum is simply dummy text of the printing and typesetting

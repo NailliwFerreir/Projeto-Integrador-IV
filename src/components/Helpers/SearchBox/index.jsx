@@ -10,7 +10,7 @@ export default function SearchBox({ className, type }) {
             <input
               type="text"
               className="search-input"
-              placeholder="Search Product..."
+              placeholder="Pesquisar produto..."
             />
           </form>
         </div>

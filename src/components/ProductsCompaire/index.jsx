@@ -38,7 +38,7 @@ export default function ProductsCompaire() {
                       <div className="w-full h-[44px]">
                         <InputCom
                           type="text"
-                          placeholder="Search Product..."
+                          placeholder="Pesquisar Produto..."
                           inputClasses="w-full h-full px-2"
                         >
                           <div
@@ -84,7 +84,7 @@ export default function ProductsCompaire() {
                       <div className="w-full h-[44px]">
                         <InputCom
                           type="text"
-                          placeholder="Search Product..."
+                          placeholder="Pesquisar Produto..."
                           inputClasses="w-full h-full px-2"
                         >
                           <div
@@ -130,7 +130,7 @@ export default function ProductsCompaire() {
                       <div className="w-full h-[44px]">
                         <InputCom
                           type="text"
-                          placeholder="Search Product..."
+                          placeholder="Pesquisar Produto..."
                           inputClasses="w-full h-full px-2"
                         >
                           <div
@@ -176,7 +176,7 @@ export default function ProductsCompaire() {
                       <div className="w-full h-[44px]">
                         <InputCom
                           type="text"
-                          placeholder="Search Product..."
+                          placeholder="Pesquisar Produto..."
                           inputClasses="w-full h-full px-2"
                         >
                           <div

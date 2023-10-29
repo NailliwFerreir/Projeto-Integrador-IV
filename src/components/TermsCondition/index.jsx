@@ -39,11 +39,11 @@ export default function TermsCondition() {
               </h2>
               <p className="text-[15px] text-qgraytwo leading-7 mb-10">
                 While it’s not legally required for ecommerce websites to have a
-                terms and conditions agreement, adding one will help protect
-                your online business.As terms and conditions are legally
+                Termos e Condições agreement, adding one will help protect
+                your online business.As Termos e Condições are legally
                 enforceable rules, they allow you to set standards for how users
                 interact with your site. Here are some of the major benefits of
-                including terms and conditions on your ecommerce site:
+                including Termos e Condições on your ecommerce site:
                 <br />
                 <br />
                 has survived not only five centuries but also the on leap into
