@@ -66,7 +66,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Demoemail@gmail.com</span>
+                            <span>inseminador123@gmail.com</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -83,7 +83,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>023 434 54354</span>
+                            <span>19 9327133</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -100,7 +100,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Haydarabad, Rord 3,Dhaka</span>
+                            <span>Campinas, São Paulo</span>
                           </li>
                         </ul>
                       </div>
@@ -111,7 +111,7 @@ export default function Sallers() {
                         <div className="w-[116px] h-[40px]">
                           <div className="yellow-btn flex justify-center">
                             <div className="flex space-x-2 items-center">
-                              <span>Shop Now</span>
+                              <span>Comprar Agora</span>
                               <span>
                                 <svg
                                   width="7"
@@ -209,7 +209,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Demoemail@gmail.com</span>
+                            <span>inseminador123@gmail.com</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -226,7 +226,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>023 434 54354</span>
+                            <span>19 93721832</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -243,7 +243,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Haydarabad, Rord 3,Dhaka</span>
+                            <span>Campinas,São Paulo</span>
                           </li>
                         </ul>
                       </div>
@@ -254,7 +254,7 @@ export default function Sallers() {
                         <div className="w-[116px] h-[40px]">
                           <div className="yellow-btn flex justify-center">
                             <div className="flex space-x-2 items-center">
-                              <span>Shop Now</span>
+                              <span>Comprar Agora</span>
                               <span>
                                 <svg
                                   width="7"
@@ -353,7 +353,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Demoemail@gmail.com</span>
+                            <span>inseminador123@gmail.com</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -370,7 +370,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>023 434 54354</span>
+                            <span>19 73821338</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -387,7 +387,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Haydarabad, Rord 3,Dhaka</span>
+                            <span>Campinas,São Paulo</span>
                           </li>
                         </ul>
                       </div>
@@ -398,7 +398,7 @@ export default function Sallers() {
                         <div className="w-[116px] h-[40px]">
                           <div className="yellow-btn flex justify-center">
                             <div className="flex space-x-2 items-center">
-                              <span>Shop Now</span>
+                              <span>Comprar Agora</span>
                               <span>
                                 <svg
                                   width="7"
@@ -497,7 +497,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Demoemail@gmail.com</span>
+                            <span>inseminador123@gmail.com</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -514,7 +514,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>023 434 54354</span>
+                            <span>19 982394312</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -531,7 +531,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Haydarabad, Rord 3,Dhaka</span>
+                            <span>Campinas, São Paulo</span>
                           </li>
                         </ul>
                       </div>
@@ -542,7 +542,7 @@ export default function Sallers() {
                         <div className="w-[116px] h-[40px]">
                           <div className="yellow-btn flex justify-center">
                             <div className="flex space-x-2 items-center">
-                              <span>Shop Now</span>
+                              <span>Comprar Agora</span>
                               <span>
                                 <svg
                                   width="7"
@@ -641,7 +641,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Demoemail@gmail.com</span>
+                            <span>inseminador123@gmail.com</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -658,7 +658,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>023 434 54354</span>
+                            <span>19 982394312</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -675,7 +675,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Haydarabad, Rord 3,Dhaka</span>
+                            <span>Campinas, São Paulo</span>
                           </li>
                         </ul>
                       </div>
@@ -686,7 +686,7 @@ export default function Sallers() {
                         <div className="w-[116px] h-[40px]">
                           <div className="yellow-btn flex justify-center">
                             <div className="flex space-x-2 items-center">
-                              <span>Shop Now</span>
+                              <span>Comprar Agora</span>
                               <span>
                                 <svg
                                   width="7"
@@ -785,7 +785,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Demoemail@gmail.com</span>
+                            <span>inseminador123@gmail.com</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -802,7 +802,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>023 434 54354</span>
+                            <span>19 982394312</span>
                           </li>
                           <li className="text-black flex space-x-5 items-center leading-9 text-base font-normal">
                             <span>
@@ -819,7 +819,7 @@ export default function Sallers() {
                                 />
                               </svg>
                             </span>
-                            <span>Haydarabad, Rord 3,Dhaka</span>
+                            <span>Campinas, São Paulo</span>
                           </li>
                         </ul>
                       </div>
@@ -830,7 +830,7 @@ export default function Sallers() {
                         <div className="w-[116px] h-[40px]">
                           <div className="yellow-btn flex justify-center">
                             <div className="flex space-x-2 items-center">
-                              <span>Shop Now</span>
+                              <span>Comprar Agora</span>
                               <span>
                                 <svg
                                   width="7"
