@@ -27,7 +27,7 @@ export default function CampaignCountDown({ className, lastDate }) {
                         </span>
                       </div>
                       <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8">
-                        Days
+                        Dias
                       </p>
                     </div>
                     <div className="countdown-item">
@@ -37,7 +37,7 @@ export default function CampaignCountDown({ className, lastDate }) {
                         </span>
                       </div>
                       <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8">
-                        Hours
+                        Horas
                       </p>
                     </div>
                     <div className="countdown-item">
@@ -47,7 +47,7 @@ export default function CampaignCountDown({ className, lastDate }) {
                         </span>
                       </div>
                       <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8">
-                        Minutes
+                        Minutos
                       </p>
                     </div>
                     <div className="countdown-item">
@@ -57,13 +57,13 @@ export default function CampaignCountDown({ className, lastDate }) {
                         </span>
                       </div>
                       <p className="sm:text-[18px] text-[12px] font-500 text-center leading-8">
-                        Seconds
+                        Segundos
                       </p>
                     </div>
                   </div>
                   <div className="countdown-title mb-4">
                     <h1 className="text-[44px] text-qblack font-600">
-                      WOO! Flash Sale
+                      WOW! Oferta Relâmpago
                     </h1>
                     <p className="text-[18px] text-qblack leading-7">
                       You get into the 2k+ best Products in Flash offer with
@@ -73,7 +73,7 @@ export default function CampaignCountDown({ className, lastDate }) {
                   <div className="  w-[119px] h-10">
                     <div className="black-btn inline-flex space-x-2 items-center">
                       <span className="text-sm font-600 tracking-wide leading-7">
-                        Shop Now
+                        Compre Agora!
                       </span>
                       <span>
                         <svg
