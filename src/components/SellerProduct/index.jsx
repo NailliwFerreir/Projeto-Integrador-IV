@@ -221,6 +221,8 @@ export default function SellerProduct() {
                       className={
                         "input-item h-[100px] border border-[#EDEDED] text-sm text-qgraytwo px-5  text-center flex items-center justify-center mb-5"
                       }
+                      acceptType={"image/*"}
+                      filesInserted={(files) => console.log(files)}
                     />
                   </div>
                   <div className="input-area pt-2">

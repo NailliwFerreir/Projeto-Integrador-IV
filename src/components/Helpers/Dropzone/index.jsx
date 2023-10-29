@@ -1,17 +1,16 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import ImageIcon from "./components/ImageIcon";
 
 export default function Dropzone({
   className,
   limitFiles = 5,
-  type = "image/*",
+  acceptType = "image/*",
+  filesInserted = () => {},
 }) {
   const [files, setFiles] = useState([]);
 
   const onDrop = useCallback((acceptedFiles) => {
-    // Do something with the files
-    console.log(acceptedFiles);
     if (acceptedFiles?.length) {
       setFiles((previousFiles) => [
         ...previousFiles,
@@ -21,6 +20,11 @@ export default function Dropzone({
       ]);
     }
   }, []);
+
+  useEffect(() => {
+    filesInserted(files);
+  }, [files]);
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: { type: [] },
