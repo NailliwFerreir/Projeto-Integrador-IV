@@ -16,13 +16,13 @@ export default function FourZeroFour() {
                 </div>
                 <div data-aos="fade-up" className="empty-content w-full">
                   <h1 className="sm:text-xl text-base font-semibold text-center mb-5">
-                    Sorry! We cant’t Find that page!
+                    Desculpe! Página não encontrada!
                   </h1>
                   <a href="/">
                     <div className="flex justify-center w-full ">
                       <div className="w-[180px] h-[50px] ">
                         <span type="button" className="yellow-btn">
-                          Back to Shop
+                          Voltar para loja
                         </span>
                       </div>
                     </div>
