@@ -292,34 +292,12 @@ export default function SellerProduct() {
                     <div className="mb-5">
                       <SelectCustom
                         label="Select Categorie*"
-                        datas={["exemplo1", "teste2"]}
-                        getValue={(value) => console.log(value)}
+                        datas={[
+                          { value: "seila", label: "exemplo1" },
+                          { value: "seila", label: "testeeeee" },
+                        ]}
+                        getValue={(value) => console.log(value.label)}
                       />
-                    </div>
-
-                    <div className="input-item mb-5">
-                      <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-                        Country*
-                      </h6>
-                      <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
-                        <span className="text-[13px] text-qgraytwo">
-                          Select Country
-                        </span>
-                        <span>
-                          <svg
-                            width="11"
-                            height="7"
-                            viewBox="0 0 11 7"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M5.4 6.8L0 1.4L1.4 0L5.4 4L9.4 0L10.8 1.4L5.4 6.8Z"
-                              fill="#222222"
-                            />
-                          </svg>
-                        </span>
-                      </div>
                     </div>
 
                     <div className="input-item mb-5">

@@ -36,7 +36,9 @@ export default function SelectCustom({
                 children({ item })
               ) : (
                 <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
-                  <span className="text-[13px] text-qgraytwo">{item}</span>
+                  <span className="text-[13px] text-qgraytwo">
+                    {item.label}
+                  </span>
                   <span>
                     <svg
                       width="11"
@@ -71,7 +73,7 @@ export default function SelectCustom({
                       getValue(value);
                     }}
                   >
-                    {value}
+                    {value.label}
                   </li>
                 ))}
               </ul>
