@@ -274,7 +274,7 @@ export default function SellerProduct() {
                     <div className="input-item mb-5">
                       <button type="button" className="p-3 black-btn">
                         <div>
-                          <span>Criar anúncio</span>
+                          <span>Postar anúncio</span>
                         </div>
                       </button>
                     </div>
