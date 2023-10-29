@@ -16,7 +16,7 @@ export default function EmptyCardError() {
               <div className="flex justify-center w-full ">
                 <div className="w-[180px] h-[50px] ">
                   <span type="button" className="yellow-btn">
-                    Voltar para compras
+                    Voltar para loja
                   </span>
                 </div>
               </div>

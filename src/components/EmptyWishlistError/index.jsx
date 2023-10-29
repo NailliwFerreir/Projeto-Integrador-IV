@@ -10,13 +10,13 @@ export default function EmptyWishlistError() {
           </div>
           <div data-aos="fade-up" className="wishlist-content w-full">
             <h1 className="sm:text-xl text-base font-semibold text-center mb-5">
-              Empty! You don’t Wishlist any Products
+              Ei! Sua lista de desejos está vazia!
             </h1>
             <a href="/">
               <div className="flex justify-center w-full ">
                 <div className="w-[180px] h-[50px] ">
                   <span type="button" className="yellow-btn">
-                    Back to Shop
+                    Voltar para loja
                   </span>
                 </div>
               </div>
