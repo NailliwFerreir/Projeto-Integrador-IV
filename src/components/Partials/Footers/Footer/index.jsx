@@ -25,21 +25,21 @@ export default function Footer() {
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Track Order
+                      Rastrear Pedido
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Delivery & Returns
+                      Entregas & Devoluções
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Warranty
+                      Garantia
                     </span>
                   </Link>
                 </li>
@@ -48,35 +48,35 @@ export default function Footer() {
           </div>
           <div className="lg:w-2/10 w-full mb-10 lg:mb-0">
             <div className="mb-5">
-              <h6 className="text-[18] font-500 text-[#2F2F2F]">About us</h6>
+              <h6 className="text-[18] font-500 text-[#2F2F2F]">Sobre Nós</h6>
             </div>
             <div>
               <ul className="flex flex-col space-y-5 ">
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Rave’s Story
+                      História Insemina+ 
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Work With Us
+                      Trabalhe conosco!
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Coporate News
+                      Nossas Notícias
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Investors
+                      Investidores
                     </span>
                   </Link>
                 </li>
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
           <div className="lg:w-2/10 w-full mb-10 lg:mb-0 ">
             <div className="mb-5">
-              <h6 className="text-[18] font-500 text-[#2F2F2F]">Online Shop</h6>
+              <h6 className="text-[18] font-500 text-[#2F2F2F]">Compra Online</h6>
             </div>
             <div>
               <ul className="flex flex-col space-y-5 ">
@@ -123,7 +123,7 @@ export default function Footer() {
           <div className="lg:w-2/10 w-full mb-10 lg:mb-0">
             <div className="mb-5">
               <h6 className="text-[18] font-500 text-[#2F2F2F]">
-                Useful Links
+                Links Úteis
               </h6>
             </div>
             <div>
@@ -131,28 +131,28 @@ export default function Footer() {
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Secure Payment
+                      Pagamento Seguro
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Privacy Policy
+                      Política de Privacidade
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Terms of Use
+                      Termos de Uso
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <span className="text-[#9A9A9A] text-[15px] hover:text-qblack border-b border-transparent hover:border-qblack">
-                      Archived Products
+                      Produtos Arquivados
                     </span>
                   </Link>
                 </li>
