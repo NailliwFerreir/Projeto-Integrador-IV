@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import Dropzone from "../Helpers/Dropzone";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
 import PageTitle from "../Helpers/PageTitle";
@@ -54,7 +55,7 @@ export default function SellerProduct() {
 
   // product values
   const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState("");
+  const [productPrice, setProductPrice] = useState("R$ 0,00");
   const [productDescription, setProductDescription] = useState("");
   const [productCategory, setProductCategory] = useState("");
   const [productSubCategory, setProductSubCategory] = useState("");
@@ -167,15 +168,33 @@ export default function SellerProduct() {
 
   const group = [{ bovine: "Bovino" }, { equine: "Equino" }];
 
+  function moneyMaskBR(inputStr) {
+    if (typeof inputStr === "number")
+      inputStr = inputStr.toString().replace(".", "");
+    var numericStr = inputStr.replace(/[^0-9]/g, "");
+    numericStr = numericStr.replace(/^0+/, "");
+    if (numericStr.length < 2) {
+      numericStr = numericStr.padStart(2, "0");
+    }
+    if (numericStr.length <= 2) {
+      numericStr = numericStr.padStart(3, "0");
+    }
+    var integerPart = numericStr.slice(0, -2);
+    var decimalPart = numericStr.slice(-2);
+    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    var formattedValue = "R$ " + integerPart + "," + decimalPart;
+    return formattedValue;
+  }
+
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="become-saller-wrapper w-full">
         <div className="title mb-10">
           <PageTitle
-            title="Seller Product"
+            title="Informações do anúncio"
             breadcrumb={[
               { name: "home", path: "/" },
-              { name: "Become Saller", path: "/become-saller" },
+              { name: "Informações do anúncio", path: "/seller-product" },
             ]}
           />
         </div>
@@ -186,81 +205,29 @@ export default function SellerProduct() {
                 <div className="w-full">
                   <div className="title w-full mb-4">
                     <h1 className="text-[22px] font-semibold text-qblack mb-1">
-                      Seller Product Information
+                      Informações do anúncio
                     </h1>
                     <p className="text-[15px] text-qgraytwo">
-                      Fill the form below or write us .We will help you as soon
-                      as possible.
+                      Preencha todos os campos do anúncio.
                     </p>
                   </div>
                   <div className="update-cover w-full">
-                    <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
-                      Please insert images of your ad
-                      <span className="ml-1">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10 0C4.47457 0 0 4.47791 0 10C0 15.5221 4.47791 20 10 20C15.5221 20 20 15.5221 20 10C19.9967 4.48126 15.5221 0.00669344 10 0ZM10 16.67C9.53815 16.67 9.16667 16.2985 9.16667 15.8367C9.16667 15.3748 9.53815 15.0033 10 15.0033C10.4618 15.0033 10.8333 15.3748 10.8333 15.8367C10.8333 16.2952 10.4618 16.67 10 16.67ZM11.6098 10.425C11.1078 10.7396 10.8132 11.2952 10.8333 11.8842V12.5033C10.8333 12.9652 10.4618 13.3367 10 13.3367C9.53815 13.3367 9.16667 12.9652 9.16667 12.5033V11.8842C9.14324 10.6861 9.76907 9.56827 10.8032 8.96586C11.4357 8.61781 11.7704 7.90161 11.6366 7.19545C11.5027 6.52276 10.9772 5.99732 10.3046 5.8668C9.40094 5.69946 8.5308 6.29853 8.36346 7.20214C8.34673 7.30254 8.33668 7.40295 8.33668 7.50335C8.33668 7.96519 7.9652 8.33668 7.50335 8.33668C7.0415 8.33668 6.67002 7.96519 6.67002 7.50335C6.67002 5.66265 8.16265 4.17001 10.0067 4.17001C11.8474 4.17001 13.34 5.66265 13.34 7.50669C13.3333 8.71821 12.674 9.83601 11.6098 10.425Z"
-                            fill="#374557"
-                            fillOpacity="0.6"
-                          />
-                        </svg>
-                      </span>
+                    <h1 className="text-sm tracking-wide text-qblack flex items-center mb-2">
+                      Por favor insira as imagens do anúncio (limite de 5
+                      imagens)
                     </h1>
-                    <p className="text-sm text-qgraytwo mb-5">
-                      Cover of at least Size
-                      <span className="ml-1 text-qblack">1170x920</span>.
-                    </p>
-                    <div className="flex justify-center">
-                      <div className="w-full relative">
-                        <img
-                          src={
-                            coverImg ||
-                            `${process.env.PUBLIC_URL}/assets/images/edit-coverimg.jpg`
-                          }
-                          alt=""
-                          className="w-full h-[120px] rounded-lg overflow-hidden object-cover"
-                        />
-                        <input
-                          ref={coverImgInput}
-                          onChange={(e) => coverImgChangHandler(e)}
-                          type="file"
-                          className="hidden"
-                        />
-                        <div
-                          onClick={browseCoverImg}
-                          className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#87D6D1] hover:bg-[#87D6D1] rounded-full cursor-pointer"
-                        >
-                          <svg
-                            width="32"
-                            height="32"
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M16.5147 11.5C17.7284 12.7137 18.9234 13.9087 20.1296 15.115C19.9798 15.2611 19.8187 15.4109 19.6651 15.5683C17.4699 17.7635 15.271 19.9587 13.0758 22.1539C12.9334 22.2962 12.7948 22.4386 12.6524 22.5735C12.6187 22.6034 12.5663 22.6296 12.5213 22.6296C11.3788 22.6334 10.2362 22.6297 9.09365 22.6334C9.01498 22.6334 9 22.6034 9 22.536C9 21.4009 9 20.2621 9.00375 19.1271C9.00375 19.0746 9.02997 19.0109 9.06368 18.9772C10.4123 17.6249 11.7609 16.2763 13.1095 14.9277C14.2295 13.8076 15.3459 12.6913 16.466 11.5712C16.4884 11.5487 16.4997 11.5187 16.5147 11.5Z"
-                              fill="white"
-                            />
-                            <path
-                              d="M20.9499 14.2904C19.7436 13.0842 18.5449 11.8854 17.3499 10.6904C17.5634 10.4694 17.7844 10.2446 18.0054 10.0199C18.2639 9.76139 18.5261 9.50291 18.7884 9.24443C19.118 8.91852 19.5713 8.91852 19.8972 9.24443C20.7251 10.0611 21.5492 10.8815 22.3771 11.6981C22.6993 12.0165 22.7105 12.4698 22.3996 12.792C21.9238 13.2865 21.4443 13.7772 20.9686 14.2717C20.9648 14.2792 20.9536 14.2867 20.9499 14.2904Z"
-                              fill="white"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
+                    <Dropzone
+                      limitFiles={10}
+                      className={
+                        "input-item h-[100px] border border-[#EDEDED] text-sm text-qgraytwo px-5  text-center flex items-center justify-center mb-5"
+                      }
+                    />
                   </div>
                   <div className="input-area pt-2">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
                       <InputCom
-                        placeholder="Product Name"
-                        label="Product Name*"
+                        placeholder="Nome do Produto "
+                        label="Nome do produto (Isso vai ser o título do anúncio)*"
                         name="productName"
                         type="text"
                         inputClasses="h-[50px]"
@@ -269,20 +236,22 @@ export default function SellerProduct() {
                       />
 
                       <InputCom
-                        label="Product Price*"
+                        label="Preço*"
                         name="productPrice"
                         placeholder="R$ 100,00"
                         type="text"
                         inputClasses="h-[50px]"
                         value={productPrice}
-                        inputHandler={(e) => setProductPrice(e.target.value)}
+                        inputHandler={(e) =>
+                          setProductPrice(moneyMaskBR(e.target.value))
+                        }
                       />
                     </div>
 
                     <div className="mb-5 align-top ">
                       <InputTextareaCom
-                        label="Product Description*"
-                        placeholder="Please insert product details"
+                        label="Descrição do produto*"
+                        placeholder="Por favor insira uma descrição do produto"
                         name="phone"
                         type="text"
                         inputClasses="h-[150px] whitespace-pre-line word-brake text-black"
@@ -291,10 +260,10 @@ export default function SellerProduct() {
 
                     <div className="mb-5">
                       <SelectCustom
-                        label="Select Categorie*"
+                        label="Categoria do sêmen*"
                         datas={[
-                          { value: "seila", label: "exemplo1" },
-                          { value: "seila", label: "testeeeee" },
+                          { value: "row", label: "Linha1" },
+                          { value: "ro2", label: "Linha2" },
                         ]}
                         getValue={(value) => console.log(value.label)}
                       />
@@ -303,7 +272,7 @@ export default function SellerProduct() {
                     <div className="input-item mb-5">
                       <button type="button" className="p-3 black-btn">
                         <div>
-                          <span>Create ad</span>
+                          <span>Criar anúncio</span>
                         </div>
                       </button>
                     </div>

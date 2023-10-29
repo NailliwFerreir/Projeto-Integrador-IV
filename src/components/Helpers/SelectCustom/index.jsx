@@ -21,8 +21,8 @@ export default function SelectCustom({
   return (
     <>
       <div className="input-item">
-        <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-          {label ?? "Select"}
+        <h6 className="input-label text-qgray text-[13px] font-normal block mb-2 ">
+          {label ?? "Selecione uma opção"}
         </h6>
 
         {datas.length > 0 && (

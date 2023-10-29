@@ -13,7 +13,7 @@ export default function InputCom({
     <div className="input-com w-full h-full">
       {label && (
         <label
-          className={`input-label capitalize block  mb-2 ${labelClasses || ""}`}
+          className={`input-label block  mb-2 ${labelClasses || ""}`}
           htmlFor={name}
         >
           {label}
