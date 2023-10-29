@@ -920,35 +920,35 @@ export default function Navbar({ className }) {
                               <ul className="flex flex-col space-y-2">
                                 <li>
                                   <a href="/privacy-policy">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Privacy Policy
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/terms-condition">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Terms and Conditions
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="/faq">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       FAQ
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Shop Category Icon
                                     </span>
                                   </a>
                                 </li>
                                 <li>
                                   <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-black hover:text-black">
+                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qh2-green hover:text-qh2-green">
                                       Shop List View
                                     </span>
                                   </a>
