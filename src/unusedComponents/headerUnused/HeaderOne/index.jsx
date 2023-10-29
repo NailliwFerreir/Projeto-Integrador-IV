@@ -3,11 +3,14 @@ import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
 import TopBar from "./TopBar";
 
-export default function HeaderOne({ className, drawerAction,type=1 }) {
+export default function HeaderOne({ className, drawerAction, type = 1 }) {
   return (
     <header className={` ${className || ""} header-section-wrapper relative`}>
       <TopBar className="quomodo-shop-top-bar" />
-      <Middlebar type={type} className="quomodo-shop-middle-bar lg:block hidden" />
+      <Middlebar
+        type={type}
+        className="quomodo-shop-middle-bar lg:block hidden"
+      />
       <div className="quomodo-shop-drawer lg:hidden block w-full h-[60px] bg-white">
         <div className="w-full h-full flex justify-between items-center px-5">
           <div onClick={drawerAction}>
@@ -17,7 +20,7 @@ export default function HeaderOne({ className, drawerAction,type=1 }) {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-            strokeWidth="2"
+              strokeWidth="2"
             >
               <path
                 strokeLinecap="round"
@@ -27,33 +30,33 @@ export default function HeaderOne({ className, drawerAction,type=1 }) {
             </svg>
           </div>
           <div>
-            {type===3?(
-                <a href="/">
-                  <img
-                      width="152"
-                      height="36"
-                      src={`${process.env.PUBLIC_URL}/assets/images/logo-3.svg`}
-                      alt="logo"
-                  />
-                </a>
-            ):type===4?(
-                <a href="/">
-                  <img
-                      width="152"
-                      height="36"
-                      src={`${process.env.PUBLIC_URL}/assets/images/logo-4.svg`}
-                      alt="logo"
-                  />
-                </a>
-            ):(
-                <a href="/">
-                  <img
-                      width="152"
-                      height="36"
-                      src={`${process.env.PUBLIC_URL}/assets/images/logo.svg`}
-                      alt="logo"
-                  />
-                </a>
+            {type === 3 ? (
+              <a href="/">
+                <img
+                  width="152"
+                  height="36"
+                  src={`${process.env.PUBLIC_URL}/assets/images/logo-3.svg`}
+                  alt="logo"
+                />
+              </a>
+            ) : type === 4 ? (
+              <a href="/">
+                <img
+                  width="152"
+                  height="36"
+                  src={`${process.env.PUBLIC_URL}/assets/images/logo-4.svg`}
+                  alt="logo"
+                />
+              </a>
+            ) : (
+              <a href="/">
+                <img
+                  width="152"
+                  height="36"
+                  src={`${process.env.PUBLIC_URL}/assets/images/logo.svg`}
+                  alt="logo"
+                />
+              </a>
             )}
           </div>
           <div className="cart relative cursor-pointer">
@@ -62,7 +65,13 @@ export default function HeaderOne({ className, drawerAction,type=1 }) {
                 <ThinBag />
               </span>
             </a>
-            <span className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] ${type===3?'bg-qh3-blue text-white':'bg-qyellow text-qblack'}`}>
+            <span
+              className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] ${
+                type === 3
+                  ? "bg-qh3-blue text-white"
+                  : "bg-qh2-green text-qblack"
+              }`}
+            >
               15
             </span>
           </div>

@@ -133,16 +133,16 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 /*TODO:  ========= home one ========= */
-.home-one .search-btn {
+/* .home-one .search-btn {
     @apply bg-qyellow text-qblack;
 }
 .home-one .cart-wrappwer {
     @apply border-qyellow;
-}
+} */
 /*TODO:  ========= home one end ========= */
 /*TODO:  ========= home two ========= */
 .home-two .search-btn {
-    @apply bg-qh2-green text-white;
+  @apply bg-qh2-green text-white;
 }
 .home-four .search-btn {
   @apply bg-qh4-pink text-qblack;
@@ -156,8 +156,10 @@ body {
 .home-five .cart-wrappwer {
   @apply border-qh5-bwhite;
 }
-.home-two :is(.cart-wrappwer, .product-card-style-one-two, .product-row-card-style-one-two) .yellow-btn {
-    @apply bg-qh2-green text-white;
+.home-two
+  :is(.cart-wrappwer, .product-card-style-one-two, .product-row-card-style-one-two)
+  .yellow-btn {
+  @apply bg-qh2-green text-white;
 }
 .home-four .yellow-btn {
   @apply bg-qh5-bwhite text-qblack;

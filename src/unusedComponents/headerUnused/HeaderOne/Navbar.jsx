@@ -26,7 +26,7 @@ export default function Navbar({ className, type }) {
   return (
     <div
       className={`nav-widget-wrapper w-full  h-[60px] relative z-30 ${
-        type === 3 ? "bg-qh3-blue" : "bg-qyellow"
+        type === 3 ? "bg-qh3-blue" : "bg-qh2-green"
       }  ${className || ""}`}
     >
       <div className="container-x mx-auto h-full">
@@ -83,7 +83,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -146,7 +146,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -210,7 +210,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -273,7 +273,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -332,7 +332,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -396,7 +396,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -454,7 +454,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -515,7 +515,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -574,7 +574,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -634,7 +634,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -693,7 +693,7 @@ export default function Navbar({ className, type }) {
                           className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
                             type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
+                              : "hover:bg-qh2-green"
                           }`}
                         >
                           <div className="flex items-center space-x-6">
@@ -778,7 +778,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Home One
@@ -791,7 +791,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Home Two
@@ -804,7 +804,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Home Three
@@ -817,7 +817,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Home Four
@@ -830,7 +830,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Home Five
@@ -878,7 +878,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Shop Sidebar
@@ -891,7 +891,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Shop Fullwidth
@@ -904,7 +904,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Shop Category Icon
@@ -917,7 +917,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Shop Category Icon
@@ -930,7 +930,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Shop List View
@@ -954,7 +954,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Horizonral Thumbnail
@@ -967,7 +967,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Vertical Thumbnail
@@ -980,7 +980,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Gallery Thumbnail
@@ -993,7 +993,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Sticky Summary
@@ -1017,7 +1017,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Phone & Tablet
@@ -1030,7 +1030,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Gaming & Sports
@@ -1043,7 +1043,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Home Appliance
@@ -1056,7 +1056,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Fashion Clothes
@@ -1108,7 +1108,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Privacy Policy
@@ -1121,7 +1121,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Terms and Conditions
@@ -1134,7 +1134,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       FAQ
@@ -1147,7 +1147,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Shop Category Icon
@@ -1160,7 +1160,7 @@ export default function Navbar({ className, type }) {
                                       className={`text-qgray text-sm font-400 border-b border-transparent   ${
                                         type === 3
                                           ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
+                                          : "hover:text-qh2-green hover:border-qh2-green"
                                       }`}
                                     >
                                       Shop List View
