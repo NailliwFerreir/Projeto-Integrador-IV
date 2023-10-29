@@ -259,7 +259,7 @@ export default function BecomeSaller() {
                         />
                         <div
                           onClick={browseProfileImg}
-                          className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
+                          className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#87D6D1] bg-[#87D6D1] rounded-full cursor-pointer"
                         >
                           <svg
                             width="32"
@@ -324,7 +324,7 @@ export default function BecomeSaller() {
                         />
                         <div
                           onClick={browseLogoImg}
-                          className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#F539F8] bg-[#F539F8] rounded-full cursor-pointer"
+                          className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  hover:bg-[#87D6D1] bg-[#87D6D1] rounded-full cursor-pointer"
                         >
                           <svg
                             width="32"
@@ -387,7 +387,7 @@ export default function BecomeSaller() {
                         />
                         <div
                           onClick={browseCoverImg}
-                          className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#F539F8] hover:bg-[#F539F8] rounded-full cursor-pointer"
+                          className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#87D6D1] hover:bg-[#87D6D1] rounded-full cursor-pointer"
                         >
                           <svg
                             width="32"

@@ -1,11 +1,11 @@
-export default function Cart({ className,type }) {
+export default function Cart({ className, type }) {
   return (
     <>
       <div
         style={{ boxShadow: " 0px 15px 50px 0px rgba(0, 0, 0, 0.14)" }}
-        className={`w-[300px] bg-white border-t-[3px] ${type===3?'border-qh3-blue':'cart-wrappwer'}  ${
-          className || ""
-        }`}
+        className={`w-[300px] bg-white border-t-[3px] ${
+          type === 3 ? "border-qh3-blue" : "cart-wrappwer"
+        }  ${className || ""}`}
       >
         <div className="w-full h-full">
           <div className="product-items h-[310px] overflow-y-scroll">
@@ -232,7 +232,11 @@ export default function Cart({ className,type }) {
               </a>
               <a href="#">
                 <div className="w-full h-[50px]">
-                  <div className={type===3?'blue-btn':'yellow-btn'}>
+                  <div
+                    className={
+                      "black-btn h-full flex justify-center items-center font-bold "
+                    }
+                  >
                     <span className="text-sm">Checkout Now</span>
                   </div>
                 </div>
