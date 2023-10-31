@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
+import Swal from "sweetalert2";
 import Dropzone from "../Helpers/Dropzone";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
 import PageTitle from "../Helpers/PageTitle";
 import SelectCustom from "../Helpers/SelectCustom";
 import Layout from "../Partials/Layout";
-
 export default function SellerProduct() {
   const [profileImg, setProfileImg] = useState(null);
   const [logoImg, setLogoImg] = useState(null);
@@ -272,7 +272,33 @@ export default function SellerProduct() {
                     </div>
 
                     <div className="input-item mb-5">
-                      <button type="button" className="p-3 black-btn">
+                      <button
+                        onClick={(e) => {
+                          Swal.fire({
+                            title: "Anúncio criado com sucesso!",
+                            text: "O anúncio foi criado com sucesso, você será redirecionado para a página do anúncio.",
+                            icon: "success",
+                            confirmButtonText: "Ok",
+                            showCancelButton: true,
+                            buttonsStyling: false,
+                            reverseButtons: true,
+                            customClass: {
+                              confirmButton:
+                                "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+                              title: "text-2xl text-qblack",
+                              text: "text-xs text-qblack",
+                              cancelButton:
+                                "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+                            },
+                          }); /* .then((result) => {
+                            if (result.isConfirmed) {
+                              navigate("/ondevcquizerir")");
+                            }
+                          }); */
+                        }}
+                        type="button"
+                        className="p-3 black-btn"
+                      >
                         <div>
                           <span>Postar anúncio</span>
                         </div>
