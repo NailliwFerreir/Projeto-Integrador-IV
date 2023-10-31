@@ -1,8 +1,38 @@
+import { useNavigate } from "react-router-dom";
+import api from "src/services/api";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
-
 export default function Contact() {
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSumbit = async () => {
+    const data = {
+      firstName,
+      email,
+      subject,
+      message,
+    };
+    try {
+      const response = await api("/endpoint", data);
+    } catch (error) {
+      console.log(error.message);
+      Swal.fire({
+        icon: "error",
+        title: "Erro!",
+        text: "Desculpe, ocorreu um erro!",
+        showConfirmButton: true,
+        // timer: 3000
+      }).then(() => {
+        Navigate("/endpoint");
+      });
+    }
+  };
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="page-title mb-10">
@@ -135,8 +165,8 @@ export default function Contact() {
                       Endereço
                     </h1>
                     <p className="text-[15px] text-qblack leading-[30px]">
-                      Av. Reitor Benedito José Barreto Fonseca, 355-371, <br />
-                      - Parque dos Jacarandás, Campinas - SP
+                      Av. Reitor Benedito José Barreto Fonseca, 355-371, <br />-
+                      Parque dos Jacarandás, Campinas - SP
                     </p>
                   </div>
                 </div>
@@ -180,6 +210,8 @@ export default function Contact() {
                     placeholder="Digite seu nome..."
                     name="first_name"
                     inputClasses="h-[50px]"
+                    inputHandler={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                   />
                 </div>
                 <div className="mb-4">
@@ -188,6 +220,8 @@ export default function Contact() {
                     placeholder="Digite seu e-mail..."
                     name="email"
                     inputClasses="h-[50px]"
+                    inputHandler={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="mb-4">
@@ -196,6 +230,8 @@ export default function Contact() {
                     placeholder="Informe seu assunto"
                     name="subject"
                     inputClasses="h-[50px]"
+                    inputHandler={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                   />
                 </div>
                 <div className="mb-5">
@@ -205,15 +241,17 @@ export default function Contact() {
                   <textarea
                     placeholder="Digite sua mensagem..."
                     className="w-full h-[105px] focus:ring-0 focus:outline-none p-3 border border-qgray-border placeholder:text-sm"
+                    inputHandler={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
                 </div>
-                <div>
+                <button type="submit" onSubmit={handleSumbit}>
                   <a href="#">
                     <div className="black-btn text-sm font-semibold w-full h-[50px] flex justify-center items-center">
                       <span>Mande Agora</span>
                     </div>
                   </a>
-                </div>
+                </button>
               </div>
             </div>
           </div>
