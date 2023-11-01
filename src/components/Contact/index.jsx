@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import api from "src/services/api";
+import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";

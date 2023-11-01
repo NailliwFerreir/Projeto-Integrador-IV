@@ -1,4 +1,6 @@
 import { useRef, useState } from "react";
+import Swal from "sweetalert2";
+import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
@@ -7,6 +9,16 @@ export default function BecomeSaller() {
   const [profileImg, setProfileImg] = useState(null);
   const [logoImg, setLogoImg] = useState(null);
   const [coverImg, setCoverImg] = useState(null);
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const pais = "Brasil";
+  const [address, setAddress] = useState("");
+  const [shopname, setShopname] = useState("");
+  const [shopaddress, setShopaddress] = useState("");
+  const [password, setPassword] = useState("");
+  const [rePassrod, setRePassword] = useState("");
   // logo img
   const logoImgInput = useRef(null);
   const browseLogoImg = () => {
@@ -49,6 +61,46 @@ export default function BecomeSaller() {
       imgReader.readAsDataURL(e.target.files[0]);
     }
   };
+
+  const becomeSallerHandler = (e) => {
+    const obj = {
+      fname,
+      lname,
+      email,
+      phone,
+      pais,
+      address,
+      shopname,
+      shopaddress,
+      password,
+      rePassrod,
+    };
+    if(password !== rePassrod){
+      Swal.fire({
+        title: "Erro!",
+        text: "Insira senhas identicas para prosseguir!",
+        icon: "error",
+        confirmButtonText: "Ok",
+        showCancelButton: false,
+        buttonsStyling: false,
+        reverseButtons: true,
+        customClass: {
+          confirmButton:
+            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        },
+      });
+    }else{
+      console.log(obj);
+      api
+      .post("/api/signup", obj) /* Tem que verificar esse endpoint aqui e se as informações estão sendo passadas corretamente! */
+      .then((resp) => console.log(resp.data))
+      .catch((error) => console.log(error));
+    }
+  };
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="become-saller-wrapper w-full">
@@ -83,6 +135,8 @@ export default function BecomeSaller() {
                         name="fname"
                         type="text"
                         inputClasses="h-[50px]"
+                        value={fname}
+                        inputHandler={(e) => setFname(e.target.value)}
                       />
 
                       <InputCom
@@ -91,6 +145,8 @@ export default function BecomeSaller() {
                         name="lname"
                         type="text"
                         inputClasses="h-[50px]"
+                        value={lname}
+                        inputHandler={(e) => setLname(e.target.value)}
                       />
                     </div>
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
@@ -100,6 +156,8 @@ export default function BecomeSaller() {
                         name="email"
                         type="email"
                         inputClasses="h-[50px]"
+                        value={email}
+                        inputHandler={(e) => setEmail(e.target.value)}
                       />
 
                       <InputCom
@@ -108,6 +166,8 @@ export default function BecomeSaller() {
                         name="phone"
                         type="text"
                         inputClasses="h-[50px]"
+                        value={phone}
+                        inputHandler={(e) => setPhone(e.target.value)}
                       />
                     </div>
 
@@ -138,11 +198,13 @@ export default function BecomeSaller() {
 
                     <div className="input-item mb-5">
                       <InputCom
-                        placeholder="Your address Here"
+                        placeholder="Digite o seu endereço..."
                         label="Address*"
                         name="address"
                         type="text"
                         inputClasses="h-[50px]"
+                        value={address}
+                        inputHandler={(e) => setAddress(e.target.value)}
                       />
                     </div>
                   </div>
@@ -160,20 +222,24 @@ export default function BecomeSaller() {
                   <div className="input-area">
                     <div className="mb-5">
                       <InputCom
-                        placeholder="Digite seu nome..."
+                        placeholder="Digite o nome da loja..."
                         label="Shop Name*"
                         name="shopname"
                         type="text"
                         inputClasses="h-[50px]"
+                        value={shopname}
+                        inputHandler={(e) => setShopname(e.target.value)}
                       />
                     </div>
                     <div className="mb-5">
                       <InputCom
-                        placeholder="Your address Here"
+                        placeholder="Digite o endereco da loja..."
                         label="Address*"
                         name="shopaddress"
                         type="text"
                         inputClasses="h-[50px]"
+                        value={shopaddress}
+                        inputHandler={(e) => setShopaddress(e.target.value)}
                       />
                     </div>
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-[30px]">
@@ -183,6 +249,8 @@ export default function BecomeSaller() {
                         name="password"
                         type="password"
                         inputClasses="h-[50px]"
+                        value={password}
+                        inputHandler={(e) => setPassword(e.target.value)}
                       />
 
                       <InputCom
@@ -191,12 +259,14 @@ export default function BecomeSaller() {
                         name="repassword"
                         type="password"
                         inputClasses="h-[50px]"
+                        value={rePassrod}
+                        inputHandler={(e) => setRePassword(e.target.value)}
                       />
                     </div>
 
                     <div className="signin-area mb-3">
                       <div className="flex justify-center">
-                        <button
+                        <button onClick={becomeSallerHandler}
                           type="button"
                           className="black-btn text-sm text-white w-[490px] h-[50px] font-semibold flex justify-center bg-purple items-center"
                         >
