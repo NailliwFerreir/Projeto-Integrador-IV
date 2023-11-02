@@ -115,8 +115,8 @@ export default function SellerProduct() {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("R$ 0,00");
   const [productDescription, setProductDescription] = useState("");
-  const [productCategory, setProductCategory] = useState("");
-  const [productSubCategory, setProductSubCategory] = useState("");
+  const [productCategory, setProductCategory] = useState("Bovino");
+  const [productSubCategory, setProductSubCategory] = useState("Nelore");
 
   const cattles = {
     bovine: [
@@ -352,23 +352,23 @@ export default function SellerProduct() {
                           {value: "row16", label: "Tabapuã"},
                           {value: "row17", label: "Xiquexique"},
                           //Parte dos equinos
-                          {value: "row", label: "Crioulo"},
-                          {value: "row2", label: "Mangalarga Marchador"},
-                          {value: "row3", label: "Pônei Brasileiro"},
-                          {value: "row4", label: "Appaloosa"},
-                          {value: "row5", label: "Paint Horse"},
-                          {value: "row6", label: "Árabe"},
-                          {value: "row7", label: "Quarter Horse"},
-                          {value: "row8", label: "Pursange"},
-                          {value: "row9", label: "Thoroughbred"},
-                          {value: "row11", label: "Pedigree"},
-                          {value: "row12", label: "Andalusiano"},
-                          {value: "row13", label: "Lipizzano"},
-                          {value: "row14", label: "Morgan"},
-                          {value: "row15", label: "Shetland"},
-                          {value: "row16", label: "Appaloosa Brasileiro"},
-                          {value: "row17", label: "Pônei Quarto de Milha"},
-                          {value: "row18", label: "Pônei Shetland Brasileiro"},
+                          {value: "row18", label: "Crioulo"},
+                          {value: "row19", label: "Mangalarga Marchador"},
+                          {value: "row20", label: "Pônei Brasileiro"},
+                          {value: "row41", label: "Appaloosa"},
+                          {value: "row51", label: "Paint Horse"},
+                          {value: "row61", label: "Árabe"},
+                          {value: "row71", label: "Quarter Horse"},
+                          {value: "row81", label: "Pursange"},
+                          {value: "row91", label: "Thoroughbred"},
+                          {value: "row111", label: "Pedigree"},
+                          {value: "row121", label: "Andalusiano"},
+                          {value: "row131", label: "Lipizzano"},
+                          {value: "row141", label: "Morgan"},
+                          {value: "row151", label: "Shetland"},
+                          {value: "row161", label: "Appaloosa Brasileiro"},
+                          {value: "row171", label: "Pônei Quarto de Milha"},
+                          {value: "row181", label: "Pônei Shetland Brasileiro"},
                         ]}
                         getValue={(value) => setProductSubCategory(value.label)}
                       />
