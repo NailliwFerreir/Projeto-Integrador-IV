@@ -21,7 +21,7 @@ export default function SelectCustom({
   return (
     <>
       <div className="input-item">
-        <h6 className="input-label text-qgray text-[13px] font-normal block mb-2 ">
+        <h6 className="input-label text-qgray text-[13px] font-normal block mb-2">
           {label ?? "Selecione uma opção"}
         </h6>
 
@@ -63,7 +63,7 @@ export default function SelectCustom({
               ></div>
             )}
             <div className={`my-select-box-section ${toggle ? "open" : ""}`}>
-              <ul className="list">
+              <ul className="list overflow-auto max-h-96">
                 {datas.map((value) => (
                   <li
                     className={item === value ? "selected" : ""}

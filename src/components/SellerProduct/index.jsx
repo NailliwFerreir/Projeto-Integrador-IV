@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Swal from "sweetalert2";
+import api from "../../services/api";
 import Dropzone from "../Helpers/Dropzone";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
@@ -52,6 +53,63 @@ export default function SellerProduct() {
       imgReader.readAsDataURL(e.target.files[0]);
     }
   };
+
+  const sallerProductHandler = (e) => {
+    const obj = {
+      productName,
+      productPrice,
+      productDescription,
+      productCategory,
+      productSubCategory,
+      //Falta adicionar a imagem do anúncio
+    };
+    console.log(obj);
+    api
+      .post("/api/orders/{definir id do pedido aqui}/items", obj)
+      .then((resp) => {
+        console.log(resp);
+        Swal.fire({
+          title: "Anúncio criado com sucesso!",
+          text: "O anúncio foi criado com sucesso, você será redirecionado para a página do anúncio.",
+          icon: "success",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 3000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        }); 
+        //definir o direcionamento para a página do anúncio caso o anúncio seja criado com sucesso
+      })
+    .catch((err) => {
+      console.log(err);
+      Swal.fire({
+        title: "Ocorreu uma falha ao publicar o anúncio!",
+        text: "Tente novamente mais tarde!",
+        icon: "error",
+        confirmButtonText: "Ok",
+        showCancelButton: false,
+        buttonsStyling: false,
+        reverseButtons: true,
+        timer: 3000,
+        customClass: {
+          confirmButton:
+            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        },
+      });
+    })
+  }
 
   // product values
   const [productName, setProductName] = useState("");
@@ -257,6 +315,8 @@ export default function SellerProduct() {
                         name="phone"
                         type="text"
                         inputClasses="h-[150px] whitespace-pre-line word-brake text-black"
+                        value={productDescription}
+                        inputHandler={(e) => setProductDescription(e.target.value)}
                       />
                     </div>
 
@@ -264,41 +324,63 @@ export default function SellerProduct() {
                       <SelectCustom
                         label="Categoria do sêmen*"
                         datas={[
-                          { value: "row", label: "Linha1" },
-                          { value: "ro2", label: "Linha2" },
+                          { value: "row", label: "Bovino" },
+                          { value: "ro2", label: "Equino" },
                         ]}
-                        getValue={(value) => console.log(value.label)}
+                        getValue={(value) => setProductCategory(value.label)}
+                      />
+                    </div>
+
+                    <div className="mb-5">
+                      <SelectCustom
+                        label="Subcategoria do sêmen*"
+                        datas={[
+                          {value: "row", label: "Nelore"},
+                          {value: "row2", label: "Angus"},
+                          {value: "row3", label: "Guzerá"},
+                          {value: "row4", label: "Simental"},
+                          {value: "row5", label: "Charolais"},
+                          {value: "row6", label: "Hereford"},
+                          {value: "row7", label: "Brahman"},
+                          {value: "row8", label: "Mangalarga Marchador"},
+                          {value: "row9", label: "Crioulo"},
+                          {value: "row11", label: "Indolês"},
+                          {value: "row12", label: "Jersey"},
+                          {value: "row13", label: "Limousin"},
+                          {value: "row14", label: "Shorthorn"},
+                          {value: "row15", label: "Senepol"},
+                          {value: "row16", label: "Tabapuã"},
+                          {value: "row17", label: "Xiquexique"},
+                          //Parte dos equinos
+                          {value: "row", label: "Crioulo"},
+                          {value: "row2", label: "Mangalarga Marchador"},
+                          {value: "row3", label: "Pônei Brasileiro"},
+                          {value: "row4", label: "Appaloosa"},
+                          {value: "row5", label: "Paint Horse"},
+                          {value: "row6", label: "Árabe"},
+                          {value: "row7", label: "Quarter Horse"},
+                          {value: "row8", label: "Pursange"},
+                          {value: "row9", label: "Thoroughbred"},
+                          {value: "row11", label: "Pedigree"},
+                          {value: "row12", label: "Andalusiano"},
+                          {value: "row13", label: "Lipizzano"},
+                          {value: "row14", label: "Morgan"},
+                          {value: "row15", label: "Shetland"},
+                          {value: "row16", label: "Appaloosa Brasileiro"},
+                          {value: "row17", label: "Pônei Quarto de Milha"},
+                          {value: "row18", label: "Pônei Shetland Brasileiro"},
+                        ]}
+                        getValue={(value) => setProductSubCategory(value.label)}
                       />
                     </div>
 
                     <div className="input-item mb-5">
                       <button
-                        onClick={(e) => {
-                          Swal.fire({
-                            title: "Anúncio criado com sucesso!",
-                            text: "O anúncio foi criado com sucesso, você será redirecionado para a página do anúncio.",
-                            icon: "success",
-                            confirmButtonText: "Ok",
-                            showCancelButton: true,
-                            buttonsStyling: false,
-                            reverseButtons: true,
-                            customClass: {
-                              confirmButton:
-                                "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-                              title: "text-2xl text-qblack",
-                              text: "text-xs text-qblack",
-                              cancelButton:
-                                "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-                            },
-                          }); /* .then((result) => {
-                            if (result.isConfirmed) {
-                              navigate("/ondevcquizerir")");
-                            }
-                          }); */
-                        }}
+                        onClick={(e) => sallerProductHandler(e)}
                         type="button"
                         className="p-3 black-btn"
                       >
+                        
                         <div>
                           <span>Postar anúncio</span>
                         </div>

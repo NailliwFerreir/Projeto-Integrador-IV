@@ -19,6 +19,7 @@ export default function BecomeSaller() {
   const [shopaddress, setShopaddress] = useState("");
   const [password, setPassword] = useState("");
   const [rePassrod, setRePassword] = useState("");
+  const [afe, setAfe] = useState("");
   // logo img
   const logoImgInput = useRef(null);
   const browseLogoImg = () => {
@@ -72,6 +73,7 @@ export default function BecomeSaller() {
       address,
       shopname,
       shopaddress,
+      afe,
       password,
       rePassrod,
     };
@@ -79,11 +81,12 @@ export default function BecomeSaller() {
       Swal.fire({
         title: "Erro!",
         text: "Insira senhas identicas para prosseguir!",
-        icon: "error",
+        icon: "warning",
         confirmButtonText: "Ok",
         showCancelButton: false,
         buttonsStyling: false,
         reverseButtons: true,
+        timer: 3000,
         customClass: {
           confirmButton:
             "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
@@ -106,7 +109,7 @@ export default function BecomeSaller() {
       <div className="become-saller-wrapper w-full">
         <div className="title mb-10">
           <PageTitle
-            title="Seller Application"
+            title="Seja um vendedor!"
             breadcrumb={[
               { name: "home", path: "/" },
               { name: "Become Saller", path: "/become-saller" },
@@ -240,6 +243,17 @@ export default function BecomeSaller() {
                         inputClasses="h-[50px]"
                         value={shopaddress}
                         inputHandler={(e) => setShopaddress(e.target.value)}
+                      />
+                    </div>
+                    <div className="mb-5">
+                      <InputCom
+                        placeholder="Digite o número da sua autorização de venda..."
+                        label="AFE*"
+                        name="afe"
+                        type="text"
+                        inputClasses="h-[50px]"
+                        value={afe}
+                        inputHandler={(e) => setAfe(e.target.value)}
                       />
                     </div>
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-[30px]">
