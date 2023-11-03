@@ -61,14 +61,14 @@ export default function BecomeSaller() {
   const becomeSallerHandler = (e) => {
     const obj = {
       name:`${fname} ${lname}`,
-      birth,
+      birthdate:birth,
       email,
       address:`${address}, ${pais}`,
-      afe,
+      certificateCode:afe,
     };
     console.log(obj);
     api
-      .post("/api/client", obj) /* Tem que verificar esse endpoint aqui e se as informações estão sendo passadas corretamente! */
+      .post("/client", obj) /* Tem que verificar esse endpoint aqui e se as informações estão sendo passadas corretamente! */
       .then((resp) => {
         console.log(resp.data);
         Swal.fire({
@@ -235,7 +235,7 @@ export default function BecomeSaller() {
                         placeholder="Digite o número da sua autorização de venda..."
                         label="AFE*"
                         name="afe"
-                        type="text"
+                        type="number"
                         inputClasses="h-[50px]"
                         value={afe}
                         inputHandler={(e) => setAfe(e.target.value)}
