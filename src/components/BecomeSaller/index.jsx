@@ -61,10 +61,10 @@ export default function BecomeSaller() {
   const becomeSallerHandler = (e) => {
     const obj = {
       name:`${fname} ${lname}`,
-      birthdate:birth,
-      email,
+      birthDate:birth,
       address:`${address}, ${pais}`,
       certificateCode:afe,
+      email,
     };
     console.log(obj);
     api
