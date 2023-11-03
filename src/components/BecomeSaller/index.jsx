@@ -14,7 +14,7 @@ export default function BecomeSaller() {
   const [birth, setBirth] = useState("");
   const pais = "Brasil";
   const [address, setAddress] = useState("");
-  const [afe, setAfe] = useState("");
+  const [afe, setAfe] = useState();
   // logo img
   const logoImgInput = useRef(null);
   const browseLogoImg = () => {
@@ -68,7 +68,7 @@ export default function BecomeSaller() {
     };
     console.log(obj);
     api
-      .post("/client", obj) /* Tem que verificar esse endpoint aqui e se as informações estão sendo passadas corretamente! */
+      .post("/client", obj)
       .then((resp) => {
         console.log(resp.data);
         Swal.fire({
