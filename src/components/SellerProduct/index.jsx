@@ -56,16 +56,16 @@ export default function SellerProduct() {
 
   const sallerProductHandler = (e) => {
     const obj = {
-      productName,
-      productPrice,
-      productDescription,
-      productCategory,
-      productSubCategory,
+      name: productName,
+      category: `${productCategory}, ${productSubCategory}`,
+      stock,
+      value: productPrice,
+      description: productDescription,
       //Falta adicionar a imagem do anúncio
     };
     console.log(obj);
     api
-      .post("/api/clients/{clientId}/products", obj)
+      .post("/clients/2/products", obj)
       .then((resp) => {
         console.log(resp.data);
         Swal.fire({
@@ -113,10 +113,11 @@ export default function SellerProduct() {
 
   // product values
   const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState("R$ 0,00");
+  const [productPrice, setProductPrice] = useState(0.00);
   const [productDescription, setProductDescription] = useState("");
   const [productCategory, setProductCategory] = useState("Bovino");
   const [productSubCategory, setProductSubCategory] = useState("Nelore");
+  const [stock, setStock] = useState(1);
 
   const cattles = {
     bovine: [
@@ -286,8 +287,8 @@ export default function SellerProduct() {
                   <div className="input-area pt-2">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
                       <InputCom
-                        placeholder="Nome do Produto "
-                        label="Nome do produto (Isso vai ser o título do anúncio)*"
+                        placeholder="Nome do Produto"
+                        label="Nome do produto*"
                         name="productName"
                         type="text"
                         inputClasses="h-[50px]"
@@ -299,12 +300,22 @@ export default function SellerProduct() {
                         label="Preço*"
                         name="productPrice"
                         placeholder="R$ 100,00"
-                        type="text"
+                        type="number"
                         inputClasses="h-[50px]"
                         value={productPrice}
                         inputHandler={(e) =>
-                          setProductPrice(moneyMaskBR(e.target.value))
+                          setProductPrice((e.target.value)) //moneyMaskBR(e.target.value)
                         }
+                      />
+
+                      <InputCom
+                        label="Estoque*"
+                        name="productStock"
+                        placeholder="R$ 100,00"
+                        type="number"
+                        inputClasses="h-[50px]"
+                        value={stock}
+                        inputHandler={(e) => setStock(e.target.value)}
                       />
                     </div>
 
