@@ -60,6 +60,7 @@ export default function SellerProduct() {
       category: `${productCategory}, ${productSubCategory}`,
       stock,
       value: productPrice,
+      race: productSubCategory,
       description: productDescription,
       //Falta adicionar a imagem do anúncio
     };
