@@ -4,7 +4,6 @@ import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
-
 export default function BecomeSaller() {
   const [profileImg, setProfileImg] = useState(null);
   const [logoImg, setLogoImg] = useState(null);
@@ -12,13 +11,9 @@ export default function BecomeSaller() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [birth, setBirth] = useState("");
   const pais = "Brasil";
   const [address, setAddress] = useState("");
-  const [shopname, setShopname] = useState("");
-  const [shopaddress, setShopaddress] = useState("");
-  const [password, setPassword] = useState("");
-  const [rePassrod, setRePassword] = useState("");
   const [afe, setAfe] = useState("");
   // logo img
   const logoImgInput = useRef(null);
@@ -65,44 +60,57 @@ export default function BecomeSaller() {
 
   const becomeSallerHandler = (e) => {
     const obj = {
-      fname,
-      lname,
+      name:`${fname} ${lname}`,
+      birth,
       email,
-      phone,
-      pais,
-      address,
-      shopname,
-      shopaddress,
+      address:`${address}, ${pais}`,
       afe,
-      password,
-      rePassrod,
     };
-    if(password !== rePassrod){
-      Swal.fire({
-        title: "Erro!",
-        text: "Insira senhas identicas para prosseguir!",
-        icon: "warning",
-        confirmButtonText: "Ok",
-        showCancelButton: false,
-        buttonsStyling: false,
-        reverseButtons: true,
-        timer: 3000,
-        customClass: {
-          confirmButton:
-            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-          title: "text-2xl text-qblack",
-          text: "text-xs text-qblack",
-          cancelButton:
-            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-        },
+    console.log(obj);
+    api
+      .post("/api/client", obj) /* Tem que verificar esse endpoint aqui e se as informações estão sendo passadas corretamente! */
+      .then((resp) => {
+        console.log(resp.data);
+        Swal.fire({
+          title: "Conta registrada com sucesso!",
+          text: "Contamos com você para um mundo com animais mais bonitos, fortes e saudáveis!",
+          icon: "success",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 3000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        }); 
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          title: "Não foi possível criar a conta!",
+          text: "Infelizmente estamos passando por problemas técnicos! Tente novamente mais tarde!",
+          icon: "error",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 3000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        }); 
       });
-    }else{
-      console.log(obj);
-      api
-      .post("/api/signup", obj) /* Tem que verificar esse endpoint aqui e se as informações estão sendo passadas corretamente! */
-      .then((resp) => console.log(resp.data))
-      .catch((error) => console.log(error));
-    }
   };
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -165,12 +173,12 @@ export default function BecomeSaller() {
 
                       <InputCom
                         placeholder="0213 *********"
-                        label="Phone*"
-                        name="phone"
+                        label="Data de nascimento*"
+                        name="Data de nascimento"
                         type="text"
                         inputClasses="h-[50px]"
-                        value={phone}
-                        inputHandler={(e) => setPhone(e.target.value)}
+                        value={birth}
+                        inputHandler={(e) => setBirth(e.target.value)}
                       />
                     </div>
 
@@ -218,33 +226,10 @@ export default function BecomeSaller() {
                       Informações da loja
                     </h1>
                     <p className="text-[15px] text-qgraytwo">
-                      Fill the form below or write us .We will help you as soon
-                      as possible.
+                      Insira a sua autorização de venda.
                     </p>
                   </div>
                   <div className="input-area">
-                    <div className="mb-5">
-                      <InputCom
-                        placeholder="Digite o nome da loja..."
-                        label="Shop Name*"
-                        name="shopname"
-                        type="text"
-                        inputClasses="h-[50px]"
-                        value={shopname}
-                        inputHandler={(e) => setShopname(e.target.value)}
-                      />
-                    </div>
-                    <div className="mb-5">
-                      <InputCom
-                        placeholder="Digite o endereco da loja..."
-                        label="Address*"
-                        name="shopaddress"
-                        type="text"
-                        inputClasses="h-[50px]"
-                        value={shopaddress}
-                        inputHandler={(e) => setShopaddress(e.target.value)}
-                      />
-                    </div>
                     <div className="mb-5">
                       <InputCom
                         placeholder="Digite o número da sua autorização de venda..."
@@ -254,27 +239,6 @@ export default function BecomeSaller() {
                         inputClasses="h-[50px]"
                         value={afe}
                         inputHandler={(e) => setAfe(e.target.value)}
-                      />
-                    </div>
-                    <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-[30px]">
-                      <InputCom
-                        placeholder="● ● ● ● ● ●"
-                        label="Password*"
-                        name="password"
-                        type="password"
-                        inputClasses="h-[50px]"
-                        value={password}
-                        inputHandler={(e) => setPassword(e.target.value)}
-                      />
-
-                      <InputCom
-                        placeholder="● ● ● ● ● ●"
-                        label="Re-enter Password*"
-                        name="repassword"
-                        type="password"
-                        inputClasses="h-[50px]"
-                        value={rePassrod}
-                        inputHandler={(e) => setRePassword(e.target.value)}
                       />
                     </div>
 

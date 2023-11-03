@@ -65,9 +65,9 @@ export default function SellerProduct() {
     };
     console.log(obj);
     api
-      .post("/api/orders/{definir id do pedido aqui}/items", obj)
+      .post("/api/clients/{clientId}/products", obj)
       .then((resp) => {
-        console.log(resp);
+        console.log(resp.data);
         Swal.fire({
           title: "Anúncio criado com sucesso!",
           text: "O anúncio foi criado com sucesso, você será redirecionado para a página do anúncio.",
