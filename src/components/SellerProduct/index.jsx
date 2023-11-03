@@ -66,7 +66,7 @@ export default function SellerProduct() {
     };
     console.log(obj);
     api
-      .post("/clients/2/products", obj)
+      .post("/clients/1/products", obj)
       .then((resp) => {
         console.log(resp.data);
         Swal.fire({
@@ -114,7 +114,7 @@ export default function SellerProduct() {
 
   // product values
   const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState(0.00);
+  const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
   const [productCategory, setProductCategory] = useState("Bovino");
   const [productSubCategory, setProductSubCategory] = useState("Nelore");
