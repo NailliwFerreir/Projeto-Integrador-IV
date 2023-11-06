@@ -40,7 +40,9 @@ export default function BecomeSaller() {
       imgReader.onload = (event) => {
         setProfileImg(event.target.result);
       };
+      imgReader.readAsBinaryString(e.target.files[0]);
       imgReader.readAsDataURL(e.target.files[0]);
+
     }
   };
   // cover img
@@ -51,6 +53,8 @@ export default function BecomeSaller() {
   const coverImgChangHandler = (e) => {
     if (e.target.value !== "") {
       const imgReader = new FileReader();
+      console.log("working")
+      console.log(imgReader)
       imgReader.onload = (event) => {
         setCoverImg(event.target.result);
       };
@@ -69,7 +73,7 @@ export default function BecomeSaller() {
     };
     console.log(obj);
     api
-      .put(`/auth/seller/${id}`, obj)
+      .put(`/seller/${id}`, obj)
       .then((resp) => {
         console.log(resp.data);
         Swal.fire({
