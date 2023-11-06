@@ -104,7 +104,7 @@ export default function BecomeSaller() {
     };
     console.log(obj);
     api
-      .put(`/seller/${id}`, obj)
+      .put(`auth/seller/${id}`, obj)
       .then((resp) => {
         console.log(resp.data);
         Swal.fire({
