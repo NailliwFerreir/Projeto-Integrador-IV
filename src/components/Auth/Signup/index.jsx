@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 import api from "../../../services/api";
 import InputCom from "../../Helpers/InputCom";
 import Layout from "../../Partials/Layout";
@@ -6,6 +7,7 @@ import Thumbnail from "./Thumbnail";
 
 export default function Signup() {
   const [checked, setValue] = useState(false);
+  const [navigate, setNavigate] = useState(false);
   const rememberMe = () => {
     setValue(!checked);
   };
@@ -24,8 +26,49 @@ export default function Signup() {
     console.log(data);
     api
       .post("/auth/signup", data)
-      .then((resp) => console.log(resp.data))
-      .catch((error) => console.log(error));
+      .then((resp) => {
+        console.log(resp.data);
+        Swal.fire({
+          title: "Conta criada com sucesso!",
+          text: "Você será redirecionado para a página login.",
+          icon: "success",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 4000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          title: "Infelizmente não foi possível criar sua conta!",
+          text: "Tente novamente mais tarde.",
+          icon: "error",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 4000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+      });
   };
 
   return (
