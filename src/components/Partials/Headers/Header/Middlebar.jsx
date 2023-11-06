@@ -1,16 +1,21 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Cart from "../../../Cart";
+import SearchBox from "../../../Helpers/SearchBox";
 import Compair from "../../../Helpers/icons/Compair";
 import ThinBag from "../../../Helpers/icons/ThinBag";
 import ThinLove from "../../../Helpers/icons/ThinLove";
 import ThinPeople from "../../../Helpers/icons/ThinPeople";
-import SearchBox from "../../../Helpers/SearchBox";
 
 export default function Middlebar({ className }) {
+  var [id, setId] = useState(JSON.parse(localStorage.getItem("user")));
+  const navigate = useNavigate();
+  console.log(id);
   // const [toggleCart, setToggle] = useState(false);
   // const cartHandler = () => {
   //   setToggle(!toggleCart);
   // };
+
   return (
     <div className={`w-full h-[86px] bg-white ${className}`}>
       <div className="container-x mx-auto h-full">
@@ -66,11 +71,24 @@ export default function Middlebar({ className }) {
                 <Cart className="absolute -right-[45px] top-11 z-50 hidden group-hover:block" />
               </div>
               <div>
-                <Link to="/profile">
-                  <span>
-                    <ThinPeople />
-                  </span>
-                </Link>
+                {id ? (
+                  <Link to="/profile">
+                    <span>
+                      <ThinPeople />
+                    </span>
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => {
+                      // Redireciona o usuário para a página de login
+                      navigate("/login");
+                    }}
+                  >
+                    <span>
+                      <ThinPeople />
+                    </span>
+                  </button>
+                )}
               </div>
             </div>
           </div>
