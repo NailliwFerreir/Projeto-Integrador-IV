@@ -78,8 +78,6 @@ export default function Signup() {
     }
   };
 
-  const handleSubmit = () => { };
-
   const createAccount = () => {
     const data = {
       username: `${firstName}${lastName}`,
