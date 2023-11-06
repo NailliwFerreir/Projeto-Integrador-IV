@@ -85,10 +85,7 @@ export default function Signup() {
       username: `${firstName}${lastName}`,
       email,
       password,
-      role: ["comprador"],
-      cpf,
-      afe: "0",
-      address: `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}`,
+      role: ["comprador"]
     };
     console.log(data);
     api

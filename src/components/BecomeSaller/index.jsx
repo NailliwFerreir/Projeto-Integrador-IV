@@ -59,16 +59,17 @@ export default function BecomeSaller() {
   };
 
   const becomeSallerHandler = (e) => {
+    var id = JSON.parse(localStorage.getItem("user"))
+    id = id.id
+    console.log(id)
     const obj = {
-      name:`${fname} ${lname}`,
-      birthDate:birth,
-      address:`${address}, ${pais}`,
-      certificateCode:afe,
-      email,
+      birthDate: birth,
+      address: `${address}, ${pais}`,
+      certificateCode: afe,
     };
     console.log(obj);
     api
-      .post("/client", obj)
+      .put(`/auth/seller/${id}`, obj)
       .then((resp) => {
         console.log(resp.data);
         Swal.fire({
@@ -88,7 +89,7 @@ export default function BecomeSaller() {
             cancelButton:
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
-        }); 
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -109,7 +110,7 @@ export default function BecomeSaller() {
             cancelButton:
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
-        }); 
+        });
       });
   };
   return (
@@ -235,7 +236,7 @@ export default function BecomeSaller() {
                         placeholder="Digite o número da sua autorização de venda..."
                         label="AFE*"
                         name="afe"
-                        type="number"
+                        type="text"
                         inputClasses="h-[50px]"
                         value={afe}
                         inputHandler={(e) => setAfe(e.target.value)}

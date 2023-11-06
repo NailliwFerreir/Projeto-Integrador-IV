@@ -17,7 +17,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     try {
       const data = { email, password };
-      api.post("/api/auth/signin", data).then((response) => {
+      api.post("/auth/signin", data).then((response) => {
         console.log(response.data.accessToken)
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
