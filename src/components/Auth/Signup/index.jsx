@@ -23,7 +23,7 @@ export default function Signup() {
     };
     console.log(data);
     api
-      .post("/api/auth/signup", data)
+      .post("/auth/signup", data)
       .then((resp) => console.log(resp.data))
       .catch((error) => console.log(error));
   };
