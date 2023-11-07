@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import api from "../../../services/api";
 import InputCom from "../../Helpers/InputCom";
 import Layout from "../../Partials/Layout";
@@ -6,6 +8,7 @@ import Thumbnail from "./Thumbnail";
 
 export default function Login() {
   const [checked, setValue] = useState(false);
+  const navigate = useNavigate();
   const rememberMe = () => {
     setValue(!checked);
   };
@@ -17,16 +20,51 @@ export default function Login() {
   const handleSubmit = (e) => {
     try {
       const data = { email, password };
-      api.post("/api/auth/signin", data).then((response) => {
+      api.post("/auth/signin", data).then((response) => {
         console.log(response.data.accessToken)
+        Swal.fire({
+          title: "Logado com sucesso!",
+          text: "Você será redirecionado para a página principal.",
+          icon: "success",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 4000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
         }
-
-        return response.data;
+        navigate("/");
       });
     } catch (error) {
       console.log(error);
+      Swal.fire({
+        title: "Infelizmente não foi possível fazer o login!",
+        text: "Tente novamente mais tarde.",
+        icon: "error",
+        confirmButtonText: "Ok",
+        showCancelButton: false,
+        buttonsStyling: false,
+        reverseButtons: true,
+        timer: 4000,
+        customClass: {
+          confirmButton:
+            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        },
+      });
     }
   };
   return (

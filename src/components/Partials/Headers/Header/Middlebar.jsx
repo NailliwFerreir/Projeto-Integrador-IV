@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Cart from "../../../Cart";
-import Compair from "../../../Helpers/icons/Compair";
-import ThinBag from "../../../Helpers/icons/ThinBag";
-import ThinLove from "../../../Helpers/icons/ThinLove";
-import ThinPeople from "../../../Helpers/icons/ThinPeople";
 import SearchBox from "../../../Helpers/SearchBox";
+import ThinBag from "../../../Helpers/icons/ThinBag";
+import ThinPeople from "../../../Helpers/icons/ThinPeople";
 
 export default function Middlebar({ className }) {
+  var [id, setId] = useState(JSON.parse(localStorage.getItem("user")));
+  const navigate = useNavigate();
+  console.log(id);
   // const [toggleCart, setToggle] = useState(false);
   // const cartHandler = () => {
   //   setToggle(!toggleCart);
   // };
+
   return (
     <div className={`w-full h-[86px] bg-white ${className}`}>
       <div className="container-x mx-auto h-full">
@@ -30,26 +33,6 @@ export default function Middlebar({ className }) {
               <SearchBox className="search-com" />
             </div>
             <div className="flex space-x-6 items-center">
-              <div className="compaire relative">
-                <a href="/products-compaire">
-                  <span>
-                    <Compair />
-                  </span>
-                </a>
-                <span className="w-[18px] h-[18px] rounded-full bg-qh2-green absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] text-white">
-                  2
-                </span>
-              </div>
-              <div className="favorite relative">
-                <a href="/wishlist">
-                  <span>
-                    <ThinLove />
-                  </span>
-                </a>
-                <span className="w-[18px] h-[18px] rounded-full bg-qh2-green absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] text-white">
-                  1
-                </span>
-              </div>
               <div className="cart-wrapper group relative py-4">
                 <div className="cart relative cursor-pointer">
                   <a href="/cart">
@@ -66,11 +49,24 @@ export default function Middlebar({ className }) {
                 <Cart className="absolute -right-[45px] top-11 z-50 hidden group-hover:block" />
               </div>
               <div>
-                <Link to="/profile">
-                  <span>
-                    <ThinPeople />
-                  </span>
-                </Link>
+                {id ? (
+                  <Link to="/profile">
+                    <span>
+                      <ThinPeople />
+                    </span>
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => {
+                      // Redireciona o usuário para a página de login
+                      navigate("/login");
+                    }}
+                  >
+                    <span>
+                      <ThinPeople />
+                    </span>
+                  </button>
+                )}
               </div>
             </div>
           </div>

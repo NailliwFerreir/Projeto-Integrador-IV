@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Swal from "sweetalert2";
+import api from "../../services/api";
 import Dropzone from "../Helpers/Dropzone";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
@@ -10,6 +11,7 @@ export default function SellerProduct() {
   const [profileImg, setProfileImg] = useState(null);
   const [logoImg, setLogoImg] = useState(null);
   const [coverImg, setCoverImg] = useState(null);
+
   // logo img
   const logoImgInput = useRef(null);
   const browseLogoImg = () => {
@@ -53,12 +55,74 @@ export default function SellerProduct() {
     }
   };
 
+  const sallerProductHandler = (e) => {
+    var id = JSON.parse(localStorage.getItem("user"));
+    id = id.id;
+    const obj = {
+      name: productName,
+      category: `${productCategory}, ${productSubCategory}`,
+      stock,
+      value: productPrice,
+      race: productSubCategory,
+      description: productDescription,
+      fkUserId: id
+      //Falta adicionar a imagem do anúncio
+    };
+    console.log(obj);
+    api
+      .post("/products", obj)
+      .then((resp) => {
+        console.log(resp.data);
+        Swal.fire({
+          title: "Anúncio criado com sucesso!",
+          text: "O anúncio foi criado com sucesso, você será redirecionado para a página do anúncio.",
+          icon: "success",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 3000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+        //definir o direcionamento para a página do anúncio caso o anúncio seja criado com sucesso
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          title: "Ocorreu uma falha ao publicar o anúncio!",
+          text: "Tente novamente mais tarde!",
+          icon: "error",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 3000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+      })
+  }
+
   // product values
   const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState("R$ 0,00");
+  const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
-  const [productCategory, setProductCategory] = useState("");
-  const [productSubCategory, setProductSubCategory] = useState("");
+  const [productCategory, setProductCategory] = useState("Bovino");
+  const [productSubCategory, setProductSubCategory] = useState("Nelore");
+  const [stock, setStock] = useState(1);
 
   const cattles = {
     bovine: [
@@ -228,8 +292,8 @@ export default function SellerProduct() {
                   <div className="input-area pt-2">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
                       <InputCom
-                        placeholder="Nome do Produto "
-                        label="Nome do produto (Isso vai ser o título do anúncio)*"
+                        placeholder="Nome do Produto"
+                        label="Nome do produto*"
                         name="productName"
                         type="text"
                         inputClasses="h-[50px]"
@@ -241,12 +305,22 @@ export default function SellerProduct() {
                         label="Preço*"
                         name="productPrice"
                         placeholder="R$ 100,00"
-                        type="text"
+                        type="number"
                         inputClasses="h-[50px]"
                         value={productPrice}
                         inputHandler={(e) =>
-                          setProductPrice(moneyMaskBR(e.target.value))
+                          setProductPrice((e.target.value)) //moneyMaskBR(e.target.value)
                         }
+                      />
+
+                      <InputCom
+                        label="Estoque*"
+                        name="productStock"
+                        placeholder="R$ 100,00"
+                        type="number"
+                        inputClasses="h-[50px]"
+                        value={stock}
+                        inputHandler={(e) => setStock(e.target.value)}
                       />
                     </div>
 
@@ -257,6 +331,8 @@ export default function SellerProduct() {
                         name="phone"
                         type="text"
                         inputClasses="h-[150px] whitespace-pre-line word-brake text-black"
+                        value={productDescription}
+                        inputHandler={(e) => setProductDescription(e.target.value)}
                       />
                     </div>
 
@@ -264,41 +340,63 @@ export default function SellerProduct() {
                       <SelectCustom
                         label="Categoria do sêmen*"
                         datas={[
-                          { value: "row", label: "Linha1" },
-                          { value: "ro2", label: "Linha2" },
+                          { value: "row", label: "Bovino" },
+                          { value: "ro2", label: "Equino" },
                         ]}
-                        getValue={(value) => console.log(value.label)}
+                        getValue={(value) => setProductCategory(value.label)}
+                      />
+                    </div>
+
+                    <div className="mb-5">
+                      <SelectCustom
+                        label="Subcategoria do sêmen*"
+                        datas={[
+                          { value: "row", label: "Nelore" },
+                          { value: "row2", label: "Angus" },
+                          { value: "row3", label: "Guzerá" },
+                          { value: "row4", label: "Simental" },
+                          { value: "row5", label: "Charolais" },
+                          { value: "row6", label: "Hereford" },
+                          { value: "row7", label: "Brahman" },
+                          { value: "row8", label: "Mangalarga Marchador" },
+                          { value: "row9", label: "Crioulo" },
+                          { value: "row11", label: "Indolês" },
+                          { value: "row12", label: "Jersey" },
+                          { value: "row13", label: "Limousin" },
+                          { value: "row14", label: "Shorthorn" },
+                          { value: "row15", label: "Senepol" },
+                          { value: "row16", label: "Tabapuã" },
+                          { value: "row17", label: "Xiquexique" },
+                          //Parte dos equinos
+                          { value: "row18", label: "Crioulo" },
+                          { value: "row19", label: "Mangalarga Marchador" },
+                          { value: "row20", label: "Pônei Brasileiro" },
+                          { value: "row41", label: "Appaloosa" },
+                          { value: "row51", label: "Paint Horse" },
+                          { value: "row61", label: "Árabe" },
+                          { value: "row71", label: "Quarter Horse" },
+                          { value: "row81", label: "Pursange" },
+                          { value: "row91", label: "Thoroughbred" },
+                          { value: "row111", label: "Pedigree" },
+                          { value: "row121", label: "Andalusiano" },
+                          { value: "row131", label: "Lipizzano" },
+                          { value: "row141", label: "Morgan" },
+                          { value: "row151", label: "Shetland" },
+                          { value: "row161", label: "Appaloosa Brasileiro" },
+                          { value: "row171", label: "Pônei Quarto de Milha" },
+                          { value: "row181", label: "Pônei Shetland Brasileiro" },
+                        ]}
+                        getValue={(value) => setProductSubCategory(value.label)}
                       />
                     </div>
 
                     <div className="input-item mb-5">
                       <button
-                        onClick={(e) => {
-                          Swal.fire({
-                            title: "Anúncio criado com sucesso!",
-                            text: "O anúncio foi criado com sucesso, você será redirecionado para a página do anúncio.",
-                            icon: "success",
-                            confirmButtonText: "Ok",
-                            showCancelButton: true,
-                            buttonsStyling: false,
-                            reverseButtons: true,
-                            customClass: {
-                              confirmButton:
-                                "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-                              title: "text-2xl text-qblack",
-                              text: "text-xs text-qblack",
-                              cancelButton:
-                                "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-                            },
-                          }); /* .then((result) => {
-                            if (result.isConfirmed) {
-                              navigate("/ondevcquizerir")");
-                            }
-                          }); */
-                        }}
+                        onClick={(e) => sallerProductHandler(e)}
                         type="button"
                         className="p-3 black-btn"
                       >
+
                         <div>
                           <span>Postar anúncio</span>
                         </div>

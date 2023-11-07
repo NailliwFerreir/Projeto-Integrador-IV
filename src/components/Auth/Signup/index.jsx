@@ -1,5 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import api from "../../../services/api";
 import InputCom from "../../Helpers/InputCom";
 import Layout from "../../Partials/Layout";
@@ -7,94 +8,68 @@ import Thumbnail from "./Thumbnail";
 
 export default function Signup() {
   const [checked, setValue] = useState(false);
+  const navigate = useNavigate();
   const rememberMe = () => {
     setValue(!checked);
   };
-  const [cep, setCep] = useState("");
-  const [street, setStreet] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("");
-  const [houseNumber, setHouseNumber] = useState("");
-  const [number, setNumber] = useState("");
-  const [neighborhood, setNeighborhood] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [cpf, setCpf] = useState("");
-
-  const cepMask = (value) => {
-    value = value.replace(/[^0-9]/g, "");
-    value = value.slice(0, 5) + "-" + value.slice(5);
-    return value;
-  };
-
-  const cpfMask = (value) => {
-    value = value.replace(/[^0-9]/g, "");
-    value =
-      value.slice(0, 3) +
-      "." +
-      value.slice(3, 6) +
-      "." +
-      value.slice(6, 9) +
-      "-" +
-      value.slice(9, 11);
-    return value;
-  };
-
-  const numberMask = (value) => {
-    value = value.replace(/[^0-9]/g, "");
-    return value;
-  };
-
-  const phoneMask = (value) => {
-    value = value.replace(/[^0-9]/g, "");
-    value =
-      "(" +
-      value.slice(0, 2) +
-      ")" +
-      " " +
-      value.slice(2, 7) +
-      "-" +
-      value.slice(7);
-    return value;
-  };
-
-  const checkCep = async (cep) => {
-    console.log(cep);
-    cep = cep.replace(/\D/g, "");
-    if (cep.length === 8) {
-      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
-      console.log(response.data);
-      const { data } = response;
-      if (data.cep) {
-        setStreet(data.logradouro);
-        setNeighborhood(data.bairro);
-        setCity(data.localidade);
-        setState(data.uf);
-        setCountry("Brasil");
-      }
-    }
-  };
-
-  const handleSubmit = () => { };
 
   const createAccount = () => {
     const data = {
       username: `${firstName}${lastName}`,
       email,
       password,
-      role: ["comprador"],
-      cpf,
-      afe: "0",
-      address: `${street}, ${houseNumber}, ${neighborhood}. ${city}, ${state}`,
+      role: ["comprador"]
     };
     console.log(data);
     api
-      .post("/api/auth/signup", data)
-      .then((resp) => console.log(resp.data))
-      .catch((error) => console.log(error));
+      .post("/auth/signup", data)
+      .then((resp) => {
+        console.log(resp.data);
+        Swal.fire({
+          title: "Conta criada com sucesso!",
+          text: "Você será redirecionado para a página login.",
+          icon: "success",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 4000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          title: "Infelizmente não foi possível criar sua conta!",
+          text: "Tente novamente mais tarde.",
+          icon: "error",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 4000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+      });
   };
 
   return (
@@ -157,126 +132,6 @@ export default function Signup() {
                       value={email}
                       inputHandler={(e) => setEmail(e.target.value)}
                     />
-
-                    <InputCom
-                      placeholder="(21) 99887 65544"
-                      label="Número de Celular*"
-                      name="phone"
-                      type="text"
-                      inputClasses="h-[50px]"
-                      value={number}
-                      inputHandler={(e) => {
-                        if (e.target.value.length < 16) {
-                          setNumber(phoneMask(e.target.value));
-                        }
-                      }}
-                    />
-                  </div>
-
-                  <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
-                    <div className="w-1/2">
-                      <div className="w-full h-[25px] mb-5 sm:mb-0">
-                        <InputCom
-                          placeholder="123.456.789-10"
-                          label="CPF*"
-                          name="cpf"
-                          type="text"
-                          inputClasses="h-[50px]"
-                          value={cpf}
-                          inputHandler={(e) => {
-                            if (e.target.value.length < 15) {
-                              setCpf(cpfMask(e.target.value));
-                            }
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
-                    <div className="w-1/2">
-                      <div className="w-full h-[50px] mb-5 sm:mb-0">
-                        <InputCom
-                          label="Código Postal / CEP*"
-                          inputClasses="w-full h-full"
-                          type="text"
-                          placeholder="12345-123"
-                          value={cep}
-                          inputHandler={(e) => {
-                            if (e.target.value.length < 10) {
-                              setCep(cepMask(e.target.value));
-                              checkCep(e.target.value);
-                            }
-                          }}
-                        />
-                      </div>
-                    </div>
-                    <div className="w-1/2">
-                      <div className="w-full h-[50px] mb-5 sm:mb-0">
-                        <InputCom
-                          label="Cidade"
-                          inputClasses="w-full h-full"
-                          type="text"
-                          placeholder="Nome da cidade"
-                          value={city}
-                          inputHandler={(e) => setCity(e.target.value)}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="input-item mb-10">
-                    <div className="w-full h-[50px] mb-5 sm:mb-0">
-                      <InputCom
-                        label="Rua"
-                        inputClasses="w-full h-full"
-                        type="text"
-                        placeholder="Rua Exemplo, 123"
-                        value={street}
-                        inputHandler={(e) => setStreet(e.target.value)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
-                    <div className="w-1/5">
-                      <div className="w-full h-[50px] mb-5 sm:mb-0">
-                        <InputCom
-                          label="Estado"
-                          inputClasses="w-full h-full"
-                          type="text"
-                          placeholder="Uf"
-                          value={state}
-                          inputHandler={(e) => setState(e.target.value)}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="w-full h-[50px] mb-5 sm:mb-0">
-                        <InputCom
-                          label="Bairro"
-                          inputClasses="w-full h-full"
-                          type="text"
-                          placeholder="Nome do bairro"
-                          value={neighborhood}
-                          inputHandler={(e) => setNeighborhood(e.target.value)}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="w-full h-[50px] mb-5 sm:mb-0">
-                        <InputCom
-                          label="Número"
-                          inputClasses="w-full h-full"
-                          type="text"
-                          placeholder="Número da casa"
-                          value={houseNumber}
-                          inputHandler={(e) => {
-                            if (e.target.value.length < 10) {
-                              setHouseNumber(numberMask(e.target.value));
-                            }
-                          }}
-                        />
-                      </div>
-                    </div>
                   </div>
                   <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
                     <div className="flex-1">

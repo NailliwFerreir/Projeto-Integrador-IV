@@ -7,12 +7,7 @@ import IcoAdress from "./icons/IcoAdress";
 import IcoCart from "./icons/IcoCart";
 import IcoDashboard from "./icons/IcoDashboard";
 import IcoLogout from "./icons/IcoLogout";
-import IcoLove from "./icons/IcoLove";
-import IcoPassword from "./icons/IcoPassword";
-import IcoPayment from "./icons/IcoPayment";
 import IcoPeople from "./icons/IcoPeople";
-import IcoReviewHand from "./icons/IcoReviewHand";
-import IcoSupport from "./icons/IcoSupport";
 import AddressesTab from "./tabs/AddressesTab";
 import Dashboard from "./tabs/Dashboard";
 import OrderTab from "./tabs/OrderTab";
@@ -92,19 +87,6 @@ export default function Profile() {
                         </div>
                       </Link>
                     </div>
-
-                    <div className="item group">
-                      <Link to="/profile#payment">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoPayment />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Métodos de pagamento
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
                     <div className="item group">
                       <Link to="/profile#order">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
@@ -116,18 +98,6 @@ export default function Profile() {
                       </Link>
                     </div>
                     <div className="item group">
-                      <Link to="/profile#wishlist">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoLove />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Listas de desejos
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="item group">
                       <Link to="/profile#address">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
@@ -135,42 +105,6 @@ export default function Profile() {
                           </span>
                           <span className=" font-normal text-base">
                             Endereço
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="item group">
-                      <Link to="/profile#review">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoReviewHand />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Reviews apaga depois essa bosta
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="item group">
-                      <Link to="/profile#password">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoPassword />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Mudar senha
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="item group">
-                      <Link to="/profile#support">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoSupport />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Ticket de suporte
                           </span>
                         </div>
                       </Link>

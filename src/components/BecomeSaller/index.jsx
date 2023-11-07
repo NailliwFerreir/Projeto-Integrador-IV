@@ -1,12 +1,25 @@
+import axios from "axios";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
-
 export default function BecomeSaller() {
   const [profileImg, setProfileImg] = useState(null);
   const [logoImg, setLogoImg] = useState(null);
   const [coverImg, setCoverImg] = useState(null);
+  const [birth, setBirth] = useState("");
+  const [afe, setAfe] = useState("");
+  const [cep, setCep] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
+  const [houseNumber, setHouseNumber] = useState("");
+  const [neighborhood, setNeighborhood] = useState("");
+  const navigate = useNavigate();
   // logo img
   const logoImgInput = useRef(null);
   const browseLogoImg = () => {
@@ -32,7 +45,9 @@ export default function BecomeSaller() {
       imgReader.onload = (event) => {
         setProfileImg(event.target.result);
       };
+      imgReader.readAsBinaryString(e.target.files[0]);
       imgReader.readAsDataURL(e.target.files[0]);
+
     }
   };
   // cover img
@@ -43,18 +58,106 @@ export default function BecomeSaller() {
   const coverImgChangHandler = (e) => {
     if (e.target.value !== "") {
       const imgReader = new FileReader();
+      console.log("working")
+      console.log(imgReader)
       imgReader.onload = (event) => {
         setCoverImg(event.target.result);
       };
       imgReader.readAsDataURL(e.target.files[0]);
     }
   };
+
+  const cepMask = (value) => {
+    value = value.replace(/[^0-9]/g, "");
+    value = value.slice(0, 5) + "-" + value.slice(5);
+    return value;
+  };
+
+  const numberMask = (value) => {
+    value = value.replace(/[^0-9]/g, "");
+    return value;
+  };
+
+  const checkCep = async (cep) => {
+    console.log(cep);
+    cep = cep.replace(/\D/g, "");
+    if (cep.length === 8) {
+      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+      console.log(response.data);
+      const { data } = response;
+      if (data.cep) {
+        setStreet(data.logradouro);
+        setNeighborhood(data.bairro);
+        setCity(data.localidade);
+        setState(data.uf);
+        setCountry("Brasil");
+      }
+    }
+  };
+
+  const becomeSallerHandler = (e) => {
+    var id = JSON.parse(localStorage.getItem("user"))
+    id = id.id
+    console.log(id)
+    const obj = {
+      birthDate: birth,
+      cep,
+      address: `${street}, ${houseNumber}, ${neighborhood}, ${city}, ${state}, ${country}`,
+      certificateCode: afe,
+    };
+    console.log(obj);
+    api
+      .put(`auth/seller/${id}`, obj)
+      .then((resp) => {
+        console.log(resp.data);
+        Swal.fire({
+          title: "Conta registrada com sucesso!",
+          text: "Contamos com você para um mundo com animais mais bonitos, fortes e saudáveis!",
+          icon: "success",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 3000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          title: "Não foi possível criar a conta!",
+          text: "Infelizmente estamos passando por problemas técnicos! Tente novamente mais tarde!",
+          icon: "error",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 3000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+      });
+  };
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="become-saller-wrapper w-full">
         <div className="title mb-10">
           <PageTitle
-            title="Seller Application"
+            title="Seja um vendedor!"
             breadcrumb={[
               { name: "home", path: "/" },
               { name: "Become Saller", path: "/become-saller" },
@@ -78,72 +181,98 @@ export default function BecomeSaller() {
                   <div className="input-area">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
                       <InputCom
-                        placeholder="Digite seu nome..."
-                        label="Primeiro Nome*"
-                        name="fname"
-                        type="text"
-                        inputClasses="h-[50px]"
-                      />
-
-                      <InputCom
-                        placeholder="Digite seu nome..."
-                        label="Last Name*"
-                        name="lname"
-                        type="text"
-                        inputClasses="h-[50px]"
-                      />
-                    </div>
-                    <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
-                      <InputCom
-                        placeholder="Demo@gmail.com"
-                        label="Endereço de e-mail"
-                        name="email"
-                        type="email"
-                        inputClasses="h-[50px]"
-                      />
-
-                      <InputCom
                         placeholder="0213 *********"
-                        label="Phone*"
-                        name="phone"
+                        label="Data de nascimento*"
+                        name="Data de nascimento"
                         type="text"
                         inputClasses="h-[50px]"
+                        value={birth}
+                        inputHandler={(e) => setBirth(e.target.value)}
                       />
                     </div>
-
-                    <div className="input-item mb-5">
-                      <h6 className="input-label text-qgray capitalize text-[13px] font-normal block mb-2 ">
-                        País*
-                      </h6>
-                      <div className="w-full h-[50px] border border-[#EDEDED] px-5 flex justify-between items-center mb-2">
-                        <span className="text-[13px] text-qgraytwo">
-                          Informe o país
-                        </span>
-                        <span>
-                          <svg
-                            width="11"
-                            height="7"
-                            viewBox="0 0 11 7"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M5.4 6.8L0 1.4L1.4 0L5.4 4L9.4 0L10.8 1.4L5.4 6.8Z"
-                              fill="#222222"
-                            />
-                          </svg>
-                        </span>
+                    <div className="w-1/2">
+                      <div className="w-full h-[50px] mb-5 sm:mb-0">
+                        <InputCom
+                          label="Código Postal / CEP*"
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="12345-123"
+                          value={cep}
+                          inputHandler={(e) => {
+                            if (e.target.value.length < 10) {
+                              setCep(cepMask(e.target.value));
+                              checkCep(e.target.value);
+                            }
+                          }}
+                        />
                       </div>
                     </div>
-
-                    <div className="input-item mb-5">
+                    <div className="w-1/2">
+                      <div className="w-full h-[50px] mb-5 sm:mb-0">
+                        <InputCom
+                          label="Cidade"
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="Nome da cidade"
+                          value={city}
+                          inputHandler={(e) => setCity(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="input-item mb-10">
+                    <div className="w-full h-[50px] mb-5 sm:mb-0">
                       <InputCom
-                        placeholder="Your address Here"
-                        label="Address*"
-                        name="address"
+                        label="Rua"
+                        inputClasses="w-full h-full"
                         type="text"
-                        inputClasses="h-[50px]"
+                        placeholder="Rua Exemplo, 123"
+                        value={street}
+                        inputHandler={(e) => setStreet(e.target.value)}
                       />
+                    </div>
+                  </div>
+
+                  <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-10">
+                    <div className="w-1/5">
+                      <div className="w-full h-[50px] mb-5 sm:mb-0">
+                        <InputCom
+                          label="Estado"
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="Uf"
+                          value={state}
+                          inputHandler={(e) => setState(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="w-full h-[50px] mb-5 sm:mb-0">
+                        <InputCom
+                          label="Bairro"
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="Nome do bairro"
+                          value={neighborhood}
+                          inputHandler={(e) => setNeighborhood(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="w-full h-[50px] mb-5 sm:mb-0">
+                        <InputCom
+                          label="Número"
+                          inputClasses="w-full h-full"
+                          type="text"
+                          placeholder="Número da casa"
+                          value={houseNumber}
+                          inputHandler={(e) => {
+                            if (e.target.value.length < 10) {
+                              setHouseNumber(numberMask(e.target.value));
+                            }
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
 
@@ -153,50 +282,25 @@ export default function BecomeSaller() {
                       Informações da loja
                     </h1>
                     <p className="text-[15px] text-qgraytwo">
-                      Fill the form below or write us .We will help you as soon
-                      as possible.
+                      Insira a sua autorização de venda.
                     </p>
                   </div>
                   <div className="input-area">
                     <div className="mb-5">
                       <InputCom
-                        placeholder="Digite seu nome..."
-                        label="Shop Name*"
-                        name="shopname"
+                        placeholder="Digite o número da sua autorização de venda..."
+                        label="AFE*"
+                        name="afe"
                         type="text"
                         inputClasses="h-[50px]"
-                      />
-                    </div>
-                    <div className="mb-5">
-                      <InputCom
-                        placeholder="Your address Here"
-                        label="Address*"
-                        name="shopaddress"
-                        type="text"
-                        inputClasses="h-[50px]"
-                      />
-                    </div>
-                    <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-[30px]">
-                      <InputCom
-                        placeholder="● ● ● ● ● ●"
-                        label="Password*"
-                        name="password"
-                        type="password"
-                        inputClasses="h-[50px]"
-                      />
-
-                      <InputCom
-                        placeholder="● ● ● ● ● ●"
-                        label="Re-enter Password*"
-                        name="repassword"
-                        type="password"
-                        inputClasses="h-[50px]"
+                        value={afe}
+                        inputHandler={(e) => setAfe(e.target.value)}
                       />
                     </div>
 
                     <div className="signin-area mb-3">
                       <div className="flex justify-center">
-                        <button
+                        <button onClick={becomeSallerHandler}
                           type="button"
                           className="black-btn text-sm text-white w-[490px] h-[50px] font-semibold flex justify-center bg-purple items-center"
                         >
