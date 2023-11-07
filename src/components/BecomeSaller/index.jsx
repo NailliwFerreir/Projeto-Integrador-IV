@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
@@ -18,6 +19,7 @@ export default function BecomeSaller() {
   const [country, setCountry] = useState("");
   const [houseNumber, setHouseNumber] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
+  const navigate = useNavigate();
   // logo img
   const logoImgInput = useRef(null);
   const browseLogoImg = () => {
@@ -125,6 +127,7 @@ export default function BecomeSaller() {
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
         });
+        navigate("/login");
       })
       .catch((error) => {
         console.log(error);
