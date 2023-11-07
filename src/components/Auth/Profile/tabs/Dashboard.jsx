@@ -190,6 +190,14 @@ export default function Dashboard() {
               </tr>
               <tr className="flex mb-3">
                 <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
+                  <div>Afe:</div>
+                </td>
+                <td className="text-base text-qblack line-clamp-1 font-medium">
+                  {certificateCode}
+                </td>
+              </tr>
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
                   <div>CEP:</div>
                 </td>
                 <td className="text-base text-qblack line-clamp-1 font-medium">
