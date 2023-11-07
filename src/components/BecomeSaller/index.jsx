@@ -22,7 +22,7 @@ export default function BecomeSaller() {
   const [neighborhood, setNeighborhood] = useState("");
   const navigate = useNavigate();
 
-  const convertProfileImgDataToImage = async () => {
+  const ProfileImageData = async () => {
     var id = JSON.parse(localStorage.getItem("user"))
     id = id.id
     console.log(id)
@@ -31,23 +31,22 @@ export default function BecomeSaller() {
     setCurrentImg(data.image)
 
   };
-  useEffect(() => { convertProfileImgDataToImage() }, [])
+  useEffect(() => { ProfileImageData() }, [])
 
-  // logo img
-  const logoImgInput = useRef(null);
-  const browseLogoImg = () => {
-    logoImgInput.current.click();
-  };
-  const logoImgChangHandler = (e) => {
-    if (e.target.value !== "") {
-      const imgReader = new FileReader();
-      imgReader.onload = (event) => {
-        setLogoImg(event.target.result);
-      };
-      imgReader.readAsDataURL(e.target.files[0]);
-    }
-  };
-  // profile img
+  // // logo img
+  // const logoImgInput = useRef(null);
+  // const browseLogoImg = () => {
+  //   logoImgInput.current.click();
+  // };
+  // const logoImgChangHandler = (e) => {
+  //   if (e.target.value !== "") {
+  //     const imgReader = new FileReader();
+  //     imgReader.onload = (event) => {
+  //       setLogoImg(event.target.result);
+  //     };
+  //     imgReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
   const profileImgInput = useRef(null);
   let profileImgData = null;
   const browseProfileImg = () => {
@@ -71,22 +70,22 @@ export default function BecomeSaller() {
     }
 
   };
-  // cover img
-  const coverImgInput = useRef(null);
-  const browseCoverImg = () => {
-    coverImgInput.current.click();
-  };
-  const coverImgChangHandler = (e) => {
-    if (e.target.value !== "") {
-      const imgReader = new FileReader();
-      console.log("working")
-      console.log(imgReader)
-      imgReader.onload = (event) => {
-        setCoverImg(event.target.result);
-      };
-      imgReader.readAsDataURL(e.target.files[0]);
-    }
-  };
+  // // cover img
+  // const coverImgInput = useRef(null);
+  // const browseCoverImg = () => {
+  //   coverImgInput.current.click();
+  // };
+  // const coverImgChangHandler = (e) => {
+  //   if (e.target.value !== "") {
+  //     const imgReader = new FileReader();
+  //     console.log("working")
+  //     console.log(imgReader)
+  //     imgReader.onload = (event) => {
+  //       setCoverImg(event.target.result);
+  //     };
+  //     imgReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
 
   const cepMask = (value) => {
     value = value.replace(/[^0-9]/g, "");
@@ -407,7 +406,7 @@ export default function BecomeSaller() {
                       </div>
                     </div>
                   </div>
-                  <div className="update-logo w-full mb-9">
+                  {/* <div className="update-logo w-full mb-9">
                     <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
                       Atualizar Logo
                       <span className="ml-1">
@@ -431,8 +430,8 @@ export default function BecomeSaller() {
                       <span className="ml-1 text-qblack">300x300</span>. Gifs
                       Também funcionam.
                       <span className="ml-1 text-qblack">Max 5mb</span>.
-                    </p>
-                    <div className="flex xl:justify-center justify-start">
+                    </p> */}
+                  {/* <div className="flex xl:justify-center justify-start">
                       <div className="relative">
                         <img
                           src={
@@ -470,9 +469,9 @@ export default function BecomeSaller() {
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="update-cover w-full">
+                    </div> */}
+                  {/* </div> */}
+                  {/* <div className="update-cover w-full">
                     <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
                       Atualizar capa
                       <span className="ml-1">
@@ -534,7 +533,7 @@ export default function BecomeSaller() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
