@@ -8,8 +8,6 @@ import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
 export default function BecomeSaller() {
   const [currentImg, setCurrentImg] = useState(null);
-  const [logoImg, setLogoImg] = useState(null);
-  const [coverImg, setCoverImg] = useState(null);
   const [birth, setBirth] = useState("00/00/0000");
   const [afe, setAfe] = useState("");
   const [cep, setCep] = useState("");
@@ -32,20 +30,6 @@ export default function BecomeSaller() {
   };
   useEffect(() => { ProfileImageData() }, [])
 
-  // // logo img
-  // const logoImgInput = useRef(null);
-  // const browseLogoImg = () => {
-  //   logoImgInput.current.click();
-  // };
-  // const logoImgChangHandler = (e) => {
-  //   if (e.target.value !== "") {
-  //     const imgReader = new FileReader();
-  //     imgReader.onload = (event) => {
-  //       setLogoImg(event.target.result);
-  //     };
-  //     imgReader.readAsDataURL(e.target.files[0]);
-  //   }
-  // };
   const profileImgInput = useRef(null);
   let profileImgData = null;
   const browseProfileImg = () => {
@@ -69,22 +53,6 @@ export default function BecomeSaller() {
     }
 
   };
-  // // cover img
-  // const coverImgInput = useRef(null);
-  // const browseCoverImg = () => {
-  //   coverImgInput.current.click();
-  // };
-  // const coverImgChangHandler = (e) => {
-  //   if (e.target.value !== "") {
-  //     const imgReader = new FileReader();
-  //     console.log("working")
-  //     console.log(imgReader)
-  //     imgReader.onload = (event) => {
-  //       setCoverImg(event.target.result);
-  //     };
-  //     imgReader.readAsDataURL(e.target.files[0]);
-  //   }
-  // };
 
   const cepMask = (value) => {
     value = value.replace(/[^0-9]/g, "");
