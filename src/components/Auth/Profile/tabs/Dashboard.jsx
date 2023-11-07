@@ -135,32 +135,32 @@ export default function Dashboard() {
       </div>
       <div className="dashboard-info mt-8 flex justify-between items-center bg-primarygray px-7 py-7">
         <div className="">
-          <p className="title text-[22px] font-semibold">
-            Informação Pessoal
+          <p className="title text-[35px] font-semibold ">
+            Informações Pessoais
           </p>
           <div className="mt-5">
             <table>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block">
                   <div>Nome:</div>
                 </td>
-                <td className="text-base text-qblack font-medium">
+                <td className="text-base text-qblack line-clamp-1 font-medium">
                   {name}
                 </td>
               </tr>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block">
                   <div>Email:</div>
                 </td>
-                <td className="text-base text-qblack font-medium">
+                <td className="text-base text-qblack line-clamp-1 font-medium">
                   {email}
                 </td>
               </tr>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block">
                   <div>Data de Nascimento:</div>
                 </td>
-                <td className="text-base text-qblack font-medium">
+                <td className="text-base text-qblack line-clamp-1 font-medium">
                   {birthDate}
                 </td>
               </tr>
