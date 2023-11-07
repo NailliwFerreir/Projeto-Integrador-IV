@@ -11,6 +11,7 @@ export default function SellerProduct() {
   const [profileImg, setProfileImg] = useState(null);
   const [logoImg, setLogoImg] = useState(null);
   const [coverImg, setCoverImg] = useState(null);
+
   // logo img
   const logoImgInput = useRef(null);
   const browseLogoImg = () => {
@@ -55,6 +56,8 @@ export default function SellerProduct() {
   };
 
   const sallerProductHandler = (e) => {
+    var id = JSON.parse(localStorage.getItem("user"));
+    id = id.id;
     const obj = {
       name: productName,
       category: `${productCategory}, ${productSubCategory}`,
@@ -62,11 +65,12 @@ export default function SellerProduct() {
       value: productPrice,
       race: productSubCategory,
       description: productDescription,
+      fkUserId: id
       //Falta adicionar a imagem do anúncio
     };
     console.log(obj);
     api
-      .post("/clients/1/products", obj)
+      .post("/products", obj)
       .then((resp) => {
         console.log(resp.data);
         Swal.fire({
@@ -86,30 +90,30 @@ export default function SellerProduct() {
             cancelButton:
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
-        }); 
+        });
         //definir o direcionamento para a página do anúncio caso o anúncio seja criado com sucesso
       })
-    .catch((err) => {
-      console.log(err);
-      Swal.fire({
-        title: "Ocorreu uma falha ao publicar o anúncio!",
-        text: "Tente novamente mais tarde!",
-        icon: "error",
-        confirmButtonText: "Ok",
-        showCancelButton: false,
-        buttonsStyling: false,
-        reverseButtons: true,
-        timer: 3000,
-        customClass: {
-          confirmButton:
-            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-          title: "text-2xl text-qblack",
-          text: "text-xs text-qblack",
-          cancelButton:
-            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-        },
-      });
-    })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          title: "Ocorreu uma falha ao publicar o anúncio!",
+          text: "Tente novamente mais tarde!",
+          icon: "error",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 3000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+      })
   }
 
   // product values
@@ -347,40 +351,40 @@ export default function SellerProduct() {
                       <SelectCustom
                         label="Subcategoria do sêmen*"
                         datas={[
-                          {value: "row", label: "Nelore"},
-                          {value: "row2", label: "Angus"},
-                          {value: "row3", label: "Guzerá"},
-                          {value: "row4", label: "Simental"},
-                          {value: "row5", label: "Charolais"},
-                          {value: "row6", label: "Hereford"},
-                          {value: "row7", label: "Brahman"},
-                          {value: "row8", label: "Mangalarga Marchador"},
-                          {value: "row9", label: "Crioulo"},
-                          {value: "row11", label: "Indolês"},
-                          {value: "row12", label: "Jersey"},
-                          {value: "row13", label: "Limousin"},
-                          {value: "row14", label: "Shorthorn"},
-                          {value: "row15", label: "Senepol"},
-                          {value: "row16", label: "Tabapuã"},
-                          {value: "row17", label: "Xiquexique"},
+                          { value: "row", label: "Nelore" },
+                          { value: "row2", label: "Angus" },
+                          { value: "row3", label: "Guzerá" },
+                          { value: "row4", label: "Simental" },
+                          { value: "row5", label: "Charolais" },
+                          { value: "row6", label: "Hereford" },
+                          { value: "row7", label: "Brahman" },
+                          { value: "row8", label: "Mangalarga Marchador" },
+                          { value: "row9", label: "Crioulo" },
+                          { value: "row11", label: "Indolês" },
+                          { value: "row12", label: "Jersey" },
+                          { value: "row13", label: "Limousin" },
+                          { value: "row14", label: "Shorthorn" },
+                          { value: "row15", label: "Senepol" },
+                          { value: "row16", label: "Tabapuã" },
+                          { value: "row17", label: "Xiquexique" },
                           //Parte dos equinos
-                          {value: "row18", label: "Crioulo"},
-                          {value: "row19", label: "Mangalarga Marchador"},
-                          {value: "row20", label: "Pônei Brasileiro"},
-                          {value: "row41", label: "Appaloosa"},
-                          {value: "row51", label: "Paint Horse"},
-                          {value: "row61", label: "Árabe"},
-                          {value: "row71", label: "Quarter Horse"},
-                          {value: "row81", label: "Pursange"},
-                          {value: "row91", label: "Thoroughbred"},
-                          {value: "row111", label: "Pedigree"},
-                          {value: "row121", label: "Andalusiano"},
-                          {value: "row131", label: "Lipizzano"},
-                          {value: "row141", label: "Morgan"},
-                          {value: "row151", label: "Shetland"},
-                          {value: "row161", label: "Appaloosa Brasileiro"},
-                          {value: "row171", label: "Pônei Quarto de Milha"},
-                          {value: "row181", label: "Pônei Shetland Brasileiro"},
+                          { value: "row18", label: "Crioulo" },
+                          { value: "row19", label: "Mangalarga Marchador" },
+                          { value: "row20", label: "Pônei Brasileiro" },
+                          { value: "row41", label: "Appaloosa" },
+                          { value: "row51", label: "Paint Horse" },
+                          { value: "row61", label: "Árabe" },
+                          { value: "row71", label: "Quarter Horse" },
+                          { value: "row81", label: "Pursange" },
+                          { value: "row91", label: "Thoroughbred" },
+                          { value: "row111", label: "Pedigree" },
+                          { value: "row121", label: "Andalusiano" },
+                          { value: "row131", label: "Lipizzano" },
+                          { value: "row141", label: "Morgan" },
+                          { value: "row151", label: "Shetland" },
+                          { value: "row161", label: "Appaloosa Brasileiro" },
+                          { value: "row171", label: "Pônei Quarto de Milha" },
+                          { value: "row181", label: "Pônei Shetland Brasileiro" },
                         ]}
                         getValue={(value) => setProductSubCategory(value.label)}
                       />
@@ -392,7 +396,7 @@ export default function SellerProduct() {
                         type="button"
                         className="p-3 black-btn"
                       >
-                        
+
                         <div>
                           <span>Postar anúncio</span>
                         </div>
