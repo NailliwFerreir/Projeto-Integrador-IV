@@ -53,8 +53,8 @@ export default function Contact() {
                 Informações para Contato
               </h1>
               <p className="text-[15px] text-qgraytwo leading-[30px] mb-5">
-                Fill the form below or write us .We will help you as soon as
-                possible.
+                Preencha o formulario abaixo ou escreva para nós. Nós o ajudaremos o mais rápido possível
+
               </p>
 
               <div className="xl:flex xl:space-x-[30px] mb-[30px]">
