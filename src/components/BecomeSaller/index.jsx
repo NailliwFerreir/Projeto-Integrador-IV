@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import api from "../../services/api";
@@ -7,10 +7,10 @@ import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
 export default function BecomeSaller() {
-  const [profileImg, setProfileImg] = useState(null);
+  const [currentImg, setCurrentImg] = useState(null);
   const [logoImg, setLogoImg] = useState(null);
   const [coverImg, setCoverImg] = useState(null);
-  const [birth, setBirth] = useState("");
+  const [birth, setBirth] = useState("00/00/0000");
   const [afe, setAfe] = useState("");
   const [cep, setCep] = useState("");
   const [street, setStreet] = useState("");
@@ -20,57 +20,80 @@ export default function BecomeSaller() {
   const [houseNumber, setHouseNumber] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
   const navigate = useNavigate();
-  // logo img
-  const logoImgInput = useRef(null);
-  const browseLogoImg = () => {
-    logoImgInput.current.click();
+
+  const ProfileImageData = async () => {
+    var id = JSON.parse(localStorage.getItem("user"))
+    id = id.id
+    console.log(id)
+    const response = await api.get(`auth/user/${id}`);
+    const { data } = response;
+    setCurrentImg(data.image)
+
   };
-  const logoImgChangHandler = (e) => {
-    if (e.target.value !== "") {
-      const imgReader = new FileReader();
-      imgReader.onload = (event) => {
-        setLogoImg(event.target.result);
-      };
-      imgReader.readAsDataURL(e.target.files[0]);
-    }
-  };
-  // profile img
+  useEffect(() => { ProfileImageData() }, [])
+
+  // // logo img
+  // const logoImgInput = useRef(null);
+  // const browseLogoImg = () => {
+  //   logoImgInput.current.click();
+  // };
+  // const logoImgChangHandler = (e) => {
+  //   if (e.target.value !== "") {
+  //     const imgReader = new FileReader();
+  //     imgReader.onload = (event) => {
+  //       setLogoImg(event.target.result);
+  //     };
+  //     imgReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
   const profileImgInput = useRef(null);
+  let profileImgData = null;
   const browseProfileImg = () => {
     profileImgInput.current.click();
   };
   const profileImgChangHandler = (e) => {
     if (e.target.value !== "") {
       const imgReader = new FileReader();
+      var id = JSON.parse(localStorage.getItem("user"))
+      id = id.id
       imgReader.onload = (event) => {
-        setProfileImg(event.target.result);
+        profileImgData = event.target.result;
+        setCurrentImg(event.target.result);
+        const obj = {
+          image: profileImgData
+        }
+        api.put(`auth/imageUser/${id}`, obj);
       };
-      imgReader.readAsBinaryString(e.target.files[0]);
-      imgReader.readAsDataURL(e.target.files[0]);
 
-    }
-  };
-  // cover img
-  const coverImgInput = useRef(null);
-  const browseCoverImg = () => {
-    coverImgInput.current.click();
-  };
-  const coverImgChangHandler = (e) => {
-    if (e.target.value !== "") {
-      const imgReader = new FileReader();
-      console.log("working")
-      console.log(imgReader)
-      imgReader.onload = (event) => {
-        setCoverImg(event.target.result);
-      };
       imgReader.readAsDataURL(e.target.files[0]);
     }
+
   };
+  // // cover img
+  // const coverImgInput = useRef(null);
+  // const browseCoverImg = () => {
+  //   coverImgInput.current.click();
+  // };
+  // const coverImgChangHandler = (e) => {
+  //   if (e.target.value !== "") {
+  //     const imgReader = new FileReader();
+  //     console.log("working")
+  //     console.log(imgReader)
+  //     imgReader.onload = (event) => {
+  //       setCoverImg(event.target.result);
+  //     };
+  //     imgReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
 
   const cepMask = (value) => {
     value = value.replace(/[^0-9]/g, "");
     value = value.slice(0, 5) + "-" + value.slice(5);
     return value;
+  };
+
+  const dateMask = (birth) => {
+    //fazer depois
   };
 
   const numberMask = (value) => {
@@ -181,7 +204,7 @@ export default function BecomeSaller() {
                   <div className="input-area">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
                       <InputCom
-                        placeholder="0213 *********"
+                        placeholder="01/01/2023"
                         label="Data de nascimento*"
                         name="Data de nascimento"
                         type="text"
@@ -348,10 +371,7 @@ export default function BecomeSaller() {
                     <div className="flex xl:justify-center justify-start">
                       <div className="relative">
                         <img
-                          src={
-                            profileImg ||
-                            `${process.env.PUBLIC_URL}/assets/images/edit-profileimg.jpg`
-                          }
+                          src={currentImg ? currentImg : `${process.env.PUBLIC_URL}/assets/images/placeholder.png`}
                           alt=""
                           className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                         />
@@ -385,7 +405,7 @@ export default function BecomeSaller() {
                       </div>
                     </div>
                   </div>
-                  <div className="update-logo w-full mb-9">
+                  {/* <div className="update-logo w-full mb-9">
                     <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
                       Atualizar Logo
                       <span className="ml-1">
@@ -409,8 +429,8 @@ export default function BecomeSaller() {
                       <span className="ml-1 text-qblack">300x300</span>. Gifs
                       Também funcionam.
                       <span className="ml-1 text-qblack">Max 5mb</span>.
-                    </p>
-                    <div className="flex xl:justify-center justify-start">
+                    </p> */}
+                  {/* <div className="flex xl:justify-center justify-start">
                       <div className="relative">
                         <img
                           src={
@@ -448,9 +468,9 @@ export default function BecomeSaller() {
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="update-cover w-full">
+                    </div> */}
+                  {/* </div> */}
+                  {/* <div className="update-cover w-full">
                     <h1 className="text-xl tracking-wide font-bold text-qblack flex items-center mb-2">
                       Atualizar capa
                       <span className="ml-1">
@@ -512,7 +532,7 @@ export default function BecomeSaller() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
@@ -19,6 +20,7 @@ export default function Contact() {
       message,
     };
     try {
+
       const response = await api("/endpoint", data);
     } catch (error) {
       console.log(error.message);
@@ -52,8 +54,8 @@ export default function Contact() {
                 Informações para Contato
               </h1>
               <p className="text-[15px] text-qgraytwo leading-[30px] mb-5">
-                Fill the form below or write us .We will help you as soon as
-                possible.
+                Preencha o formulario abaixo ou escreva para nós. Nós o ajudaremos o mais rápido possível
+
               </p>
 
               <div className="xl:flex xl:space-x-[30px] mb-[30px]">
@@ -173,7 +175,7 @@ export default function Contact() {
                 <div className="w-full h-[206px] mt-5">
                   <iframe
                     title="newWork"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.94539481518!2d-74.26675559025064!3d40.69739290398433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1656755618576!5m2!1sen!2sbd"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.1463668021765!2d-47.05522352375924!3d-22.834073735278228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c423e9c92bc5%3A0xce9a7f4920d1df4b!2sPUC%20Campinas%20-%20Pr%C3%A9dio%20H15!5e0!3m2!1spt-BR!2sbr!4v1699358409740!5m2!1spt-BR!2sbr"
                     style={{ border: "0", width: "100%", height: "100%" }}
                     allowFullScreen=""
                     loading="lazy"

@@ -1,59 +1,57 @@
 import { useRef, useState } from "react";
 import Swal from "sweetalert2";
 import api from "../../services/api";
-import Dropzone from "../Helpers/Dropzone";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
 import PageTitle from "../Helpers/PageTitle";
 import SelectCustom from "../Helpers/SelectCustom";
 import Layout from "../Partials/Layout";
 export default function SellerProduct() {
-  const [profileImg, setProfileImg] = useState(null);
-  const [logoImg, setLogoImg] = useState(null);
-  const [coverImg, setCoverImg] = useState(null);
+  const [productImg, setProductImg] = useState(null);
+  // const [logoImg, setLogoImg] = useState(null);
+  // const [coverImg, setCoverImg] = useState(null);
 
-  // logo img
-  const logoImgInput = useRef(null);
-  const browseLogoImg = () => {
-    logoImgInput.current.click();
+  // // logo img
+  // const logoImgInput = useRef(null);
+  // const browseLogoImg = () => {
+  //   logoImgInput.current.click();
+  // };
+  // const logoImgChangHandler = (e) => {
+  //   if (e.target.value !== "") {
+  //     const imgReader = new FileReader();
+  //     imgReader.onload = (event) => {
+  //       setLogoImg(event.target.result);
+  //     };
+  //     imgReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
+  const productImgInput = useRef(null);
+  const browseProductImg = () => {
+    productImgInput.current.click();
   };
-  const logoImgChangHandler = (e) => {
+  const productImgChangHandler = (e) => {
     if (e.target.value !== "") {
       const imgReader = new FileReader();
       imgReader.onload = (event) => {
-        setLogoImg(event.target.result);
+        setProductImg(event.target.result);
       };
       imgReader.readAsDataURL(e.target.files[0]);
     }
   };
-  // profile img
-  const profileImgInput = useRef(null);
-  const browseProfileImg = () => {
-    profileImgInput.current.click();
-  };
-  const profileImgChangHandler = (e) => {
-    if (e.target.value !== "") {
-      const imgReader = new FileReader();
-      imgReader.onload = (event) => {
-        setProfileImg(event.target.result);
-      };
-      imgReader.readAsDataURL(e.target.files[0]);
-    }
-  };
-  // cover img
-  const coverImgInput = useRef(null);
-  const browseCoverImg = () => {
-    coverImgInput.current.click();
-  };
-  const coverImgChangHandler = (e) => {
-    if (e.target.value !== "") {
-      const imgReader = new FileReader();
-      imgReader.onload = (event) => {
-        setCoverImg(event.target.result);
-      };
-      imgReader.readAsDataURL(e.target.files[0]);
-    }
-  };
+  // // cover img
+  // const coverImgInput = useRef(null);
+  // const browseCoverImg = () => {
+  //   coverImgInput.current.click();
+  // };
+  // const coverImgChangHandler = (e) => {
+  //   if (e.target.value !== "") {
+  //     const imgReader = new FileReader();
+  //     imgReader.onload = (event) => {
+  //       setCoverImg(event.target.result);
+  //     };
+  //     imgReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
 
   const sallerProductHandler = (e) => {
     var id = JSON.parse(localStorage.getItem("user"));
@@ -65,8 +63,9 @@ export default function SellerProduct() {
       value: productPrice,
       race: productSubCategory,
       description: productDescription,
-      fkUserId: id,
-      //Falta adicionar a imagem do anúncio
+      productImage: productImg,
+      fkUserId: id
+
     };
     console.log(obj);
     api
@@ -312,20 +311,34 @@ export default function SellerProduct() {
                       Preencha todos os campos do anúncio.
                     </p>
                   </div>
-                  <div className="update-cover w-full">
-                    <h1 className="text-sm tracking-wide text-qblack flex items-center mb-2">
-                      Por favor insira as imagens do anúncio (limite de 5
-                      imagens)
-                    </h1>
-                    <Dropzone
-                      limitFiles={10}
-                      className={
-                        "input-item h-[100px] border border-[#EDEDED] text-sm text-qgraytwo px-5  text-center flex items-center justify-center mb-5"
-                      }
-                      acceptType={"image/*"}
-                      filesInserted={(files) => console.log(files)}
-                    />
+                  <div class="flex justify-center">
+                    <div class="relative">
+                      <img
+                        src={productImg || `${process.env.PUBLIC_URL}/assets/images/edit-coverimg.jpg`}
+                        alt=""
+                        class="rounded-lg overflow-hidden object-cover"
+                      />
+                      <input
+                        ref={productImgInput}
+                        onChange={(e) => productImgChangHandler(e)}
+                        type="file"
+                        class="hidden"
+                      />
+                      <div
+                        onClick={browseProductImg}
+                        class="absolute top-[-60px] right-0 mb-4 mr-4 bg-black hover:bg-gray-900 rounded-lg cursor-pointer"
+                        style={{ width: `100%` }}
+                      >
+                        <div class="flex items-center justify-between h-full px-4">
+                          <span class="text-white text-base font-semibold">Adicionar imagem do produto</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+
+
+
                   <div className="input-area pt-2">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
                       <InputCom
