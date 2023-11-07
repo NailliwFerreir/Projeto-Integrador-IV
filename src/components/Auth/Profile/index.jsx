@@ -1,27 +1,23 @@
-  import { useEffect, useState } from "react";
-  import { Link, useLocation } from "react-router-dom";
-  import datas from "../../../data/products.json";
-  import BreadcrumbCom from "../../BreadcrumbCom";
-  import Layout from "../../Partials/Layout";
-  import IcoAdress from "./icons/IcoAdress";
-  import IcoCart from "./icons/IcoCart";
-  import IcoDashboard from "./icons/IcoDashboard";
-  import IcoLogout from "./icons/IcoLogout";
-  import IcoLove from "./icons/IcoLove";
-  import IcoPassword from "./icons/IcoPassword";
-  import IcoPayment from "./icons/IcoPayment";
-  import IcoPeople from "./icons/IcoPeople";
-  import IcoReviewHand from "./icons/IcoReviewHand";
-  import IcoSupport from "./icons/IcoSupport";
-  import AddressesTab from "./tabs/AddressesTab";
-  import Dashboard from "./tabs/Dashboard";
-  import OrderTab from "./tabs/OrderTab";
-  import PasswordTab from "./tabs/PasswordTab";
-  import Payment from "./tabs/Payment";
-  import ProfileTab from "./tabs/ProfileTab";
-  import ReviewTab from "./tabs/ReviewTab";
-  import SupportTab from "./tabs/SupportTab";
-  import WishlistTab from "./tabs/WishlistTab";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import datas from "../../../data/products.json";
+import BreadcrumbCom from "../../BreadcrumbCom";
+import Layout from "../../Partials/Layout";
+import IcoAdress from "./icons/IcoAdress";
+import IcoCart from "./icons/IcoCart";
+import IcoDashboard from "./icons/IcoDashboard";
+import IcoLogout from "./icons/IcoLogout";
+import IcoPassword from "./icons/IcoPassword";
+import IcoPeople from "./icons/IcoPeople";
+import AddressesTab from "./tabs/AddressesTab";
+import Dashboard from "./tabs/Dashboard";
+import OrderTab from "./tabs/OrderTab";
+import PasswordTab from "./tabs/PasswordTab";
+import Payment from "./tabs/Payment";
+import ProfileTab from "./tabs/ProfileTab";
+import ReviewTab from "./tabs/ReviewTab";
+import SupportTab from "./tabs/SupportTab";
+import WishlistTab from "./tabs/WishlistTab";
 
 export default function Profile() {
   const [switchDashboard, setSwitchDashboard] = useState(false);
@@ -92,19 +88,6 @@ export default function Profile() {
                         </div>
                       </Link>
                     </div>
-
-                    <div className="item group">
-                      <Link to="/profile#payment">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoPayment />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Métodos de pagamento
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
                     <div className="item group">
                       <Link to="/profile#order">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
@@ -112,18 +95,6 @@ export default function Profile() {
                             <IcoCart />
                           </span>
                           <span className=" font-normal text-base">Pedidos</span>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="item group">
-                      <Link to="/profile#wishlist">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoLove />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Listas de desejos
-                          </span>
                         </div>
                       </Link>
                     </div>
@@ -140,18 +111,6 @@ export default function Profile() {
                       </Link>
                     </div>
                     <div className="item group">
-                      <Link to="/profile#review">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoReviewHand />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Reviews apaga depois essa bosta
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="item group">
                       <Link to="/profile#password">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
@@ -159,18 +118,6 @@ export default function Profile() {
                           </span>
                           <span className=" font-normal text-base">
                             Mudar senha
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="item group">
-                      <Link to="/profile#support">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoSupport />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Ticket de suporte
                           </span>
                         </div>
                       </Link>
