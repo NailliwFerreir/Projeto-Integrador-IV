@@ -65,7 +65,7 @@ export default function SellerProduct() {
       value: productPrice,
       race: productSubCategory,
       description: productDescription,
-      fkUserId: id
+      fkUserId: id,
       //Falta adicionar a imagem do anúncio
     };
     console.log(obj);
@@ -113,8 +113,8 @@ export default function SellerProduct() {
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
         });
-      })
-  }
+      });
+  };
 
   // product values
   const [productName, setProductName] = useState("");
@@ -122,115 +122,152 @@ export default function SellerProduct() {
   const [productDescription, setProductDescription] = useState("");
   const [productCategory, setProductCategory] = useState("Bovino");
   const [productSubCategory, setProductSubCategory] = useState("Nelore");
+  const [productType, setProductType] = useState(null);
   const [stock, setStock] = useState(1);
 
   const cattles = {
     bovine: [
       {
-        Nelore: "Nelore",
+        value: "Nelore",
+        label: "Nelore",
       },
       {
-        Angus: "Angus",
+        value: "Angus",
+        label: "Angus",
       },
       {
-        Guzerá: "Guzerá",
+        value: "Guzerá",
+        label: "Guzerá",
       },
       {
-        Simental: "Simental",
+        value: "Simental",
+        label: "Simental",
       },
       {
-        Charolais: "Charolais",
+        value: "Charolais",
+        label: "Charolais",
       },
       {
-        Hereford: "Hereford",
+        value: "Hereford",
+        label: "Hereford",
       },
       {
-        Brahman: "Brahman",
+        value: "Brahman",
+        label: "Brahman",
       },
       {
-        "Mangalarga Marchador": "Mangalarga Marchador",
+        value: "Mangalarga Marchador",
+        label: "Mangalarga Marchador",
       },
       {
-        Crioulo: "Crioulo",
+        value: "Crioulo",
+        label: "Crioulo",
       },
       {
-        Indolês: "Indolês",
+        value: "Indolês",
+        label: "Indolês",
       },
       {
-        Jersey: "Jersey",
+        value: "Jersey",
+        label: "Jersey",
       },
       {
-        Limousin: "Limousin",
+        value: "Limousin",
+        label: "Limousin",
       },
       {
-        Shorthorn: "Shorthorn",
+        value: "Shorthorn",
+        label: "Shorthorn",
       },
       {
-        Senepol: "Senepol",
+        value: "Senepol",
+        label: "Senepol",
       },
       {
-        Tabapuã: "Tabapuã",
+        value: "Tabapuã",
+        label: "Tabapuã",
       },
       {
-        Xiquexique: "Xiquexique",
+        value: "Xiquexique",
+        label: "Xiquexique",
       },
     ],
     equine: [
       {
-        Crioulo: "Crioulo",
+        value: "Crioulo",
+        label: "Crioulo",
       },
       {
-        "Mangalarga Marchador": "Mangalarga Marchador",
+        value: "Mangalarga Marchador",
+        label: "Mangalarga Marchador",
       },
       {
-        "Pônei Brasileiro": "Pônei Brasileiro",
+        value: "Pônei Brasileiro",
+        label: "Pônei Brasileiro",
       },
       {
-        Appaloosa: "Appaloosa",
+        value: "Appaloosa",
+        label: "Appaloosa",
       },
       {
-        "Paint Horse": "Paint Horse",
+        value: "Paint Horse",
+        label: "Paint Horse",
       },
       {
-        Árabe: "Árabe",
+        value: "Árabe",
+        label: "Árabe",
       },
       {
-        "Quarter Horse": "Quarter Horse",
+        value: "Quarter Horse",
+        label: "Quarter Horse",
       },
       {
-        Pursange: "Pursange",
+        value: "Pursange",
+        label: "Pursange",
       },
       {
-        Thoroughbred: "Thoroughbred",
+        value: "Thoroughbred",
+        label: "Thoroughbred",
       },
       {
-        Pedigree: "Pedigree",
+        value: "Pedigree",
+        label: "Pedigree",
       },
       {
-        Andalusiano: "Andalusiano",
+        value: "Andalusiano",
+        label: "Andalusiano",
       },
       {
-        Lipizzano: "Lipizzano",
+        value: "Lipizzano",
+        label: "Lipizzano",
       },
       {
-        Morgan: "Morgan",
+        value: "Morgan",
+        label: "Morgan",
       },
       {
-        Shetland: "Shetland",
+        value: "Shetland",
+        label: "Shetland",
       },
       {
-        "Appaloosa Brasileiro": "Appaloosa Brasileiro",
+        value: "Appaloosa Brasileiro",
+        label: "Appaloosa Brasileiro",
       },
       {
-        "Pônei Quarto de Milha": "Pônei Quarto de Milha",
+        value: "Pônei Quarto de Milha",
+        label: "Pônei Quarto de Milha",
       },
       {
-        "Pônei Shetland Brasileiro": "Pônei Shetland Brasileiro",
+        value: "Pônei Shetland Brasileiro",
+        label: "Pônei Shetland Brasileiro",
       },
     ],
   };
 
-  const group = [{ bovine: "Bovino" }, { equine: "Equino" }];
+  const group = [
+    { value: "bovine", label: "Bovino" },
+    { value: "equine", label: "Equino" },
+  ];
 
   function moneyMaskBR(inputStr) {
     if (typeof inputStr === "number")
@@ -308,8 +345,8 @@ export default function SellerProduct() {
                         type="number"
                         inputClasses="h-[50px]"
                         value={productPrice}
-                        inputHandler={(e) =>
-                          setProductPrice((e.target.value)) //moneyMaskBR(e.target.value)
+                        inputHandler={
+                          (e) => setProductPrice(e.target.value) //moneyMaskBR(e.target.value)
                         }
                       />
 
@@ -332,63 +369,34 @@ export default function SellerProduct() {
                         type="text"
                         inputClasses="h-[150px] whitespace-pre-line word-brake text-black"
                         value={productDescription}
-                        inputHandler={(e) => setProductDescription(e.target.value)}
+                        inputHandler={(e) =>
+                          setProductDescription(e.target.value)
+                        }
                       />
                     </div>
 
                     <div className="mb-5">
                       <SelectCustom
-                        label="Categoria do sêmen*"
-                        datas={[
-                          { value: "row", label: "Bovino" },
-                          { value: "ro2", label: "Equino" },
-                        ]}
-                        getValue={(value) => setProductCategory(value.label)}
+                        label="Selecione a categoria"
+                        datas={group}
+                        getValue={(value) => {
+                          setProductCategory(value.label);
+                          setProductType(value.value);
+                        }}
                       />
                     </div>
 
-                    <div className="mb-5">
-                      <SelectCustom
-                        label="Subcategoria do sêmen*"
-                        datas={[
-                          { value: "row", label: "Nelore" },
-                          { value: "row2", label: "Angus" },
-                          { value: "row3", label: "Guzerá" },
-                          { value: "row4", label: "Simental" },
-                          { value: "row5", label: "Charolais" },
-                          { value: "row6", label: "Hereford" },
-                          { value: "row7", label: "Brahman" },
-                          { value: "row8", label: "Mangalarga Marchador" },
-                          { value: "row9", label: "Crioulo" },
-                          { value: "row11", label: "Indolês" },
-                          { value: "row12", label: "Jersey" },
-                          { value: "row13", label: "Limousin" },
-                          { value: "row14", label: "Shorthorn" },
-                          { value: "row15", label: "Senepol" },
-                          { value: "row16", label: "Tabapuã" },
-                          { value: "row17", label: "Xiquexique" },
-                          //Parte dos equinos
-                          { value: "row18", label: "Crioulo" },
-                          { value: "row19", label: "Mangalarga Marchador" },
-                          { value: "row20", label: "Pônei Brasileiro" },
-                          { value: "row41", label: "Appaloosa" },
-                          { value: "row51", label: "Paint Horse" },
-                          { value: "row61", label: "Árabe" },
-                          { value: "row71", label: "Quarter Horse" },
-                          { value: "row81", label: "Pursange" },
-                          { value: "row91", label: "Thoroughbred" },
-                          { value: "row111", label: "Pedigree" },
-                          { value: "row121", label: "Andalusiano" },
-                          { value: "row131", label: "Lipizzano" },
-                          { value: "row141", label: "Morgan" },
-                          { value: "row151", label: "Shetland" },
-                          { value: "row161", label: "Appaloosa Brasileiro" },
-                          { value: "row171", label: "Pônei Quarto de Milha" },
-                          { value: "row181", label: "Pônei Shetland Brasileiro" },
-                        ]}
-                        getValue={(value) => setProductSubCategory(value.label)}
-                      />
-                    </div>
+                    {productType && (
+                      <div className="mb-5">
+                        <SelectCustom
+                          label="Selecione a subcategoria*"
+                          datas={cattles[productType]}
+                          getValue={(value) => {
+                            setProductSubCategory(value.value);
+                          }}
+                        />
+                      </div>
+                    )}
 
                     <div className="input-item mb-5">
                       <button
@@ -396,7 +404,6 @@ export default function SellerProduct() {
                         type="button"
                         className="p-3 black-btn"
                       >
-
                         <div>
                           <span>Postar anúncio</span>
                         </div>
