@@ -8,6 +8,7 @@ export default function WishlistTab({ className }) {
   const [value, setValue] = useState("");
   const [stock, setStock] = useState("");
   const [race, setRace] = useState("");
+  const [productImage, setProductImage] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
 
@@ -71,7 +72,7 @@ export default function WishlistTab({ className }) {
                     <div className="flex space-x-6 items-center">
                       <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED]">
                         <img
-                          src={`${process.env.PUBLIC_URL}/assets/images/product-img-1.jpg`}
+                          src={product.productImage}
                           alt="product"
                           className="w-full h-full object-contain"
                         />
