@@ -5,6 +5,9 @@ export default function OrderTab() {
   const [situation, setSituation] = useState("");
   const [value, setValue] = useState("");
 
+  const [orders, setOrders] = useState([]);
+
+
   const orderHandler = async () => {
     let id = JSON.parse(localStorage.getItem("user"));
     id = id.id;
@@ -12,10 +15,8 @@ export default function OrderTab() {
     const response = await api.get(`/orders/userId/${id}`);
     const { data } = response;
     console.log(data);
-    var obj = data[0]
-    setDate(obj.date);
-    setSituation(obj.situation);
-    setValue(obj.value);
+
+    setOrders(data);
   }
   useEffect(() => { orderHandler() }, [])
 
@@ -34,106 +35,28 @@ export default function OrderTab() {
               <td className="py-4 whitespace-nowrap text-center">Preço</td>
             </tr>
             {/* table heading end */}
-            <tr className="bg-white border-b hover:bg-gray-50">
-              <td className="text-center py-4">
-                <span className="text-lg text-qgray font-medium">#1</span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qgray  whitespace-nowrap">
-                  {date}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  {situation}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  R${value}
-                </span>
-              </td>
-            </tr>
-            <tr className="bg-white border-b hover:bg-gray-50">
-              <td className="text-center py-4">
-                <span className="text-lg text-qgray font-medium">#2</span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qgray  whitespace-nowrap">
-                  {date}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-sm rounded text-red-500 bg-red-100 p-2">
-                  {situation}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  R${value}
-                </span>
-              </td>
-            </tr>
-            <tr className="bg-white border-b hover:bg-gray-50">
-              <td className="text-center py-4">
-                <span className="text-lg text-qgray font-medium">#3</span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qgray  whitespace-nowrap">
-                  {date}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-sm rounded text-red-500 bg-red-100 p-2">
-                  {situation}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  R${value}
-                </span>
-              </td>
-            </tr>
-            <tr className="bg-white border-b hover:bg-gray-50">
-              <td className="text-center py-4">
-                <span className="text-lg text-qgray font-medium">#4</span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qgray  whitespace-nowrap">
-                  {date}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-sm rounded text-green-500 bg-green-100 p-2">
-                  {situation}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  R${value}
-                </span>
-              </td>
-            </tr>
-            <tr className="bg-white border-b hover:bg-gray-50">
-              <td className="text-center py-4">
-                <span className="text-lg text-qgray font-medium">#5</span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qgray  whitespace-nowrap">
-                  {date}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-sm rounded text-red-500 bg-red-100 p-2">
-                  {situation}
-                </span>
-              </td>
-              <td className="text-center py-4 px-2">
-                <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                  R${value}
-                </span>
-              </td>
-            </tr>
+            {orders?.length > 0 && orders.map((order, index) => (
+              <tr className="bg-white border-b hover:bg-gray-50" key={index}>
+                <td className="text-center py-4">
+                  <span className="text-lg text-qgray font-medium">#{index + 1}</span>
+                </td>
+                <td className="text-center py-4 px-2">
+                  <span className="text-base text-qgray  whitespace-nowrap">
+                    {order.date}
+                  </span>
+                </td>
+                <td className="text-center py-4 px-2">
+                  <span className={`text-sm rounded text-${order.situation == "Liberado" ? "green" : "red"}-500 bg-${order.situation == "Liberado" ? "green" : "red"}-100 p-2`}>
+                    {order.situation}
+                  </span>
+                </td>
+                <td className="text-center py-4 px-2">
+                  <span className="text-base text-qblack whitespace-nowrap px-2 ">
+                    R$ {order.value}
+                  </span>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
