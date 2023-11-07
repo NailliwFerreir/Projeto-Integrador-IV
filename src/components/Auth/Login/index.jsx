@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import api from "../../../services/api";
 import InputCom from "../../Helpers/InputCom";
 import Layout from "../../Partials/Layout";
@@ -6,7 +8,7 @@ import Thumbnail from "./Thumbnail";
 
 export default function Login() {
   const [checked, setValue] = useState(false);
-  const [navigate , setNavigate] = useState(false);
+  const [navigate] = useNavigate();
   const rememberMe = () => {
     setValue(!checked);
   };
