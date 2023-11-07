@@ -372,7 +372,7 @@ export default function BecomeSaller() {
                     <div className="flex xl:justify-center justify-start">
                       <div className="relative">
                         <img
-                          src={currentImg}
+                          src={currentImg ? currentImg : `${process.env.PUBLIC_URL}/assets/images/placeholder.png`}
                           alt=""
                           className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                         />
