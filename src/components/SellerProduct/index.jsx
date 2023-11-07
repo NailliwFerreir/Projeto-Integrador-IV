@@ -66,7 +66,6 @@ export default function SellerProduct() {
       description: productDescription,
       productImage: profileImg,
       fkUserId: id
-      //Falta adicionar a imagem do anúncio
     };
     console.log(obj);
     api

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../../../services/api";
 
-export default function WishlistTab({ className }) {
+export default function ProductTab({ className }) {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [value, setValue] = useState("");

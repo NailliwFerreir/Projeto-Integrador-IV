@@ -13,10 +13,10 @@ import Dashboard from "./tabs/Dashboard";
 import OrderTab from "./tabs/OrderTab";
 import PasswordTab from "./tabs/PasswordTab";
 import Payment from "./tabs/Payment";
+import ProductTab from "./tabs/ProductTab";
 import ProfileTab from "./tabs/ProfileTab";
 import ReviewTab from "./tabs/ReviewTab";
 import SupportTab from "./tabs/SupportTab";
-import WishlistTab from "./tabs/WishlistTab";
 
 export default function Profile() {
   const [switchDashboard, setSwitchDashboard] = useState(false);
@@ -70,7 +70,7 @@ export default function Profile() {
                             <IcoDashboard />
                           </span>
                           <span className=" font-normal text-base">
-                            Paínel de controle
+                            Painel de controle
                           </span>
                         </div>
                       </Link>
@@ -88,7 +88,7 @@ export default function Profile() {
                       </Link>
                     </div>
                     <div className="item group">
-                      <Link to="/profile#wishlist">
+                      <Link to="/profile#product">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
                             <IcoCart />
@@ -153,9 +153,9 @@ export default function Profile() {
                       <>
                         <OrderTab />
                       </>
-                    ) : active === "wishlist" ? (
+                    ) : active === "product" ? (
                       <>
-                        <WishlistTab />
+                        <ProductTab />
                       </>
                     ) : active === "address" ? (
                       <>
