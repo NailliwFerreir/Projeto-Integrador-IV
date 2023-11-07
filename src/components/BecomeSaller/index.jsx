@@ -7,7 +7,6 @@ import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
 export default function BecomeSaller() {
-  const [profileImg, setProfileImg] = useState(null);
   const [currentImg, setCurrentImg] = useState(null);
   const [logoImg, setLogoImg] = useState(null);
   const [coverImg, setCoverImg] = useState(null);
@@ -59,7 +58,7 @@ export default function BecomeSaller() {
       id = id.id
       imgReader.onload = (event) => {
         profileImgData = event.target.result;
-        setProfileImg(event.target.result);
+        setCurrentImg(event.target.result);
         const obj = {
           image: profileImgData
         }

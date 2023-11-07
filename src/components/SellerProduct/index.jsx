@@ -7,52 +7,51 @@ import PageTitle from "../Helpers/PageTitle";
 import SelectCustom from "../Helpers/SelectCustom";
 import Layout from "../Partials/Layout";
 export default function SellerProduct() {
-  const [profileImg, setProfileImg] = useState(null);
-  const [logoImg, setLogoImg] = useState(null);
-  const [coverImg, setCoverImg] = useState(null);
+  const [productImg, setProductImg] = useState(null);
+  // const [logoImg, setLogoImg] = useState(null);
+  // const [coverImg, setCoverImg] = useState(null);
 
-  // logo img
-  const logoImgInput = useRef(null);
-  const browseLogoImg = () => {
-    logoImgInput.current.click();
+  // // logo img
+  // const logoImgInput = useRef(null);
+  // const browseLogoImg = () => {
+  //   logoImgInput.current.click();
+  // };
+  // const logoImgChangHandler = (e) => {
+  //   if (e.target.value !== "") {
+  //     const imgReader = new FileReader();
+  //     imgReader.onload = (event) => {
+  //       setLogoImg(event.target.result);
+  //     };
+  //     imgReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
+  const productImgInput = useRef(null);
+  const browseProductImg = () => {
+    productImgInput.current.click();
   };
-  const logoImgChangHandler = (e) => {
+  const productImgChangHandler = (e) => {
     if (e.target.value !== "") {
       const imgReader = new FileReader();
       imgReader.onload = (event) => {
-        setLogoImg(event.target.result);
+        setProductImg(event.target.result);
       };
       imgReader.readAsDataURL(e.target.files[0]);
     }
   };
-  // profile img
-  const profileImgInput = useRef(null);
-  const browseProfileImg = () => {
-    profileImgInput.current.click();
-  };
-  const profileImgChangHandler = (e) => {
-    if (e.target.value !== "") {
-      const imgReader = new FileReader();
-      imgReader.onload = (event) => {
-        setProfileImg(event.target.result);
-      };
-      imgReader.readAsDataURL(e.target.files[0]);
-    }
-  };
-  // cover img
-  const coverImgInput = useRef(null);
-  const browseCoverImg = () => {
-    coverImgInput.current.click();
-  };
-  const coverImgChangHandler = (e) => {
-    if (e.target.value !== "") {
-      const imgReader = new FileReader();
-      imgReader.onload = (event) => {
-        setCoverImg(event.target.result);
-      };
-      imgReader.readAsDataURL(e.target.files[0]);
-    }
-  };
+  // // cover img
+  // const coverImgInput = useRef(null);
+  // const browseCoverImg = () => {
+  //   coverImgInput.current.click();
+  // };
+  // const coverImgChangHandler = (e) => {
+  //   if (e.target.value !== "") {
+  //     const imgReader = new FileReader();
+  //     imgReader.onload = (event) => {
+  //       setCoverImg(event.target.result);
+  //     };
+  //     imgReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
 
   const sallerProductHandler = (e) => {
     var id = JSON.parse(localStorage.getItem("user"));
@@ -64,7 +63,7 @@ export default function SellerProduct() {
       value: productPrice,
       race: productSubCategory,
       description: productDescription,
-      productImage: profileImg,
+      productImage: productImg,
       fkUserId: id
     };
     console.log(obj);
@@ -274,45 +273,33 @@ export default function SellerProduct() {
                       Preencha todos os campos do anúncio.
                     </p>
                   </div>
-                  <div className="flex justify-center">
-                    <div className="w-full relative">
+                  <div class="flex justify-center">
+                    <div class="relative">
                       <img
-                        src={
-                          profileImg ||
-                          `${process.env.PUBLIC_URL}/assets/images/edit-coverimg.jpg`
-                        }
+                        src={productImg || `${process.env.PUBLIC_URL}/assets/images/edit-coverimg.jpg`}
                         alt=""
-                        className="w-full h-[120px] rounded-lg overflow-hidden object-cover"
+                        class="rounded-lg overflow-hidden object-cover"
                       />
                       <input
-                        ref={profileImgInput}
-                        onChange={(e) => profileImgChangHandler(e)}
+                        ref={productImgInput}
+                        onChange={(e) => productImgChangHandler(e)}
                         type="file"
-                        className="hidden"
+                        class="hidden"
                       />
                       <div
-                        onClick={browseProfileImg}
-                        className="w-[32px] h-[32px] absolute -bottom-4 right-4 bg-[#87D6D1] hover:bg-[#87D6D1] rounded-full cursor-pointer"
+                        onClick={browseProductImg}
+                        class="absolute top-[-60px] right-0 mb-4 mr-4 bg-black hover:bg-gray-900 rounded-lg cursor-pointer"
+                        style={{ width: `100%` }}
                       >
-                        <svg
-                          width="32"
-                          height="32"
-                          viewBox="0 0 32 32"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16.5147 11.5C17.7284 12.7137 18.9234 13.9087 20.1296 15.115C19.9798 15.2611 19.8187 15.4109 19.6651 15.5683C17.4699 17.7635 15.271 19.9587 13.0758 22.1539C12.9334 22.2962 12.7948 22.4386 12.6524 22.5735C12.6187 22.6034 12.5663 22.6296 12.5213 22.6296C11.3788 22.6334 10.2362 22.6297 9.09365 22.6334C9.01498 22.6334 9 22.6034 9 22.536C9 21.4009 9 20.2621 9.00375 19.1271C9.00375 19.0746 9.02997 19.0109 9.06368 18.9772C10.4123 17.6249 11.7609 16.2763 13.1095 14.9277C14.2295 13.8076 15.3459 12.6913 16.466 11.5712C16.4884 11.5487 16.4997 11.5187 16.5147 11.5Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M20.9499 14.2904C19.7436 13.0842 18.5449 11.8854 17.3499 10.6904C17.5634 10.4694 17.7844 10.2446 18.0054 10.0199C18.2639 9.76139 18.5261 9.50291 18.7884 9.24443C19.118 8.91852 19.5713 8.91852 19.8972 9.24443C20.7251 10.0611 21.5492 10.8815 22.3771 11.6981C22.6993 12.0165 22.7105 12.4698 22.3996 12.792C21.9238 13.2865 21.4443 13.7772 20.9686 14.2717C20.9648 14.2792 20.9536 14.2867 20.9499 14.2904Z"
-                            fill="white"
-                          />
-                        </svg>
+                        <div class="flex items-center justify-between h-full px-4">
+                          <span class="text-white text-base font-semibold">Adicionar imagem do produto</span>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+
+
 
                   <div className="input-area pt-2">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
