@@ -1,23 +1,104 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import api from "../../../../services/api";
 import InputCom from "../../../Helpers/InputCom";
 
 export default function ProfileTab() {
-  const [profileImg, setprofileImg] = useState(null);
   const [nome, setNome] = useState();
   const [sobrenome, setSobrenome] = useState();
   const [email, setEmail] = useState();
+  const [currentImg, setCurrentImg] = useState(null);
+  const navigate = useNavigate();
+
+  const ProfileImageData = async () => {
+    var id = JSON.parse(localStorage.getItem("user"))
+    id = id.id
+    console.log(id)
+    const response = await api.get(`auth/user/${id}`);
+    const { data } = response;
+    setCurrentImg(data.image)
+
+  };
+  useEffect(() => { ProfileImageData() }, [])
+
   const profileImgInput = useRef(null);
-  const browseprofileImg = () => {
+  let profileImgData = null;
+  const browseProfileImg = () => {
     profileImgInput.current.click();
   };
   const profileImgChangHandler = (e) => {
     if (e.target.value !== "") {
       const imgReader = new FileReader();
+      var id = JSON.parse(localStorage.getItem("user"))
+      id = id.id
       imgReader.onload = (event) => {
-        setprofileImg(event.target.result);
+        profileImgData = event.target.result;
+        setCurrentImg(event.target.result);
+        const obj = {
+          image: profileImgData
+        }
+        api.put(`auth/imageUser/${id}`, obj);
       };
+
       imgReader.readAsDataURL(e.target.files[0]);
     }
+
+  };
+  const updateProfileHandler = (e) => {
+    var id = JSON.parse(localStorage.getItem("user"))
+    id = id.id
+    console.log(id)
+    const obj = {
+      username: `${nome}${sobrenome}`,
+      email
+    };
+    console.log(obj);
+    api
+      .put(`auth/users/${id}`, obj)
+      .then((resp) => {
+        console.log(resp.data);
+        Swal.fire({
+          title: "Conta alterada com sucesso!",
+          text: "Seu login agora utiliza esse email novo!",
+          icon: "success",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 4000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          title: "Não foi possível alterar a conta!",
+          text: "Infelizmente estamos passando por problemas técnicos! Tente novamente mais tarde!",
+          icon: "error",
+          confirmButtonText: "Ok",
+          showCancelButton: false,
+          buttonsStyling: false,
+          reverseButtons: true,
+          timer: 4000,
+          customClass: {
+            confirmButton:
+              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+            title: "text-2xl text-qblack",
+            text: "text-xs text-qblack",
+            cancelButton:
+              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          },
+        });
+      });
   };
   return (
     <>
@@ -87,10 +168,7 @@ export default function ProfileTab() {
               <div className="relative">
                 <div className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden relative">
                   <img
-                    src={
-                      profileImg ||
-                      `${process.env.PUBLIC_URL}/assets/images/edit-profileimg.jpg`
-                    }
+                    src={currentImg ? currentImg : `${process.env.PUBLIC_URL}/assets/images/placeholder.png`}
                     alt=""
                     className="object-cover w-full h-full"
                   />
@@ -102,7 +180,7 @@ export default function ProfileTab() {
                   className="hidden"
                 />
                 <div
-                  onClick={browseprofileImg}
+                  onClick={browseProfileImg}
                   className="w-[32px] h-[32px] absolute bottom-7 sm:right-0 right-[105px]  bg-qblack rounded-full cursor-pointer"
                 >
                   <svg
@@ -134,7 +212,7 @@ export default function ProfileTab() {
         <button
           type="button"
           className="w-[164px] h-[50px] bg-qblack text-white text-sm"
-          onClick={atualizarPerfil}
+          onClick={updateProfileHandler}
         >
           Atualizar perfil
         </button>
