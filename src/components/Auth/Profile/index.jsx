@@ -88,6 +88,18 @@ export default function Profile() {
                       </Link>
                     </div>
                     <div className="item group">
+                      <Link to="/profile#wishlist">
+                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                          <span>
+                            <IcoCart />
+                          </span>
+                          <span className=" font-normal text-base">
+                            Produtos
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="item group">
                       <Link to="/profile#order">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
