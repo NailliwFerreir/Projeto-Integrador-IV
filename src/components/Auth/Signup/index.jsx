@@ -8,7 +8,7 @@ import Thumbnail from "./Thumbnail";
 
 export default function Signup() {
   const [checked, setValue] = useState(false);
-  const [navigate] = useNavigate();
+  const navigate = useNavigate();
   const rememberMe = () => {
     setValue(!checked);
   };
