@@ -7,7 +7,6 @@ import IcoAdress from "./icons/IcoAdress";
 import IcoCart from "./icons/IcoCart";
 import IcoDashboard from "./icons/IcoDashboard";
 import IcoLogout from "./icons/IcoLogout";
-import IcoPassword from "./icons/IcoPassword";
 import IcoPeople from "./icons/IcoPeople";
 import AddressesTab from "./tabs/AddressesTab";
 import Dashboard from "./tabs/Dashboard";
@@ -106,18 +105,6 @@ export default function Profile() {
                           </span>
                           <span className=" font-normal text-base">
                             Endereço
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="item group">
-                      <Link to="/profile#password">
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoPassword />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Mudar senha
                           </span>
                         </div>
                       </Link>
