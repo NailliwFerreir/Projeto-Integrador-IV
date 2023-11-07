@@ -101,6 +101,7 @@ export default function BecomeSaller() {
     console.log(id)
     const obj = {
       birthDate: birth,
+      cep,
       address: `${street}, ${houseNumber}, ${neighborhood}, ${city}, ${state}, ${country}`,
       certificateCode: afe,
     };

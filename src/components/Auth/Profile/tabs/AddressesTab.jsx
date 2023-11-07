@@ -1,6 +1,48 @@
-import React from "react";
-
+import { useState } from "react";
 export default function AddressesTab() {
+  const [cep, setCep] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
+  const [houseNumber, setHouseNumber] = useState("");
+  const [neighborhood, setNeighborhood] = useState("");
+
+  const addressHandler = () => {
+    var id = JSON.parse(localStorage.getItem("user"));
+    id = id.id;
+    api
+      .get(`auth/user/${id}`)
+  }
+
+  const cepMask = (value) => {
+    value = value.replace(/[^0-9]/g, "");
+    value = value.slice(0, 5) + "-" + value.slice(5);
+    return value;
+  };
+
+  const numberMask = (value) => {
+    value = value.replace(/[^0-9]/g, "");
+    return value;
+  };
+
+  const checkCep = async (cep) => {
+    console.log(cep);
+    cep = cep.replace(/\D/g, "");
+    if (cep.length === 8) {
+      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+      console.log(response.data);
+      const { data } = response;
+      if (data.cep) {
+        setStreet(data.logradouro);
+        setNeighborhood(data.bairro);
+        setCity(data.localidade);
+        setState(data.uf);
+        setCountry("Brasil");
+      }
+    }
+  };
+
   return (
     <>
       <div className="grid grid-cols-2 gap-[30px]">
