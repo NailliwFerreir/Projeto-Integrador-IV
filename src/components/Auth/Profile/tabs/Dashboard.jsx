@@ -1,6 +1,62 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import api from "../../../../services/api";
 
 export default function Dashboard() {
+  const [cep, setCep] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [certificateCode, setCertificateCode] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
+  const [houseNumber, setHouseNumber] = useState("");
+  const [neighborhood, setNeighborhood] = useState("");
+
+  const dashboardHandler = async () => {
+    let id = JSON.parse(localStorage.getItem("user"));
+    id = id.id;
+    console.log(id)
+    const response = await api.get(`auth/user/${id}`);
+    const { data } = response;
+    setName(data.username);
+    setEmail(data.email);
+    setBirthDate(data.birthDate);
+    setCertificateCode(data.certificateCode)
+    setCep(data.cep);
+    checkCep(data.cep);
+  }
+  useEffect(() => { dashboardHandler() }, [])
+
+  const cepMask = (value) => {
+    value = value.replace(/[^0-9]/g, "");
+    value = value.slice(0, 5) + "-" + value.slice(5);
+    return value;
+  };
+
+  const numberMask = (value) => {
+    value = value.replace(/[^0-9]/g, "");
+    return value;
+  };
+  const checkCep = async (cep) => {
+    console.log(cep);
+    cep = cep.replace(/\D/g, "");
+    if (cep.length === 8) {
+      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+      console.log(response.data);
+      const { data } = response;
+      if (data.cep) {
+        setStreet(data.logradouro);
+        setNeighborhood(data.bairro);
+        setCity(data.localidade);
+        setState(data.uf);
+        setCountry("Brasil");
+      }
+    }
+  };
+
   return (
     <>
       <div className="welcome-msg w-full">
@@ -113,7 +169,7 @@ export default function Dashboard() {
                   <div>Nome:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  Inseminador+
+                  {name}
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
@@ -121,81 +177,71 @@ export default function Dashboard() {
                   <div>Email:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  inseminador123@gmail.com
+                  {email}
                 </td>
               </tr>
               <tr className="inline-flex mb-5">
                 <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Celular:</div>
+                  <div>Data de Nascimento:</div>
                 </td>
                 <td className="text-base text-qblack font-medium">
-                  019 9 8321-0933
+                  {birthDate}
                 </td>
               </tr>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
+                  <div>CEP:</div>
+                </td>
+                <td className="text-base text-qblack line-clamp-1 font-medium">
+                  {cep}
+                </td>
+              </tr>
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
+                  <div>País:</div>
+                </td>
+                <td className="text-base text-qblack line-clamp-1 font-medium">
+                  {country}
+                </td>
+              </tr>
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
+                  <div>Estado:</div>
+                </td>
+                <td className="text-base text-qblack line-clamp-1 font-medium">
+                  {state}
+                </td>
+              </tr>
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
                   <div>Cidade:</div>
                 </td>
-                <td className="text-base text-qblack font-medium">
-                  Campinas
+                <td className="text-base text-qblack line-clamp-1 font-medium">
+                  {city}
                 </td>
               </tr>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>CEP:</div>
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
+                  <div>Bairro:</div>
                 </td>
-                <td className="text-base text-qblack font-medium">13040586</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div className="w-[1px] h-[164px] bg-[#E4E4E4]"></div>
-        <div className="ml-6">
-          <p className="title text-[22px] font-semibold">Informações de vendedor</p>
-          <div className="mt-5">
-            <table>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Nome:</div>
-                </td>
-                <td className="text-base text-qblack font-medium">
-                  Inseminador+
+                <td className="text-base text-qblack line-clamp-1 font-medium">
+                  {neighborhood}
                 </td>
               </tr>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Email:</div>
+              <tr className="flex mb-3">
+                <td className="text-base text-qgraytwo w-[70px] block line-clamp-1">
+                  <div>Rua:</div>
                 </td>
-                <td className="text-base text-qblack font-medium">
-                  inseminador123@gmail.com
+                <td className="text-base text-qblack line-clamp-1 font-medium">
+                  {street}
                 </td>
-              </tr>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>Celular:</div>
-                </td>
-                <td className="text-base text-qblack font-medium">
-                  019 9 8321-0933
-                </td>
-              </tr>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>City:</div>
-                </td>
-                <td className="text-base text-qblack font-medium">
-                  Campinas
-                </td>
-              </tr>
-              <tr className="inline-flex mb-5">
-                <td className="text-base text-qgraytwo w-[100px] block">
-                  <div>CEP:</div>
-                </td>
-                <td className="text-base text-qblack font-medium">13040586</td>
               </tr>
             </table>
           </div>
         </div>
-      </div>
+
+
+      </div >
     </>
   );
 }
