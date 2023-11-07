@@ -12,8 +12,7 @@ export default function OrderTab() {
     const response = await api.get(`/orders/userId/${id}`);
     const { data } = response;
     console.log(data);
-    var array = data
-    var obj = array[0]
+    var obj = data[0]
     setDate(obj.date);
     setSituation(obj.situation);
     setValue(obj.value);
