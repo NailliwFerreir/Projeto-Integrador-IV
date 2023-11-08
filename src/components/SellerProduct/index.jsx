@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
+import { currencyMaskBR, removeCurrencyMaskBR } from "../../masks";
 import api from "../../services/api";
 import Dropzone from "../Helpers/Dropzone";
 import InputCom from "../Helpers/InputCom";
@@ -63,7 +64,7 @@ export default function SellerProduct() {
       name: productName,
       category: `${productCategory}, ${productSubCategory}`,
       stock,
-      value: productPrice,
+      value: removeCurrencyMaskBR(productPrice),
       race: productSubCategory,
       description: productDescription,
       productImage: productImg,
@@ -124,7 +125,11 @@ export default function SellerProduct() {
   const [productCategory, setProductCategory] = useState("Bovino");
   const [productSubCategory, setProductSubCategory] = useState("Nelore");
   const [productType, setProductType] = useState(null);
-  const [stock, setStock] = useState(1);
+  const [stock, setStock] = useState(0);
+
+  useEffect(() => {
+    console.log(removeCurrencyMaskBR(productPrice));
+  }, [productPrice]);
 
   const cattles = {
     bovine: [
@@ -270,23 +275,6 @@ export default function SellerProduct() {
     { value: "equine", label: "Equino" },
   ];
 
-  function moneyMaskBR(inputStr) {
-    if (typeof inputStr === "number")
-      inputStr = inputStr.toString().replace(".", "");
-    var numericStr = inputStr.replace(/[^0-9]/g, "");
-    numericStr = numericStr.replace(/^0+/, "");
-    if (numericStr.length < 2) {
-      numericStr = numericStr.padStart(2, "0");
-    }
-    if (numericStr.length <= 2) {
-      numericStr = numericStr.padStart(3, "0");
-    }
-    var integerPart = numericStr.slice(0, -2);
-    var decimalPart = numericStr.slice(-2);
-    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    var formattedValue = "R$ " + integerPart + "," + decimalPart;
-    return formattedValue;
-  }
   const [files, setFiles] = useState([]);
 
   useEffect(() => {
@@ -367,6 +355,16 @@ export default function SellerProduct() {
                       }}
                     />
                   </div>
+                  <div className="flex justify-center gap-4 flex-wrap">
+                    {files.length > 0 &&
+                      files.map((file) => (
+                        <ImageIcon
+                          key={file.name}
+                          file={file}
+                          onClick={() => hadleRemoveFile(file)}
+                        />
+                      ))}
+                  </div>
 
                   <div className="input-area pt-2">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
@@ -384,11 +382,11 @@ export default function SellerProduct() {
                         label="Preço*"
                         name="productPrice"
                         placeholder="R$ 100,00"
-                        type="number"
+                        type="text"
                         inputClasses="h-[50px]"
                         value={productPrice}
-                        inputHandler={
-                          (e) => setProductPrice(moneyMaskBR(e.target.value)) //moneyMaskBR(e.target.value)
+                        inputHandler={(e) =>
+                          setProductPrice(currencyMaskBR(e.target.value))
                         }
                       />
 
