@@ -3,18 +3,35 @@ import React, { useEffect, useState } from "react";
 import api from "../../../../services/api";
 
 export default function Dashboard() {
-  const [cep, setCep] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [birthDate, setBirthDate] = useState("");
-  const [certificateCode, setCertificateCode] = useState("");
-  const [street, setStreet] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("");
-  const [houseNumber, setHouseNumber] = useState("");
-  const [neighborhood, setNeighborhood] = useState("");
+  const [cep, setCep] = useState("13086-900");
+  const [name, setName] = useState("Inseminador+");
+  const [email, setEmail] = useState("inseminador+@puccampinas.edu.br");
+  const [birthDate, setBirthDate] = useState("08/11/2023");
+  const [certificateCode, setCertificateCode] = useState("12345678910");
+  const [street, setStreet] = useState(
+    "Rua Professor Dr. Euryclides de Jesus Zerbini"
+  );
+  const [city, setCity] = useState("Campinas");
+  const [state, setState] = useState("SP");
+  const [country, setCountry] = useState("Brasil");
+  const [houseNumber, setHouseNumber] = useState("1516");
+  const [neighborhood, setNeighborhood] = useState(
+    "Parque Rural Fazenda Santa Cândida"
+  );
   const [currentImg, setCurrentImg] = useState(null);
+  let contL = 0,
+    contN = 0;
+
+  const countOrdersHandler = async () => {
+    let id = JSON.parse(localStorage.getItem("user"));
+    id = id.id;
+    console.log(id);
+    const response = await api.get(`/orders/userId/${id}`);
+    const { data } = response;
+    countL = data.filter((obj) => obj.situation === "Enviado").length;
+    countN = data.filter((obj) => obj.situation === "Não enviado").length;
+    console.log(data);
+  };
 
   const dashboardHandler = async () => {
     let id = JSON.parse(localStorage.getItem("user"));
@@ -65,7 +82,7 @@ export default function Dashboard() {
     <>
       <div className="welcome-msg w-full">
         <div>
-          <p className="text-qblack text-lg">Olá, Inseminador+</p>
+          <p className="text-qblack text-lg">Olá, {name}</p>
           <h1 className="font-bold text-[24px] text-qblack">
             Bem-vindo(a) ao seu perfil!
           </h1>
@@ -102,7 +119,7 @@ export default function Dashboard() {
             Pedidos Enviados
           </p>
           <span className="text-[40px] text-white group-hover:text-qblacktext font-bold leading-none mt-1 block">
-            1
+            {contL}
           </span>
         </div>
         <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qh2-green transition-all duration-300 ease-in-out p-6">
@@ -134,7 +151,7 @@ export default function Dashboard() {
             Pedidos em análise
           </p>
           <span className="text-[40px] text-white group-hover:text-qblacktext font-bold leading-none mt-1 block">
-            1
+            {contN}
           </span>
         </div>
       </div>

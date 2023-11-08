@@ -33,7 +33,7 @@ export default function Routers() {
       <Route exact path="/home-four" element={<HomeFour />} />
       <Route exact path="/home-five" element={<HomeFive />} /> */}
       <Route exact path="/all-products" element={<AllProductPage />} />
-      <Route exact path="/single-product" element={<SingleProductPage />} />
+      <Route exact path="/single-product/:id" element={<SingleProductPage />} />
       <Route exact path="/cart" element={<CardPage />} />
       <Route exact path="/checkout" element={<CheakoutPage />} />
       <Route exact path="/wishlist" element={<Wishlist />} />
