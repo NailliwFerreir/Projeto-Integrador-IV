@@ -16,14 +16,16 @@ export default function Navbar({ className }) {
   };
   const visibilityHandler = async () => {
     try {
-      const response = await apiauth.get(`/comprador`);
+      const response = await apiauth.get(`/vendedor`);
       const { data } = response;
-      setVisibiity(data);
+      if (data == true) {
+        setVisibiity(false);
+      }
       console.log(visibility)
 
     } catch (error) {
       console.log(error)
-      setVisibiity(false)
+      setVisibiity(true)
       console.log(visibility)
     }
   }
