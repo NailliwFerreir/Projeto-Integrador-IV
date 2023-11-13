@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useParams, useRef, useState } from "react";
 import data from "../../data/products.json";
 import BreadcrumbCom from "../BreadcrumbCom";
 import ProductCardStyleOne from "../Helpers/Cards/ProductCardStyleOne";
@@ -10,6 +10,8 @@ import Reviews from "./Reviews";
 import SallerInfo from "./SallerInfo";
 
 export default function SingleProductPage() {
+  const params = useParams();
+  const productId = params.id;
   const [tab, setTab] = useState("des");
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
@@ -81,6 +83,15 @@ export default function SingleProductPage() {
       return false;
     }, 2000);
   };
+
+  const productInfoHandler = async (productId) => {
+    const response = await api.get(`/products/${productId}`);
+    //setar os bagulho do produto aqui
+  };
+
+  useEffect(() => {
+    productInfoHandler(productId);
+  }, []);
 
   return (
     <>

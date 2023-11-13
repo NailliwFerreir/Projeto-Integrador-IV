@@ -1,4 +1,5 @@
 export default function ImageIcon({ file, onClick }) {
+  console.log(file);
   return (
     <div className="w-36 h-auto">
       <div className="  relative">

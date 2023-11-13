@@ -3,35 +3,53 @@ import React, { useEffect, useState } from "react";
 import api from "../../../../services/api";
 
 export default function Dashboard() {
-  const [cep, setCep] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [birthDate, setBirthDate] = useState("");
-  const [certificateCode, setCertificateCode] = useState("");
-  const [street, setStreet] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("");
-  const [houseNumber, setHouseNumber] = useState("");
-  const [neighborhood, setNeighborhood] = useState("");
+  const [cep, setCep] = useState("13086-900");
+  const [name, setName] = useState("Inseminador+");
+  const [email, setEmail] = useState("inseminador+@puccampinas.edu.br");
+  const [birthDate, setBirthDate] = useState("08/11/2023");
+  const [certificateCode, setCertificateCode] = useState("12345678910");
+  const [street, setStreet] = useState(
+    "Rua Professor Dr. Euryclides de Jesus Zerbini"
+  );
+  const [city, setCity] = useState("Campinas");
+  const [state, setState] = useState("SP");
+  const [country, setCountry] = useState("Brasil");
+  const [houseNumber, setHouseNumber] = useState("1516");
+  const [neighborhood, setNeighborhood] = useState(
+    "Parque Rural Fazenda Santa Cândida"
+  );
   const [currentImg, setCurrentImg] = useState(null);
+  let contL = 0,
+    contN = 0;
 
+  const countOrdersHandler = async () => {
+    let id = JSON.parse(localStorage.getItem("user"));
+    id = id.id;
+    console.log(id);
+    const response = await api.get(`/orders/userId/${id}`);
+    const { data } = response;
+    countL = data.filter((obj) => obj.situation === "Enviado").length;
+    countN = data.filter((obj) => obj.situation === "Não enviado").length;
+    console.log(data);
+  };
 
   const dashboardHandler = async () => {
     let id = JSON.parse(localStorage.getItem("user"));
     id = id.id;
-    console.log(id)
+    console.log(id);
     const response = await api.get(`auth/user/${id}`);
     const { data } = response;
     setName(data.username);
     setEmail(data.email);
     setBirthDate(data.birthDate);
-    setCertificateCode(data.certificateCode)
+    setCertificateCode(data.certificateCode);
     setCep(data.cep);
     checkCep(data.cep);
-    setCurrentImg(data.image)
-  }
-  useEffect(() => { dashboardHandler() }, [])
+    setCurrentImg(data.image);
+  };
+  useEffect(() => {
+    dashboardHandler();
+  }, []);
 
   const cepMask = (value) => {
     value = value.replace(/[^0-9]/g, "");
@@ -64,7 +82,7 @@ export default function Dashboard() {
     <>
       <div className="welcome-msg w-full">
         <div>
-          <p className="text-qblack text-lg">Olá, Inseminador+</p>
+          <p className="text-qblack text-lg">Olá, {name}</p>
           <h1 className="font-bold text-[24px] text-qblack">
             Bem-vindo(a) ao seu perfil!
           </h1>
@@ -72,7 +90,11 @@ export default function Dashboard() {
       </div>
       <div className="quick-view-grid w-full flex justify-between items-center mt-3 ">
         <img
-          src={currentImg ? currentImg : `${process.env.PUBLIC_URL}/assets/images/placeholder.png`}
+          src={
+            currentImg
+              ? currentImg
+              : `${process.env.PUBLIC_URL}/assets/images/placeholder.png`
+          }
           alt=""
           className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
         />
@@ -97,7 +119,7 @@ export default function Dashboard() {
             Pedidos Enviados
           </p>
           <span className="text-[40px] text-white group-hover:text-qblacktext font-bold leading-none mt-1 block">
-            1
+            {contL}
           </span>
         </div>
         <div className="qv-item w-[252px] h-[208px] bg-qblack group hover:bg-qh2-green transition-all duration-300 ease-in-out p-6">
@@ -129,7 +151,7 @@ export default function Dashboard() {
             Pedidos em análise
           </p>
           <span className="text-[40px] text-white group-hover:text-qblacktext font-bold leading-none mt-1 block">
-            1
+            {contN}
           </span>
         </div>
       </div>
@@ -158,9 +180,9 @@ export default function Dashboard() {
               </tr>
               <tr className="flex mb-3">
                 <td className="text-base text-qgraytwo w-[70px] block">
-                  <div>Data de Nascimento:</div>
+                  <div className="w-44">Data de Nascimento:</div>
                 </td>
-                <td className="text-base text-qblack line-clamp-1 font-medium">
+                <td className="text-base text-qblack line-clamp-1 font-medium ml-24">
                   {birthDate}
                 </td>
               </tr>
@@ -223,9 +245,7 @@ export default function Dashboard() {
             </table>
           </div>
         </div>
-
-
-      </div >
+      </div>
     </>
   );
 }
