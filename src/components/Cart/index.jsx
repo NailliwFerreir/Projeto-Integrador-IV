@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import api from "../../services/api";
 
 export default function Cart({ className, type }) {
   const [totalValue, setTotalValue] = useState(0);
@@ -12,17 +11,6 @@ export default function Cart({ className, type }) {
       '--space-between-items': '10px',
     },
   };
-  const cartProductHandler = async () => {
-    const response = await api.get(`/products/userId/655245155d192510c79e86fc`);
-    const { data } = response;
-    console.log("data", data);
-    localStorage.setItem('cart', JSON.stringify(data));
-    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    console.log("cart", cart)
-    if (cart) {
-      setCartProduct(cart);
-    }
-  }
   const calculateTotalValue = () => {
     let total = 0;
     cartProduct.forEach((cart) => {
@@ -30,11 +18,20 @@ export default function Cart({ className, type }) {
     });
     setTotalValue(total);
   };
+  const cartProductHandler = async () => {
+    try {
+      let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      console.log("cart", cart)
+      setCartProduct(cart);
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
     cartProductHandler();
-    calculateTotalValue();
-  }, [cartProduct]);
+    calculateTotalValue()
+  }, [])
   return (
     <>
       <div
@@ -45,7 +42,7 @@ export default function Cart({ className, type }) {
         <div className="w-full h-full">
           <ul className="product-items overflow-y-scroll">
             {cartProduct?.length > 0 && cartProduct.map((carts, index) => (
-              <li className="w-full h-full flex" style={styles.productItemsLi}>
+              <li className="w-full h-full flex" key={carts.id} style={styles.productItemsLi}>
                 <li className="w-full h-full flex">
                   <div className="flex space-x-[6px] justify-center items-center px-4 my-[20px]">
                     <div className="w-[65px] h-full">
@@ -125,3 +122,4 @@ export default function Cart({ className, type }) {
     </>
   );
 }
+
