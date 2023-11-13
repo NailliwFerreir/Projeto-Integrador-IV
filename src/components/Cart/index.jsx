@@ -11,13 +11,6 @@ export default function Cart({ className, type }) {
       '--space-between-items': '10px',
     },
   };
-  const calculateTotalValue = () => {
-    let total = 0;
-    cartProduct.forEach((cart) => {
-      total += Number(cart.value);
-    });
-    setTotalValue(total);
-  };
   const cartProductHandler = async () => {
     try {
       let cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -27,6 +20,13 @@ export default function Cart({ className, type }) {
       console.log(error)
     }
   }
+  const calculateTotalValue = () => {
+    let total = 0;
+    cartProduct.forEach((cart) => {
+      total += Number(cart.value);
+    });
+    setTotalValue(total);
+  };
 
   useEffect(() => {
     cartProductHandler();
