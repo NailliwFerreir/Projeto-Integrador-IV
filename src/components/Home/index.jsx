@@ -6,30 +6,44 @@ import SectionStyleFour from "../Helpers/SectionStyleFour";
 import SectionStyleThreeHomeTwo from "../Helpers/SectionStyleThreeHomeTwo";
 import SectionStyleTwo from "../Helpers/SectionStyleTwoHomeTwo";
 import ViewMoreTitle from "../Helpers/ViewMoreTitle";
-import Banner from "./Banner";
 import CampaignCountDown from "./CampaignCountDown";
-import CategoriesSection from "./CategoriesSection";
 import ProductsAds from "./ProductsAds";
 
 export default function Home() {
+  /* 
+  const [products, setProducts] = useState([]);
+  const handleGetProducts = async () => {
+    try {
+      const response = await api.get("/products");
+      const { data } = response;
+      setProducts(data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    handleGetProducts();
+  }, []); */
+
   const { products } = datas;
   return (
     <Layout>
-      <Banner className="banner-wrapper mb-[46px]" />
+      {/* <Banner className="banner-wrapper mb-[46px]" />
       <ViewMoreTitle
         className="my-categories mb-[60px]"
         seeMoreUrl="/all-products"
         categoryTitle="Minhas Categorias"
       >
-        <CategoriesSection />
-      </ViewMoreTitle>
-      <SectionStyleThreeHomeTwo
+        <CategoriesSection /> 
+      </ViewMoreTitle>*/}
+      {/* <SectionStyleThreeHomeTwo
         products={products}
         showProducts={6}
         sectionTitle="Produtos em Destaque!"
         seeMoreUrl="/all-products"
         className="new-products mb-[60px]"
-      />
+      /> */}
       <CampaignCountDown className="mb-[60px]" lastDate="2023-10-04 4:00:00" />
       <ProductsAds
         ads={[
@@ -51,7 +65,7 @@ export default function Home() {
         seeMoreUrl="/all-products"
         categoryTitle="Produtos Mais Vendidos"
       >
-        <SectionStyleTwo products={products.slice(3, products.length)} />
+        <SectionStyleTwo products={products.slice(5, products.length)} />
       </ViewMoreTitle>
       <ProductsAds
         ads={[`${process.env.PUBLIC_URL}/assets/images/ads-2.3.png`]}
