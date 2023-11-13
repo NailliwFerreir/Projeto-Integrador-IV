@@ -17,12 +17,12 @@ export default function Signup() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  const createAccount = () => {
+  const createAccountHandler = () => {
     const data = {
       username: `${firstName}${lastName}`,
       email,
       password,
-      role: ["comprador"]
+      role: ["comprador"],
     };
     console.log(data);
     api

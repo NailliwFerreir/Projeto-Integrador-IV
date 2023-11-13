@@ -1,6 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
+import { currencyMaskBR, removeCurrencyMaskBR } from "../../masks";
 import api from "../../services/api";
+import Dropzone from "../Helpers/Dropzone";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
 import PageTitle from "../Helpers/PageTitle";
@@ -30,8 +32,10 @@ export default function SellerProduct() {
     productImgInput.current.click();
   };
   const productImgChangHandler = (e) => {
+    console.log(e.target.value);
     if (e.target.value !== "") {
       const imgReader = new FileReader();
+
       imgReader.onload = (event) => {
         setProductImg(event.target.result);
       };
@@ -60,12 +64,11 @@ export default function SellerProduct() {
       name: productName,
       category: `${productCategory}, ${productSubCategory}`,
       stock,
-      value: productPrice,
+      value: removeCurrencyMaskBR(productPrice),
       race: productSubCategory,
       description: productDescription,
       productImage: productImg,
-      fkUserId: id
-
+      fkUserId: id,
     };
     console.log(obj);
     api
@@ -117,12 +120,16 @@ export default function SellerProduct() {
 
   // product values
   const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState(0);
+  const [productPrice, setProductPrice] = useState("R$ 0,00");
   const [productDescription, setProductDescription] = useState("");
   const [productCategory, setProductCategory] = useState("Bovino");
   const [productSubCategory, setProductSubCategory] = useState("Nelore");
   const [productType, setProductType] = useState(null);
-  const [stock, setStock] = useState(1);
+  const [stock, setStock] = useState(0);
+
+  useEffect(() => {
+    console.log(removeCurrencyMaskBR(productPrice));
+  }, [productPrice]);
 
   const cattles = {
     bovine: [
@@ -268,23 +275,11 @@ export default function SellerProduct() {
     { value: "equine", label: "Equino" },
   ];
 
-  function moneyMaskBR(inputStr) {
-    if (typeof inputStr === "number")
-      inputStr = inputStr.toString().replace(".", "");
-    var numericStr = inputStr.replace(/[^0-9]/g, "");
-    numericStr = numericStr.replace(/^0+/, "");
-    if (numericStr.length < 2) {
-      numericStr = numericStr.padStart(2, "0");
-    }
-    if (numericStr.length <= 2) {
-      numericStr = numericStr.padStart(3, "0");
-    }
-    var integerPart = numericStr.slice(0, -2);
-    var decimalPart = numericStr.slice(-2);
-    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    var formattedValue = "R$ " + integerPart + "," + decimalPart;
-    return formattedValue;
-  }
+  const [files, setFiles] = useState([]);
+
+  useEffect(() => {
+    console.log(files);
+  }, [files]);
 
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -314,13 +309,19 @@ export default function SellerProduct() {
                   <div class="flex justify-center">
                     <div class="relative">
                       <img
-                        src={productImg || `${process.env.PUBLIC_URL}/assets/images/edit-coverimg.jpg`}
+                        src={
+                          productImg ||
+                          `${process.env.PUBLIC_URL}/assets/images/edit-coverimg.jpg`
+                        }
                         alt=""
                         class="rounded-lg overflow-hidden object-cover"
                       />
                       <input
                         ref={productImgInput}
-                        onChange={(e) => productImgChangHandler(e)}
+                        onChange={(e) => {
+                          console.log(e.target.value);
+                          productImgChangHandler(e);
+                        }}
                         type="file"
                         class="hidden"
                       />
@@ -330,14 +331,40 @@ export default function SellerProduct() {
                         style={{ width: `100%` }}
                       >
                         <div class="flex items-center justify-between h-full px-4">
-                          <span class="text-white text-base font-semibold">Adicionar imagem do produto</span>
+                          <span class="text-white text-base font-semibold">
+                            Adicionar imagem do produto
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
-
-
-
+                  <div className="update-cover w-full">
+                    <h1 className="text-sm tracking-wide text-qblack flex items-center mb-2">
+                      Por favor insira as imagens do anúncio (limite de 5
+                      imagens)
+                    </h1>
+                    <Dropzone
+                      limitFiles={10}
+                      className={
+                        "input-item h-[100px] border border-[#EDEDED] text-sm text-qgraytwo px-5  text-center flex items-center justify-center mb-5"
+                      }
+                      acceptType={"image/*"}
+                      filesInserted={(files) => {
+                        console.log(files);
+                        console.log(files[0]?.path);
+                      }}
+                    />
+                  </div>
+                  <div className="flex justify-center gap-4 flex-wrap">
+                    {files.length > 0 &&
+                      files.map((file) => (
+                        <ImageIcon
+                          key={file.name}
+                          file={file}
+                          onClick={() => hadleRemoveFile(file)}
+                        />
+                      ))}
+                  </div>
 
                   <div className="input-area pt-2">
                     <div className="flex sm:flex-row flex-col space-y-5 sm:space-y-0 sm:space-x-5 mb-5">
@@ -355,11 +382,11 @@ export default function SellerProduct() {
                         label="Preço*"
                         name="productPrice"
                         placeholder="R$ 100,00"
-                        type="number"
+                        type="text"
                         inputClasses="h-[50px]"
                         value={productPrice}
-                        inputHandler={
-                          (e) => setProductPrice(e.target.value) //moneyMaskBR(e.target.value)
+                        inputHandler={(e) =>
+                          setProductPrice(currencyMaskBR(e.target.value))
                         }
                       />
 
