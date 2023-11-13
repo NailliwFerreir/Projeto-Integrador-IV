@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import datas from "../../../data/products.json";
+import apiauth from "../../../services/apiauth";
 import BreadcrumbCom from "../../BreadcrumbCom";
 import Layout from "../../Partials/Layout";
 import IcoAdress from "./icons/IcoAdress";
@@ -23,13 +24,30 @@ export default function Profile() {
   const location = useLocation();
   const getHashContent = location.hash.split("#");
   const [active, setActive] = useState("dashboard");
+  const [visibility, setVisibiity] = useState(false);
+
+  const visibilityHandler = async () => {
+    try {
+      const response = await apiauth.get(`/vendedor`);
+      const { data } = response;
+      setVisibiity(data)
+      console.log("products", visibility)
+
+    } catch (error) {
+      console.log(error)
+      setVisibiity(false)
+      console.log("product", visibility)
+    }
+  }
   useEffect(() => {
+    visibilityHandler();
     setActive(
       getHashContent && getHashContent.length > 1
         ? getHashContent[1]
         : "dashboard"
     );
   }, [getHashContent]);
+
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="profile-page-wrapper w-full">
@@ -42,7 +60,7 @@ export default function Profile() {
               ]}
             />
             <div className="w-full bg-white px-10 py-9">
-              <div className="title-area w-full flex justify-between items-center">
+              {/* <div className="title-area w-full flex justify-between items-center">
                 <h1 className="text-[22px] font-bold text-qblack">
                   Sua Conta
                 </h1>
@@ -59,7 +77,7 @@ export default function Profile() {
                     ></div>
                   </button>
                 </div>
-              </div>
+              </div> */}
               <div className="profile-wrapper w-full mt-8 flex space-x-10">
                 <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
                   <div className="flex flex-col space-y-10">
@@ -88,7 +106,7 @@ export default function Profile() {
                       </Link>
                     </div>
                     <div className="item group">
-                      <Link to="/profile#product">
+                      <Link to="/profile#product" style={{ visibility: visibility ? "visible" : "hidden" }}>
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
                             <IcoCart />

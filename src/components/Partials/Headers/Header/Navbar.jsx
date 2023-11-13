@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import apiauth from "../../../../services/apiauth";
 import Arrow from "../../../Helpers/icons/Arrow";
 
 export default function Navbar({ className }) {
   const [categoryToggle, setToggle] = useState(false);
   const [elementsSize, setSize] = useState("0px");
+  const [visibility, setVisibiity] = useState(false);
   // const getItems = document.querySelectorAll(`.categories-list li`).length;
   // if (categoryToggle && getItems > 0) {
   //   setSize(`${40 * getItems}px`);
@@ -12,7 +14,27 @@ export default function Navbar({ className }) {
   const handler = () => {
     setToggle(!categoryToggle);
   };
+  const visibilityHandler = async () => {
+    try {
+      const response = await apiauth.get(`/vendedor`);
+      const { data } = response;
+      if (data == true) {
+        setVisibiity(false);
+      }
+      console.log(visibility)
+
+    } catch (error) {
+      console.log(error)
+      setVisibiity(true)
+      console.log(visibility)
+    }
+  }
+
   useEffect(() => {
+
+    visibilityHandler();
+    console.log(visibility)
+
     if (categoryToggle) {
       const getItems = document.querySelectorAll(`.categories-list li`).length;
       if (categoryToggle && getItems > 0) {
@@ -21,13 +43,12 @@ export default function Navbar({ className }) {
     } else {
       setSize(`0px`);
     }
-  }, [categoryToggle]);
+  }, [categoryToggle, visibility]);
 
   return (
     <div
-      className={`nav-widget-wrapper w-full bg-qh2-green h-[60px] relative z-30  ${
-        className || ""
-      }`}
+      className={`nav-widget-wrapper w-full bg-qh2-green h-[60px] relative z-30  ${className || ""
+        }`}
     >
       <div className="container-x mx-auto h-full">
         <div className="w-full h-full relative">
@@ -424,7 +445,7 @@ export default function Navbar({ className }) {
               </div>
             </div>
             <div className="become-seller-btn  w-[161px] h-[40px]">
-              <Link to="/become-saller">
+              <Link to="/become-saller" style={{ visibility: visibility ? "visible" : "hidden" }}>
                 <div className="black-btn flex justify-center items-center cursor-pointer h-full">
                   <div className="flex space-x-2 items-center">
                     <span className="text-sm font-600">Seja um Vendedor!</span>

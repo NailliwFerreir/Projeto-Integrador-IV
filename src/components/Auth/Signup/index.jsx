@@ -154,7 +154,7 @@ export default function Signup() {
                       <button
                         type="button"
                         className="black-btn text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center"
-                        onClick={createAccount}
+                        onClick={createAccountHandler}
                       >
                         <span>Criar Conta</span>
                       </button>

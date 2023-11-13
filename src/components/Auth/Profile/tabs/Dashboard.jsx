@@ -34,18 +34,23 @@ export default function Dashboard() {
   };
 
   const dashboardHandler = async () => {
-    let id = JSON.parse(localStorage.getItem("user"));
-    id = id.id;
-    console.log(id);
-    const response = await api.get(`auth/user/${id}`);
-    const { data } = response;
-    setName(data.username);
-    setEmail(data.email);
-    setBirthDate(data.birthDate);
-    setCertificateCode(data.certificateCode);
-    setCep(data.cep);
-    checkCep(data.cep);
-    setCurrentImg(data.image);
+    try {
+      let id = JSON.parse(localStorage.getItem("user"));
+      id = id.id;
+      console.log(id);
+      const response = await api.get(`auth/user/${id}`);
+      const { data } = response;
+      setName(data.username);
+      setEmail(data.email);
+      setBirthDate(data.birthDate);
+      setCertificateCode(data.certificateCode);
+      setCep(data.cep);
+      checkCep(data.cep);
+      setCurrentImg(data.image);
+    } catch (error) {
+      console.log(error)
+    }
+
   };
   useEffect(() => {
     dashboardHandler();
@@ -62,19 +67,23 @@ export default function Dashboard() {
     return value;
   };
   const checkCep = async (cep) => {
-    console.log(cep);
-    cep = cep.replace(/\D/g, "");
-    if (cep.length === 8) {
-      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
-      console.log(response.data);
-      const { data } = response;
-      if (data.cep) {
-        setStreet(data.logradouro);
-        setNeighborhood(data.bairro);
-        setCity(data.localidade);
-        setState(data.uf);
-        setCountry("Brasil");
+    try {
+      console.log(cep);
+      cep = cep.replace(/\D/g, "");
+      if (cep.length === 8) {
+        const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+        console.log(response.data);
+        const { data } = response;
+        if (data.cep) {
+          setStreet(data.logradouro);
+          setNeighborhood(data.bairro);
+          setCity(data.localidade);
+          setState(data.uf);
+          setCountry("Brasil");
+        }
       }
+    } catch (error) {
+      console.log(error)
     }
   };
 
