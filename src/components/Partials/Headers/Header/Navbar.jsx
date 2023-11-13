@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import apiauth from "../../../../services/apiauth";
 import Arrow from "../../../Helpers/icons/Arrow";
 
 export default function Navbar({ className }) {
   const [categoryToggle, setToggle] = useState(false);
   const [elementsSize, setSize] = useState("0px");
+  const [visibility, setVisibiity] = useState(false);
   // const getItems = document.querySelectorAll(`.categories-list li`).length;
   // if (categoryToggle && getItems > 0) {
   //   setSize(`${40 * getItems}px`);
@@ -12,7 +14,25 @@ export default function Navbar({ className }) {
   const handler = () => {
     setToggle(!categoryToggle);
   };
+  const visibilityHandler = async () => {
+    try {
+      const response = await apiauth.get(`/comprador`);
+      const { data } = response;
+      setVisibiity(data);
+      console.log(visibility)
+
+    } catch (error) {
+      console.log(error)
+      setVisibiity(false)
+      console.log(visibility)
+    }
+  }
+
   useEffect(() => {
+
+    visibilityHandler();
+    console.log(visibility)
+
     if (categoryToggle) {
       const getItems = document.querySelectorAll(`.categories-list li`).length;
       if (categoryToggle && getItems > 0) {
@@ -21,13 +41,12 @@ export default function Navbar({ className }) {
     } else {
       setSize(`0px`);
     }
-  }, [categoryToggle]);
+  }, [categoryToggle, visibility]);
 
   return (
     <div
-      className={`nav-widget-wrapper w-full bg-qh2-green h-[60px] relative z-30  ${
-        className || ""
-      }`}
+      className={`nav-widget-wrapper w-full bg-qh2-green h-[60px] relative z-30  ${className || ""
+        }`}
     >
       <div className="container-x mx-auto h-full">
         <div className="w-full h-full relative">
@@ -82,14 +101,14 @@ export default function Navbar({ className }) {
                         <div className=" flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white">
                           <div className="flex items-center space-x-6">
                             <span>
-                              <svg 
-                              fill="#000000" 
-                              width="30" 
-                              height="25" 
-                              viewBox="0 0 256 256" 
-                              id="Flat" 
-                              xmlns="http://www.w3.org/2000/svg">
-                                <path d="M168,100H88a36.04062,36.04062,0,0,0-36,36v8a36.04061,36.04061,0,0,0,36,36h80a36.04061,36.04061,0,0,0,36-36v-8A36.04062,36.04062,0,0,0,168,100Zm28,44a28.03146,28.03146,0,0,1-28,28H88a28.03146,28.03146,0,0,1-28-28v-8a28.03146,28.03146,0,0,1,28-28h80a28.03146,28.03146,0,0,1,28,28Zm-24-4a8,8,0,1,1-8-8A8.00917,8.00917,0,0,1,172,140Zm-72,0a8,8,0,1,1-8-8A8.00917,8.00917,0,0,1,100,140ZM208,36a28.04383,28.04383,0,0,0-27.71484,24H75.71484A28.00109,28.00109,0,0,0,20,64v80a68.07728,68.07728,0,0,0,68,68h80a68.07728,68.07728,0,0,0,68-68V64A28.03146,28.03146,0,0,0,208,36Zm20,108a60.06812,60.06812,0,0,1-60,60H88a60.06812,60.06812,0,0,1-60-60V64a20,20,0,0,1,40,0,4.0002,4.0002,0,0,0,4,4H184a4.0002,4.0002,0,0,0,4-4,20,20,0,0,1,40,0Z"/>
+                              <svg
+                                fill="#000000"
+                                width="30"
+                                height="25"
+                                viewBox="0 0 256 256"
+                                id="Flat"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M168,100H88a36.04062,36.04062,0,0,0-36,36v8a36.04061,36.04061,0,0,0,36,36h80a36.04061,36.04061,0,0,0,36-36v-8A36.04062,36.04062,0,0,0,168,100Zm28,44a28.03146,28.03146,0,0,1-28,28H88a28.03146,28.03146,0,0,1-28-28v-8a28.03146,28.03146,0,0,1,28-28h80a28.03146,28.03146,0,0,1,28,28Zm-24-4a8,8,0,1,1-8-8A8.00917,8.00917,0,0,1,172,140Zm-72,0a8,8,0,1,1-8-8A8.00917,8.00917,0,0,1,100,140ZM208,36a28.04383,28.04383,0,0,0-27.71484,24H75.71484A28.00109,28.00109,0,0,0,20,64v80a68.07728,68.07728,0,0,0,68,68h80a68.07728,68.07728,0,0,0,68-68V64A28.03146,28.03146,0,0,0,208,36Zm20,108a60.06812,60.06812,0,0,1-60,60H88a60.06812,60.06812,0,0,1-60-60V64a20,20,0,0,1,40,0,4.0002,4.0002,0,0,0,4,4H184a4.0002,4.0002,0,0,0,4-4,20,20,0,0,1,40,0Z" />
                               </svg>
                             </span>
                             <span className="text-xs font-400">Bovinos</span>
@@ -129,14 +148,14 @@ export default function Navbar({ className }) {
                         <div className="flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white">
                           <div className="flex items-center space-x-6">
                             <span>
-                              <svg 
-                              fill="#000000" 
-                              width="30" 
-                              height="25" 
-                              viewBox="0 0 256 256" 
-                              id="Flat" 
-                              xmlns="http://www.w3.org/2000/svg">
-                                <path d="M199.2041,57.78613A99.28144,99.28144,0,0,0,128,28h-8a4.0002,4.0002,0,0,0-4,4V61.76465L13.90332,124.59326a3.99946,3.99946,0,0,0-1.14746,5.74658L26.543,149.45605a27.85078,27.85078,0,0,0,27.42676,11.21924c14.98242-2.53662,43.13769-4.603,68.1875,8.62256L91.36133,212.4126A91.88509,91.88509,0,0,1,66.668,196.57471a4.00015,4.00015,0,1,0-5.33594,5.96093A99.67467,99.67467,0,0,0,128.01367,228q1.00342,0,2.00781-.02A100.0001,100.0001,0,0,0,199.2041,57.78613Zm20.78613,71.52539A92.05084,92.05084,0,0,1,99.08691,215.35938l31.00928-43.4126A52.05612,52.05612,0,0,0,180,120a4,4,0,0,0-8,0,44.04263,44.04263,0,0,1-42.97607,43.97412c-27.90686-16.22558-59.76221-14.00146-76.39014-11.18652a19.911,19.911,0,0,1-19.60254-8.01123L21.76172,129.15088l100.335-61.74414A4.00064,4.00064,0,0,0,124,64V36h4a91.99841,91.99841,0,0,1,91.99023,93.31152ZM132,100a8,8,0,1,1-8-8A8.00917,8.00917,0,0,1,132,100Z"/>
+                              <svg
+                                fill="#000000"
+                                width="30"
+                                height="25"
+                                viewBox="0 0 256 256"
+                                id="Flat"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M199.2041,57.78613A99.28144,99.28144,0,0,0,128,28h-8a4.0002,4.0002,0,0,0-4,4V61.76465L13.90332,124.59326a3.99946,3.99946,0,0,0-1.14746,5.74658L26.543,149.45605a27.85078,27.85078,0,0,0,27.42676,11.21924c14.98242-2.53662,43.13769-4.603,68.1875,8.62256L91.36133,212.4126A91.88509,91.88509,0,0,1,66.668,196.57471a4.00015,4.00015,0,1,0-5.33594,5.96093A99.67467,99.67467,0,0,0,128.01367,228q1.00342,0,2.00781-.02A100.0001,100.0001,0,0,0,199.2041,57.78613Zm20.78613,71.52539A92.05084,92.05084,0,0,1,99.08691,215.35938l31.00928-43.4126A52.05612,52.05612,0,0,0,180,120a4,4,0,0,0-8,0,44.04263,44.04263,0,0,1-42.97607,43.97412c-27.90686-16.22558-59.76221-14.00146-76.39014-11.18652a19.911,19.911,0,0,1-19.60254-8.01123L21.76172,129.15088l100.335-61.74414A4.00064,4.00064,0,0,0,124,64V36h4a91.99841,91.99841,0,0,1,91.99023,93.31152ZM132,100a8,8,0,1,1-8-8A8.00917,8.00917,0,0,1,132,100Z" />
                               </svg>
                             </span>
                             <span className="text-xs font-400">Equinos</span>
@@ -415,7 +434,7 @@ export default function Navbar({ className }) {
               </div>
             </div>
             <div className="become-seller-btn  w-[161px] h-[40px]">
-              <Link to="/become-saller">
+              <Link to="/become-saller" style={{ visibility: visibility ? "visible" : "hidden" }}>
                 <div className="black-btn flex justify-center items-center cursor-pointer h-full">
                   <div className="flex space-x-2 items-center">
                     <span className="text-sm font-600">Seja um Vendedor!</span>
