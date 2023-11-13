@@ -67,7 +67,7 @@ export default function ProductTab({ className }) {
               {/* table heading end */}
               {productsList?.length > 0 && productsList.map((product) => (
 
-                <tr className="bg-white border-b hover:bg-gray-50">
+                <tr className="bg-white border-b hover:bg-gray-50" key={product.id}>
                   <td className="pl-10  py-4 ">
                     <div className="flex space-x-6 items-center">
                       <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED]">
