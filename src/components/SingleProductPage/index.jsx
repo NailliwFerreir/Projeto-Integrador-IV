@@ -1,5 +1,7 @@
-import { useParams, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import data from "../../data/products.json";
+import api from "../../services/api";
 import BreadcrumbCom from "../BreadcrumbCom";
 import ProductCardStyleOne from "../Helpers/Cards/ProductCardStyleOne";
 import DataIteration from "../Helpers/DataIteration";
@@ -11,6 +13,7 @@ import SallerInfo from "./SallerInfo";
 
 export default function SingleProductPage() {
   const params = useParams();
+  console.log(params);
   const productId = params.id;
   const [tab, setTab] = useState("des");
   const [rating, setRating] = useState(0);
@@ -85,8 +88,13 @@ export default function SingleProductPage() {
   };
 
   const productInfoHandler = async (productId) => {
-    const response = await api.get(`/products/${productId}`);
-    //setar os bagulho do produto aqui
+    try {
+      const response = await api.get(`/products/${productId}`);
+      const { data } = response;
+      console.log(data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   useEffect(() => {

@@ -26,6 +26,11 @@ export default function SectionStyleThreeHomeTwo({
               )}
             </DataIteration>
           </div>
+          <div className="grid  lg:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-10">
+            {products.map((datas) => {
+              <ProductCardStyleOneTwo datas={datas} />;
+            })}
+          </div>
         </div>
       </ViewMoreTitle>
     </div>

@@ -1,27 +1,38 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../Partials/Layout";
+("react-spinners");
 
+import { BeatLoader } from "react-spinners";
 import api from "../../services/api";
 import SectionStyleThreeHomeTwo from "../Helpers/SectionStyleThreeHomeTwo";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [viewProducts, setViewProducts] = useState(6);
-
+  const [loading, setLoading] = useState(true);
   const handleViewMore = () => {
     setViewProducts((previousViewProducts) => previousViewProducts + 6);
   };
 
+  const [productTeste, setProducTest] = useState(null);
+
   const handleGetProducts = async () => {
     try {
+      console.log("iniciou a request");
       const response = await api.get("/products");
       const { data } = response;
       setProducts(data);
+      setProducTest(data[0]);
+      setLoading(false);
+      console.log(data);
     } catch (error) {
       console.log(error.message);
     }
   };
+
+  useEffect(() => {
+    console.log(products);
+  }, [products]);
 
   useEffect(() => {
     handleGetProducts();
@@ -37,17 +48,26 @@ export default function Home() {
       >
         <CategoriesSection /> 
       </ViewMoreTitle>*/}
-      <SectionStyleThreeHomeTwo
-        products={products}
-        showProducts={viewProducts}
-        sectionTitle="Produtos"
-        className="new-products mb-[60px]"
-      />
-      <div className="w-full flex justify-center">
-        <button className="bg-black w-32 p-2 hover:font-medium text-white">
-          Ver mais
-        </button>
-      </div>
+      {loading && (
+        <div className="w-full flex justify-center">
+          <BeatLoader color="#36d7b7" />
+        </div>
+      )}
+      {!loading && (
+        <>
+          <SectionStyleThreeHomeTwo
+            products={products}
+            showProducts={viewProducts}
+            sectionTitle="Produtos"
+            className="new-products mb-[60px]"
+          />
+          <div className="w-full flex justify-center">
+            <button className="bg-black w-32 p-2 hover:font-medium text-white">
+              Ver mais
+            </button>
+          </div>
+        </>
+      )}
       {/*
       <CampaignCountDown className="mb-[60px]" lastDate="2023-10-04 4:00:00" />
       <ProductsAds
