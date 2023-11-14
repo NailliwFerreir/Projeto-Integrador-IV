@@ -75,8 +75,11 @@ export default function ProfileTab() {
             cancelButton:
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
+        }).then((result) => {
+          if(result.isConfirmed){
+            window.location.href = "/login"
+          }
         });
-        navigate("/login");
       })
       .catch((error) => {
         console.log(error);
