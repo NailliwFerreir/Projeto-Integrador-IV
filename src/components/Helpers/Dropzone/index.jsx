@@ -22,7 +22,7 @@ export default function Dropzone({
   }, []);
 
   useEffect(() => {
-    filesInserted(files);
+    filesInserted(files.map((file) => file.preview));
   }, [files]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -42,7 +42,12 @@ export default function Dropzone({
   return (
     <>
       {!(limitFiles == files.length) && (
-        <div {...getRootProps({ className: className })}>
+        <div
+          {...getRootProps({
+            className:
+              "input-item h-[100px] border border-[#EDEDED] text-sm text-qgraytwo px-5  text-center flex items-center justify-center mb-5",
+          })}
+        >
           <input {...getInputProps()} />
           {isDragActive ? (
             <p>Solte os arquivos aqui...</p>

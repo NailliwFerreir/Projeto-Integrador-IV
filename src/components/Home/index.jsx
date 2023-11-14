@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../Partials/Layout";
 
-import datas from "../../data/productsTwo.json";
-import SectionStyleFour from "../Helpers/SectionStyleFour";
 import SectionStyleThreeHomeTwo from "../Helpers/SectionStyleThreeHomeTwo";
-import SectionStyleTwo from "../Helpers/SectionStyleTwoHomeTwo";
-import ViewMoreTitle from "../Helpers/ViewMoreTitle";
-import CampaignCountDown from "./CampaignCountDown";
-import ProductsAds from "./ProductsAds";
 
 export default function Home() {
-  /* 
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [viewProducts, setViewProducts] = useState(6);
+
+  const handleViewMore = () => {
+    setViewProducts((previousViewProducts) => previousViewProducts + 6);
+  };
+
   const handleGetProducts = async () => {
     try {
       const response = await api.get("/products");
@@ -24,9 +24,8 @@ export default function Home() {
 
   useEffect(() => {
     handleGetProducts();
-  }, []); */
+  }, []);
 
-  const { products } = datas;
   return (
     <Layout>
       {/* <Banner className="banner-wrapper mb-[46px]" />
@@ -37,13 +36,18 @@ export default function Home() {
       >
         <CategoriesSection /> 
       </ViewMoreTitle>*/}
-      {/* <SectionStyleThreeHomeTwo
+      <SectionStyleThreeHomeTwo
         products={products}
-        showProducts={6}
-        sectionTitle="Produtos em Destaque!"
-        seeMoreUrl="/all-products"
+        showProducts={viewProducts}
+        sectionTitle="Produtos"
         className="new-products mb-[60px]"
-      /> */}
+      />
+      <div className="w-full flex justify-center">
+        <button className="bg-black w-32 p-2 hover:font-medium text-white">
+          Ver mais
+        </button>
+      </div>
+      {/*
       <CampaignCountDown className="mb-[60px]" lastDate="2023-10-04 4:00:00" />
       <ProductsAds
         ads={[
@@ -88,7 +92,7 @@ export default function Home() {
         sectionTitle="Vendas Populares"
         seeMoreUrl="/all-products"
         className="category-products mb-[60px]"
-      />
+      />*/}
     </Layout>
   );
 }

@@ -13,7 +13,7 @@ export default function ViewMoreTitle({
               {categoryTitle}
             </h1>
           </div>
-          <div>
+          {/* <div>
             <a href={seeMoreUrl}>
               <div className="flex space-x-2 items-center">
                 <p className="text-base font-600 text-qblack">Ver Mais</p>
@@ -37,7 +37,7 @@ export default function ViewMoreTitle({
                 </span>
               </div>
             </a>
-          </div>
+          </div> */}
         </div>
         <div className="section-content">{children && children}</div>
       </div>

@@ -9,6 +9,7 @@ import PageTitle from "../Helpers/PageTitle";
 import SelectCustom from "../Helpers/SelectCustom";
 import Layout from "../Partials/Layout";
 export default function SellerProduct() {
+  const [productImages, setProductImages] = useState([]);
   const [productImg, setProductImg] = useState(null);
   // const [logoImg, setLogoImg] = useState(null);
   // const [coverImg, setCoverImg] = useState(null);
@@ -345,14 +346,8 @@ export default function SellerProduct() {
                     </h1>
                     <Dropzone
                       limitFiles={10}
-                      className={
-                        "input-item h-[100px] border border-[#EDEDED] text-sm text-qgraytwo px-5  text-center flex items-center justify-center mb-5"
-                      }
                       acceptType={"image/*"}
-                      filesInserted={(files) => {
-                        console.log(files);
-                        console.log(files[0]?.path);
-                      }}
+                      filesInserted={(files) => setProductImages(files)}
                     />
                   </div>
                   <div className="flex justify-center gap-4 flex-wrap">
