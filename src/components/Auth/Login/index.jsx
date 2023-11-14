@@ -17,34 +17,37 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     try {
-      const data = { email, password };
-      api.post("/auth/signin", data).then((response) => {
-        console.log(response.data.accessToken)
-        Swal.fire({
-          title: "Logado com sucesso!",
-          text: "Você será redirecionado para a página principal.",
-          icon: "success",
-          confirmButtonText: "Ok",
-          showCancelButton: false,
-          buttonsStyling: false,
-          reverseButtons: true,
-          timer: 4000,
-          customClass: {
-            confirmButton:
-              "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-            title: "text-2xl text-qblack",
-            text: "text-xs text-qblack",
-            cancelButton:
-              "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-          },
-        });
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
+      const body = { email, password };
+      const response = await api.post("/auth/signin", body);
+      const { data } = response;
+
+      console.log(data.accessToken);
+      Swal.fire({
+        title: "Logado com sucesso!",
+        text: "Você será redirecionado para a página principal.",
+        icon: "success",
+        confirmButtonText: "Ok",
+        showCancelButton: false,
+        buttonsStyling: false,
+        reverseButtons: true,
+        customClass: {
+          confirmButton:
+            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        },
+      }).then((response) => {
+        if (response.isConfirmed) {
+          navigate("/");
         }
-        navigate("/");
       });
+      if (data.accessToken) {
+        localStorage.setItem("user", JSON.stringify(data));
+      }
     } catch (error) {
       console.log(error);
       Swal.fire({
@@ -55,7 +58,6 @@ export default function Login() {
         showCancelButton: false,
         buttonsStyling: false,
         reverseButtons: true,
-        timer: 4000,
         customClass: {
           confirmButton:
             "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",

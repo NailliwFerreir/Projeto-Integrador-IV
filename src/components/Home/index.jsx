@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../Partials/Layout";
 
+import api from "../../services/api";
 import SectionStyleThreeHomeTwo from "../Helpers/SectionStyleThreeHomeTwo";
 
 export default function Home() {

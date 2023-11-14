@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function ProductCardStyleOneTwo({ datas }) {
   const navigate = useNavigate();
+  console.log(datas);
   return (
     <div
       className="product-card-style-one-two w-full h-full bg-white relative group overflow-hidden"
