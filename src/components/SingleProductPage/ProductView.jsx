@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { currencyMaskBR } from "../../masks";
+import api from "../../services/api";
 import Star from "../Helpers/icons/Star";
 
 export default function ProductView({ className, reportHandler }) {
@@ -82,9 +83,8 @@ export default function ProductView({ className, reportHandler }) {
 
   return (
     <div
-      className={`product-view w-full lg:flex justify-between ${
-        className || ""
-      }`}
+      className={`product-view w-full lg:flex justify-between ${className || ""
+        }`}
     >
       <div data-aos="fade-right" className="lg:w-1/2 xl:mr-[70px] lg:mr-[50px]">
         <div className="w-full">
@@ -107,9 +107,8 @@ export default function ProductView({ className, reportHandler }) {
                   <img
                     src={`${process.env.PUBLIC_URL}/assets/images/${img.src}`}
                     alt=""
-                    className={`w-full h-full object-contain ${
-                      src !== img.src ? "opacity-50" : ""
-                    } `}
+                    className={`w-full h-full object-contain ${src !== img.src ? "opacity-50" : ""
+                      } `}
                   />
                 </div>
               ))}
@@ -155,7 +154,7 @@ export default function ProductView({ className, reportHandler }) {
             data-aos="fade-up"
             className="text-qgray text-sm text-normal mb-[30px] leading-7"
           >
-            {productDescription}	
+            {productDescription}
           </p>
 
           {/* <div data-aos="fade-up" className="colors mb-[30px]">
