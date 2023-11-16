@@ -4,6 +4,7 @@ import Layout from "../Partials/Layout";
 
 import { BeatLoader } from "react-spinners";
 import api from "../../services/api";
+import ProductCardStyleOneTwo from "../Helpers/Cards/ProductCardStyleOneTwo";
 import SectionStyleThreeHomeTwo from "../Helpers/SectionStyleThreeHomeTwo";
 
 export default function Home() {
@@ -14,11 +15,16 @@ export default function Home() {
     setViewProducts((previousViewProducts) => previousViewProducts + 6);
   };
 
+  const handleAddProductToLocalStorage = (product) => {
+    const cartData = localStorage.getItem("cart");
+    const cart = cartData === null ? [] : JSON.parse(cartData);
+    localStorage.setItem("cart", JSON.stringify([...cart, product]));
+  };
+
   const [productTeste, setProducTest] = useState(null);
 
   const handleGetProducts = async () => {
     try {
-      console.log("iniciou a request");
       const response = await api.get("/products");
       const { data } = response;
       setProducts(data);
@@ -48,6 +54,15 @@ export default function Home() {
       >
         <CategoriesSection /> 
       </ViewMoreTitle>*/}
+
+      <ProductCardStyleOneTwo
+        datas={{
+          id: "ori39ir93h9f8h9458h9f348",
+          value: "R$ 123,12",
+          name: "Nome do Produto",
+          productImage: "../../../public/assets/images/product-img-16.jpg",
+        }}
+      />
       {loading && (
         <div className="w-full flex justify-center">
           <BeatLoader color="#36d7b7" />
