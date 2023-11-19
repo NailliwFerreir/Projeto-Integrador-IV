@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { currencyMaskBR } from "../../masks";
 
 export default function Cart({ className, type }) {
   const [totalValue, setTotalValue] = useState(0);
   const [cartProduct, setCartProduct] = useState([]);
   const id = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
+
   const styles = {
     productItems: {
       display: "flex",
@@ -18,6 +20,7 @@ export default function Cart({ className, type }) {
       "--space-between-items": "10px",
     },
   };
+
   const cartProductHandler = async () => {
     try {
       let cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -31,9 +34,9 @@ export default function Cart({ className, type }) {
   const calculateTotalValue = () => {
     let total = 0;
     cartProduct.forEach((cart) => {
-      total += (Number(cart.value) * Number(cart.quantity)).toFixed(2);
+      total += Number(cart.value) * Number(cart.quantity);
     });
-    setTotalValue(total);
+    setTotalValue(total.toFixed(2));
   };
 
   const deleteHandle = (index) => {
@@ -44,8 +47,11 @@ export default function Cart({ className, type }) {
 
   useEffect(() => {
     cartProductHandler();
-    calculateTotalValue();
   }, []);
+
+  useEffect(() => {
+    calculateTotalValue();
+  }, [cartProduct]);
 
   return (
     <>
@@ -73,19 +79,28 @@ export default function Cart({ className, type }) {
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <div className="flex-1 h-full flex flex-col justify-center ">
-                        <p className="title mb-2 text-[13px] font-600 text-qblack leading-4 line-clamp-2 hover:text-blue-600">
-                          {carts.name}
+                      <div className="mx-1">
+                        <p>
+                          <span className="text-[15px] font-500 text-qblack">
+                            {carts.name}
+                          </span>
                         </p>
-
+                      </div>
+                      <div className="flex-1 h-full flex flex-col justify-center ">
                         <p className="price">
                           <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                            R$ {carts.value}
+                            {currencyMaskBR(carts.value)}
                           </span>
                         </p>
                       </div>
                     </div>
-                    <button onClick={() => deleteHandle(index)} type="button">
+                    <button
+                      onClick={() => {
+                        deleteHandle(index);
+                        cartProductHandler();
+                      }}
+                      type="button"
+                    >
                       <span className="mt-[20px] mr-[15px] inline-flex cursor-pointer ">
                         <svg
                           width="8"
@@ -109,11 +124,9 @@ export default function Cart({ className, type }) {
           <div className="product-actions px-4 mb-[30px]">
             <div className="total-equation flex justify-between items-center mb-[28px]">
               <span className="text-[15px] font-500 text-qblack">Subtotal</span>
+
               <span className="text-[15px] font-500 text-qred ">
-                R$ {totalValue}
-              </span>
-              <span className="text-[15px] font-500 text-qred ">
-                R$ {totalValue}
+                {currencyMaskBR(totalValue)}
               </span>
             </div>
             <div className="product-action-btn">

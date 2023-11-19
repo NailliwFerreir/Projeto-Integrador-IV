@@ -14,6 +14,7 @@ export function currencyMaskBR(inputStr) {
   if (inputStr === null || inputStr === undefined) inputStr = 0;
   if (typeof inputStr === "number") {
     if (Math.floor(inputStr) === inputStr) {
+      console.log(inputStr);
       inputStr = inputStr + "00";
       inputStr = inputStr.replace(".", "");
     }
