@@ -27,18 +27,21 @@ export default function Cart({ className, type }) {
       console.log(error);
     }
   };
+
   const calculateTotalValue = () => {
     let total = 0;
     cartProduct.forEach((cart) => {
-      total += Number(cart.value);
+      total += (Number(cart.value) * Number(cart.quantity)).toFixed(2);
     });
     setTotalValue(total);
   };
+
   const deleteHandle = (index) => {
     const array = JSON.parse(localStorage.getItem("cart") || "[]");
     array.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(array));
   };
+
   useEffect(() => {
     cartProductHandler();
     calculateTotalValue();
@@ -146,14 +149,6 @@ export default function Cart({ className, type }) {
                 </div>
               </a>
             </div>
-          </div>
-          <div className="w-full px-4 mt-[20px]">
-            <div className="h-[1px] bg-[#F0F1F3]"></div>
-          </div>
-          <div className="flex justify-center py-[15px]">
-            <p className="text-[13px] font-500 text-qgray">
-              Devolução com até <span className="text-qblack">30 dias</span>
-            </p>
           </div>
         </div>
       </div>

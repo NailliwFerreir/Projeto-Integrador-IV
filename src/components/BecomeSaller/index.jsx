@@ -20,15 +20,40 @@ export default function BecomeSaller() {
   const navigate = useNavigate();
 
   const ProfileImageData = async () => {
-    var id = JSON.parse(localStorage.getItem("user"))
-    id = id.id
-    console.log(id)
-    const response = await api.get(`auth/user/${id}`);
-    const { data } = response;
-    setCurrentImg(data.image)
-
+    try {
+      var id = JSON.parse(localStorage.getItem("user"));
+      id = id.id;
+      console.log(id);
+      const response = await api.get(`auth/user/${id}`);
+      const { data } = response;
+      setCurrentImg(data.image);
+    } catch (error) {
+      Swal.fire({
+        title: "Você não está logado",
+        text: "Você será redirecionado para a página de login para continuar.",
+        icon: "question",
+        confirmButtonText: "Fazer login",
+        showCancelButton: false,
+        buttonsStyling: false,
+        reverseButtons: true,
+        customClass: {
+          confirmButton:
+            "mx-10 w-40 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        },
+      }).then((res) => {
+        if (res.isConfirmed) {
+          navigate("/login");
+        }
+      });
+    }
   };
-  useEffect(() => { ProfileImageData() }, [])
+  useEffect(() => {
+    ProfileImageData();
+  }, []);
 
   const profileImgInput = useRef(null);
   let profileImgData = null;
@@ -38,20 +63,19 @@ export default function BecomeSaller() {
   const profileImgChangHandler = (e) => {
     if (e.target.value !== "") {
       const imgReader = new FileReader();
-      var id = JSON.parse(localStorage.getItem("user"))
-      id = id.id
+      var id = JSON.parse(localStorage.getItem("user"));
+      id = id.id;
       imgReader.onload = (event) => {
         profileImgData = event.target.result;
         setCurrentImg(event.target.result);
         const obj = {
-          image: profileImgData
-        }
+          image: profileImgData,
+        };
         api.put(`auth/imageUser/${id}`, obj);
       };
 
       imgReader.readAsDataURL(e.target.files[0]);
     }
-
   };
 
   const cepMask = (value) => {
@@ -87,9 +111,9 @@ export default function BecomeSaller() {
   };
 
   const becomeSallerHandler = (e) => {
-    var id = JSON.parse(localStorage.getItem("user"))
-    id = id.id
-    console.log(id)
+    var id = JSON.parse(localStorage.getItem("user"));
+    id = id.id;
+    console.log(id);
     const obj = {
       birthDate: birth,
       cep,
@@ -119,8 +143,8 @@ export default function BecomeSaller() {
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
         }).then((result) => {
-          if(result.isConfirmed){
-            window.location.href = "/login"
+          if (result.isConfirmed) {
+            window.location.href = "/login";
           }
         });
       })
@@ -294,7 +318,8 @@ export default function BecomeSaller() {
 
                     <div className="signin-area mb-3">
                       <div className="flex justify-center">
-                        <button onClick={becomeSallerHandler}
+                        <button
+                          onClick={becomeSallerHandler}
                           type="button"
                           className="black-btn text-sm text-white w-[490px] h-[50px] font-semibold flex justify-center bg-purple items-center"
                         >
@@ -342,7 +367,11 @@ export default function BecomeSaller() {
                     <div className="flex xl:justify-center justify-start">
                       <div className="relative">
                         <img
-                          src={currentImg ? currentImg : `${process.env.PUBLIC_URL}/assets/images/placeholder.png`}
+                          src={
+                            currentImg
+                              ? currentImg
+                              : `${process.env.PUBLIC_URL}/assets/images/placeholder.png`
+                          }
                           alt=""
                           className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full overflow-hidden object-cover"
                         />
