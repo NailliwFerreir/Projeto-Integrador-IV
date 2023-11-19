@@ -23,14 +23,7 @@ export default function Home() {
   );
 
   const countCartItems = () => {
-    console.log("countCartItems");
     setCart(JSON.parse(localStorage.getItem("cart") || "[]").length);
-  };
-
-  const handleAddProductToLocalStorage = (product) => {
-    const cartData = localStorage.getItem("cart");
-    const cart = cartData === null ? [] : JSON.parse(cartData);
-    localStorage.setItem("cart", JSON.stringify([...cart, product]));
   };
 
   const [productTeste, setProducTest] = useState(null);

@@ -69,7 +69,7 @@ export default function Cart({ className, type }) {
 
                         <p className="price">
                           <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                            R$ {carts.value}
+                            {carts.value}
                           </span>
                         </p>
                       </div>

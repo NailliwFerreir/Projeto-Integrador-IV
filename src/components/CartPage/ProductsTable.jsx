@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import { currencyMaskBR } from "../../masks";
 import InputQuantityCom from "../Helpers/InputQuantityCom";
 
 export default function ProductsTable({ className }) {
@@ -7,34 +8,36 @@ export default function ProductsTable({ className }) {
   const [cartProduct, setCartProduct] = useState([]);
 
   const cartProductHandler = async () => {
-    console.log("cartProductHandler");
     try {
       let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-      console.log("produto cart", cart);
       setCartProduct(cart);
     } catch (error) {
       console.log(error);
     }
   };
+
   const calculateTotalValue = () => {
     let total = 0;
     cartProduct.forEach((cart) => {
-      total += Number(cart.value);
+      total += Number(cart.value) * Number(cart.quantity);
     });
-    setTotalValue(total);
+    setTotalValue(total.toFixed(2));
   };
 
   const deleteHandle = (index) => {
     const array = JSON.parse(localStorage.getItem("cart") || "[]");
     array.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(array));
+    cartProductHandler();
   };
 
   useEffect(() => {
-    console.log("useEffect");
     cartProductHandler();
-    calculateTotalValue();
   }, []);
+
+  useEffect(() => {
+    calculateTotalValue();
+  }, [cartProduct]);
 
   return (
     <div className={`w-full ${className || ""}`}>
@@ -46,8 +49,8 @@ export default function ProductsTable({ className }) {
               <td className="py-4 pl-10 block whitespace-nowrap min-w-[300px]">
                 Produto
               </td>
-              <td className="py-4 whitespace-nowrap text-center">Cor</td>
-              <td className="py-4 whitespace-nowrap text-center">Tamanho</td>
+              <td className="py-4 whitespace-nowrap text-center">Raça</td>
+              <td className="py-4 whitespace-nowrap text-center">Detalhes</td>
               <td className="py-4 whitespace-nowrap text-center">Preço</td>
               <td className="py-4 whitespace-nowrap  text-center">
                 Quantidade
@@ -95,19 +98,28 @@ export default function ProductsTable({ className }) {
                   <td className="text-center py-4 px-2">
                     <div className="flex space-x-1 items-center justify-center">
                       <span className="text-[15px] font-normal">
-                        R$ {carts.value}
+                        {currencyMaskBR(carts.value)}
                       </span>
                     </div>
                   </td>
                   <td className=" py-4">
                     <div className="flex justify-center items-center">
-                      <InputQuantityCom />
+                      <InputQuantityCom
+                        calculateAgain={cartProductHandler}
+                        productQuantity={carts.quantity}
+                        productId={carts.id}
+                      />
                     </div>
                   </td>
                   <td className="text-right py-4">
                     <div className="flex space-x-1 items-center justify-center">
                       <span className="text-[15px] font-normal">
-                        quantidade * preço
+                        quantidade * preço{" "}
+                        {currencyMaskBR(
+                          (
+                            Number(carts.value) * Number(carts.quantity)
+                          ).toFixed(2)
+                        )}
                       </span>
                     </div>
                   </td>
@@ -133,10 +145,10 @@ export default function ProductsTable({ className }) {
                   </td>
                 </tr>
               ))}
-            <div className=" flex justify-between mb-6">
+            <div className=" flex justify-between  p-5">
               <p className="text-[15px] font-medium text-qblack">Subtotal</p>
               <p className="text-[15px] font-medium text-qred">
-                R$ {totalValue}
+                {currencyMaskBR(totalValue)}
               </p>
             </div>
             <tr className="bg-white border-b hover:bg-gray-50"></tr>
