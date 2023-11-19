@@ -43,8 +43,7 @@ export default function Cart({ className, type }) {
     cartProductHandler();
     calculateTotalValue();
   }, []);
-    calculateTotalValue();
-  }, []);
+
   return (
     <>
       <div
