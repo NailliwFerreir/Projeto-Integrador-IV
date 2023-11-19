@@ -1,34 +1,56 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { currencyMaskBR } from "../../../masks";
 
-export default function ProductCardStyleOneTwo({ datas }) {
+export default function ProductCardStyleOneTwo({
+  datas,
+  countCart = () => {},
+}) {
   const navigate = useNavigate();
-  console.log(datas);
+  const handleAddProductToLocalStorage = (product) => {
+    const cartData = localStorage.getItem("cart");
+    const cart = cartData === null ? [] : JSON.parse(cartData);
+    const existentProduct = cart.find((item) => item.id === product.id);
+    const cartFilter = cart.filter((item) => item.id !== product.id);
+    if (existentProduct) {
+      product = { ...product, quantity: existentProduct.quantity + 1 };
+      localStorage.setItem("cart", JSON.stringify([...cartFilter, product]));
+    } else {
+      localStorage.setItem(
+        "cart",
+        JSON.stringify([...cart, { ...product, quantity: 1 }])
+      );
+    }
+  };
+
   return (
     <div
       className="product-card-style-one-two w-full h-full bg-white relative group overflow-hidden"
       style={{ boxShadow: "0px 15px 64px 0px rgba(0, 0, 0, 0.05)" }}
     >
-      <div
-      /*  className="product-card-img w-full h-[322px] mt-4"
-        style={{
-          background: `${datas.productImage} no-repeat center`,
-        }} */
-      >
-        <img
+      <Link to={`/single-product/${datas.id}`}>
+        <div
           className="product-card-img w-full h-[322px] mt-4"
-          src={datas.productImage}
-          alt="Carregando"
-          srcset=""
-        />
-      </div>
+          /*   style={{
+          background: `no-repeat center`,
+        }} */
+        >
+          <img
+            className="no-repeat center object-cover"
+            src={datas.productImage}
+            alt="Product"
+          />
+        </div>
+      </Link>
       <div className="product-card-details flex justify-center h-[102px] items-center  relative">
-        {/* add to card button */}
         <div className="absolute w-[204px] h-[54px] left-[80px] -bottom-20 group-hover:bottom-[65px] transition-all duration-300 ease-in-out">
           <button
             type="button"
             className="black-btn h-full p-3"
-            onClick={() => navigate(`/single-product/${datas.id}`)}
+            onClick={() => {
+              handleAddProductToLocalStorage(datas);
+              countCart();
+            }}
           >
             <div>
               <span>Adicionar ao Carrinho</span>
@@ -44,10 +66,10 @@ export default function ProductCardStyleOneTwo({ datas }) {
           <div className="flex justify-center ">
             <div className="price">
               {/* <span className="offer-price text-center text-qred font-600 text-[18px] mr-1 inline-block">
-                {datas.offer_price}
+                {datas.offer_price}line-through 
               </span> */}
-              <span className="main-price text-qgray line-through font-600 text-center text-[18px]">
-                {datas.value}
+              <span className="main-price text-qgray font-600 text-center text-[18px]">
+                {currencyMaskBR(datas.value)}
               </span>
             </div>
           </div>

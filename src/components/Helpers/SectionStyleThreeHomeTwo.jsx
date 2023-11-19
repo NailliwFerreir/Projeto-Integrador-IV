@@ -8,6 +8,7 @@ export default function SectionStyleThreeHomeTwo({
   seeMoreUrl,
   products = [],
   showProducts,
+  countCart = () => {},
 }) {
   return (
     <div className={`section-style-one ${className || ""}`}>
@@ -21,7 +22,7 @@ export default function SectionStyleThreeHomeTwo({
             >
               {({ datas }) => (
                 <div data-aos="fade-up" key={datas.id} className="item">
-                  <ProductCardStyleOneTwo datas={datas} />
+                  <ProductCardStyleOneTwo countCart={countCart} datas={datas} />
                 </div>
               )}
             </DataIteration>

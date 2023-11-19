@@ -12,6 +12,10 @@ export default function Cart({ className, type }) {
       flexWrap: "wrap",
       overflowY: "scroll",
       "--space-between-items": "10px",
+      display: "flex",
+      flexWrap: "wrap",
+      overflowY: "scroll",
+      "--space-between-items": "10px",
     },
   };
   const cartProductHandler = async () => {
@@ -37,6 +41,8 @@ export default function Cart({ className, type }) {
   };
   useEffect(() => {
     cartProductHandler();
+    calculateTotalValue();
+  }, []);
     calculateTotalValue();
   }, []);
   return (
@@ -101,6 +107,9 @@ export default function Cart({ className, type }) {
           <div className="product-actions px-4 mb-[30px]">
             <div className="total-equation flex justify-between items-center mb-[28px]">
               <span className="text-[15px] font-500 text-qblack">Subtotal</span>
+              <span className="text-[15px] font-500 text-qred ">
+                R$ {totalValue}
+              </span>
               <span className="text-[15px] font-500 text-qred ">
                 R$ {totalValue}
               </span>
