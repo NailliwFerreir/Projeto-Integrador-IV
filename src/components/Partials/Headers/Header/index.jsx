@@ -2,11 +2,14 @@ import ThinBag from "../../../Helpers/icons/ThinBag";
 import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
 
-export default function Header({ className, drawerAction }) {
+export default function Header({ className, drawerAction, cartItems }) {
   return (
     <header className={` ${className || ""} header-section-wrapper relative`}>
       {/* <TopBar className="quomodo-shop-top-bar" /> */}
-      <Middlebar className="quomodo-shop-middle-bar lg:block hidden" />
+      <Middlebar
+        className="quomodo-shop-middle-bar lg:block hidden"
+        cartItems={cartItems}
+      />
       <div className="quomodo-shop-drawer lg:hidden block w-full h-[60px] bg-white">
         <div className="w-full h-full flex justify-between items-center px-5">
           <div onClick={drawerAction}>
@@ -42,7 +45,7 @@ export default function Header({ className, drawerAction }) {
               </span>
             </a>
             <span className="w-[18px] h-[18px] rounded-full bg-qh2-green absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
-              15
+              30
             </span>
           </div>
         </div>
