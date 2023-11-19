@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Cart({ className, type }) {
   const [totalValue, setTotalValue] = useState(0);
   const [cartProduct, setCartProduct] = useState([]);
+  const id = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
   const styles = {
     productItems: {
+      display: "flex",
+      flexWrap: "wrap",
+      overflowY: "scroll",
+      "--space-between-items": "10px",
       display: "flex",
       flexWrap: "wrap",
       overflowY: "scroll",
@@ -34,6 +41,8 @@ export default function Cart({ className, type }) {
   };
   useEffect(() => {
     cartProductHandler();
+    calculateTotalValue();
+  }, []);
     calculateTotalValue();
   }, []);
   return (
@@ -69,7 +78,7 @@ export default function Cart({ className, type }) {
 
                         <p className="price">
                           <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                            {carts.value}
+                            R$ {carts.value}
                           </span>
                         </p>
                       </div>
@@ -101,6 +110,9 @@ export default function Cart({ className, type }) {
               <span className="text-[15px] font-500 text-qred ">
                 R$ {totalValue}
               </span>
+              <span className="text-[15px] font-500 text-qred ">
+                R$ {totalValue}
+              </span>
             </div>
             <div className="product-action-btn">
               <a href="#">
@@ -108,14 +120,29 @@ export default function Cart({ className, type }) {
                   <span>Ver carrinho</span>
                 </div>
               </a>
-              <a href="#">
+              <a href="">
                 <div className="w-full h-[50px]">
                   <div
                     className={
                       "black-btn h-full flex justify-center items-center font-bold "
                     }
                   >
-                    <span className="text-sm">Fazer checkout</span>
+                    <div>
+                      {id ? (
+                        <Link to="/checkout">
+                          <span className="text-sm">Fazer checkout</span>
+                        </Link>
+                      ) : (
+                        <button
+                          onClick={() => {
+                            // Redireciona o usuário para a página de login
+                            navigate("/login");
+                          }}
+                        >
+                          <span className="text-sm">Fazer checkout</span>
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </a>

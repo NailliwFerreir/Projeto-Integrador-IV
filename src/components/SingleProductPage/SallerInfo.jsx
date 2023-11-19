@@ -1,25 +1,49 @@
+import { useState } from "react";
+import api from "../../services/api";
 import ProductCardStyleOne from "../Helpers/Cards/ProductCardStyleOne";
 import DataIteration from "../Helpers/DataIteration";
 import Star from "../Helpers/icons/Star";
 
 export default function SallerInfo({ products }) {
+  const [sallerName, setSallerName] = useState("");
+  const [certificateCode, setCertificateCode] = useState("");
+  const [sallerEmail, setSallerEmail] = useState("");
+  const getSallerInfo = async () => {
+    let id = JSON.parse(localStorage.getItem("user"));
+    id = id.id;
+    api
+      .get(`/users/${id}`)
+      .then((resp) => {
+        console.log(resp.data);
+        setSallerName(resp.data.username);
+        setCertificateCode(resp.data.certificateCode);
+        setSallerEmail(resp.data.email);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   return (
     <div className="saller-info-wrapper w-full">
       <div className="saller-info sm:flex justify-between items-center pb-[30px] border-b border-[#E8E8E8]">
         <div className="sm:flex sm:space-x-5 items-center sm:w-1/4">
           <div className="saller w-[73px] h-[73px] rounded-full overflow-hidden">
             <img
-              src={`${process.env.PUBLIC_URL}/assets/images/comment-user-1.png`}
+              src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
               alt="saller"
               className="w-full h-full object-cover"
             />
           </div>
           <div>
             <h6 className="text-[18px] font-medium leading-[30px]">
-              Ridoy Rock
+              {sallerName}
             </h6>
             <p className="text-[13px] font-normal text-qgray leading-[30px]">
-              London,United Kingdom
+              Email: {sallerEmail}
+            </p>
+            <p className="text-[13px] font-normal text-qgray leading-[30px]">
+              Certificado n°: {certificateCode}
             </p>
             <div className="flex items-center mt-4">
               <div className="flex">
@@ -33,7 +57,7 @@ export default function SallerInfo({ products }) {
             </div>
           </div>
         </div>
-        <div className="flex-1 w-full sm:flex sm:space-x-5 justify-between sm:ml-[60px] mt-5 sm:mt-0">
+        {/* <div className="flex-1 w-full sm:flex sm:space-x-5 justify-between sm:ml-[60px] mt-5 sm:mt-0">
           <div className="w-full mb-5 sm:mb-0">
             <ul>
               <li className="text-qgray leading-[30px]">
@@ -78,7 +102,7 @@ export default function SallerInfo({ products }) {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="saller-product w-full mt-[30px]">
         <h1 className="text-[18px] font-medium mb-5">Produto da loja</h1>

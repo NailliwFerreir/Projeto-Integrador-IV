@@ -25,73 +25,90 @@ export default function SingleProductPage() {
   const [reviewLoading, setLoading] = useState(false);
   const reviewElement = useRef(null);
   const [report, setReport] = useState(false);
-  const [commnets, setComments] = useState([
-    {
-      id: Math.random(),
-      author: "Rafiqul Islam",
-      comments: `Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the redi 1500s, when an unknown printer took a
-                galley of type and scrambled it to make a type specimen book. It
-                has survived not only five centuries but also the on leap into
-                electronic typesetting, remaining`,
-      review: 4,
-      replys: [
-        {
-          id: Math.random(),
-          name: "Willium Kingson",
-          comments: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
-        },
-      ],
-    },
-    {
-      id: Math.random(),
-      author: "Abdullah Mamun",
-      comments: `Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the redi 1500s, when an unknown printer took a
-                galley of type and scrambled it to make a type specimen book. It
-                has survived not only five centuries but also the on leap into
-                electronic typesetting, remaining`,
-      review: 5,
-    },
-  ]);
-  const reviewAction = () => {
-    setLoading(true);
-    setTimeout(() => {
-      if ((name, message, rating)) {
-        setComments((prev) => [
-          {
-            id: Math.random(),
-            author: name,
-            comments: message,
-            review: rating,
-          },
-          ...prev,
-        ]);
-        setLoading(false);
-        setName("");
-        setEmail("");
-        setPhone("");
-        setMessage("");
-        setRating(0);
-        setHover(0);
-        window.scrollTo({
-          top: -reviewElement.current.getBoundingClientRect().top,
-          left: 0,
-          behavior: "smooth",
-        });
-      }
-      setLoading(false);
-      return false;
-    }, 2000);
-  };
+  //definição do que realmente nós usamos
+  const [productName, setProductName] = useState("");
+  const [productCategory, setProductCategory] = useState("");
+  const [productStock, setProductStock] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+  const [productRace, setProductRace] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [productImage, setProductImage] = useState(null);
+  const [productSeller, setProductSeller] = useState("");
+    // const [commnets, setComments] = useState([
+    //   {
+    //     id: Math.random(),
+    //     author: "Rafiqul Islam",
+    //     comments: `Lorem Ipsum is simply dummy text of the printing and typesetting
+    //               industry. Lorem Ipsum has been the industry's standard dummy
+    //               text ever since the redi 1500s, when an unknown printer took a
+    //               galley of type and scrambled it to make a type specimen book. It
+    //               has survived not only five centuries but also the on leap into
+    //               electronic typesetting, remaining`,
+    //     review: 4,
+    //     replys: [
+    //       {
+    //         id: Math.random(),
+    //         name: "Willium Kingson",
+    //         comments: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     id: Math.random(),
+    //     author: "Abdullah Mamun",
+    //     comments: `Lorem Ipsum is simply dummy text of the printing and typesetting
+    //               industry. Lorem Ipsum has been the industry's standard dummy
+    //               text ever since the redi 1500s, when an unknown printer took a
+    //               galley of type and scrambled it to make a type specimen book. It
+    //               has survived not only five centuries but also the on leap into
+    //               electronic typesetting, remaining`,
+    //     review: 5,
+    //   },
+    // ]);
+  // const reviewAction = () => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     if ((name, message, rating)) {
+  //       setComments((prev) => [
+  //         {
+  //           id: Math.random(),
+  //           author: name,
+  //           comments: message,
+  //           review: rating,
+  //         },
+  //         ...prev,
+  //       ]);
+  //       setLoading(false);
+  //       setName("");
+  //       setEmail("");
+  //       setPhone("");
+  //       setMessage("");
+  //       setRating(0);
+  //       setHover(0);
+  //       window.scrollTo({
+  //         top: -reviewElement.current.getBoundingClientRect().top,
+  //         left: 0,
+  //         behavior: "smooth",
+  //       });
+  //     }
+  //     setLoading(false);
+  //     return false;
+  //   }, 2000);
+  // };
 
   const productInfoHandler = async (productId) => {
     try {
       const response = await api.get(`/products/${productId}`);
       const { data } = response;
       console.log(data);
+      setProductName(data.name);
+      setProductCategory(data.category);
+      setProductStock(data.stock);
+      setProductPrice(data.value);
+      setProductRace(data.race);
+      setProductDescription(data.description);
+      setProductImage(data.image);
+      setProductSeller(data.fkUserId);
     } catch (error) {
       console.log(error.message);
     }
@@ -142,7 +159,7 @@ export default function SingleProductPage() {
                       Descrição
                     </span>
                   </li>
-                  <li>
+                  {/* <li>
                     <span
                       onClick={() => setTab("review")}
                       className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
@@ -153,7 +170,7 @@ export default function SingleProductPage() {
                     >
                       Avaliações
                     </span>
-                  </li>
+                  </li> */}
                   <li>
                     <span
                       onClick={() => setTab("info")}
@@ -175,40 +192,24 @@ export default function SingleProductPage() {
                 {tab === "des" && (
                   <div data-aos="fade-up" className="w-full tab-content-item">
                     <h6 className="text-[18px] font-medium text-qblack mb-2">
-                      Introdução
+                      Descrição
                     </h6>
                     <p className="text-[15px] text-qgray text-normal mb-10">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries but also the on leap into electronic
-                      typesetting, remaining essentially unchanged. It wasn’t
-                      popularised in the 1960s with the release of Letraset
-                      sheets containing Lorem Ipsum passages, andei more
-                      recently with desktop publishing software like Aldus
-                      PageMaker including versions of Lorem Ipsum to make a type
-                      specimen book.
+                      {productDescription}
                     </p>
                     <div>
                       <h6 className="text-[18px] text-medium mb-4">
-                        Características :
+                        Características:
                       </h6>
                       <ul className="list-disc ml-[15px]">
                         <li className="font-normal text-qgray leading-9">
-                          slim body with metal cover
+                          Categoria: {productCategory}
                         </li>
                         <li className="font-normal text-qgray leading-9">
-                          latest Intel Core i5-1135G7 processor (4 cores / 8
-                          threads)
+                          Raça: {productRace}
                         </li>
                         <li className="font-normal text-qgray leading-9">
-                          8GB DDR4 RAM and fast 512GB PCIe SSD
-                        </li>
-                        <li className="font-normal text-qgray leading-9">
-                          NVIDIA GeForce MX350 2GB GDDR5 graphics card backlit
-                          keyboard, touchpad with gesture support
+                          Quantidade em estoque: {productStock}
                         </li>
                       </ul>
                     </div>
