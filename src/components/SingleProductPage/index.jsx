@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import data from "../../data/products.json";
 import api from "../../services/api";
 import BreadcrumbCom from "../BreadcrumbCom";
-import ProductCardStyleOne from "../Helpers/Cards/ProductCardStyleOne";
-import DataIteration from "../Helpers/DataIteration";
 import InputCom from "../Helpers/InputCom";
 import Layout from "../Partials/Layout";
 import ProductView from "./ProductView";
@@ -34,37 +32,37 @@ export default function SingleProductPage() {
   const [productDescription, setProductDescription] = useState("");
   const [productImage, setProductImage] = useState(null);
   const [productSeller, setProductSeller] = useState("");
-    // const [commnets, setComments] = useState([
-    //   {
-    //     id: Math.random(),
-    //     author: "Rafiqul Islam",
-    //     comments: `Lorem Ipsum is simply dummy text of the printing and typesetting
-    //               industry. Lorem Ipsum has been the industry's standard dummy
-    //               text ever since the redi 1500s, when an unknown printer took a
-    //               galley of type and scrambled it to make a type specimen book. It
-    //               has survived not only five centuries but also the on leap into
-    //               electronic typesetting, remaining`,
-    //     review: 4,
-    //     replys: [
-    //       {
-    //         id: Math.random(),
-    //         name: "Willium Kingson",
-    //         comments: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     id: Math.random(),
-    //     author: "Abdullah Mamun",
-    //     comments: `Lorem Ipsum is simply dummy text of the printing and typesetting
-    //               industry. Lorem Ipsum has been the industry's standard dummy
-    //               text ever since the redi 1500s, when an unknown printer took a
-    //               galley of type and scrambled it to make a type specimen book. It
-    //               has survived not only five centuries but also the on leap into
-    //               electronic typesetting, remaining`,
-    //     review: 5,
-    //   },
-    // ]);
+  // const [commnets, setComments] = useState([
+  //   {
+  //     id: Math.random(),
+  //     author: "Rafiqul Islam",
+  //     comments: `Lorem Ipsum is simply dummy text of the printing and typesetting
+  //               industry. Lorem Ipsum has been the industry's standard dummy
+  //               text ever since the redi 1500s, when an unknown printer took a
+  //               galley of type and scrambled it to make a type specimen book. It
+  //               has survived not only five centuries but also the on leap into
+  //               electronic typesetting, remaining`,
+  //     review: 4,
+  //     replys: [
+  //       {
+  //         id: Math.random(),
+  //         name: "Willium Kingson",
+  //         comments: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: Math.random(),
+  //     author: "Abdullah Mamun",
+  //     comments: `Lorem Ipsum is simply dummy text of the printing and typesetting
+  //               industry. Lorem Ipsum has been the industry's standard dummy
+  //               text ever since the redi 1500s, when an unknown printer took a
+  //               galley of type and scrambled it to make a type specimen book. It
+  //               has survived not only five centuries but also the on leap into
+  //               electronic typesetting, remaining`,
+  //     review: 5,
+  //   },
+  // ]);
   // const reviewAction = () => {
   //   setLoading(true);
   //   setTimeout(() => {
@@ -150,11 +148,10 @@ export default function SingleProductPage() {
                   <li>
                     <span
                       onClick={() => setTab("des")}
-                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
-                        tab === "des"
-                          ? "border-qh2-green text-qblack "
-                          : "border-transparent text-qgray"
-                      }`}
+                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${tab === "des"
+                        ? "border-qh2-green text-qblack "
+                        : "border-transparent text-qgray"
+                        }`}
                     >
                       Descrição
                     </span>
@@ -174,11 +171,10 @@ export default function SingleProductPage() {
                   <li>
                     <span
                       onClick={() => setTab("info")}
-                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
-                        tab === "info"
-                          ? "border-qh2-green text-qblack "
-                          : "border-transparent text-qgray"
-                      }`}
+                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${tab === "info"
+                        ? "border-qh2-green text-qblack "
+                        : "border-transparent text-qgray"
+                        }`}
                     >
                       Informações do vendedor
                     </span>
@@ -253,7 +249,7 @@ export default function SingleProductPage() {
 
           <div className="related-product w-full bg-white">
             <div className="container-x mx-auto">
-              <div className="w-full py-[60px]">
+              {/* <div className="w-full py-[60px]">
                 <h1 className="sm:text-3xl text-xl font-600 text-qblacktext leading-none mb-[30px]">
                   Produtos relacionados
                 </h1>
@@ -273,7 +269,7 @@ export default function SingleProductPage() {
                     )}
                   </DataIteration>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

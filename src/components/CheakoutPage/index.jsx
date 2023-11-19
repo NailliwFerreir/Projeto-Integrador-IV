@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { currencyMaskBR } from "../../masks";
 import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
+
 
 export default function CheakoutPage() {
   const [FirstName, setFirstName] = useState("");
@@ -20,6 +22,44 @@ export default function CheakoutPage() {
   const [validade, setValidade] = useState("");
   const [cvv, setCvv] = useState("");
   const [cpf, setCPF] = useState("");
+  const [totalOrder, setTotalOrder] = useState(0);
+  const [cartProduct, setCartProduct] = useState([]);
+  const styles = {
+    productItems: {
+      display: "flex",
+      flexWrap: "wrap",
+      overflowY: "scroll",
+      "--space-between-items": "10px",
+      display: "flex",
+      flexWrap: "wrap",
+      overflowY: "scroll",
+      "--space-between-items": "10px",
+    },
+  };
+
+  const getTotalOrder = () => {
+    let total = 0;
+    const orders = JSON.parse(localStorage.getItem("cart"));
+    for (const order of orders) {
+      total += order.value * order.quantity;
+    }
+    setTotalOrder(total);
+  }
+
+  const cartProductHandler = async () => {
+    try {
+      let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      console.log("cart", cart);
+      setCartProduct(cart);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getTotalOrder();
+    cartProductHandler();
+  }, []);
 
   const numberMask = (value) => {
     value = value.replace(/[^0-9]/g, "");
@@ -115,20 +155,65 @@ export default function CheakoutPage() {
                 </h1>
 
                 <div className="w-full px-10 py-[30px] border border-[#EDEDED]">
-                  <div className="sub-total mb-6">
-                    <div className=" flex justify-between mb-5">
-                      <p className="text-[13px] font-medium text-qblack uppercase">
-                        Produto
-                      </p>
-                      <p className="text-[13px] font-medium text-qblack uppercase">
-                        total
-                      </p>
-                    </div>
-                    <div className="w-full h-[1px] bg-[#EDEDED]"></div>
-                  </div>
                   <div className="product-list w-full mb-[30px]">
                     <ul className="flex flex-col space-y-5">
-                      {/* {loadItems()} */}
+                      <div className="sub-total mb-6">
+                        <div className=" flex justify-between mb-5">
+                          <p className="text-[13px] font-medium text-qblack uppercase">
+                            Produto
+                          </p>
+                          <div>
+                            {cartProduct?.length > 0 && cartProduct.map((carts, index) => (
+                              <li
+                                className="w-full h-full flex"
+                                key={carts.id}
+                                style={styles.productItemsLi}
+                              >
+                                <li className="w-full h-full flex">
+                                  <div className="flex space-x-[6px] justify-center items-center px-4 my-[20px]">
+                                    <div className="w-[65px] h-full">
+                                      <img
+                                        src={carts.productImage}
+                                        alt=""
+                                        className="w-full h-full object-contain"
+                                      />
+                                    </div>
+                                    <div className="flex-1 h-full flex flex-col justify-center ">
+                                      <p className="title mb-2 text-[13px] font-600 text-qblack leading-4 line-clamp-2 hover:text-blue-600">
+                                        {carts.name}
+                                      </p>
+
+                                      <p className="price">
+                                        <span className="offer-price text-qred font-600 text-[15px] ml-2">
+                                          R$ {carts.value}
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <button onClick={() => deleteHandle(index)} type="button">
+                                    <span className="mt-[20px] mr-[15px] inline-flex cursor-pointer ">
+                                      <svg
+                                        width="8"
+                                        height="8"
+                                        viewBox="0 0 8 8"
+                                        fill="none"
+                                        className="inline fill-current text-[#AAAAAA] hover:text-qred"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path d="M7.76 0.24C7.44 -0.08 6.96 -0.08 6.64 0.24L4 2.88L1.36 0.24C1.04 -0.08 0.56 -0.08 0.24 0.24C-0.08 0.56 -0.08 1.04 0.24 1.36L2.88 4L0.24 6.64C-0.08 6.96 -0.08 7.44 0.24 7.76C0.56 8.08 1.04 8.08 1.36 7.76L4 5.12L6.64 7.76C6.96 8.08 7.44 8.08 7.76 7.76C8.08 7.44 8.08 6.96 7.76 6.64L5.12 4L7.76 1.36C8.08 1.04 8.08 0.56 7.76 0.24Z" />
+                                      </svg>
+                                    </span>
+                                  </button>
+                                </li>
+                              </li>))
+                            }
+                          </div>
+                          <p className="text-[13px] font-medium text-qblack uppercase">
+                            total
+                          </p>
+                        </div>
+                        <div className="w-full h-[1px] bg-[#EDEDED]"></div>
+                      </div>
                     </ul>
                   </div>
                   <div className="w-full h-[1px] bg-[#EDEDED]"></div>
@@ -139,8 +224,7 @@ export default function CheakoutPage() {
                         SUBTOTAL
                       </p>
                       <p className="text-[15px] font-medium text-qblack uppercase">
-                        {/* Aquii fica o valor do subtotal, tem que adicionar a função */}
-                        {/* {loadSubtotal()} */}
+                        {currencyMaskBR(totalOrder)}
                       </p>
                     </div>
                   </div>
@@ -168,7 +252,7 @@ export default function CheakoutPage() {
                     <div className=" flex justify-between mb-5">
                       <p className="text-2xl font-medium text-qblack">Total</p>
                       <p className="text-2xl font-medium text-qred">
-                        INSERIR VALOR DO TOTAL AQUI
+                        {currencyMaskBR(totalOrder)}
                       </p>
                     </div>
                   </div>
@@ -385,7 +469,7 @@ export default function CheakoutPage() {
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
         }).then((result) => {
-          if(result.isConfirmed){
+          if (result.isConfirmed) {
             window.location.href = "/"
           }
         });

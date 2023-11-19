@@ -114,7 +114,7 @@ export default function ProductsTable({ className }) {
                   <td className="text-right py-4">
                     <div className="flex space-x-1 items-center justify-center">
                       <span className="text-[15px] font-normal">
-                        quantidade * preço{" "}
+                        {" "}
                         {currencyMaskBR(
                           (
                             Number(carts.value) * Number(carts.quantity)

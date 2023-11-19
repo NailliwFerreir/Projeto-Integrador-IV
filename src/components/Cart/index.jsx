@@ -57,9 +57,8 @@ export default function Cart({ className, type }) {
     <>
       <div
         style={{ boxShadow: " 0px 15px 50px 0px rgba(0, 0, 0, 0.14)" }}
-        className={`w-[300px] bg-white border-  t-[3px] ${
-          type === 3 ? "border-qh3-blue" : "cart-wrappwer"
-        }  ${className || ""}`}
+        className={`w-[300px] bg-white border-  t-[3px] ${type === 3 ? "border-qh3-blue" : "cart-wrappwer"
+          }  ${className || ""}`}
       >
         <div className="w-full h-full">
           <ul className="product-items overflow-y-scroll">
@@ -130,7 +129,7 @@ export default function Cart({ className, type }) {
               </span>
             </div>
             <div className="product-action-btn">
-              <a href="#">
+              <a href="/cart">
                 <div className="gray-btn w-full h-[50px] mb-[10px] ">
                   <span>Ver carrinho</span>
                 </div>
