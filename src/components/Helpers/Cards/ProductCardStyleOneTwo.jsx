@@ -1,7 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { currencyMaskBR } from "../../../masks";
 
-export default function ProductCardStyleOneTwo({ datas }) {
+export default function ProductCardStyleOneTwo({
+  datas,
+  countCart = () => {},
+}) {
   const navigate = useNavigate();
   const handleAddProductToLocalStorage = (product) => {
     const cartData = localStorage.getItem("cart");
@@ -21,11 +25,11 @@ export default function ProductCardStyleOneTwo({ datas }) {
           background: `no-repeat center`,
         }} */
         >
-          {/* <img
-            className="product-card-img w-full h-[322px] mt-4"
+          <img
+            className="no-repeat center object-cover"
             src={datas.productImage}
             alt="Product"
-          /> */}
+          />
         </div>
       </Link>
       <div className="product-card-details flex justify-center h-[102px] items-center  relative">
@@ -33,7 +37,10 @@ export default function ProductCardStyleOneTwo({ datas }) {
           <button
             type="button"
             className="black-btn h-full p-3"
-            onClick={() => handleAddProductToLocalStorage(datas)}
+            onClick={() => {
+              handleAddProductToLocalStorage(datas);
+              countCart();
+            }}
           >
             <div>
               <span>Adicionar ao Carrinho</span>
@@ -52,7 +59,7 @@ export default function ProductCardStyleOneTwo({ datas }) {
                 {datas.offer_price}line-through 
               </span> */}
               <span className="main-price text-qgray font-600 text-center text-[18px]">
-                {datas.value}
+                {currencyMaskBR(datas.value)}
               </span>
             </div>
           </div>
