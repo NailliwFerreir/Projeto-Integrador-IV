@@ -10,7 +10,17 @@ export default function ProductCardStyleOneTwo({
   const handleAddProductToLocalStorage = (product) => {
     const cartData = localStorage.getItem("cart");
     const cart = cartData === null ? [] : JSON.parse(cartData);
-    localStorage.setItem("cart", JSON.stringify([...cart, product]));
+    const existentProduct = cart.find((item) => item.id === product.id);
+    const cartFilter = cart.filter((item) => item.id !== product.id);
+    if (existentProduct) {
+      product = { ...product, quantity: existentProduct.quantity + 1 };
+      localStorage.setItem("cart", JSON.stringify([...cartFilter, product]));
+    } else {
+      localStorage.setItem(
+        "cart",
+        JSON.stringify([...cart, { ...product, quantity: 1 }])
+      );
+    }
   };
 
   return (
