@@ -206,7 +206,7 @@ export default function Navbar({ className }) {
               </div>
               <div className="nav">
                 <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
-                  <li>
+                  {/* <li>
                     <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
                       <span>Comprar</span>
                       <span className="ml-1.5 ">
@@ -359,8 +359,8 @@ export default function Navbar({ className }) {
                         </div>
                       </div>
                     </div>
-                  </li>
-                  <li className="relative">
+                  </li> */}
+                  {/* <li className="relative">
                     <span className="flex items-center text-sm text-white font-600 cursor-pointer ">
                       <span>Notas</span>
                       <span className="ml-1.5 ">
@@ -419,7 +419,7 @@ export default function Navbar({ className }) {
                         </div>
                       </div>
                     </div>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/about">
                       <span className="flex items-center text-sm text-white font-600 cursor-pointer ">

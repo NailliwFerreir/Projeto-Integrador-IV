@@ -23,6 +23,12 @@ export default function CheckoutPage() {
   const [cpf, setCPF] = useState("");
   const [totalOrder, setTotalOrder] = useState(0);
   const [cartProduct, setCartProduct] = useState([]);
+  const [date, setDate] = useState("");
+  const [situation, setSituation] = useState("não Liberado");
+  const [tvalue, setTValue] = useState("");
+  const [fkUserId, setFkUserId] = useState("");
+  const [productIds, setProductIds] = useState("");
+
   const styles = {
     productItems: {
       display: "flex",
@@ -54,10 +60,35 @@ export default function CheckoutPage() {
       console.log(error);
     }
   };
+  const orderCreateHandler = () => {
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    let sellerIds = []
+    let productIds = []
+    let totalCartValue = 0;
+    for (const product of cart) {
+      sellerIds.includes(product.fkUserId) ? false : sellerIds.push(product.fkUserId);
+      productIds.includes(product.id) ? false : productIds.push(product.id);
+      totalCartValue += product.value;
+    }
+
+    const data = {
+      date: new Date().toLocaleDateString(),
+      situation: "Não Liberado",
+      value: totalCartValue,
+      fkUserId,
+      productIds,
+      orderId,
+      idBuyer
+    };
+    console.log(data)
+    // api.post("/orders", data)
+  }
+
 
   useEffect(() => {
     getTotalOrder();
     cartProductHandler();
+    orderCreateHandler();
   }, []);
 
   const numberMask = (value) => {
@@ -417,6 +448,28 @@ export default function CheckoutPage() {
     }
   }
   function makeOrder() {
+    if (cartProduct.length < 1) {
+      Swal.fire({
+        title: "Não é possível realizar a compra!",
+        text: "Seu carrinho está vazio! ",
+        icon: "question",
+        confirmButtonText: "Ok",
+        showCancelButton: false,
+        buttonsStyling: false,
+        reverseButtons: true,
+        timer: 4000,
+        customClass: {
+          confirmButton:
+            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+
+        },
+      });
+      return;
+    }
     let obj;
     console.log("ENTROU");
     if (payOption == "tranfer") {
@@ -454,6 +507,7 @@ export default function CheckoutPage() {
       .post("http://localhost:3030/checkout", obj)
       .then((res) => {
         console.log(res.data);
+        localStorage.setItem("cart", "[]")
         Swal.fire({
           title: "Pagamento realizado com sucesso!",
           text: "Muito obrigado pela compra!",
@@ -470,6 +524,7 @@ export default function CheckoutPage() {
             text: "text-xs text-qblack",
             cancelButton:
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+
           },
         }).then((result) => {
           if (result.isConfirmed) {
