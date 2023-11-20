@@ -156,6 +156,18 @@ export default function ProductsTable({ className }) {
           </tbody>
         </table>
       </div>
+      <div className="w-full sm:flex justify-between mt-4">
+        <div className="flex space-x-2.5 items-center">
+          <a href="/checkout">
+            <button
+              disabled={cartProduct.length === 0}
+              className="w-[220px] h-[50px] bg-[#F6F6F6] flex justify-center items-center disabled:bg-[#F6F6F6] disabled:cursor-not-allowed"
+            >
+              <span className="text-sm font-semibold">Finalizar venda</span>
+            </button>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

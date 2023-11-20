@@ -33,17 +33,6 @@ export default function CardPage({ cart = true }) {
           <div className="w-full mt-[23px]">
             <div className="container-x mx-auto">
               <ProductsTable className="mb-[30px]" />
-              <div className="w-full sm:flex justify-between">
-                <div className="flex space-x-2.5 items-center">
-                  <a href="/checkout">
-                    <div className="w-[220px] h-[50px] bg-[#F6F6F6] flex justify-center items-center">
-                      <span className="text-sm font-semibold">
-                        Finalizar venda
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

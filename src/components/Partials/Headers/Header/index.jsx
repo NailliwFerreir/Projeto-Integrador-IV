@@ -46,7 +46,7 @@ export default function Header({ className, drawerAction, cartItems }) {
               </span>
             </a>
             <span className="w-[18px] h-[18px] rounded-full bg-qh2-green absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
-              30
+              {cartItems}
             </span>
           </div>
         </div>

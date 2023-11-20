@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import { currencyMaskBR, removeCurrencyMaskBR } from "../../masks";
 import api from "../../services/api";
-import Dropzone from "../Helpers/Dropzone";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
 import PageTitle from "../Helpers/PageTitle";
@@ -307,8 +306,8 @@ export default function SellerProduct() {
                       Preencha todos os campos do anúncio.
                     </p>
                   </div>
-                  <div class="flex justify-center">
-                    <div class="relative">
+                  <div className="flex justify-center max-w-6xl">
+                    <div class="">
                       <img
                         src={
                           productImg ||
@@ -316,6 +315,7 @@ export default function SellerProduct() {
                         }
                         alt=""
                         class="rounded-lg overflow-hidden object-cover"
+                        style={{ width: `100%`, height: `300px` }}
                       />
                       <input
                         ref={productImgInput}
@@ -328,18 +328,18 @@ export default function SellerProduct() {
                       />
                       <div
                         onClick={browseProductImg}
-                        class="absolute top-[-60px] right-0 mb-4 mr-4 bg-black hover:bg-gray-900 rounded-lg cursor-pointer"
+                        class=" mt-4 right-0 p-4 mb-4 mr-4 bg-black hover:bg-gray-900 rounded-lg cursor-pointer"
                         style={{ width: `100%` }}
                       >
-                        <div class="flex items-center justify-between h-full px-4">
-                          <span class="text-white text-base font-semibold">
+                        <div class="flex items-center justify-center h-full">
+                          <span class="text-white text-center font-semibold">
                             Adicionar imagem do produto
                           </span>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="update-cover w-full">
+                  {/* <div className="update-cover w-full">
                     <h1 className="text-sm tracking-wide text-qblack flex items-center mb-2">
                       Por favor insira as imagens do anúncio (limite de 5
                       imagens)
@@ -349,7 +349,7 @@ export default function SellerProduct() {
                       acceptType={"image/*"}
                       filesInserted={(files) => setProductImages(files)}
                     />
-                  </div>
+                  </div> */}
                   <div className="flex justify-center gap-4 flex-wrap">
                     {files.length > 0 &&
                       files.map((file) => (
