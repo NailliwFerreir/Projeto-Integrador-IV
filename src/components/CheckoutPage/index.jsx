@@ -95,16 +95,11 @@ export default function CheckoutPage() {
   };
 
   const cpfMask = (value) => {
-    // Remove todos os caracteres não numéricos
     value = value.replace(/\D/g, "");
-    // Garante que o CPF tenha no máximo 11 dígitos
     if (value.length > 11) {
       value = value.slice(0, 11);
     }
-
-    // Adiciona os pontos e traço no formato do CPF
     value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-
     return value;
   };
 
