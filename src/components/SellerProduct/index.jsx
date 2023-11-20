@@ -122,8 +122,8 @@ export default function SellerProduct() {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("R$ 0,00");
   const [productDescription, setProductDescription] = useState("");
-  const [productCategory, setProductCategory] = useState("Bovino");
-  const [productSubCategory, setProductSubCategory] = useState("Nelore");
+  const [productCategory, setProductCategory] = useState(null);
+  const [productSubCategory, setProductSubCategory] = useState(null);
   const [productType, setProductType] = useState(null);
   const [stock, setStock] = useState(0);
 

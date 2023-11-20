@@ -8,8 +8,9 @@ export default function SelectCustom({
   children,
   label,
   getValue = () => {},
+  reset = () => {},
 }) {
-  const [item, setItem] = useState(datas[0]);
+  const [item, setItem] = useState({ value: null, label: "Selecione" });
   const [toggle, setToggle] = useState(false);
   const handler = (e, value) => {
     if (action) {
@@ -18,6 +19,7 @@ export default function SelectCustom({
     setItem(value);
     setToggle(!toggle);
   };
+
   return (
     <>
       <div className="input-item">
