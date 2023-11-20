@@ -74,14 +74,14 @@ export default function Home() {
             sectionTitle="Produtos"
             className="new-products mb-[60px]"
           />
-          <div className="w-full flex justify-center">
+          {/* <div className="w-full flex justify-center">
             <button
               onClick={() => handleViewMore(3)}
               className="bg-black w-32 p-2 hover:font-medium text-white"
             >
               Ver mais
             </button>
-          </div>
+          </div> */}
         </>
       )}
       {/*

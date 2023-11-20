@@ -8,7 +8,7 @@ import BecomeSaller from "./components/BecomeSaller";
 import Blogs from "./components/Blogs";
 import Blog from "./components/Blogs/Blog.jsx";
 import CardPage from "./components/CartPage";
-import CheakoutPage from "./components/CheakoutPage";
+import CheckoutPage from "./components/CheckoutPage/index.jsx";
 import Contact from "./components/Contact";
 import Faq from "./components/Faq";
 import FlashSale from "./components/FlashSale";
@@ -35,7 +35,7 @@ export default function Routers() {
       <Route exact path="/all-products" element={<AllProductPage />} />
       <Route exact path="/single-product/:id" element={<SingleProductPage />} />
       <Route exact path="/cart" element={<CardPage />} />
-      <Route exact path="/checkout" element={<CheakoutPage />} />
+      <Route exact path="/checkout" element={<CheckoutPage />} />
       <Route exact path="/wishlist" element={<Wishlist />} />
       <Route exact path="/flash-sale" element={<FlashSale />} />
       <Route exact path="/saller-page" element={<SallerPage />} />
