@@ -1,7 +1,6 @@
 import ProductCardStyleOneTwo from "./Cards/ProductCardStyleOneTwo";
-import DataIteration from "./DataIteration";
+//import DataIteration from "./DataIteration";
 import ViewMoreTitle from "./ViewMoreTitle";
-
 export default function SectionStyleThreeHomeTwo({
   className,
   sectionTitle,
@@ -15,7 +14,8 @@ export default function SectionStyleThreeHomeTwo({
       <ViewMoreTitle categoryTitle={sectionTitle} /* seeMoreUrl={seeMoreUrl} */>
         <div className="products-section w-full">
           <div className="grid  lg:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-10">
-            <DataIteration
+            {/* Remover esse DataIteration de merda e usar o map */}
+            {/* <DataIteration
               datas={products}
               startLength={0}
               endLength={showProducts}
@@ -25,12 +25,13 @@ export default function SectionStyleThreeHomeTwo({
                   <ProductCardStyleOneTwo countCart={countCart} datas={datas} />
                 </div>
               )}
-            </DataIteration>
-          </div>
-          <div className="grid  lg:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-10">
-            {products.map((datas) => {
-              <ProductCardStyleOneTwo datas={datas} />;
-            })}
+            </DataIteration> */}
+            {products &&
+              products.map((datas) => (
+                <div data-aos="fade-up" key={datas.id} className="item">
+                  <ProductCardStyleOneTwo countCart={countCart} datas={datas} />
+                </div>
+              ))}
           </div>
         </div>
       </ViewMoreTitle>

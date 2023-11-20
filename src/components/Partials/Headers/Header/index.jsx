@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ThinBag from "../../../Helpers/icons/ThinBag";
 import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
@@ -29,14 +30,14 @@ export default function Header({ className, drawerAction, cartItems }) {
             </svg>
           </div>
           <div>
-            <a href="/">
+            <Link href="/">
               <img
                 width="152"
                 height="36"
                 src={`${process.env.PUBLIC_URL}/assets/images/INSEMINA +.svg`}
                 alt="logo"
               />
-            </a>
+            </Link>
           </div>
           <div className="cart relative cursor-pointer">
             <a href="/cart">
