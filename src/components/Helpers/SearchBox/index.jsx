@@ -1,4 +1,21 @@
+import { useState } from "react";
+import { useProduct } from "../../../hooks/useProduct";
+import axios from '../../../services/apiauth'
 export default function SearchBox({ className, type }) {
+  const [searchTitle,setSearchTitle]= useState('')
+  const {setProducts}=useProduct()
+  const handleChange=(value)=>{
+    setSearchTitle(value)
+    console.log(value)
+  }
+
+  const handleSubmit= async (e)=>{
+    e.preventDefault()
+
+    const products= await axios.get( `https://localhost:8080/api/products?name=${searchTitle}` )
+    setProducts(products.data)
+  }
+
   return (
     <>
       <div
@@ -11,6 +28,10 @@ export default function SearchBox({ className, type }) {
               type="text"
               className="search-input"
               placeholder="Pesquisar produto..."
+              onChange={
+                (event)=>{handleChange(event.target.value)}
+              }
+              value={searchTitle}
             />
           </form>
         </div>
@@ -54,6 +75,7 @@ export default function SearchBox({ className, type }) {
             " w-[93px] h-full text-sm font-600 bg-qh2-green text-white"
           }
           type="button"
+          onClick={handleSubmit}
         >
           Pesquisar
         </button>
