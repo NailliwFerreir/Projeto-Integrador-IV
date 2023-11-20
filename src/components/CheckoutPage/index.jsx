@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { v4 } from "uuid";
 import { currencyMaskBR } from "../../masks";
 import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
@@ -23,11 +24,6 @@ export default function CheckoutPage() {
   const [cpf, setCPF] = useState("");
   const [totalOrder, setTotalOrder] = useState(0);
   const [cartProduct, setCartProduct] = useState([]);
-  const [date, setDate] = useState("");
-  const [situation, setSituation] = useState("não Liberado");
-  const [tvalue, setTValue] = useState("");
-  const [fkUserId, setFkUserId] = useState("");
-  const [productIds, setProductIds] = useState("");
 
   const styles = {
     productItems: {
@@ -60,35 +56,37 @@ export default function CheckoutPage() {
       console.log(error);
     }
   };
-  const orderCreateHandler = () => {
-    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    let sellerIds = []
-    let productIds = []
-    let totalCartValue = 0;
-    for (const product of cart) {
-      sellerIds.includes(product.fkUserId) ? false : sellerIds.push(product.fkUserId);
-      productIds.includes(product.id) ? false : productIds.push(product.id);
-      totalCartValue += product.value;
-    }
 
-    const data = {
-      date: new Date().toLocaleDateString(),
-      situation: "Não Liberado",
-      value: totalCartValue,
-      fkUserId,
-      productIds,
-      orderId,
-      idBuyer
-    };
-    console.log(data)
-    // api.post("/orders", data)
+  const orderCreateHandler = async () => {
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    let buyer = JSON.parse(localStorage.getItem("user"))
+    let totalCartValue = 0;
+    const orderId = v4();
+
+    for (const item of cart) {
+      try {
+        await api.post("/orders", {
+          date: new Date().toLocaleDateString(),
+          situation: "Não Liberado.",
+          value: item.value,
+          quantity: String(item.quantity).toString(),
+          fkUserId: item.fkUserId,
+          productId: item.id,
+          orderId,
+          buyerId: buyer.id,
+        })
+      }
+      catch (error) {
+        console.log(error.message);
+      }
+
+    }
   }
 
 
   useEffect(() => {
     getTotalOrder();
     cartProductHandler();
-    orderCreateHandler();
   }, []);
 
   const numberMask = (value) => {
@@ -503,6 +501,7 @@ export default function CheckoutPage() {
         value,
       };
     }
+    orderCreateHandler();
     api
       .post("http://localhost:3030/checkout", obj)
       .then((res) => {
