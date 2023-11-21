@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { v4 } from "uuid";
 import { currencyMaskBR } from "../../masks";
 import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
@@ -23,6 +24,7 @@ export default function CheckoutPage() {
   const [cpf, setCPF] = useState("");
   const [totalOrder, setTotalOrder] = useState(0);
   const [cartProduct, setCartProduct] = useState([]);
+
   const styles = {
     productItems: {
       display: "flex",
@@ -55,6 +57,33 @@ export default function CheckoutPage() {
     }
   };
 
+  const orderCreateHandler = async () => {
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    let buyer = JSON.parse(localStorage.getItem("user"))
+    let totalCartValue = 0;
+    const orderId = v4();
+
+    for (const item of cart) {
+      try {
+        await api.post("/orders", {
+          date: new Date().toLocaleDateString(),
+          situation: "Não Liberado.",
+          value: item.value,
+          quantity: String(item.quantity).toString(),
+          fkUserId: item.fkUserId,
+          productId: item.id,
+          orderId,
+          buyerId: buyer.id,
+        })
+      }
+      catch (error) {
+        console.log(error.message);
+      }
+
+    }
+  }
+
+
   useEffect(() => {
     getTotalOrder();
     cartProductHandler();
@@ -66,16 +95,11 @@ export default function CheckoutPage() {
   };
 
   const cpfMask = (value) => {
-    // Remove todos os caracteres não numéricos
     value = value.replace(/\D/g, "");
-    // Garante que o CPF tenha no máximo 11 dígitos
     if (value.length > 11) {
       value = value.slice(0, 11);
     }
-
-    // Adiciona os pontos e traço no formato do CPF
     value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-
     return value;
   };
 
@@ -417,6 +441,28 @@ export default function CheckoutPage() {
     }
   }
   function makeOrder() {
+    if (cartProduct.length < 1) {
+      Swal.fire({
+        title: "Não é possível realizar a compra!",
+        text: "Seu carrinho está vazio! ",
+        icon: "question",
+        confirmButtonText: "Ok",
+        showCancelButton: false,
+        buttonsStyling: false,
+        reverseButtons: true,
+        timer: 4000,
+        customClass: {
+          confirmButton:
+            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+
+        },
+      });
+      return;
+    }
     let obj;
     console.log("ENTROU");
     if (payOption == "tranfer") {
@@ -450,10 +496,12 @@ export default function CheckoutPage() {
         value,
       };
     }
+    orderCreateHandler();
     api
       .post("http://localhost:3030/checkout", obj)
       .then((res) => {
         console.log(res.data);
+        localStorage.setItem("cart", "[]")
         Swal.fire({
           title: "Pagamento realizado com sucesso!",
           text: "Muito obrigado pela compra!",
@@ -470,6 +518,7 @@ export default function CheckoutPage() {
             text: "text-xs text-qblack",
             cancelButton:
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+
           },
         }).then((result) => {
           if (result.isConfirmed) {

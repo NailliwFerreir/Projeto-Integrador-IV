@@ -18,6 +18,7 @@ export default function Dashboard() {
   const [neighborhood, setNeighborhood] = useState(
     "Parque Rural Fazenda Santa Cândida"
   );
+  const [visibility, setVisibiity] = useState(false);
   const [currentImg, setCurrentImg] = useState(null);
   let contL = 0,
     contN = 0;
@@ -52,8 +53,24 @@ export default function Dashboard() {
     }
 
   };
+
+  const visibilityHandler = async () => {
+    try {
+      const response = await apiauth.get(`/vendedor`);
+      const { data } = response;
+      setVisibiity(data)
+      console.log("productsantes", visibility)
+
+    } catch (error) {
+      console.log(error)
+      setVisibiity(false)
+      console.log("productdps", visibility)
+    }
+  }
+
   useEffect(() => {
     dashboardHandler();
+    visibilityHandler();
   }, []);
 
   const cepMask = (value) => {
