@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import api from "../../../../services/api";
+import apiauth from "../../../../services/apiauth";
 
 export default function Dashboard() {
   const [cep, setCep] = useState("13086-900");
