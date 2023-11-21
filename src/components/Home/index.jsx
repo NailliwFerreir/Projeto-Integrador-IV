@@ -30,11 +30,16 @@ export default function Home() {
   const handleGetProducts = async () => {
     try {
       setLoading(true);
+      let id = JSON.parse(localStorage.getItem("user"));
+      id = id.id;
+      console.log(id)
       const response = await api.get("/products");
       const { data } = response;
       console.log(data);
-      setProducts(data);
-      setProducTest(data);
+      const filterId = data.filter((product) => product.fkUserId !== id)
+      console.log(filterId)
+      setProducts(filterId);
+      setProducTest(filterId);
       setLoading(false);
     } catch (error) {
       console.log(error.message);
