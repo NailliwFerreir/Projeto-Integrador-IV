@@ -10,6 +10,7 @@ import Layout from "../Partials/Layout";
 export default function SellerProduct() {
   const [productImages, setProductImages] = useState([]);
   const [productImg, setProductImg] = useState(null);
+  const navigate = useNavigate();
   // const [logoImg, setLogoImg] = useState(null);
   // const [coverImg, setCoverImg] = useState(null);
 
@@ -92,8 +93,12 @@ export default function SellerProduct() {
             cancelButton:
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
+        }).then((res) => {
+          if (response.isConfirmed) {
+            navigate("/");
+          }
         });
-        //definir o direcionamento para a página do anúncio caso o anúncio seja criado com sucesso
+
       })
       .catch((err) => {
         console.log(err);
