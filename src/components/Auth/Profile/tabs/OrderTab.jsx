@@ -1,22 +1,74 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import api from "../../../../services/api";
 export default function OrderTab() {
   const [date, setDate] = useState("");
-  const [situation, setSituation] = useState("");
+  const [situation, setSituation] = useState("Não Liberado");
   const [value, setValue] = useState("");
-
   const [orders, setOrders] = useState([]);
+  const [apiData, setApiData] = useState({});
 
 
   const orderHandler = async () => {
     let id = JSON.parse(localStorage.getItem("user"));
     id = id.id;
+    let idProduct = id.productId
     console.log(id)
-    const response = await api.get(`/orders/userId/${id}`);
+    const response = await api.get(`/orders/buyerId/${id}`);
     const { data } = response;
-    console.log(data);
+    console.log("pedido", data);
+    setApiData(data)
+    console.log(apiData)
 
     setOrders(data);
+  }
+  const updateOrderSituation = async (order, index) => {
+    let respS = false
+    Swal.fire({
+      title: "Deseja atualizar o status do pedido para Liberado?",
+      text: "Confirme para atualizar!",
+      icon: "question",
+      confirmButtonText: "Ok",
+      showCancelButton: true,
+      buttonsStyling: false,
+      reverseButtons: true,
+      customClass: {
+        confirmButton:
+          "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        title: "text-2xl text-qblack",
+        text: "text-xs text-qblack",
+        cancelButton:
+          "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+      },
+    }).then((respS) => {
+      if (respS == false) {
+        return;
+      }
+    });
+    console.log(respS);
+    try {
+      console.log(apiData[index].productId)
+      const response = await api.put(`/orders/situ/${apiData[index].productId}`, {
+        ...order,
+        situation: "Liberado"
+      });
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+  const resetSituation = async (order, index) => {
+
+    try {
+      console.log(apiData[index].productId)
+      const response = await api.put(`/orders/situ/${apiData[index].productId}`, {
+        ...order,
+        situation: "Não Liberado"
+      });
+    } catch (error) {
+      console.log(error)
+    }
+
   }
   useEffect(() => { orderHandler() }, [])
 
@@ -38,7 +90,7 @@ export default function OrderTab() {
             {orders?.length > 0 && orders.map((order, index) => (
               <tr className="bg-white border-b hover:bg-gray-50" key={index}>
                 <td className="text-center py-4">
-                  <span className="text-lg text-qgray font-medium">#{index + 1}</span>
+                  <span className="text-lg text-qgray font-medium">#{order.productId}</span>
                 </td>
                 <td className="text-center py-4 px-2">
                   <span className="text-base text-qgray  whitespace-nowrap">
@@ -46,14 +98,19 @@ export default function OrderTab() {
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className={`text-sm rounded text-${order.situation == "Liberado" ? "green" : "red"}-500 bg-${order.situation == "Liberado" ? "green" : "red"}-100 p-2`}>
-                    {order.situation}
-                  </span>
+                  <button onClick={() => updateOrderSituation(order, index)} type="button">
+                    <span className={`text-sm rounded text-${order.situation == "Liberado" ? "green" : "red"}-500 bg-${order.situation == "Liberado" ? "green" : "red"}-100 p-2`}>
+                      {order.situation}
+                    </span>
+                  </button>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <span className="text-base text-qblack whitespace-nowrap px-2 ">
-                    R$ {order.value}
-                  </span>
+                  {/* remover botao depois, apenas para testar situação */}
+                  <button onClick={() => resetSituation(order, index)} type="button">
+                    <span className="text-base text-qblack whitespace-nowrap px-2 ">
+                      R$ {order.value}
+                    </span>
+                  </button>
                 </td>
               </tr>
             ))}
