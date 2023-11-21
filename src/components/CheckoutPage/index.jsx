@@ -136,7 +136,7 @@ export default function CheckoutPage() {
                       <div className="flex-1">
                         <InputCom
                           label="Last Name*"
-                          placeholder="Digite seu nome..."
+                          placeholder="Digite seu sobrenome..."
                           inputClasses="w-full h-[50px]"
                           inputHandler={(e) => setLastName(e.target.value)}
                         />
@@ -347,14 +347,16 @@ export default function CheckoutPage() {
                       </li>
                     </ul>
                   </div>
-                  <div className="w-full h-[50px] black-btn flex justify-center items-center">
-                    <button
-                      className="text-sm font-semibold"
-                      onClick={makeOrder}
-                    >
+                  <button
+                    className="text-sm font-semibold"
+                    onClick={makeOrder}
+                  >
+                    <div className="w-[500px] h-[50px] black-btn flex justify-center items-center">
+
                       Realizar pedido
-                    </button>
-                  </div>
+
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -549,35 +551,3 @@ export default function CheckoutPage() {
       });
   }
 }
-
-//function loadItems() {
-// const items = await items em cache do pedido
-// let res = []
-// items.map((element) => {
-//  res.push(
-// <li>
-//   <div className="flex justify-between items-center">
-//   <div>
-//     <h4 className="text-[15px] text-qblack mb-2.5">
-//       {element.name}
-//       <sup className="text-[13px] text-qgray ml-2 mt-2">
-//         {element.qtd}
-//       </sup>
-//     </h4>
-//   </div>
-//   <div>
-//     <span className="text-[15px] text-qblack font-medium">
-//       R${element.value}
-//     </span>
-//   </div>
-// </div>
-// </li>
-//)
-// })
-// return res
-// }
-
-//function loadSubtotal(){
-//  const subtotal += items.valor e retornar esse valor para aparecer lá na tela depois
-//  return subtotal
-//}
