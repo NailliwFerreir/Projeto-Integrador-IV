@@ -23,7 +23,6 @@ export default function OrderTab() {
     setOrders(data);
   }
   const updateOrderSituation = async (order, index) => {
-    let respS = false
     Swal.fire({
       title: "Deseja atualizar o status do pedido para Liberado?",
       text: "Confirme para atualizar!",
@@ -40,23 +39,31 @@ export default function OrderTab() {
         cancelButton:
           "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
       },
-    }).then((respS) => {
-      if (respS == false) {
-        return;
+    }).then(async (res) => {
+      if (res.isConfirmed) {
+        try {
+          console.log(apiData[index].productId)
+          const response = await api.put(`/orders/situ/${apiData[index].productId}`, {
+            ...order,
+            situation: "Liberado"
+          });
+          const filteredOrder = orders.filter((ord) => {
+            return ord.productId !== apiData[index].productId
+          })
+          console.log(filteredOrder)
+          setOrders([{
+            ...order,
+            situation: "Liberado"
+          }, ...filteredOrder])
+        } catch (error) {
+          console.log(error)
+        }
       }
     });
-    console.log(respS);
-    try {
-      console.log(apiData[index].productId)
-      const response = await api.put(`/orders/situ/${apiData[index].productId}`, {
-        ...order,
-        situation: "Liberado"
-      });
-    } catch (error) {
-      console.log(error)
-    }
+
 
   }
+  const [updatedOrder, setUpdatedOrder] = useState([])
   const resetSituation = async (order, index) => {
 
     try {
