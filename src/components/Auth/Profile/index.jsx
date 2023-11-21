@@ -106,7 +106,7 @@ export default function Profile() {
                       </Link>
                     </div>
                     <div className="item group">
-                      <Link to="/profile#product" style={{ visibility: visibility ? "visible" : "hidden" }}>
+                      <Link to="/profile#product" style={{ visibility: visibility ? 'block' : 'none' }}>
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
                           <span>
                             <IcoCart />
