@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { currencyMaskBR, removeCurrencyMaskBR } from "../../masks";
 import api from "../../services/api";
@@ -7,6 +8,144 @@ import InputTextareaCom from "../Helpers/InputTextareaCom";
 import PageTitle from "../Helpers/PageTitle";
 import SelectCustom from "../Helpers/SelectCustom";
 import Layout from "../Partials/Layout";
+export const cattles = {
+  bovine: [
+    {
+      value: "Nelore",
+      label: "Nelore",
+    },
+    {
+      value: "Angus",
+      label: "Angus",
+    },
+    {
+      value: "Guzerá",
+      label: "Guzerá",
+    },
+    {
+      value: "Simental",
+      label: "Simental",
+    },
+    {
+      value: "Charolais",
+      label: "Charolais",
+    },
+    {
+      value: "Hereford",
+      label: "Hereford",
+    },
+    {
+      value: "Brahman",
+      label: "Brahman",
+    },
+    {
+      value: "Mangalarga Marchador",
+      label: "Mangalarga Marchador",
+    },
+    {
+      value: "Crioulo",
+      label: "Crioulo",
+    },
+    {
+      value: "Indolês",
+      label: "Indolês",
+    },
+    {
+      value: "Jersey",
+      label: "Jersey",
+    },
+    {
+      value: "Limousin",
+      label: "Limousin",
+    },
+    {
+      value: "Shorthorn",
+      label: "Shorthorn",
+    },
+    {
+      value: "Senepol",
+      label: "Senepol",
+    },
+    {
+      value: "Tabapuã",
+      label: "Tabapuã",
+    },
+    {
+      value: "Xiquexique",
+      label: "Xiquexique",
+    },
+  ],
+  equine: [
+    {
+      value: "Crioulo",
+      label: "Crioulo",
+    },
+    {
+      value: "Mangalarga Marchador",
+      label: "Mangalarga Marchador",
+    },
+    {
+      value: "Pônei Brasileiro",
+      label: "Pônei Brasileiro",
+    },
+    {
+      value: "Appaloosa",
+      label: "Appaloosa",
+    },
+    {
+      value: "Paint Horse",
+      label: "Paint Horse",
+    },
+    {
+      value: "Árabe",
+      label: "Árabe",
+    },
+    {
+      value: "Quarter Horse",
+      label: "Quarter Horse",
+    },
+    {
+      value: "Pursange",
+      label: "Pursange",
+    },
+    {
+      value: "Thoroughbred",
+      label: "Thoroughbred",
+    },
+    {
+      value: "Pedigree",
+      label: "Pedigree",
+    },
+    {
+      value: "Andalusiano",
+      label: "Andalusiano",
+    },
+    {
+      value: "Lipizzano",
+      label: "Lipizzano",
+    },
+    {
+      value: "Morgan",
+      label: "Morgan",
+    },
+    {
+      value: "Shetland",
+      label: "Shetland",
+    },
+    {
+      value: "Appaloosa Brasileiro",
+      label: "Appaloosa Brasileiro",
+    },
+    {
+      value: "Pônei Quarto de Milha",
+      label: "Pônei Quarto de Milha",
+    },
+    {
+      value: "Pônei Shetland Brasileiro",
+      label: "Pônei Shetland Brasileiro",
+    },
+  ],
+};
 export default function SellerProduct() {
   const [productImages, setProductImages] = useState([]);
   const [productImg, setProductImg] = useState(null);
@@ -136,144 +275,7 @@ export default function SellerProduct() {
     console.log(removeCurrencyMaskBR(productPrice));
   }, [productPrice]);
 
-  const cattles = {
-    bovine: [
-      {
-        value: "Nelore",
-        label: "Nelore",
-      },
-      {
-        value: "Angus",
-        label: "Angus",
-      },
-      {
-        value: "Guzerá",
-        label: "Guzerá",
-      },
-      {
-        value: "Simental",
-        label: "Simental",
-      },
-      {
-        value: "Charolais",
-        label: "Charolais",
-      },
-      {
-        value: "Hereford",
-        label: "Hereford",
-      },
-      {
-        value: "Brahman",
-        label: "Brahman",
-      },
-      {
-        value: "Mangalarga Marchador",
-        label: "Mangalarga Marchador",
-      },
-      {
-        value: "Crioulo",
-        label: "Crioulo",
-      },
-      {
-        value: "Indolês",
-        label: "Indolês",
-      },
-      {
-        value: "Jersey",
-        label: "Jersey",
-      },
-      {
-        value: "Limousin",
-        label: "Limousin",
-      },
-      {
-        value: "Shorthorn",
-        label: "Shorthorn",
-      },
-      {
-        value: "Senepol",
-        label: "Senepol",
-      },
-      {
-        value: "Tabapuã",
-        label: "Tabapuã",
-      },
-      {
-        value: "Xiquexique",
-        label: "Xiquexique",
-      },
-    ],
-    equine: [
-      {
-        value: "Crioulo",
-        label: "Crioulo",
-      },
-      {
-        value: "Mangalarga Marchador",
-        label: "Mangalarga Marchador",
-      },
-      {
-        value: "Pônei Brasileiro",
-        label: "Pônei Brasileiro",
-      },
-      {
-        value: "Appaloosa",
-        label: "Appaloosa",
-      },
-      {
-        value: "Paint Horse",
-        label: "Paint Horse",
-      },
-      {
-        value: "Árabe",
-        label: "Árabe",
-      },
-      {
-        value: "Quarter Horse",
-        label: "Quarter Horse",
-      },
-      {
-        value: "Pursange",
-        label: "Pursange",
-      },
-      {
-        value: "Thoroughbred",
-        label: "Thoroughbred",
-      },
-      {
-        value: "Pedigree",
-        label: "Pedigree",
-      },
-      {
-        value: "Andalusiano",
-        label: "Andalusiano",
-      },
-      {
-        value: "Lipizzano",
-        label: "Lipizzano",
-      },
-      {
-        value: "Morgan",
-        label: "Morgan",
-      },
-      {
-        value: "Shetland",
-        label: "Shetland",
-      },
-      {
-        value: "Appaloosa Brasileiro",
-        label: "Appaloosa Brasileiro",
-      },
-      {
-        value: "Pônei Quarto de Milha",
-        label: "Pônei Quarto de Milha",
-      },
-      {
-        value: "Pônei Shetland Brasileiro",
-        label: "Pônei Shetland Brasileiro",
-      },
-    ],
-  };
+
 
   const group = [
     { value: "bovine", label: "Bovino" },
