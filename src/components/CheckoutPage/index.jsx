@@ -83,16 +83,43 @@ export default function CheckoutPage() {
     }
   }
 
-
   useEffect(() => {
     getTotalOrder();
     cartProductHandler();
   }, []);
 
-  const numberMask = (value) => {
-    value = value.replace(/[^0-9]/g, "");
+  const phoneMask = (value) => {
+    value = value.replace(/\D/g, "");
+    if (value.length > 11) {
+      value = value.slice(0, 11);
+    }
+    value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
     return value;
   };
+
+  const numeroCartaoMask = (value) => {
+    value = value.replace(/\D/g, "");
+    if (value.length > 16) {
+      value = value.slice(0, 16);
+    }
+    value = value.replace(/(\d{4})(\d{4})(\d{4})(\d{4})/, "$1 $2 $3 $4");
+    return value;
+  };
+
+  const validadeMask = (value) => {
+    value = value.replace(/\D/g, "");
+    value = value.slice(0, 6);
+    if (value.length > 2) {
+      value = value.slice(0, 2) + "/" + value.slice(2);
+    }
+    return value;
+  };
+
+  const cvvMask = (value) => {
+    value = value.replace(/\D/g, "")
+    value = value.slice(0, 3);
+    return value;
+  }
 
   const cpfMask = (value) => {
     value = value.replace(/\D/g, "");
@@ -156,7 +183,10 @@ export default function CheckoutPage() {
                           label="Phone Number*"
                           placeholder="012 3  *******"
                           inputClasses="w-full h-[50px]"
-                          inputHandler={(e) => setPhone(e.target.value)}
+                          inputHandler={(e) => {
+                            setPhone(phoneMask(e.target.value));
+                          }}
+                          value={phone}
                         />
                       </div>
                     </div>
@@ -399,7 +429,10 @@ export default function CheckoutPage() {
                 label="CPF/CNPJ*"
                 placeholder="000.000.000-XX"
                 inputClasses="w-full h-[50px]"
-                inputHandler={(e) => setCPF(cpfMask(e.target.value))}
+                inputHandler={(e) => {
+                  setCPF(cpfMask(e.target.value))
+                }}
+                value={cpf}
               />
             </div>
           </div>
@@ -409,7 +442,8 @@ export default function CheckoutPage() {
                 label="Número do cartão*"
                 placeholder="0000 0000 0000 0000"
                 inputClasses="w-full h-[50px]"
-                inputHandler={(e) => setEmail(numberMask(e.target.value))}
+                value={numeroCartao}
+                inputHandler={(e) => setNumeroCartao(numeroCartaoMask(e.target.value))}
               />
             </div>
             <div className="flex-1">
@@ -417,7 +451,8 @@ export default function CheckoutPage() {
                 label="Validade*"
                 placeholder="10/30"
                 inputClasses="w-full h-[50px]"
-                inputHandler={(e) => setPhone(e.target.value)}
+                value={validade}
+                inputHandler={(e) => setValidade(validadeMask(e.target.value))}
               />
             </div>
             <div className="flex-1">
@@ -425,7 +460,8 @@ export default function CheckoutPage() {
                 label="CVV*"
                 placeholder="000"
                 inputClasses="w-full h-[50px]"
-                inputHandler={(e) => setPhone(e.target.value)}
+                value={cvv}
+                inputHandler={(e) => setCvv(cvvMask(e.target.value))}
               />
             </div>
           </div>
@@ -467,7 +503,7 @@ export default function CheckoutPage() {
     }
     let obj;
     console.log("ENTROU");
-    if (payOption == "tranfer") {
+    if (payOption == "transfer") {
       obj = {
         nameC,
         email,
