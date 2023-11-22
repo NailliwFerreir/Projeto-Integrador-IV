@@ -257,46 +257,6 @@ export default function ProductView({ className, reportHandler }) {
                 data-aos="fade-up"
                 className="quantity-card-wrapper w-full flex items-center h-[50px] space-x-[10px] mb-[30px]"
               >
-                <div className="w-[120px] h-full px-[26px] flex items-center border border-qgray-border">
-                  <div className="flex justify-between items-center w-full">
-                    <button
-                      onClick={decrement}
-                      type="button"
-                      className="text-base text-qgray"
-                    >
-                      -
-                    </button>
-                    <span className="text-qblack">{quantity}</span>
-                    <button
-                      onClick={increment}
-                      type="button"
-                      className="text-base text-qgray"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div className="w-[60px] h-full flex justify-center items-center border border-qgray-border">
-                  <button type="button">
-                    <span>
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 1C14.9 1 13.1 2.1 12 3.7C10.9 2.1 9.1 1 7 1C3.7 1 1 3.7 1 7C1 13 12 22 12 22C12 22 23 13 23 7C23 3.7 20.3 1 17 1Z"
-                          stroke="#D5D5D5"
-                          strokeWidth="2"
-                          strokeMiterlimit="10"
-                          strokeLinecap="square"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </div>
                 <div className="flex-1 h-full">
                   <button
                     type="button"
