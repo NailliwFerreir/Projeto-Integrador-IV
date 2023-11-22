@@ -13,9 +13,10 @@ export function removeCurrencyMaskBR(inputStr) {
 export function currencyMaskBR(inputStr) {
   if (inputStr === null || inputStr === undefined) inputStr = 0;
   if (typeof inputStr === "number") {
+    inputStr = inputStr.toFixed(2);
     if (Math.floor(inputStr) === inputStr) {
-      console.log(inputStr);
       inputStr = inputStr + "00";
+      console.log(inputStr);
       inputStr = inputStr.replace(".", "");
     }
     inputStr = inputStr.toString().replace(".", "");
