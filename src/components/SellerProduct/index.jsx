@@ -233,7 +233,7 @@ export default function SellerProduct() {
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
           },
         }).then((res) => {
-          if (response.isConfirmed) {
+          if (res.isConfirmed) {
             navigate("/");
           }
         });
