@@ -4,7 +4,7 @@ import { currencyMaskBR } from "../../../masks";
 
 export default function ProductCardStyleOneTwo({
   datas,
-  countCart = () => {},
+  countCart = () => { },
 }) {
   const navigate = useNavigate();
   const handleAddProductToLocalStorage = (product) => {
@@ -30,13 +30,13 @@ export default function ProductCardStyleOneTwo({
     >
       <Link to={`/single-product/${datas.id}`}>
         <div
-          className="product-card-img w-full h-[322px] mt-4"
-          /*   style={{
-          background: `no-repeat center`,
-        }} */
+          className="product-card-img w-full h-[322px] "
+        /*   style={{
+        background: `no-repeat center`,
+      }} */
         >
           <img
-            className="no-repeat center object-cover"
+            className="no-repeat center object-cover w-full h-[288px] "
             src={datas.productImage}
             alt="Product"
           />

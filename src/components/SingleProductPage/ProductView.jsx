@@ -121,7 +121,7 @@ export default function ProductView({ className, reportHandler }) {
                 <img
                   src={productImage}
                   alt=""
-                  className="object-contain"
+                  className="w-full h-auto"
                 />
               </div>
               <div className="flex gap-2 flex-wrap">
