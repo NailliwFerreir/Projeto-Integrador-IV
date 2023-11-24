@@ -206,5 +206,6 @@ export default function Profile() {
 }
 
 const logout = () => {
-  localStorage.removeItem("user");
+  localStorage.setItem("cart", "[]");
+  localStorage.setItem("user", null)
 };
