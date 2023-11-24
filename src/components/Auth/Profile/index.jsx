@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import datas from "../../../data/products.json";
-import apiauth from "../../../services/apiauth";
 import BreadcrumbCom from "../../BreadcrumbCom";
 import Layout from "../../Partials/Layout";
 import IcoAdress from "./icons/IcoAdress";
@@ -26,18 +25,16 @@ export default function Profile() {
   const [active, setActive] = useState("dashboard");
   const [visibility, setVisibiity] = useState(false);
 
-  const visibilityHandler = async () => {
-    try {
-      const response = await apiauth.get(`/vendedor`);
-      const { data } = response;
-      setVisibiity(data)
-      console.log("products", visibility)
-
-    } catch (error) {
-      console.log(error)
-      setVisibiity(false)
-      console.log("product", visibility)
+  const getRole = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      return user.roles.includes("ROLE_VENDEDOR")
     }
+    return false
+  }
+  const visibilityHandler = () => {
+    if (getRole()) setVisibiity(true)
+    else setVisibiity(false)
   }
   useEffect(() => {
     visibilityHandler();
@@ -105,18 +102,21 @@ export default function Profile() {
                         </div>
                       </Link>
                     </div>
-                    <div className="item group">
-                      <Link to="/profile#product" style={{ visibility: visibility ? 'block' : 'none' }}>
-                        <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
-                          <span>
-                            <IcoCart />
-                          </span>
-                          <span className=" font-normal text-base">
-                            Produtos
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
+                    {visibility ?
+                      <div className="item group">
+                        <Link to="/profile#product">
+                          <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
+                            <span>
+                              <IcoCart />
+                            </span>
+                            <span className=" font-normal text-base">
+                              Produtos
+                            </span>
+                          </div>
+                        </Link>
+                      </div> :
+                      <></>
+                    }
                     <div className="item group">
                       <Link to="/profile#order">
                         <div className="flex space-x-3 items-center text-qgray hover:text-qblack">
