@@ -8,15 +8,9 @@ import SectionStyleThreeHomeTwo from "../Helpers/SectionStyleThreeHomeTwo";
 
 export default function Home() {
   const [products, setProducts] = useState();
-  const [viewProducts, setViewProducts] = useState(6);
+  const [productsCopy, setProductsCopy] = useState([]);
   const [loading, setLoading] = useState(false);
-  const handleViewMore = (add = 6) => {
-    console.log(add);
-    const newViewProducts = viewProducts + add;
-    console.log(newViewProducts);
-    setViewProducts(viewProducts + add);
-  };
-
+  const [showAllProductsAgain, setShowAllProductsAgain] = useState(false);
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart") || "[]").length
   );
@@ -32,13 +26,14 @@ export default function Home() {
       setLoading(true);
       let id = JSON.parse(localStorage.getItem("user"));
       id = id.id;
-      console.log(id)
+      console.log(id);
       const response = await api.get("/products");
       const { data } = response;
       console.log(data);
-      const filterId = data.filter((product) => product.fkUserId !== id)
-      console.log(filterId)
+      const filterId = data.filter((product) => product.fkUserId !== id);
+      console.log(filterId);
       setProducts(filterId);
+      setProductsCopy(filterId);
       setProducTest(filterId);
       setLoading(false);
     } catch (error) {
@@ -54,8 +49,16 @@ export default function Home() {
     handleGetProducts();
   }, []);
 
+  const filterProducts = (value) => {
+    const filteredProducts = productsCopy.filter(
+      (product) => product.race === value
+    );
+    setProducts(filteredProducts);
+    setShowAllProductsAgain(true);
+  };
+
   return (
-    <Layout cartItems={cart}>
+    <Layout cartItems={cart} filterProducts={filterProducts}>
       {/* <Banner className="banner-wrapper mb-[46px]" />
       <ViewMoreTitle
         className="my-categories mb-[60px]"
@@ -75,18 +78,23 @@ export default function Home() {
           <SectionStyleThreeHomeTwo
             countCart={countCartItems}
             products={products}
-            showProducts={viewProducts}
+            showProducts={productsCopy}
             sectionTitle="Produtos"
             className="new-products mb-[60px]"
           />
-          {/* <div className="w-full flex justify-center">
-            <button
-              onClick={() => handleViewMore(3)}
-              className="bg-black w-32 p-2 hover:font-medium text-white"
-            >
-              Ver mais
-            </button>
-          </div> */}
+          {showAllProductsAgain && (
+            <div className="w-full flex justify-center">
+              <button
+                onClick={() => {
+                  setProducts(productsCopy);
+                  setShowAllProductsAgain(false);
+                }}
+                className="bg-black w-32 p-2 hover:font-medium text-white"
+              >
+                voltar
+              </button>
+            </div>
+          )}
         </>
       )}
       {/*
