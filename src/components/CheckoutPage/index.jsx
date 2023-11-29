@@ -8,8 +8,8 @@ import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
 
 export default function CheckoutPage() {
-  const [FirstName, setFirstName] = useState("");
-  const [LastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [nameC, setNameC] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -59,22 +59,23 @@ export default function CheckoutPage() {
 
   const orderCreateHandler = async () => {
     let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    let buyer = JSON.parse(localStorage.getItem("user"))
+    let buyer = JSON.parse(localStorage.getItem("user"));
     let totalCartValue = 0;
     const orderId = v4();
 
     for (const item of cart) {
       try {
-        // await api.post("/orders", {
-        //   date: new Date().toLocaleDateString(),
-        //   situation: "Não Liberado.",
-        //   value: item.value,
-        //   quantity: String(item.quantity).toString(),
-        //   fkUserId: item.fkUserId,
-        //   productId: item.id,
-        //   orderId,
-        //   buyerId: buyer.id,
-        // })
+
+         await api.post("/orders", {
+           date: new Date().toLocaleDateString(),
+           situation: "Não Liberado.",
+           value: item.value,
+           quantity: String(item.quantity).toString(),
+           fkUserId: item.fkUserId,
+           productId: item.id,
+           orderId,
+           buyerId: buyer.id,
+         })
         let newStock = parseInt(item.stock) - parseInt(item.quantity)
         newStock = String(newStock)
         console.log("novo stock", newStock)
@@ -86,10 +87,8 @@ export default function CheckoutPage() {
       catch (error) {
         console.log(error.message);
       }
-
     }
-  }
-
+  };
 
   useEffect(() => {
     getTotalOrder();
@@ -186,71 +185,72 @@ export default function CheckoutPage() {
 
                 <div className="w-full px-10 py-[30px] border border-[#EDEDED]">
                   <div className="product-list w-full mb-[30px]">
-                    <ul className="flex flex-col space-y-5">
+                    <div className="flex flex-col space-y-5">
                       <div className="sub-total mb-6">
                         <div className=" flex justify-between mb-5">
                           <p className="text-[13px] font-medium text-qblack uppercase">
                             Produto
                           </p>
-                          <div>
-                            {cartProduct?.length > 0 &&
-                              cartProduct.map((carts, index) => (
-                                <li
-                                  className="w-full h-full flex"
-                                  key={carts.id}
-                                  style={styles.productItemsLi}
-                                >
-                                  <li className="w-full h-full flex">
-                                    <div className="flex space-x-[6px] justify-center items-center px-4 my-[20px]">
-                                      <div className="w-[65px] h-full">
-                                        <img
-                                          src={carts.productImage}
-                                          alt=""
-                                          className="w-full h-full object-contain"
-                                        />
-                                      </div>
-                                      <div className="flex-1 h-full flex flex-col justify-center ">
-                                        <p className="title mb-2 text-[13px] font-600 text-qblack leading-4 line-clamp-2 hover:text-blue-600">
-                                          {carts.name}
-                                        </p>
-
-                                        <p className="price">
-                                          <span className="offer-price text-qred font-600 text-[15px] ml-2">
-                                            R$ {carts.value}
-                                          </span>
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <button
-                                      onClick={() => deleteHandle(index)}
-                                      type="button"
-                                    >
-                                      <span className="mt-[20px] mr-[15px] inline-flex cursor-pointer ">
-                                        <svg
-                                          width="8"
-                                          height="8"
-                                          viewBox="0 0 8 8"
-                                          fill="none"
-                                          className="inline fill-current text-[#AAAAAA] hover:text-qred"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path d="M7.76 0.24C7.44 -0.08 6.96 -0.08 6.64 0.24L4 2.88L1.36 0.24C1.04 -0.08 0.56 -0.08 0.24 0.24C-0.08 0.56 -0.08 1.04 0.24 1.36L2.88 4L0.24 6.64C-0.08 6.96 -0.08 7.44 0.24 7.76C0.56 8.08 1.04 8.08 1.36 7.76L4 5.12L6.64 7.76C6.96 8.08 7.44 8.08 7.76 7.76C8.08 7.44 8.08 6.96 7.76 6.64L5.12 4L7.76 1.36C8.08 1.04 8.08 0.56 7.76 0.24Z" />
-                                        </svg>
-                                      </span>
-                                    </button>
-                                  </li>
-                                </li>
-                              ))}
-                          </div>
                           <p className="text-[13px] font-medium text-qblack uppercase">
                             total
                           </p>
                         </div>
                         <div className="w-full h-[1px] bg-[#EDEDED]"></div>
                       </div>
-                    </ul>
+                    </div>
                   </div>
-                  <div className="w-full h-[1px] bg-[#EDEDED]"></div>
+                  <div className="w-full  bg-[#EDEDED]">
+                    <div>
+                      {cartProduct?.length > 0 &&
+                        cartProduct.map((carts, index) => (
+                          <ul
+                            className="w-full "
+                            key={carts.id}
+                            style={styles.productItemsLi}
+                          >
+                            <li className="w-full h-full flex ">
+                              <div className="w-full flex justify-around items-center px-4 my-4">
+                                <div className="w-[65px] h-full mr-3">
+                                  <img
+                                    src={carts.productImage}
+                                    alt=""
+                                    className="w-full h-full object-contain"
+                                  />
+                                </div>
+                                <div className="flex-1 h-full flex flex-col justify-center ">
+                                  <p className="title mb-2 text-[13px] font-600 text-qblack leading-4 line-clamp-2 hover:text-blue-600">
+                                    {carts.name}
+                                  </p>
+
+                                  <p className="price">
+                                    <span className="offer-price text-qred font-600 text-[15px] ml-2">
+                                      R$ {carts.value}
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              {/* <button
+                                onClick={() => deleteHandle(index)}
+                                type="button"
+                              >
+                                <span className="mt-[20px] mr-[15px] inline-flex cursor-pointer ">
+                                  <svg
+                                    width="8"
+                                    height="8"
+                                    viewBox="0 0 8 8"
+                                    fill="none"
+                                    className="inline fill-current text-[#AAAAAA] hover:text-qred"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path d="M7.76 0.24C7.44 -0.08 6.96 -0.08 6.64 0.24L4 2.88L1.36 0.24C1.04 -0.08 0.56 -0.08 0.24 0.24C-0.08 0.56 -0.08 1.04 0.24 1.36L2.88 4L0.24 6.64C-0.08 6.96 -0.08 7.44 0.24 7.76C0.56 8.08 1.04 8.08 1.36 7.76L4 5.12L6.64 7.76C6.96 8.08 7.44 8.08 7.76 7.76C8.08 7.44 8.08 6.96 7.76 6.64L5.12 4L7.76 1.36C8.08 1.04 8.08 0.56 7.76 0.24Z" />
+                                  </svg>
+                                </span>
+                              </button> */}
+                            </li>
+                          </ul>
+                        ))}
+                    </div>
+                  </div>
 
                   <div className="mt-[30px]">
                     <div className=" flex justify-between mb-5">
@@ -354,14 +354,9 @@ export default function CheckoutPage() {
                       </li>
                     </ul>
                   </div>
-                  <button
-                    className="text-sm font-semibold"
-                    onClick={makeOrder}
-                  >
+                  <button className="text-sm font-semibold" onClick={makeOrder}>
                     <div className="w-[500px] h-[50px] black-btn flex justify-center items-center">
-
                       Realizar pedido
-
                     </div>
                   </button>
                 </div>
@@ -416,7 +411,9 @@ export default function CheckoutPage() {
                 label="Número do cartão*"
                 placeholder="0000 0000 0000 0000"
                 inputClasses="w-full h-[50px]"
-                inputHandler={(e) => setEmail(numberMask(e.target.value))}
+                inputHandler={(e) =>
+                  setNumeroCartao(numberMask(e.target.value))
+                }
               />
             </div>
             <div className="flex-1">
@@ -424,7 +421,7 @@ export default function CheckoutPage() {
                 label="Validade*"
                 placeholder="10/30"
                 inputClasses="w-full h-[50px]"
-                inputHandler={(e) => setPhone(e.target.value)}
+                inputHandler={(e) => setValidade(e.target.value)}
               />
             </div>
             <div className="flex-1">
@@ -432,7 +429,7 @@ export default function CheckoutPage() {
                 label="CVV*"
                 placeholder="000"
                 inputClasses="w-full h-[50px]"
-                inputHandler={(e) => setPhone(e.target.value)}
+                inputHandler={(e) => setCvv(e.target.value)}
               />
             </div>
           </div>
@@ -467,7 +464,6 @@ export default function CheckoutPage() {
           text: "text-xs text-qblack",
           cancelButton:
             "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-
         },
       });
       return;
@@ -480,7 +476,7 @@ export default function CheckoutPage() {
         email,
         phone,
         payOption,
-        value,
+        value: totalOrder,
       };
     }
 
@@ -493,7 +489,7 @@ export default function CheckoutPage() {
         numeroCartao,
         validade,
         cvv,
-        value,
+        value: totalOrder,
       };
     }
     if (payOption == "pix") {
@@ -502,15 +498,52 @@ export default function CheckoutPage() {
         email,
         phone,
         payOption,
-        value,
+        value: totalOrder,
       };
     }
     orderCreateHandler();
+
+    const handleCHeckValues = (object) => {
+      for (const key in object) {
+        let value = object[key];
+        console.log(`${key} ${value}`);
+        if (typeof value === "string") {
+          value = value.trim();
+        }
+
+        if (value === "" || value === 0) {
+          return true;
+        }
+      }
+
+      return false;
+    };
+
+    if (handleCHeckValues(obj)) {
+      Swal.fire({
+        icon: "error",
+        title: "Erro!",
+        text: "Preencha todos os campos por favor",
+        showCancelButton: false,
+        showConfirmButton: false,
+        timer: 2000,
+        customClass: {
+          confirmButton:
+            "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        },
+      });
+      return;
+    }
+
     api
       .post("http://localhost:3030/checkout", obj)
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem("cart", "[]")
+        localStorage.setItem("cart", "[]");
         Swal.fire({
           title: "Pagamento realizado com sucesso!",
           text: "Muito obrigado pela compra!",
@@ -527,7 +560,6 @@ export default function CheckoutPage() {
             text: "text-xs text-qblack",
             cancelButton:
               "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
-
           },
         }).then((result) => {
           if (result.isConfirmed) {

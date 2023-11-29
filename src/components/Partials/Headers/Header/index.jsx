@@ -3,7 +3,12 @@ import ThinBag from "../../../Helpers/icons/ThinBag";
 import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
 
-export default function Header({ className, drawerAction, cartItems }) {
+export default function Header({
+  className,
+  drawerAction,
+  cartItems,
+  filterProducts,
+}) {
   return (
     <header className={` ${className || ""} header-section-wrapper relative`}>
       {/* <TopBar className="quomodo-shop-top-bar" /> */}
@@ -51,7 +56,10 @@ export default function Header({ className, drawerAction, cartItems }) {
           </div>
         </div>
       </div>
-      <Navbar className="quomodo-shop-nav-bar lg:block hidden" />
+      <Navbar
+        className="quomodo-shop-nav-bar lg:block hidden"
+        filterProducts={filterProducts}
+      />
     </header>
   );
 }

@@ -4,9 +4,9 @@ import apiauth from "../../../../services/apiauth";
 import Arrow from "../../../Helpers/icons/Arrow";
 import { cattles } from "../../../SellerProduct";
 
-export default function Navbar({ className }) {
+export default function Navbar({ className, filterProducts }) {
   const [productSubCategory, setProductSubCategory] = useState(null);
-  const [productType, setProductType] = useState("")
+  const [productType, setProductType] = useState();
   const [categoryToggle, setToggle] = useState(false);
   const [elementsSize, setSize] = useState("0px");
   const [visibility, setVisibiity] = useState(false);
@@ -33,19 +33,9 @@ export default function Navbar({ className }) {
   };
   useEffect(() => {
     if (productType) {
-      setProductSubCategory(cattles[productType])
+      setProductSubCategory(cattles[productType]);
     }
-
-  }, [productType])
-  console.log(productSubCategory)
-
-  const updateFilter = () => {
-    localStorage.setItem("filter", productType)
-  }
-  const handleFilter = (value) => {
-    setProductType(value)
-    updateFilter()
-  }
+  }, [productType]);
   useEffect(() => {
     visibilityHandler();
     console.log(visibility);
@@ -57,14 +47,15 @@ export default function Navbar({ className }) {
       }
     } else {
       setSize(`0px`);
-      setProductType('')
+      setProductType("");
     }
   }, [categoryToggle, visibility]);
 
   return (
     <div
-      className={`nav-widget-wrapper w-full bg-qh2-green h-[60px] relative z-30  ${className || ""
-        }`}
+      className={`nav-widget-wrapper w-full bg-qh2-green h-[60px] relative z-30  ${
+        className || ""
+      }`}
     >
       <div className="container-x mx-auto h-full">
         <div className="w-full h-full relative">
@@ -110,14 +101,14 @@ export default function Navbar({ className }) {
                   ></div>
                 )}
                 <div
-                  className={`category-dropdown w-full absolute left-0 top-[53px] ${productType === '' && 'overflow-hidden'} `}
+                  className={`category-dropdown w-full absolute left-0 top-[53px] ${
+                    productType === "" && "overflow-hidden"
+                  } `}
                   style={{ height: `${elementsSize} ` }}
                 >
                   <ul className="categories-list">
                     <li className="category-item">
-                      <a href="#" onClick={() => (
-                        handleFilter('bovine')
-                      )}>
+                      <a href="#" onClick={() => setProductType("bovine")}>
                         <div className=" flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white">
                           <div className="flex items-center space-x-6">
                             <span>
@@ -167,9 +158,7 @@ export default function Navbar({ className }) {
                       </a>
                     </li>
                     <li className="category-item">
-                      <a href="#" onClick={() => (
-                        handleFilter('equine')
-                      )}>
+                      <a href="#" onClick={() => setProductType("equine")}>
                         <div className="flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white">
                           <div className="flex items-center space-x-6">
                             <span>
@@ -220,34 +209,35 @@ export default function Navbar({ className }) {
                           </div>
                         </div>
                       </a>
-                      <div style={{
-                        borderRadius: '8px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        position: 'absolute',
-                        left: 270,
-                        top: productType === 'equine' ? '40px' : 0,
-                        width: '100%'
-                      }}>
-                        {
-                          productSubCategory?.map((item) => {
-                            return (
-                              <div onClick={(e) => (
-                                handleFilter([`${productType}`, `${item.label}`])
-                              )} style={{
-                                borderBottom: '1px solid #f8f8f8'
-                              }} className="flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white">
-                                {
-                                  item.label
-                                }
-                              </div>
-                            )
-                          })
-                        }
+                      <div
+                        style={{
+                          borderRadius: "8px",
+                          display: "flex",
+                          flexDirection: "column",
+                          position: "absolute",
+                          left: 270,
+                          top: productType === "equine" ? "40px" : 0,
+                          width: "100%",
+                        }}
+                      >
+                        {productSubCategory?.map((item) => {
+                          return (
+                            <button
+                              onClick={() => {
+                                filterProducts(item.value);
+                              }}
+                              style={{
+                                borderBottom: "1px solid #f8f8f8",
+                              }}
+                              className="flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white"
+                            >
+                              {item.label}
+                            </button>
+                          );
+                        })}
                       </div>
                     </li>
                   </ul>
-
                 </div>
               </div>
               <div className="nav">
