@@ -63,7 +63,13 @@ export default function OrderTab() {
       }
     });
 
-
+  }
+  const deleteOrderHandler = async (order) => {
+    console.log(order.id)
+    console.log(order.productId)
+    const response = await api.delete(`/orders/delete/${order.productId}`);
+    console.log("deletando")
+    console.log(response)
   }
   const updateOrderSituationEntregue = async (order, index) => {
     Swal.fire({
@@ -104,13 +110,16 @@ export default function OrderTab() {
     });
 
 
+
   }
   const [updatedOrder, setUpdatedOrder] = useState([])
   const resetSituation = async (order, index) => {
 
     try {
       console.log(apiData[index].productId)
-      const response = await api.put(`/orders/situation/${apiData[index].productId}`, {
+      let proId = apiData[index].productId
+      console.log("idproduto", proId)
+      const response = await api.put(`/orders/situation/${proId}`, {
         situation: "Não Liberado"
       });
     } catch (error) {
@@ -123,6 +132,12 @@ export default function OrderTab() {
   return (
     <>
       <div className="relative w-full overflow-x-auto sm:rounded-lg">
+        <p className="text-sm text-qgray mt-6">
+          <span className="text-blue-500">Azul</span> indica pedidos do vendedor.
+          <span className="text-yellow-500"> Amarelo</span> indica pedidos do comprador.
+          <span className="text-blue-500"> Vendedores</span> podem alterar situação do pedido selecionando com o cursor do mouse o texto do status
+
+        </p>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <tbody>
             {/* table heading */}
@@ -148,18 +163,19 @@ export default function OrderTab() {
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <button onClick={() => {
-                    if (order.situation === "Liberado") {
-                      updateOrderSituationEntregue(order, index);
-                    }
-                    else {
-                      if (order.fkUserId == idB) {
-                        updateOrderSituation(order, index);
+                  <button
+                    onClick={() => {
+                      if (order.situation === "Liberado") {
+                        updateOrderSituationEntregue(order, index);
+                        setTimeout(deleteOrderHandler, 3000, order);
+                      } else {
+                        if (order.fkUserId == idB) {
+                          updateOrderSituation(order, index);
+                        }
                       }
-                    }
-
-
-                  }} type="button">
+                    }}
+                    type="button"
+                  >
                     <span className={`text-sm rounded text ${order.situation === "Liberado"
                       ? "text-green-500"
                       : order.situation === "Não Liberado"
@@ -184,6 +200,7 @@ export default function OrderTab() {
                   </span>
                 </td>
               </tr>
+
             ))}
           </tbody>
         </table>
