@@ -80,7 +80,6 @@ export default function OrderTab() {
     }
 
   }
-  console.log("kk", idB)
   useEffect(() => { orderHandler() }, [])
 
   return (
