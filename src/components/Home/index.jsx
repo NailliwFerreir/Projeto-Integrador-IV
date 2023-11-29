@@ -82,6 +82,11 @@ export default function Home() {
             sectionTitle="Produtos"
             className="new-products mb-[60px]"
           />
+          {products && products.length === 0 && (
+            <div className="flex justify-center my-5">
+              <div>Desculpe não encontramos nenhum produto para você.</div>
+            </div>
+          )}
           {showAllProductsAgain && (
             <div className="w-full flex justify-center">
               <button
@@ -97,6 +102,7 @@ export default function Home() {
           )}
         </>
       )}
+
       {/*
       <CampaignCountDown className="mb-[60px]" lastDate="2023-10-04 4:00:00" />
       <ProductsAds

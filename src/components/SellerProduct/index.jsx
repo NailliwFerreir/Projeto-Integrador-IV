@@ -38,10 +38,10 @@ export const cattles = {
       value: "Brahman",
       label: "Brahman",
     },
-    {
+    /* {
       value: "Mangalarga Marchador",
       label: "Mangalarga Marchador",
-    },
+    }, */
     {
       value: "Crioulo",
       label: "Crioulo",
@@ -237,7 +237,6 @@ export default function SellerProduct() {
             navigate("/");
           }
         });
-
       })
       .catch((err) => {
         console.log(err);
@@ -274,8 +273,6 @@ export default function SellerProduct() {
   useEffect(() => {
     console.log(removeCurrencyMaskBR(productPrice));
   }, [productPrice]);
-
-
 
   const group = [
     { value: "bovine", label: "Bovino" },
