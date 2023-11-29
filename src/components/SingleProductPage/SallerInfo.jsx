@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../../services/api";
-import ProductCardStyleOne from "../Helpers/Cards/ProductCardStyleOne";
-import DataIteration from "../Helpers/DataIteration";
 import Star from "../Helpers/icons/Star";
 
 export default function SallerInfo({ products }) {
@@ -12,7 +10,7 @@ export default function SallerInfo({ products }) {
     let id = JSON.parse(localStorage.getItem("user"));
     id = id.id;
     api
-      .get(`/users/${id}`)
+      .get(`auth/user/${id}`)
       .then((resp) => {
         console.log(resp.data);
         setSallerName(resp.data.username);
@@ -23,7 +21,9 @@ export default function SallerInfo({ products }) {
         console.log(error);
       });
   }
-
+  useEffect(() => {
+    getSallerInfo();
+  }, []);
   return (
     <div className="saller-info-wrapper w-full">
       <div className="saller-info sm:flex justify-between items-center pb-[30px] border-b border-[#E8E8E8]">
@@ -104,7 +104,7 @@ export default function SallerInfo({ products }) {
           </div>
         </div> */}
       </div>
-      <div className="saller-product w-full mt-[30px]">
+      {/* <div className="saller-product w-full mt-[30px]">
         <h1 className="text-[18px] font-medium mb-5">Produto da loja</h1>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5">
           <DataIteration
@@ -119,7 +119,7 @@ export default function SallerInfo({ products }) {
             )}
           </DataIteration>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
