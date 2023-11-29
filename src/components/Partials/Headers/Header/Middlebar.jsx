@@ -17,11 +17,6 @@ export default function Middlebar({ className, cartItems }) {
     if (id == null) return false;
     return true;
   }
-  // const [toggleCart, setToggle] = useState(false);
-  // const cartHandler = () => {
-  //   setToggle(!toggleCart);
-  // };
-
   const countCartItems = () => {
     setCart(JSON.parse(localStorage.getItem("cart") || "[]").length);
   };
