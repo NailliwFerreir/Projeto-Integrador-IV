@@ -30,6 +30,7 @@ export default function Home() {
   const handleGetProducts = async () => {
     try {
       setLoading(true);
+      const arrayProd = []
       let id = JSON.parse(localStorage.getItem("user"));
       id = id.id;
       console.log(id)
@@ -37,6 +38,22 @@ export default function Home() {
       const { data } = response;
       console.log(data);
       const filterId = data.filter((product) => product.fkUserId !== id)
+      // products = data.map((e) => (
+      //   if (localStorage.getItem("filter")) {
+      //   if (filterData == "equine") {
+      //     if (e.category.startsWith("Equino")) {
+      //       array.push(e)
+      //     }
+      //   }
+      //   if (filterData == "bovine") {
+      //     if (e.category.startsWith("Bovi")) {
+      //       array.push(e)
+      //     }
+      //   }
+      // } else {
+      //   array.push(e)
+      // }
+      // ))
       console.log(filterId)
       setProducts(filterId);
       setProducTest(filterId);

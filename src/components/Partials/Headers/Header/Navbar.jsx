@@ -6,7 +6,7 @@ import { cattles } from "../../../SellerProduct";
 
 export default function Navbar({ className }) {
   const [productSubCategory, setProductSubCategory] = useState(null);
-  const [productType, setProductType] = useState()
+  const [productType, setProductType] = useState("")
   const [categoryToggle, setToggle] = useState(false);
   const [elementsSize, setSize] = useState("0px");
   const [visibility, setVisibiity] = useState(false);
@@ -38,6 +38,14 @@ export default function Navbar({ className }) {
 
   }, [productType])
   console.log(productSubCategory)
+
+  const updateFilter = () => {
+    localStorage.setItem("filter", productType)
+  }
+  const handleFilter = (value) => {
+    setProductType(value)
+    updateFilter()
+  }
   useEffect(() => {
     visibilityHandler();
     console.log(visibility);
@@ -107,7 +115,9 @@ export default function Navbar({ className }) {
                 >
                   <ul className="categories-list">
                     <li className="category-item">
-                      <a href="#" onClick={() => setProductType('bovine')}>
+                      <a href="#" onClick={() => (
+                        handleFilter('bovine')
+                      )}>
                         <div className=" flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white">
                           <div className="flex items-center space-x-6">
                             <span>
@@ -157,7 +167,9 @@ export default function Navbar({ className }) {
                       </a>
                     </li>
                     <li className="category-item">
-                      <a href="#" onClick={() => setProductType('equine')}>
+                      <a href="#" onClick={() => (
+                        handleFilter('equine')
+                      )}>
                         <div className="flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white">
                           <div className="flex items-center space-x-6">
                             <span>
@@ -220,7 +232,9 @@ export default function Navbar({ className }) {
                         {
                           productSubCategory?.map((item) => {
                             return (
-                              <div style={{
+                              <div onClick={(e) => (
+                                handleFilter([`${productType}`, `${item.label}`])
+                              )} style={{
                                 borderBottom: '1px solid #f8f8f8'
                               }} className="flex justify-between items-center px-5 h-10 bg-white hover:bg-qh2-green transition-all duration-300 ease-in-out cursor-pointer text-qblack hover:text-white">
                                 {
@@ -513,7 +527,7 @@ export default function Navbar({ className }) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
