@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-
+import { Navigate, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { currencyMaskBR } from "../../masks";
 import InputQuantityCom from "../Helpers/InputQuantityCom";
 
 export default function ProductsTable({ className }) {
   const [totalValue, setTotalValue] = useState(0);
   const [cartProduct, setCartProduct] = useState([]);
+  var [id, setId] = useState(JSON.parse(localStorage.getItem("user")));
+  const navigate = useNavigate();
 
   const cartProductHandler = async () => {
     try {
@@ -29,6 +32,39 @@ export default function ProductsTable({ className }) {
     array.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(array));
     cartProductHandler();
+  };
+
+  const idHandler = () => {
+    if (id == null) return false;
+    return true;
+  }
+  const handleClick = () => {
+    if (idHandler()) {
+      Navigate("/checkout");
+    }
+    else {
+      Swal.fire({
+        title: "Você não está logado",
+        text: "Você será redirecionado para a página de login para continuar.",
+        icon: "question",
+        confirmButtonText: "Fazer login",
+        showCancelButton: false,
+        buttonsStyling: false,
+        reverseButtons: true,
+        customClass: {
+          confirmButton:
+            "mx-10 w-40 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+          title: "text-2xl text-qblack",
+          text: "text-xs text-qblack",
+          cancelButton:
+            "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        },
+      }).then((res) => {
+        if (res.isConfirmed) {
+          navigate("/login");
+        }
+      });
+    }
   };
 
   useEffect(() => {
@@ -158,14 +194,13 @@ export default function ProductsTable({ className }) {
       </div>
       <div className="w-full sm:flex justify-between mt-4">
         <div className="flex space-x-2.5 items-center">
-          <a href="/checkout">
-            <button
-              disabled={cartProduct.length === 0}
-              className="w-[220px] h-[50px] bg-[#F6F6F6] flex justify-center items-center disabled:bg-[#F6F6F6] disabled:cursor-not-allowed"
-            >
-              <span className="text-sm font-semibold">Finalizar venda</span>
-            </button>
-          </a>
+          <button
+            disabled={cartProduct.length === 0}
+            className="w-[220px] h-[50px] bg-[#F6F6F6] flex justify-center items-center disabled:bg-[#F6F6F6] disabled:cursor-not-allowed"
+            onClick={handleClick}
+          >
+            <span className="text-sm font-semibold">Finalizar venda</span>
+          </button>
         </div>
       </div>
     </div>
