@@ -65,8 +65,6 @@ export default function OrderTab() {
 
   }
   const deleteOrderHandler = async (order) => {
-    console.log(order.id)
-    console.log(order.productId)
     const response = await api.delete(`/orders/delete/${order.productId}`);
     console.log("deletando")
     console.log(response)
@@ -167,7 +165,7 @@ export default function OrderTab() {
                     onClick={() => {
                       if (order.situation === "Liberado") {
                         updateOrderSituationEntregue(order, index);
-                        setTimeout(deleteOrderHandler, 3000, order);
+                        setTimeout(deleteOrderHandler, 60000, order);
                       } else {
                         if (order.fkUserId == idB) {
                           updateOrderSituation(order, index);
