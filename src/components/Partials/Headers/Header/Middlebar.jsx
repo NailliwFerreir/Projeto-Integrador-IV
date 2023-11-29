@@ -7,11 +7,18 @@ import ThinPeople from "../../../Helpers/icons/ThinPeople";
 
 export default function Middlebar({ className, cartItems }) {
   var [id, setId] = useState(JSON.parse(localStorage.getItem("user")));
+  console.log("identificador", id)
   const navigate = useNavigate();
+
+  const idHandler = () => {
+    if (id == null) return false;
+    return true;
+  }
   // const [toggleCart, setToggle] = useState(false);
   // const cartHandler = () => {
   //   setToggle(!toggleCart);
   // };
+
 
   return (
     <div className={`w-full h-[86px] bg-white ${className}`}>
@@ -48,7 +55,7 @@ export default function Middlebar({ className, cartItems }) {
                 <Cart className="absolute -right-[45px] top-11 z-50 hidden group-hover:block" />
               </div>
               <div>
-                {id ? (
+                {idHandler() ? (
                   <Link to="/profile">
                     <span>
                       <ThinPeople />

@@ -517,7 +517,7 @@ export default function Navbar({ className, filterProducts }) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }

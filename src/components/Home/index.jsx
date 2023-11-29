@@ -24,6 +24,7 @@ export default function Home() {
   const handleGetProducts = async () => {
     try {
       setLoading(true);
+      const arrayProd = []
       let id = JSON.parse(localStorage.getItem("user"));
       id = id.id;
       console.log(id);

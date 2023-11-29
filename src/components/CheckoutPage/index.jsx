@@ -65,17 +65,26 @@ export default function CheckoutPage() {
 
     for (const item of cart) {
       try {
-        await api.post("/orders", {
-          date: new Date().toLocaleDateString(),
-          situation: "Não Liberado.",
-          value: item.value,
-          quantity: String(item.quantity).toString(),
-          fkUserId: item.fkUserId,
-          productId: item.id,
-          orderId,
-          buyerId: buyer.id,
-        });
-      } catch (error) {
+
+         await api.post("/orders", {
+           date: new Date().toLocaleDateString(),
+           situation: "Não Liberado.",
+           value: item.value,
+           quantity: String(item.quantity).toString(),
+           fkUserId: item.fkUserId,
+           productId: item.id,
+           orderId,
+           buyerId: buyer.id,
+         })
+        let newStock = parseInt(item.stock) - parseInt(item.quantity)
+        newStock = String(newStock)
+        console.log("novo stock", newStock)
+
+        await api.put(`/products/stock/${item.id}`), {
+          stock: newStock,
+        }
+      }
+      catch (error) {
         console.log(error.message);
       }
     }
