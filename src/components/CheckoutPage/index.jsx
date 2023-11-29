@@ -67,7 +67,7 @@ export default function CheckoutPage() {
       try {
         await api.post("/orders", {
           date: new Date().toLocaleDateString(),
-          situation: "Não Liberado.",
+          situation: "Não Liberado",
           value: item.value,
           quantity: String(item.quantity).toString(),
           fkUserId: item.fkUserId,
@@ -218,22 +218,21 @@ export default function CheckoutPage() {
                             <li className="w-full h-full flex ">
                               <div className="w-full flex justify-around items-center px-4 my-4">
                                 <div className="w-[65px] h-full mr-3">
-                                  <img
-                                    src={carts.productImage}
-                                    alt=""
-                                    className="w-full h-full object-contain"
-                                  />
+                                  <img src={carts.productImage} alt="" className="w-full h-full object-contain" />
                                 </div>
-                                <div className="flex-1 h-full flex flex-col justify-center ">
+                                <div className="flex-1 h-full flex flex-col justify-center">
                                   <p className="title mb-2 text-[13px] font-600 text-qblack leading-4 line-clamp-2 hover:text-blue-600">
                                     {carts.name}
                                   </p>
 
-                                  <p className="price">
-                                    <span className="offer-price text-qred font-600 text-[15px] ml-2">
+                                  <div className="flex justify-between">
+                                    <span className="offer-price text-qred font-600 text-[15px]">
                                       R$ {carts.value}
                                     </span>
-                                  </p>
+                                    <span className="quantity">
+                                      Qtd: {carts.quantity}
+                                    </span>
+                                  </div>
                                 </div>
                               </div>
                               {/* <button
