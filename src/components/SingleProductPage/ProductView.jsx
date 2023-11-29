@@ -44,7 +44,7 @@ export default function ProductView({ className, reportHandler }) {
   };
 
   const handleAddProductToLocalStorage = (res) => {
-    const { data } = res;
+    let data = res.data;
     const cartData = localStorage.getItem("cart");
     const cart = cartData === null ? [] : JSON.parse(cartData);
     const existentProduct = cart.find((item) => item.id === data.id);
@@ -64,38 +64,6 @@ export default function ProductView({ className, reportHandler }) {
     productInfoHandler(productId);
   }, []);
 
-  // const productsImg = [
-  //   {
-  //     id: 1,
-  //     src: "product-details-1.png",
-  //     color: "#FFBC63",
-  //   },
-  //   {
-  //     id: 2,
-  //     src: "product-details-2.png",
-  //     color: "#649EFF",
-  //   },
-  //   {
-  //     id: 3,
-  //     src: "product-details-3.png",
-  //     color: "#FFFFFF",
-  //   },
-  //   {
-  //     id: 4,
-  //     src: "product-details-4.png",
-  //     color: "#FF7173",
-  //   },
-  //   {
-  //     id: 6,
-  //     src: "product-details-5.png",
-  //     color: "",
-  //   },
-  // ];
-
-  // const [src, setSrc] = useState(productsImg[0].src);
-  // const changeImgHandler = (data) => {
-  //   setSrc(current);
-  // };
   const [quantity, setQuantity] = useState(1);
   const increment = () => {
     setQuantity((prev) => prev + 1);

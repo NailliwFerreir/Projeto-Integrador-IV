@@ -26,8 +26,11 @@ export default function Home() {
       setLoading(true);
       const arrayProd = []
       let id = JSON.parse(localStorage.getItem("user"));
+      if (id == null) {
+        id = 1
+      }
       id = id.id;
-      console.log(id);
+      console.log("id user:", id);
       const response = await api.get("/products");
       const { data } = response;
       console.log(data);
