@@ -8,6 +8,9 @@ import ThinPeople from "../../../Helpers/icons/ThinPeople";
 export default function Middlebar({ className, cartItems }) {
   var [id, setId] = useState(JSON.parse(localStorage.getItem("user")));
   console.log("identificador", id)
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart") || "[]").length
+  );
   const navigate = useNavigate();
 
   const idHandler = () => {
@@ -19,6 +22,9 @@ export default function Middlebar({ className, cartItems }) {
   //   setToggle(!toggleCart);
   // };
 
+  const countCartItems = () => {
+    setCart(JSON.parse(localStorage.getItem("cart") || "[]").length);
+  };
 
   return (
     <div className={`w-full h-[86px] bg-white ${className}`}>
@@ -47,6 +53,7 @@ export default function Middlebar({ className, cartItems }) {
                     </span>
                   </a>
                   <span className="w-[18px] h-[18px] rounded-full bg-qh2-green absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] text-white">
+                    {cart}
                     {cartItems}
                   </span>
                 </div>

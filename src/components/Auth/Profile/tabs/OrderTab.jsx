@@ -7,14 +7,17 @@ export default function OrderTab() {
   const [value, setValue] = useState("");
   const [orders, setOrders] = useState([]);
   const [apiData, setApiData] = useState({});
+  const [idB, setIdB] = useState("");
 
 
   const orderHandler = async () => {
     let id = JSON.parse(localStorage.getItem("user"));
     id = id.id;
+    setIdB(id)
     let idProduct = id.productId
     console.log(id)
-    const response = await api.get(`/orders/buyerId/${id}`);
+    const response = await api.get(`/orders/buyerId/${id}/fkUserId/${id}`);
+    console.log(response)
     const { data } = response;
     console.log("pedido", data);
     setApiData(data)
@@ -77,6 +80,7 @@ export default function OrderTab() {
     }
 
   }
+  console.log("kk", idB)
   useEffect(() => { orderHandler() }, [])
 
   return (
@@ -97,7 +101,8 @@ export default function OrderTab() {
             {orders?.length > 0 && orders.map((order, index) => (
               <tr className="bg-white border-b hover:bg-gray-50" key={index}>
                 <td className="text-center py-4">
-                  <span className="text-lg text-qgray font-medium">#{order.productId}</span>
+                  <span className={`text-lg text-qgray font-medium ${order.fkUserId == idB ? "text-blue-500" : "text-yellow-500"} p-2`}>#{order.productId} </span>
+                  {/* "text-lg text-qgray font-medium" */}
                 </td>
                 <td className="text-center py-4 px-2">
                   <span className="text-base text-qgray  whitespace-nowrap">
@@ -106,7 +111,7 @@ export default function OrderTab() {
                 </td>
                 <td className="text-center py-4 px-2">
                   <button onClick={() => updateOrderSituation(order, index)} type="button">
-                    <span className={`text-sm rounded text-${order.situation == "Liberado" ? "green" : "red"}-500 bg-${order.situation == "Liberado" ? "green" : "red"}-100 p-2`}>
+                    <span className={`text-sm rounded text ${order.situation === "Liberado" ? "text-green-500" : "text-red-500"} p-2`}>
                       {order.situation}
                     </span>
                   </button>
