@@ -133,7 +133,7 @@ export default function OrderTab() {
         <p className="text-sm text-qgray mt-6">
           <span className="text-blue-500">Azul</span> indica pedidos do vendedor.
           <span className="text-yellow-500"> Amarelo</span> indica pedidos do comprador.
-          <span className="text-blue-500"> Vendedores</span> podem alterar situação do pedido selecionando com o cursor do mouse o texto do status
+          <span className="text-blue-500"> Vendedores</span> podem alterar situação do pedido selecionando com o cursor do mouse o texto do status(<span className="text-red-500"> Não Liberado</span>, <span className="text-green-500"> Liberado</span> e <span className="text-blue-500"> Entregue</span> )
 
         </p>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
