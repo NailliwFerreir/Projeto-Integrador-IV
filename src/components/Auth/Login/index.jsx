@@ -119,7 +119,7 @@ export default function Login() {
                     />
                   </div>
                   <div className="forgot-password-area flex justify-between items-center mb-7">
-                    <div className="remember-checkbox flex items-center space-x-2.5">
+                    {/* <div className="remember-checkbox flex items-center space-x-2.5">
                       <button
                         onClick={rememberMe}
                         type="button"
@@ -146,10 +146,10 @@ export default function Login() {
                       >
                         Lembrar-me
                       </span>
-                    </div>
-                    <a href="/forgot-password" className="text-base text-black">
+                    </div> */}
+                    {/* <a href="/forgot-password" className="text-base text-black">
                       Esqueceu a senha?
-                    </a>
+                    </a> */}
                   </div>
                   <div className="signin-area mb-3.5">
                     <div className="flex justify-center">
