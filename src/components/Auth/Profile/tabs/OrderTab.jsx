@@ -46,8 +46,7 @@ export default function OrderTab() {
       if (res.isConfirmed) {
         try {
           console.log(apiData[index].productId)
-          const response = await api.put(`/orders/situ/${apiData[index].productId}`, {
-            ...order,
+          const response = await api.put(`/orders/situation/${apiData[index].productId}`, {
             situation: "Liberado"
           });
           const filteredOrder = orders.filter((ord) => {
@@ -66,13 +65,52 @@ export default function OrderTab() {
 
 
   }
+  const updateOrderSituationEntregue = async (order, index) => {
+    Swal.fire({
+      title: "Deseja atualizar o status do pedido para Entregue?",
+      text: "Confirme para atualizar!",
+      icon: "question",
+      confirmButtonText: "Ok",
+      showCancelButton: true,
+      buttonsStyling: false,
+      reverseButtons: true,
+      customClass: {
+        confirmButton:
+          "mx-10 w-20 h-10 p-1 bg-black text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+        title: "text-2xl text-qblack",
+        text: "text-xs text-qblack",
+        cancelButton:
+          "mx-10 w-20 h-10 p-1 bg-slate-400 text-white w-16 hover:font-bold flex justify-center items-center ease-out duration-200",
+      },
+    }).then(async (res) => {
+      if (res.isConfirmed) {
+        try {
+          console.log(apiData[index].productId)
+          const response = await api.put(`/orders/situation/${apiData[index].productId}`, {
+            situation: "Entregue"
+          });
+          const filteredOrder = orders.filter((ord) => {
+            return ord.productId !== apiData[index].productId
+          })
+          console.log(filteredOrder)
+          setOrders([{
+            ...order,
+            situation: "Entregue"
+          }, ...filteredOrder])
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    });
+
+
+  }
   const [updatedOrder, setUpdatedOrder] = useState([])
   const resetSituation = async (order, index) => {
 
     try {
       console.log(apiData[index].productId)
-      const response = await api.put(`/orders/situ/${apiData[index].productId}`, {
-        ...order,
+      const response = await api.put(`/orders/situation/${apiData[index].productId}`, {
         situation: "Não Liberado"
       });
     } catch (error) {
@@ -95,6 +133,7 @@ export default function OrderTab() {
               <td className="py-4 whitespace-nowrap text-center">Data</td>
               <td className="py-4 whitespace-nowrap text-center">Status</td>
               <td className="py-4 whitespace-nowrap text-center">Preço</td>
+              <td className="py-4 whitespace-nowrap text-center">quantidade</td>
             </tr>
             {/* table heading end */}
             {orders?.length > 0 && orders.map((order, index) => (
@@ -109,8 +148,24 @@ export default function OrderTab() {
                   </span>
                 </td>
                 <td className="text-center py-4 px-2">
-                  <button onClick={() => updateOrderSituation(order, index)} type="button">
-                    <span className={`text-sm rounded text ${order.situation === "Liberado" ? "text-green-500" : "text-red-500"} p-2`}>
+                  <button onClick={() => {
+                    if (order.situation === "Liberado") {
+                      updateOrderSituationEntregue(order, index);
+                    }
+                    else {
+                      if (order.fkUserId == idB) {
+                        updateOrderSituation(order, index);
+                      }
+                    }
+
+
+                  }} type="button">
+                    <span className={`text-sm rounded text ${order.situation === "Liberado"
+                      ? "text-green-500"
+                      : order.situation === "Não Liberado"
+                        ? "text-red-500"
+                        : "text-blue-500"
+                      } p-2`}>
                       {order.situation}
                     </span>
                   </button>
@@ -122,6 +177,11 @@ export default function OrderTab() {
                       R$ {order.value}
                     </span>
                   </button>
+                </td>
+                <td className="text-center py-4 px-2">
+                  <span className="text-base text-qgray  whitespace-nowrap">
+                    {order.quantity}
+                  </span>
                 </td>
               </tr>
             ))}
