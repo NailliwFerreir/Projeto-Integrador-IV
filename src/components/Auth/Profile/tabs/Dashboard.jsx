@@ -21,19 +21,35 @@ export default function Dashboard() {
   );
   const [visibility, setVisibiity] = useState(false);
   const [currentImg, setCurrentImg] = useState(null);
-  let contL = 0,
-    contN = 0;
+  const [contL, setContL] = useState(0);
+  const [contN, setContN] = useState(0);
 
   const countOrdersHandler = async () => {
     let id = JSON.parse(localStorage.getItem("user"));
     id = id.id;
     console.log(id);
-    const response = await api.get(`/orders/userId/${id}`);
+    const response = await api.get(`/orders/buyerId/${id}/fkUserId/${id}`);
     const { data } = response;
-    countL = data.filter((obj) => obj.situation === "Enviado").length;
-    countN = data.filter((obj) => obj.situation === "Não enviado").length;
+    setContL(filter(data, (obj) => obj.situation === "Liberado").length)
+    setContN(filter(data, (obj) => obj.situation === "Não Liberado").length)
+    console.log(contL);
+    console.log(contN);
     console.log(data);
   };
+  console.log(contL);
+  console.log(contN);
+
+
+  function filter(data, condition) {
+    const filteredData = [];
+    for (const item of data) {
+      if (condition(item)) {
+        filteredData.push(item);
+      }
+    }
+    return filteredData;
+  }
+
 
   const dashboardHandler = async () => {
     try {
@@ -72,6 +88,7 @@ export default function Dashboard() {
   useEffect(() => {
     dashboardHandler();
     visibilityHandler();
+    countOrdersHandler();
   }, []);
 
   const cepMask = (value) => {
