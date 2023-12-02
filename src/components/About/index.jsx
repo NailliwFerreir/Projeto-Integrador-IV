@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
 
-
 export default function About() {
   const settings = {
     slidesToShow: 3,
@@ -71,29 +70,29 @@ export default function About() {
                   O que é a Insemina+?
                 </h1>
                 <p className="text-[15px] text-qgraytwo leading-7 mb-2.5">
-                  A INSEMINA+ é uma plataforma online que conecta criadores de bovinos e equinos com compradores de sêmen. Nosso objetivo é facilitar a comercialização de material genético de qualidade, garantindo que criadores tenham acesso a um público amplo e qualificado.
+                  A INSEMINA+ é uma plataforma online que conecta criadores de
+                  bovinos e equinos com compradores de sêmen. Nosso objetivo é
+                  facilitar a comercialização de material genético de qualidade,
+                  garantindo que criadores tenham acesso a um público amplo e
+                  qualificado.
                 </p>
                 <ul className="text-[15px] text-qgraytwo leading-7 list-disc ml-5 mb-5">
                   <li>Marketplace rural</li>
-                  <li>
-                    Melhores genéticas
-                  </li>
+                  <li>Melhores genéticas</li>
                   <li>Logistíca planejada</li>
-                  <li>
-                    Taxas baixas!
-                  </li>
+                  <li>Taxas baixas!</li>
                 </ul>
 
                 <Link to="/contact">
                   <div className="w-[121px] h-10">
-                    <span className="yellow-btn">Nos Contate</span>
+                    <span className="black-btn h-full p-3">Nos Contate</span>
                   </div>
                 </Link>
               </div>
             </div>
           </div>
         </div>
-      </div >
-    </Layout >
+      </div>
+    </Layout>
   );
 }
