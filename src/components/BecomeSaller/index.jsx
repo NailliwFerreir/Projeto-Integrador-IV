@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { dateBRMask } from "../../masks";
 import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
@@ -205,7 +206,7 @@ export default function BecomeSaller() {
                         type="text"
                         inputClasses="h-[50px]"
                         value={birth}
-                        inputHandler={(e) => setBirth(e.target.value)}
+                        inputHandler={(e) => setBirth(dateBRMask(e.target.value))}
                       />
                     </div>
                     <div className="w-1/2">

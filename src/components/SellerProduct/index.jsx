@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
-import { currencyMaskBR, removeCurrencyMaskBR } from "../../masks";
+import { currencyMaskBR, formatStockNumber, removeCurrencyMaskBR } from "../../masks";
 import api from "../../services/api";
 import InputCom from "../Helpers/InputCom";
 import InputTextareaCom from "../Helpers/InputTextareaCom";
@@ -392,11 +392,11 @@ export default function SellerProduct() {
                       <InputCom
                         label="Estoque*"
                         name="productStock"
-                        placeholder="R$ 100,00"
+                        placeholder="10"
                         type="number"
                         inputClasses="h-[50px]"
                         value={stock}
-                        inputHandler={(e) => setStock(e.target.value)}
+                        inputHandler={(e) => setStock(formatStockNumber(e.target.value))}
                       />
                     </div>
 
