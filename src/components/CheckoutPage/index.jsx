@@ -517,6 +517,10 @@ export default function CheckoutPage() {
           value = value.trim();
         }
 
+        if(payOption == "pix"){
+          return false;
+        }
+
         if (value === "" || value === 0) {
           return true;
         }

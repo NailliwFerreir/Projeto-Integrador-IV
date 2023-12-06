@@ -49,3 +49,17 @@ export function dateBRMask(str) {
   }
   return formattedDate;
 }
+
+export function formatStockNumber(input) {
+  if (input === null || input === undefined) return 0;
+  const numericInput = input.replace(/[^\d-]/g, "");
+  if (numericInput.includes("-")) {
+    return 0;
+  }
+  const integerNumber = parseInt(numericInput, 10);
+  if (isNaN(integerNumber)) {
+    return 0;
+  }
+
+  return integerNumber;
+}
