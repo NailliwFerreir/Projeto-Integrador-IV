@@ -315,7 +315,7 @@ export default function SellerProduct() {
                       <img
                         src={
                           productImg ||
-                          `${process.env.PUBLIC_URL}/assets/images/edit-coverimg.jpg`
+                          `${process.env.PUBLIC_URL}/assets/images/cavalo.jpg`
                         }
                         alt=""
                         class="rounded-lg overflow-hidden object-cover"
